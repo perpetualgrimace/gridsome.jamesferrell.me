@@ -1,0 +1,224 @@
+/////////////////////////////////////////////
+// sweet sticky footer via flexbox
+/////////////////////////////////////////////
+
+// https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+// NOTE: needed for ginormous screens
+@supports (flex-wrap: wrap) {
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  .main {
+    flex: 1;
+  }
+}
+
+
+/////////////////////////////////////////////
+// .main min-height and default positioning
+/////////////////////////////////////////////
+
+// make sure .main is large enough to fit entire expanded
+// tertiary sidebar, which has fixed positioning
+.main {
+  max-width: $max-main-width;
+  // 2+ column layout, 2 rows of social icons
+  @media (min-width: $l) {
+    min-height: rem(680);
+  }
+  // 2+ column layout, 4 rows of social icons
+  @media (min-width: $l) and (min-height: $s) {
+    min-height: rem(740);
+    // offset fixed nav
+    margin-top: $nav-height;
+  }
+}
+
+
+/////////////////////////////////////////////
+// primary and secondary content defaults
+/////////////////////////////////////////////
+
+// default margin for content
+.primary-content {
+  padding: 1.5rem 2rem;
+}
+
+.secondary-content {
+  padding: 1.5rem 2rem 2rem 2rem;
+}
+
+
+/////////////////////////////////////////////
+// tertiary sidebar small screen treatments
+/////////////////////////////////////////////
+
+// display bio and social links horizontally where that makes sense
+.main-sidebar {
+
+  // add padding for tertiary-sidebar sections on smaller viewports
+  // NOTE: needed to line up with the rest of the layout
+  @media (max-width: $l - 0.001) {
+    > * {
+      padding: 1rem;
+    }
+  }
+
+  // display bio and social links horizontally where that makes sense
+  @media (min-width: $xs) and (max-width: $l - 0.001) {
+    display: flex;
+    align-items: center;
+    background: $brand-black;
+
+    // each is exactly half width
+    > * {
+      width: 50%;
+    }
+  }
+}
+
+
+/////////////////////////////////////////////
+// 2 column layout
+/////////////////////////////////////////////
+
+@media (min-width: $l) {
+
+  // position tertiary-sidebar on the left side of the screen
+  .main-sidebar {
+    @include secondary-content-width;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    // extend background to the bottom of the screen
+    &:before {
+      @include pseudo;
+      position: fixed; // absolute won't reach the bottom, so fixed it is
+      width: inherit;
+      top: 0;
+      height: 100%; // the whole dang ol' screen
+      background: $brand-black;
+    }
+  }
+
+  // position nav and main so that take up the right side of the screen
+  .main-nav-container,
+  .main {
+    @include primary-content-width;
+    @include primary-content-positioning;
+  }
+}
+
+
+// rein in blog-content line length on 2 column layout
+@media (min-width: $l) and (max-width: $xl - 0.001) {
+  .primary-content.blog-content {
+    max-width: $max-container-width;
+  }
+}
+
+
+/////////////////////////////////////////////
+// main container realignment on big screens
+/////////////////////////////////////////////
+
+.main {
+  @media (min-width: $xxxl) {
+    @include main-offset-positioning;
+  }
+}
+
+
+/////////////////////////////////////////////
+// 3 column layout
+/////////////////////////////////////////////
+
+@media (min-width: $xl) {
+
+  // resize and accommodate gutters for primary content
+  .primary-content {
+    @include primary-content-width;
+    padding-right: $gutter; // combines with secondary-content's also halfed gutter
+
+    // limit width of inner content and horizontally center
+    > * {
+      max-width: rem(940);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+
+    // span primary-content and secondary-content area
+    // NOTE: currently only used by project-list template
+    &.single-column {
+      padding-right: $gutter * 2;
+      width: 100%;
+
+      // bigger width limit of inner content
+      > * {
+        max-width: rem(1220);
+      }
+    }
+  }
+
+
+  // bring secondary content to the right
+  .secondary-content {
+    @include secondary-content-width;
+    @include secondary-content-position-right;
+    top: 1.5rem; // default offset
+
+    // offset for pages with image-header
+    &.image-header-offset {
+      top: 11.9rem;
+    }
+
+    // offset for pages with filter-header
+    &.filter-header-offset {
+      top: 1.9rem;
+    }
+  }
+}
+
+
+/////////////////////////////////////////////
+// contact page layout exceptions
+/////////////////////////////////////////////
+
+// bring up that secondary content more often then normal
+@media (min-width: 48em) and (max-width: $l - 0.001),
+/*OR*/ (min-width: 70em) {
+
+  // copied from primary-content 3 col layout; needed
+  .contact-primary-content {
+    @include primary-content-width;
+    padding-right: 3rem; // a little extra white space is nice here
+  }
+
+  // copied from secondary-content 3 col layout and modified; also needed
+  .contact-secondary-content {
+    @include secondary-content-width;
+    @include secondary-content-position-right;
+    top: 1.9rem; // custom offset for this page
+  }
+}
+
+
+/////////////////////////////////////////////
+// legacy
+/////////////////////////////////////////////
+
+// add padding to sections
+// TODO: investigate whether this affects anything but secondary content
+.section {
+  @include clearfix;
+  clear: both; // when clearfix just isn't enough
+
+  // remove redundant padding
+  & + & {
+    padding-top: 0;
+  }
+}

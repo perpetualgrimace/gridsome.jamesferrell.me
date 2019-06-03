@@ -1,0 +1,301 @@
+////////////////////////////////
+// default / expanded state
+////////////////////////////////
+
+// container
+.site-intro {
+  // more pronounced gradient than the standard glossy overlay
+  @include brand-color-depth;
+
+  @media (min-width: $l) {
+    height: rem(400);
+  }
+}
+
+// positioning
+.site-intro-inner {
+  @include main-sidebar-positioning;
+}
+
+
+////////////////////////////////
+// avatar spacing
+////////////////////////////////
+
+// container
+.site-intro-avatar {
+  margin-bottom: 0.25rem;
+
+  @media (min-width: $l) {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+}
+
+// inner
+.site-intro-avatar-inner {
+  display: inline-block; // utilize text-align
+}
+
+
+////////////////////////////////
+// colophon
+////////////////////////////////
+
+// container
+.logo {
+  margin-bottom: 0.25em;
+}
+
+// logo icon container
+.main-logo {
+  @include brand-color-depth;
+  // alignment
+  display: inline-block;
+  vertical-align: middle;
+  top: -1px; // fudge the icon up
+  // set icon and margin in pixels; always be sharp
+  width: $logo-icon-size;
+  height: $logo-icon-size;
+  margin-right: 6px;
+  // aesthetic
+  border-radius: $radius;
+  overflow: hidden; // needed for JF to X transition
+}
+
+// alt text treatment
+.main-logo-img {
+  @include body-semibold-font;
+  color: $white;
+  // all fudged
+  font-size: 26px;
+  line-height: 1.1;
+  letter-spacing: -2px;
+
+  // account for the broken image icon in newish chrome (fudged)
+  @supports (-webkit-appearance:none) {
+    &:not([src]) {
+      top: -16px;
+    }
+  }
+}
+
+// site-intro logo icon
+.site-intro .main-logo-img {
+  display: none;
+
+  // before transition
+  @media (min-width: $l) {
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+// logo image
+.main-logo-img {
+  height: $logo-icon-size;
+  width: $logo-icon-size;
+}
+
+// mah name
+.main-logo-text {
+  display: inline-block; // needed to apply transform
+  color: $white;
+}
+
+
+////////////////////////////////
+// collapsed state: logo only
+////////////////////////////////
+
+.main-logo-img {
+  @include nav-logo;
+}
+
+@media (min-width: $l) {
+  .site-intro.is-collapsed {
+    @include nav-logo;
+    @include box-shadow;
+    z-index: 2; // bring box shadow forward
+
+    // vertically offset inner block to position the logo correctly
+    // NOTE: fudged as hell
+    .site-intro-inner {
+      transform: translateY(-8.05rem);
+      // prevent collapsed site-intro from covering up social links
+      height: $nav-height;
+    }
+
+    // shrink and hide the avatar
+    .site-intro-avatar-inner {
+      // after transition
+      transform: scale(0.5);
+      opacity: 0;
+    }
+
+    // position & show the logo icon
+    .main-logo-img,
+    .main-logo-text {
+      // after transition
+      opacity: 1;
+      transform: none;
+    }
+
+    // hide the bio offscreen
+    .site-intro-bio {
+      // after transition
+      transform: translateY(20%);
+      opacity: 0;
+      clip: rect(1px, 1px, 1px, 1px);
+      height: 1px;
+      overflow: hidden;
+    }
+  }
+}
+
+// fixed logo and offset
+@media (min-width: $l) and (min-height: $s) {
+  // make tertiary transitionable
+  .site-intro {
+    position: fixed;
+    height: 20rem;
+    z-index: 2;
+    overflow: hidden;
+  }
+  .site-intro.is-collapsed {
+    height: $nav-height;
+  }
+  .site-intro + .tertiary {
+    position: fixed;
+    top: $nav-height;
+    transform: translateY(16.7rem); // 20rem - 3.3rem ($nav-height)
+    z-index: 1;
+
+    // extend bottom
+    &:after {
+      @include pseudo;
+      position: fixed;
+      width: 100%; // both needed
+      height: 100%; // both needed
+      z-index: 1;
+      background: $brand-black;
+    }
+  }
+
+  // offset tertiary content
+  .site-intro.is-collapsed + .tertiary {
+    position: fixed;
+    transform: none;
+    top: $nav-height;
+    transform: none;
+
+    // reset bottom extention
+    &:after {
+      display: none;
+    }
+  }
+}
+
+////////////////////////////////
+// toggle button
+////////////////////////////////
+
+// position above everything
+.site-intro-toggle {
+  @include absolute-expand;
+  z-index: 1;
+}
+
+// interactions
+.site-intro-toggle:hover,
+.site-intro-toggle:focus {
+  background: rgba($white, 0.05);
+}
+
+// hide until javascript loads
+.no-js .site-intro-toggle {
+  display: none;
+}
+
+// make links clickable through the toggle button
+.site-intro a {
+  z-index: 2;
+}
+
+
+////////////////////////////////////////////////////
+// JF → + → x
+////////////////////////////////////////////////////
+
+// pseudo element default style for the + / x shape
+.site-intro-toggle {
+  &:before,
+  &:after {
+    @include pseudo;
+    position: absolute;
+    height: 2px;
+    width: 22px;
+    // fudged positioning, somewhat funky at non-100%, probably better with calc
+    top: rem(32);
+    left: rem(44);
+    // aesthetic
+    border-radius: $radius;
+    background: $white;
+    // to be transitioned
+    opacity: 0;
+  }
+  // to be transitioned
+  &:before {
+    transform: rotateZ(0);
+  }
+  &:after {
+    transform: rotateZ(-90deg);
+  }
+}
+
+// collapsed state, initial
+.site-intro.is-collapsed .site-intro-toggle {
+  // rotate from left to right, X becomes +
+  &:before {
+    transform: rotateZ(45deg);
+  }
+  &:after {
+    transform: rotateZ(-45deg);
+  }
+}
+
+// collapsed state, hover
+.site-intro.is-collapsed .site-intro-toggle:hover,
+.site-intro.is-collapsed .site-intro-toggle:focus {
+  // rotate from left to right, X becomes +
+  &:before {
+    transform: rotateZ(0);
+  }
+  &:after {
+    transform: rotateZ(-90deg);
+  }
+
+  + .site-intro-inner .logo-icon-img {
+    transform: translate(-10px, -40px) rotateZ(-45deg);
+    opacity: 0;
+  }
+}
+
+
+// expanded state, hover
+.site-intro-toggle:hover,
+.site-intro-toggle:focus {
+  // needed for all hover effects
+  &:before,
+  &:after {
+    opacity: 1;
+  }
+  // rotate from left to right, + becomes x
+  &:before {
+    transform: rotateZ(45deg);
+  }
+  &:after {
+    transform: rotateZ(-45deg);
+  }
+}

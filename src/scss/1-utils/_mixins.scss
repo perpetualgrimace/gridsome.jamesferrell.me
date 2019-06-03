@@ -1,0 +1,438 @@
+////////////////////////////////
+// typography
+////////////////////////////////
+
+// body fonts
+@mixin body-font {
+  font-family: "source-sans-pro", "Source Sans Pro", "Geneva Regular", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+@mixin body-italic-font {
+  font-family: "source-sans-pro", "Source Sans Pro", "Geneva Regular", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+@mixin body-semibold-font {
+  font-family: "source-sans-pro", "Source Sans Pro", "Geneva Regular", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+@mixin body-bold-font {
+  font-family: "source-sans-pro", "Source Sans Pro", "Geneva Regular", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+// heading fonts
+@mixin display-font {
+  font-family: "freight-display-pro", garamond, serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+// font smoothing
+@mixin font-smoothing {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+////////////////////////////////
+// layout & positioning
+////////////////////////////////
+
+// break out of container and be full width
+@mixin fullwidth {
+  margin-left: auto; // fallbacks
+  margin-right: auto;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+// Psuedo elements
+@mixin pseudo {
+  content: '';
+  display: block;
+}
+
+// Fill up an absolutely 100% amount of space; let yourself be huge
+@mixin absolute-expand {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// vertically center exactly one child element via flexbox
+@mixin flex-vertical-center {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+// Centered elements, the dumb but sometimes useful way
+@mixin absolute-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin vertical-center {
+  top: 50%;
+  transform: translate(0, -50%);
+}
+@mixin horizontal-center {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+// Good ol' clearfix
+@mixin clearfix {
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+// No wiggle
+@mixin no-wiggle {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+// Auto-ellipsis
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+////////////////////////////////
+// background images
+////////////////////////////////
+
+// hidpi mixin, somewhat inspired by responsive.scss.
+@mixin hidpi($multiplier: 1.5) {
+  @media (min-device-pixel-ratio: $multiplier), (min-resolution: (96dpi * $multiplier)) {
+    @content;
+  }
+}
+
+// Svg background with fallback and retina support
+@mixin svg($filename, $path : "img/") {
+  background-image: url(../../#{$path}#{$filename}.png);
+  background-image:
+    linear-gradient(transparent, transparent),
+    url(../../#{$path}#{$filename}.svg);
+
+  // hi res
+  @include hidpi {
+    background-image: url(../../#{$path}#{$filename}@2x.png);
+    background-image:
+      linear-gradient(transparent, transparent),
+      url(../../#{$path}#{$filename}.svg);
+  }
+}
+
+// Repeating patterns
+@mixin pattern($filename: pattern, $extension: png) {
+  background-image: url(../../img/backgrounds/#{$filename}.#{$extension});
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: -20% 0;
+
+  @include hidpi {
+    background-image: url(../../img/backgrounds/#{$filename}@2x.#{$extension});
+  }
+}
+
+
+////////////////////////////////
+// background-gradient styles
+////////////////////////////////
+
+@mixin brand-color-depth {
+  background-image: radial-gradient(at top, $brand-light 0%, $brand-color 49%, $brand-dark 100%);
+}
+
+@mixin radial-gloss {
+  background-image: radial-gradient(at top, rgba($white, 0.1) 0%, rgba($white, 0) 100%);
+}
+
+
+////////////////////////////////
+// shadow
+////////////////////////////////
+
+// box shadow
+@mixin box-shadow($shadow-color: $shadow) {
+  box-shadow: 0 1px 0.25em $shadow-color;
+}
+@mixin box-shadow-lg($shadow-color: $shadow) {
+  box-shadow: 0 1px 0.5em $shadow-color;
+}
+@mixin box-shadow-xl($shadow-color: $shadow) {
+  box-shadow: 0 1px 1em $shadow-color;
+}
+@mixin box-shadow-focus($shadow-color: rgba($brand-light, 0.5)) {
+  box-shadow: 0 0 0.25em $shadow-color;
+}
+@mixin device-shadow {
+  box-shadow:
+    0 2px 4px 0 rgba(0, 0, 0, 0.20),
+    0 2px 12px 0 rgba($black, 0.33);
+}
+
+// text shadow
+@mixin text-shadow($shadow-color: $shadow) {
+  text-shadow: 0 1px 0.25em $shadow-color;
+}
+
+@mixin text-shadow-lg($shadow-color: $shadow-dark) {
+  text-shadow: 0 1px 0.5em $shadow-color;
+}
+
+
+////////////////////////////////
+// horizontal rule
+////////////////////////////////
+
+@mixin hr {
+  border: 0;
+  display: inline-block;
+  width: 2rem;
+  height: 2px;
+  background: $light-2;
+}
+
+
+////////////////////////////////
+// layout helpers
+////////////////////////////////
+
+@mixin primary-content-width {
+  width: 75%; // fallback
+  width: calc(100% - #{$max-sidebar-width});
+}
+
+@mixin primary-content-positioning {
+  left: 25%; // fallback
+  left: calc(#{$max-sidebar-width});
+}
+
+@mixin main-offset-positioning {
+  // offset main container by half the sidebar width
+  left: 12.5%;
+  left: calc(#{$half-sidebar-width});
+  // center main container
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin secondary-content-width {
+  width: 25%; // fallback
+  width: calc(#{$max-sidebar-width});
+}
+
+@mixin secondary-content-position-right {
+  position: absolute;
+  padding-left: $gutter; // combines with primary-content's also halfed gutter
+  right: 0;
+}
+
+// style secondary content like primary content, add visual separator
+@mixin secondary-content-as-primary {
+  // compensate for _layout.scss's .section + .section margin-top reset
+  > .secondary {
+    padding-top: 2rem;
+  }
+
+  // visual separator
+  &:before {
+    @include pseudo;
+    @include hr;
+    position: absolute;
+    top: 1px;
+  }
+
+  // bump up text sizes to primary
+  h2 {
+    font-size: $gamma;
+  }
+  p {
+    font-size: $delta;
+  }
+}
+
+
+////////////////////////////////
+// nav / dropdown-menu
+////////////////////////////////
+
+// dropdown mixins for hidden and visible states
+@mixin dropdown-hidden {
+  position: absolute;
+  width: auto;
+  transform: translate(0, -1rem);
+  opacity: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  z-index: -100;
+}
+@mixin dropdown-visible {
+  transform: translate(0, 0);
+  opacity: 1;
+  clip: auto;
+  overflow: visible;
+  z-index: 1;
+}
+
+
+// nav-logo style
+@mixin nav-logo {
+  // make the same height as the main navbar
+  height: $nav-height;
+  background: $brand-black;
+}
+
+
+// apply fancy hover interactions to a link
+@mixin fancy-nav-hover {
+  &:after {
+    @include pseudo;
+    @include absolute-expand;
+    z-index: -1; // hide behind text
+    background: $brand-light;
+    background-image: linear-gradient(to bottom, $brand-light, $brand-color);
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  // hover state
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $white; // make room for pseudo element
+    color: $white; // make text readable against pseudo element
+
+    // show pseudo element
+    &:after {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+// nav toggle max width
+@mixin nav-toggle-max-width {
+  @media (max-width: $xxs - 0.001) {
+    max-width: calc(100% - 2rem);
+  }
+}
+
+
+////////////////////////////////
+// sidebar inner styles
+////////////////////////////////
+
+@mixin main-sidebar-positioning {
+  max-width: $max-container-width / 2; // keep line-length reasonable
+  padding: $gutter;
+
+  @media (min-width: $l) {
+    max-width: $max-sidebar-width;
+    margin: 0 auto;
+    padding: rem(40);
+  }
+}
+
+
+////////////////////////////////
+// brand-theme base styles
+////////////////////////////////
+
+@mixin brand-theme {
+  @include font-smoothing;
+
+  // heading link style
+  h2, h3, h4, h5, h6 {
+    color: $white;
+  }
+
+  // paragraph link stye
+  p > a {
+    color: $white;
+
+    // interactions
+    &:hover, &:active, &:focus {
+      color: rgba($white, 0.875);
+      text-decoration: underline;
+    }
+  }
+}
+
+
+////////////////////////////////
+// button base style
+////////////////////////////////
+
+@mixin button-base($primary-color: $brand-color, $light-color: $brand-light, $dark-color: $brand-dark, $text-color: $white) {
+  @include body-semibold-font;
+  @include font-smoothing;
+  display: inline-block;
+  overflow: hidden; // clip :after gradient fill
+  z-index: 1; // needed to make :after pseudo element visible
+  margin-top: 0.75rem;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  color: $text-color !important;
+  background-color: $primary-color; // base color
+  border-bottom: 2px solid transparent; // initial state
+  // default padding and border-radius; may be overwritten by button variants
+  padding: 0.65em 1.25em 0.55em 1.25em; // forever fudged
+  border-radius: $radius;
+
+  // transitionable gradient fill
+  &:after {
+    @include pseudo;
+    @include absolute-expand;
+    z-index: -1;
+    background-image: linear-gradient(to bottom, $light-color, $primary-color);
+    opacity: 0; // initial opacity
+  }
+
+  // hover state
+  &:hover,
+  &:focus {
+    color: $text-color;
+    border-color: $dark-color;
+    // transform: perspective(50em) rotateX(10deg) scale(1.0125); // 3d effect
+
+    // show gradient fill
+    &:after {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  // focus
+  &:focus {
+    @include box-shadow-focus;
+  }
+
+  // active state
+  &:active {
+    background: $dark-color;
+    color: $text-color;
+    border-color: $dark-color;
+    // transform: perspective(50em) rotateX(8deg) scale(1); // more subtle 3d effect
+
+    // partially hide gradient fill to allow darker background color to show through
+    &:after {
+      opacity: 0.625;
+    }
+  }
+}

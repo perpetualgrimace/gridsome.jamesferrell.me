@@ -1,0 +1,127 @@
+// interactive stuff
+a, label, input, textarea, button,
+[class*=button], [class*=button]:after,
+.nav-link:after, .card-inner {
+  /* autoprefixer: off */
+  transition:
+    color $timing,
+    opacity $timing,
+    background $timing,
+    border $timing,
+    transform $timing,
+    box-shadow $timing;
+}
+
+// site intro transition
+.site-intro,
+.site-intro * {
+  // only apply where transition takes place
+  @media (min-width: $l) {
+    transition:
+    background-color $timing-fast,
+    height $timing-gradual; // requires set height on both states
+  }
+}
+
+.site-intro-toggle {
+  transition: background-color $timing;
+}
+
+.site-intro-toggle:before,
+.site-intro-toggle:after,
+.site-intro-inner {
+  transition:
+    opacity $timing,
+    transform $timing;
+}
+
+.tertiary {
+  transition: transform $timing-gradual;
+}
+
+.site-intro:not(.is-collapsed) .site-intro-avatar-inner { // transition in only
+  /* autoprefixer: off */
+  transition:
+    opacity $timing-fast,
+    transform $timing;
+  transition-delay: 0.1s;
+}
+
+
+.site-intro:not(.is-collapsed) .site-intro-bio { // transition in only
+  /* autoprefixer: off */
+  transition:
+    opacity $timing-long,
+    transform $timing-long;
+}
+
+.site-intro.is-collapsed .main-logo-icon {
+  /* autoprefixer: off */
+  transition:
+    opacity $timing,
+    transform $timing;
+  transition-delay: 0.1s;
+}
+
+// images
+img, [class*='img'] {
+  /* autoprefixer: off */
+  transition:
+    opacity $timing,
+    transform $timing,
+    box-shadow $timing;
+}
+
+// svgs
+svg * {
+  /* autoprefixer: off */
+  transition:
+    fill $timing,
+    stroke $timing,
+    opacity $timing;
+}
+
+// nav list smooth expand / collapse
+.nav-list,
+.dropdown,
+.project-item-link-text {
+  /* autoprefixer: off */
+  transition:
+    opacity $timing,
+    transform $timing;
+}
+
+// nav toggle
+.nav-toggle {
+  transition:
+    opacity $timing,
+    background-color $timing-gradual;
+}
+
+// transform only
+.hamburger,
+.hamburger-bun,
+.grid-icon,
+.secondary-link > svg,
+[class*=link-arrow]:before {
+  /* autoprefixer: off */
+  transition: transform $timing;
+}
+
+// transform only, slower transition
+.mobile-container {
+  /* autoprefixer: off */
+  transition: transform $timing-gradual;
+}
+
+.laptop-container,
+.controller-container,
+.album-container {
+  /* autoprefixer: off */
+  transition: transform $timing-long;
+}
+
+// opacity only, slower transition
+.project-item-link {
+  transition: opacity $timing-long;
+}

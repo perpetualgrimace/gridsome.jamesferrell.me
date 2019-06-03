@@ -1,0 +1,85 @@
+////////////////////////////////
+// refactor
+////////////////////////////////
+
+// default type
+html {
+  @include body-font;
+}
+
+// bold type
+strong, b, a,
+dt {
+  @include body-bold-font;
+}
+
+// italic type
+em, i {
+  @include body-italic-font;
+}
+
+// heading type
+.heading,
+h1, h2, h3, h4, h5, h6 {
+  @include display-font;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+// semibold type
+button, input[type='button'], label,
+.subhead {
+  @include body-semibold-font;
+  text-transform: uppercase;
+}
+
+// type size defaults
+h1             { font-size: $beta; }
+h2             { font-size: $gamma; }
+h3, p, li      { font-size: $delta;}
+h4, figcaption { font-size: $epsilon;}
+h5, h6,
+small, label   { font-size: $milli;}
+
+// bump up font-size for h3s that follow after an h2
+h2 ~ h3 { font-size: $bigger-than-delta; }
+
+// type size overrides
+.alpha {
+  font-size: $alpha;
+}
+.beta  {
+  font-size: $beta;
+}
+.gamma,
+.gamma p,
+.gamma li {
+  font-size: $gamma;
+}
+.delta,
+.delta p,
+.delta li {
+  font-size: $delta;
+}
+.epsilon,
+.epsilon p,
+.epsilon li {
+  font-size: $epsilon;
+}
+.milli,
+.milli p,
+.milli li  {
+  font-size: $milli;
+}
+
+
+// default line-height
+html {
+  line-height: 1.5;
+}
+
+// heading line-height
+h1, h2, h3, h4, h5, h6,
+.heading, .display {
+  line-height: 1;
+}
