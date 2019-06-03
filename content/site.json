@@ -16,7 +16,12 @@
   "description": "James Ferrell is a front-end designer in Boston, MA. This is his portfolio site. He doesn't usually talk in the third person like this.",
   "keywords": "design, web design, ui design, visual design, development, developer, website, webdev, frontend, front-end, branding, identity, kirby cms, sketch, boston, tampa, freelance, contract, responsive, accessibility, accessible, a11y, 508, mobile, phone, tablet, react, vue, javascript, vanilla, css, scss, sass, postcss, es6, gulp, grunt, git",
 
-  "socialAccounts": ["twitter", "dribbble", "codepen", "github"],
+  "socialAccounts": [
+    { "name": "twitter",  "link": "https://twitter.com/perpetualgrimac" },
+    { "name": "dribbble", "link": "https://dribbble.com/perpetualgrimace" },
+    { "name": "codepen",  "link": "https://codepen.com/perpetualgrimace" },
+    { "name": "github",   "link": "https://github.com/perpetualgrimace" }
+  ],
   "copyright": "© Copyright schmopyright. Steal and improve.",
   "colophon": "This site has been built from the ground up with [Vue](https://vuejs.org/) and [GraphQL](https://graphql.org/) via the [Gridsome](https://gridsome.org/) framework. I wrote a [blog post](./blog/gridsome) about it."
 }

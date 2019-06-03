@@ -21,16 +21,18 @@
   <div :class="['main-logo', classes]">
     <g-link to="/" class="main-logo-link" exact-active-class="is-active">
 
-      <img class="main-logo-img"
-        src="/images/icons/jf-icon.png"
-        :srcset="`${img} 1x, /images/icons/jf-icon@2x.png 2x`"
-        sizes="100vw"
-        alt=" JF"
-      />
+      <span class="main-logo-icon">
+        <img class="main-logo-icon-img"
+          :src="img"
+          :srcset="`${img} 1x, ${img2x} 2x`"
+          sizes="100vw"
+          alt=" JF"
+        />
+      </span>
 
-      <author class="main-logo-text subhead">
+      <span class="main-logo-text subhead">
         {{ site.title }}
-      </author>
+      </span>
       <span class="u-visually-hidden"> home</span>
 
     </g-link>
@@ -46,38 +48,67 @@
 
   // nav-logo positioning
   .main-logo {
-    // default padding
-    padding-top: 0.75rem;
-
-    // padding adjustment on medium viewports
-    @media (min-width: $s) and (max-width: $l - 0.001) {
-      // add padding to logo
-      padding-top: 0.85rem;
-    }
 
     // main style
     @media (max-width: $l - 0.001) {
       // contain background
       width: 11.5rem;
-      padding-left: 2rem;
       // offset padding; needed so that the logo background is
-      // flush with the left edge of the screen
-      left: -2rem;
       // make sure toggled nav-menu is above nav-logo
       z-index: 0;
     }
   }
 
-  .main-logo-img,
+  .main-logo-link {
+    line-height: $nav-height;
+    padding-left: 2rem; /* NOTE: might need to change */
+    display: block;
+  }
+
   .main-logo-text {
-    display: inline-block;
-    vertical-align: middle;
+    color: $white;
   }
 
   // on tiny screens, only show JF icon
   @media (max-width: 18em - 0.001) {
     .main-logo-text {
       opacity: 0 !important;
+    }
+  }
+
+  .main-logo-icon {
+    @include brand-color-depth;
+    // alignment
+    display: inline-block;
+    vertical-align: middle;
+    top: -1px; // fudge the icon up
+    // set icon and margin in pixels; always be sharp
+    width: $logo-icon-size;
+    height: $logo-icon-size;
+    margin-right: 6px;
+    // aesthetic
+    border-radius: $radius;
+    overflow: hidden; // needed for JF to X transition
+
+    @media (min-width: $l) {
+      top: -2px;
+    }
+  }
+
+  // alt text treatment
+  .main-logo-icon-img {
+    @include body-semibold-font;
+    color: $white;
+    // all fudged
+    font-size: 26px;
+    line-height: 1.1;
+    letter-spacing: -2px;
+
+    // account for the broken image icon in newish chrome (fudged)
+    @supports (-webkit-appearance:none) {
+      &:not([src]) {
+        top: -16px;
+      }
     }
   }
 </style>
