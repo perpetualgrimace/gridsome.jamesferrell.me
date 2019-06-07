@@ -38,7 +38,7 @@
     // nav-toggle active state
     &.is-active {
       @include nav-toggle-max-width;
-      width: $max-sidebar-width;
+      width: $sidebar-width;
       background-color: $brand-color;
       border-radius: $radius-lg $radius-lg 0 0;
       box-shadow: none;

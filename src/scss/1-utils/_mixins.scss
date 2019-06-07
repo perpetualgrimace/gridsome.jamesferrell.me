@@ -109,6 +109,14 @@
   text-overflow: ellipsis;
 }
 
+@mixin visually-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
 
 ////////////////////////////////
 // background images
@@ -215,12 +223,12 @@
 
 @mixin primary-content-width {
   width: 75%; // fallback
-  width: calc(100% - #{$max-sidebar-width});
+  width: calc(100% - #{$sidebar-width});
 }
 
 @mixin primary-content-positioning {
   left: 25%; // fallback
-  left: calc(#{$max-sidebar-width});
+  left: calc(#{$sidebar-width});
 }
 
 @mixin main-offset-positioning {
@@ -234,7 +242,7 @@
 
 @mixin secondary-content-width {
   width: 25%; // fallback
-  width: calc(#{$max-sidebar-width});
+  width: calc(#{$sidebar-width});
 }
 
 @mixin secondary-content-position-right {
@@ -343,7 +351,7 @@
   padding: $gutter;
 
   @media (min-width: $l) {
-    max-width: $max-sidebar-width;
+    max-width: $sidebar-width;
     margin: 0 auto;
     padding: rem(40);
   }

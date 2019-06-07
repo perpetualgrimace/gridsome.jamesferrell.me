@@ -52,11 +52,7 @@
 
 // screen reader text
 .u-visually-hidden {
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
+  @include visually-hidden;
 }
 
 // hide :focus outline, class added via js in rare cases

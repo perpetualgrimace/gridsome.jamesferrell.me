@@ -46,7 +46,7 @@
     top: -1px; // fudge the icon up
     width: 1rem;
     height: 1rem;
-    margin-right: 0.4em;
+    margin-right: 0.625em;
     // aesthetic
     border-radius: $radius;
 

@@ -33,7 +33,7 @@
       <!-- main nav -->
       <ul id="nav" class="main-nav-list is-collapsed">
         <li class="main-nav-item" v-for="nav in site.mainNav">
-          <g-link :to="nav.link" class="main-nav-link" active-class="is-active">
+          <g-link :to="nav.link" class="main-nav-link" active-class="is-active" exact-active-class="is-active">
             {{ nav.title }}
           </g-link>
         </li>
@@ -110,7 +110,7 @@
     .main-nav-list {
       @include dropdown-hidden;
       @include box-shadow-lg;
-      max-width: $max-sidebar-width;
+      max-width: $sidebar-width;
       right: $gutter;
       border-radius: 0 0 $radius-lg $radius-lg;
     }
@@ -217,6 +217,7 @@
   ////////////////////////////////////////////
   // skip link
   ////////////////////////////////////////////
+  
   .skip-link {
     top: $nav-height + 0.13rem; // position under nav bar
     z-index: 8;

@@ -4,7 +4,6 @@
   export default {
     name: "MainLogo",
     props: {
-      classes: { default: "u-hide-above-l" },
       img: { default: "/images/icons/jf-icon.png" },
       img2x: { default: "/images/icons/jf-icon@2x.png" }
     },
@@ -18,91 +17,108 @@
 
 
 <template>
-  <div :class="['main-logo', classes]">
-    <g-link to="/" class="main-logo-link" exact-active-class="is-active">
+  <g-link to="/" class="main-logo" active-class="" exact-active-class="is-active">
 
-      <span class="main-logo-icon">
-        <img class="main-logo-icon-img"
-          :src="img"
-          :srcset="`${img} 1x, ${img2x} 2x`"
-          sizes="100vw"
-          alt=" JF"
-        />
-      </span>
+    <span class="main-logo-icon">
+      <img class="main-logo-icon-img"
+        :src="img"
+        :srcset="`${img} 1x, ${img2x} 2x`"
+        sizes="100vw"
+        alt=" JF"
+      />
+    </span>
 
-      <span class="main-logo-text subhead">
-        {{ site.title }}
-      </span>
-      <span class="u-visually-hidden"> home</span>
+    <span class="main-logo-text subhead">
+      {{ site.title }}
+    </span>
+    <span class="u-visually-hidden"> home</span>
 
-    </g-link>
-  </div>
+  </g-link>
 </template>
 
 
 <style lang="scss">
-  ////////////////////////////////////////////
-  // nav logo for small screens
-  // (site-intro used for 2+3 column layouts)
-  ////////////////////////////////////////////
-
-  // nav-logo positioning
+  // the link
   .main-logo {
-
-    // main style
-    @media (max-width: $l - 0.001) {
-      // contain background
-      width: 11.5rem;
-      // offset padding; needed so that the logo background is
-      // make sure toggled nav-menu is above nav-logo
-      z-index: 0;
-    }
-  }
-
-  .main-logo-link {
-    line-height: $nav-height;
-    padding-left: 2rem; /* NOTE: might need to change */
+    // sizing
     display: block;
-  }
+    height: $nav-height;
+    max-width: 11.5rem;
+    padding-left: 2rem;
+    line-height: $nav-height;
+    top: -1px;
+    // theming
+    background: $brand-black;
 
-  .main-logo-text {
-    color: $white;
-  }
+    // override default
+    & .main-logo-text {
+      color: $white;
+    }
 
-  // on tiny screens, only show JF icon
-  @media (max-width: 18em - 0.001) {
-    .main-logo-text {
-      opacity: 0 !important;
+
+    // sidebar layout
+    @media (min-width: $l) {
+      // sizing
+      width: $sidebar-width;
+      max-width: $sidebar-width;
+      // pin to top left
+      position: absolute;
+      left: -$sidebar-width; // offset sidebar
+      top: 0;
+      // theming
+      @include box-shadow;
+
+      & .main-logo-text {
+        // scale up text
+        font-size: $delta;
+        // positioning
+        display: inline-block; // allow positioning
+        top: -1px;
+      }
+
+      // interactions
+      &:hover, &:focus {
+        background-color: rgba($brand-dark, 0.25);
+      }
     }
   }
 
+  // the icon
   .main-logo-icon {
     @include brand-color-depth;
-    // alignment
-    display: inline-block;
-    vertical-align: middle;
-    top: -1px; // fudge the icon up
-    // set icon and margin in pixels; always be sharp
+    // sizing
     width: $logo-icon-size;
     height: $logo-icon-size;
+    // positioning
+    display: inline-block;
     margin-right: 6px;
-    // aesthetic
+    vertical-align: middle;
+    top: -1px; // fudge the icon up
+    // theming
     border-radius: $radius;
-    overflow: hidden; // needed for JF to X transition
 
     @media (min-width: $l) {
-      top: -2px;
+      top: -0.125rem;
+      margin-right: 10px;
+    }
+  }
+
+  // tweakpoint to hide text
+  @media (max-width: 16em - 0.001) {
+    .main-logo-text {
+      @include visually-hidden;
     }
   }
 
   // alt text treatment
   .main-logo-icon-img {
+    // typography / sizing (fudged)
     @include body-semibold-font;
-    color: $white;
-    // all fudged
     font-size: 26px;
-    line-height: 1.1;
     letter-spacing: -2px;
+    line-height: 1.1;
+    // theming
+    color: $white;
 
     // account for the broken image icon in newish chrome (fudged)
     @supports (-webkit-appearance:none) {

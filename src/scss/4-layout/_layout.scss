@@ -17,27 +17,6 @@
 
 
 /////////////////////////////////////////////
-// .main min-height and default positioning
-/////////////////////////////////////////////
-
-// make sure .main is large enough to fit entire expanded
-// tertiary sidebar, which has fixed positioning
-.main {
-  max-width: $max-main-width;
-  // 2+ column layout, 2 rows of social icons
-  @media (min-width: $l) {
-    min-height: rem(680);
-  }
-  // 2+ column layout, 4 rows of social icons
-  @media (min-width: $l) and (min-height: $s) {
-    min-height: rem(740);
-    // offset fixed nav
-    margin-top: $nav-height;
-  }
-}
-
-
-/////////////////////////////////////////////
 // primary and secondary content defaults
 /////////////////////////////////////////////
 
@@ -126,6 +105,8 @@
 /////////////////////////////////////////////
 
 .main {
+  max-width: $max-main-width;
+  
   @media (min-width: $xxxl) {
     @include main-offset-positioning;
   }
