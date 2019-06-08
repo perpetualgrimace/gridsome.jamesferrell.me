@@ -31,20 +31,14 @@ module.exports = {
   },
 
   plugins: [
-    {
-      use: "gridsome-plugin-netlify-cms",
-      options: {
-        publicPath: "/admin"
-      }
-    },
-    {
-      use: "@gridsome/plugin-critical",
-      options: {
-        paths: ["/"],
-        width: 1440,
-        height: 900
-      }
-    },
+    // {
+    //   use: "@gridsome/plugin-critical",
+    //   options: {
+    //     paths: ["/"],
+    //     width: 1440,
+    //     height: 900
+    //   }
+    // },
     {
       use: "@gridsome/plugin-sitemap",
       options: {
