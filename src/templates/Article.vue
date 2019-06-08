@@ -27,9 +27,7 @@
       <h1>{{ $page.d.title }}</h1>
       <span>{{ $page.d.date }}</span>
       <g-image v-if="$page.d.heroImg" :src="$page.d.heroImg" />
-      <div class="content">
-        {{$page.d.content}}
-      </div>
+      <div class="content" v-html="$page.d.content" />
     </div>
   </Layout>
 </template>
