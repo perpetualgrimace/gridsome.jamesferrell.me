@@ -3,9 +3,11 @@
 
 <script>
   import ArticleList from "~/components/ArticleList.vue";
+  import ProjectList from "~/components/ProjectList.vue";
+  
   export default {
     components: {
-      ArticleList
+      ArticleList, ProjectList
     }
   }
 </script>
@@ -16,6 +18,8 @@
 
     <h1>hi</h1>
 
+    <h2>Projects</h2>
+    <ProjectList :limit="8" />
 
     <template slot="sidebar">
       <ArticleList :limit="3" />

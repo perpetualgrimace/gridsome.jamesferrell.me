@@ -1,12 +1,7 @@
-Title: Projects
-
 ---
-
-Headline: projects
-
+title: Projects
+headline: projects
 ---
-
-cta:
 
 ## Like my work?
 

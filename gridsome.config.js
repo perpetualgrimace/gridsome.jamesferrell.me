@@ -71,6 +71,16 @@ module.exports = {
       }
     },
 
+    // project list
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/**/project-list.md",
+        typeName: "Projects",
+        route: "/projects"
+      }
+    },
+
     // projects
     {
       use: "@gridsome/source-filesystem",
