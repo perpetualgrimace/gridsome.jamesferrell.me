@@ -60,14 +60,20 @@
 
 
 /////////////////////////////////////////////
+// unfixed nav
+/////////////////////////////////////////////
+@media (max-width: $l) and (max-height: $s) {
+  .main-sidebar {
+    margin-top: $nav-height;
+  }
+}
+
+
+/////////////////////////////////////////////
 // 2 column layout
 /////////////////////////////////////////////
 
 @media (min-width: $l) {
-
-  .main {
-      margin-top: $nav-height;
-  }
 
   // position tertiary-sidebar on the left side of the screen
   .main-sidebar {

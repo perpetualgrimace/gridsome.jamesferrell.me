@@ -67,6 +67,10 @@
     @media (min-width: $l) and (min-height: $s) {
       @include box-shadow($shadow);
       position: fixed;
+
+      & + .main {
+        margin-top: $nav-height;
+      }
     }
   }
 

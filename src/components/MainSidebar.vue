@@ -100,32 +100,32 @@
     // social list items
     ////////////////////////////////
 
-    // // default
-    // .tertiary-social-list > .social-item {
-    //   display: inline-block;
-    //   width: 100%;
-    //
-    //   // half width list items, where that makes sense
-    //   @media (min-width: $xxs) and (max-width: $l - 0.001),
-    //     /*OR*/ (min-width: $l) and (max-height: 43em - 0.001) {
-    //       width: 50%;
-    //     }
-    //   }
+    // default
+    .tertiary-social-list > .social-item {
+      display: inline-block;
+      width: 100%;
 
-    // // flexbox enhancement: show all four items in a row
-    // @supports (justify-content: space-between) {
-    //   @media (min-width: 25em) and (max-width: $xs - 0.001),
-    //   /*OR*/ (min-width: $m) and (max-width: $l - 0.001) {
-    //     // flex + space-between is magic
-    //     .tertiary-social-list {
-    //       display: flex;
-    //       justify-content: space-between;
-    //
-    //       // unset width so flexbox can flex
-    //       > .social-item {
-    //         width: auto;
-    //       }
-    //     }
-    //   }
-    // }
+      // half width list items, where that makes sense
+      @media (min-width: $xxs) and (max-width: $l - 0.001),
+        /*OR*/ (min-width: $l) and (max-height: 43em - 0.001) {
+          width: 50%;
+        }
+      }
+
+    // flexbox enhancement: show all four items in a row
+    @supports (justify-content: space-between) {
+      @media (min-width: 25em) and (max-width: $xs - 0.001),
+      /*OR*/ (min-width: $m) and (max-width: $l - 0.001) {
+        // flex + space-between is magic
+        .tertiary-social-list {
+          display: flex;
+          justify-content: space-between;
+
+          // unset width so flexbox can flex
+          > .social-item {
+            width: auto;
+          }
+        }
+      }
+    }
 </style>
