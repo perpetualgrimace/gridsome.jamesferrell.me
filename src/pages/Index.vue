@@ -14,7 +14,7 @@
   <Layout>
 
 
-    <h1 class="u-margin-top-xl">hi</h1>
+    <h1>hi</h1>
 
 
     <template slot="sidebar">

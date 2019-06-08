@@ -65,6 +65,10 @@
 
 @media (min-width: $l) {
 
+  .main {
+      margin-top: $nav-height;
+  }
+
   // position tertiary-sidebar on the left side of the screen
   .main-sidebar {
     @include secondary-content-width;
