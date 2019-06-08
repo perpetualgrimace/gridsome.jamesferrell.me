@@ -1,10 +1,10 @@
 Title: Projects
 
-----
+---
 
 Headline: projects
 
-----
+---
 
 cta:
 

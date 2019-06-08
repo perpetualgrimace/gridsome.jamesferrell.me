@@ -1,3 +1,4 @@
+---
 title: "Advance Medical"
 slug: advance-medical
 color: #1481CD
@@ -8,3 +9,4 @@ mobileImg2x: advancemedical-mobile@2x.png
 laptopImg: advancemedical-laptop.png
 laptopImg2x: advancemedical-laptop@2x.png
 externalLink: http://advance-medical.net
+---

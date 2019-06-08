@@ -72,14 +72,14 @@ module.exports = {
     },
 
     // projects
-    // {
-    //   use: "@gridsome/source-filesystem",
-    //   options: {
-    //     path: "content/**/project-detail.md",
-    //     typeName: "Project",
-    //     route: "/projects/:slug"
-    //   }
-    // }
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/**/project-detail.md",
+        typeName: "Project",
+        route: "/projects/:slug"
+      }
+    }
   ],
 
   // markdown parsing

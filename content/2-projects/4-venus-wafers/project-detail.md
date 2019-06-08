@@ -1,3 +1,4 @@
+---
 title: "Venus Wafers"
 slug: venus-wafers
 color: #CC9F68
@@ -8,3 +9,4 @@ mobileImg2x: venus-mobile@2x.png
 laptopImg: venus-laptop.png
 laptopImg2x: venus-laptop@2x.png
 externalLink: http://venuswafers.com
+---
