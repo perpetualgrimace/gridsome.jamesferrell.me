@@ -30,7 +30,7 @@
 
     <transition name="is-fading" appear>
       <main class="main u-padding-top-off" id="main">
-        <div className="section primary-content">
+        <div class="section primary-content">
           <slot />
         </div>
         <div class="section secondary-content" v-if="$slots.sidebar">
