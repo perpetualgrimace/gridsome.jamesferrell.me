@@ -46,7 +46,6 @@
     max-width: 11.5rem;
     padding-left: 2rem;
     line-height: $nav-height;
-    top: -1px;
     // theming
     background: $brand-black;
 
@@ -64,7 +63,6 @@
       // pin to top left
       position: absolute;
       left: -$sidebar-width; // offset sidebar
-      top: 0;
       // theming
       @include box-shadow;
 
@@ -73,7 +71,6 @@
         font-size: $delta;
         // positioning
         display: inline-block; // allow positioning
-        top: -1px;
       }
 
       // interactions
