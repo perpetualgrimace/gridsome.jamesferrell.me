@@ -26,12 +26,12 @@
 <template>
   <Layout>
 
-
     <h1 class="u-margin-top-xl">All articles</h1>
 
     <ArticleList />
-
-    <div v-html="$page.d.content" />
+    <template slot="sidebar">
+      <div v-html="$page.d.content" />
+    </template>
 
   </Layout>
 </template>

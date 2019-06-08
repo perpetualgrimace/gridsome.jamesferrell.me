@@ -8,6 +8,7 @@
           published (format: "MMMM YYYY")
           description
           path
+          slug
         }
       }
     }
@@ -16,7 +17,12 @@
 
 
 <script>
+  import Card from "~/components/Card.vue";
+
   export default {
+    components: {
+      Card
+    },
     props: {
       limit: { default: 12 }
     },
@@ -28,13 +34,16 @@
 <template>
   <div class="g-columns">
     <div class="g-columns g-compact card-list">
-      <div class="g-col" v-for="({ node }, i) in $static.articles.edges" v-if="i < limit">
-        <g-link :to="node.path">
-          <h2 v-html="node.title"/>
-          <p v-html="node.description"/>
-        </g-link>
-        <span v-html="node.published"/>
-      </div>
+      <Card
+        v-for="({ node }, i) in $static.articles.edges"
+        v-if="i < limit"
+        :link="node.path"
+        :title="node.title"
+        :description="node.description"
+        :published="node.published"
+        :slug="node.slug"
+        :key="node.slug"
+      />
     </div>
   </div>
 </template>
