@@ -26,7 +26,7 @@
 <template>
   <Layout>
 
-    <h1 class="u-margin-top-xl">All articles</h1>
+    <h1>All articles</h1>
 
     <ArticleList />
     <template slot="sidebar">

@@ -105,37 +105,38 @@
   // main nav list
   ////////////////////////////////////////////
 
-  // small screens
-  @media (max-width: $s - 0.001) {
-    .main-nav-list {
+  .main-nav-list {
+    // small screens
+    @media (max-width: $s - 0.001) {
       @include dropdown-hidden;
       @include box-shadow-lg;
       max-width: $sidebar-width;
       right: $gutter;
       border-radius: 0 0 $radius-lg $radius-lg;
     }
-  }
 
-
-  // medium screens
-  @media (min-width: $s) and (max-width: $l - 0.001) {
-    .main-nav-list {
+    // medium screens
+    @media (min-width: $s) and (max-width: $l - 0.001) {
       // position next to nav-logo
       position: absolute;
       top: 0;
       left: 11.75rem;
     }
-  }
 
+    // fix alignment
+    @media (min-width: $s) {
+      padding-left: 1.125rem;
+    }
 
-  // expanded menu state via js
-  .main-nav-list.is-expanded {
-    @include dropdown-visible;
-    @include nav-toggle-max-width;
+    // expanded menu state via js
+    &.is-expanded {
+      @include dropdown-visible;
+      @include nav-toggle-max-width;
 
-    // position expanded list directly below menu toggle button
-    @media (max-width: $s - 0.001) {
-      margin-top: -0.78rem; // fudged
+      // position expanded list directly below menu toggle button
+      @media (max-width: $s - 0.001) {
+        margin-top: -0.78rem; // fudged
+      }
     }
   }
 
@@ -180,8 +181,8 @@
     font-size: 18px;
     z-index: 1;
     overflow: hidden;
-    padding-left: rem(15);
-    padding-right: rem(15);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 
     // extra padding where screen real estate allows
     @media (min-width: $s) {
@@ -191,7 +192,7 @@
     }
 
     // active page
-    &.is-active-pg {
+    &.is-active {
       color: $dark-2;
     }
   }
@@ -203,7 +204,7 @@
 
   .main-nav-link {
     // simplified hover effect via background-color on smaller screens
-    &:hover, &:active, &:focus {
+    &:hover, &:active, &:focus, &.is-active {
       background-color: $brand-color;
       color: $white;
     }
@@ -217,7 +218,7 @@
   ////////////////////////////////////////////
   // skip link
   ////////////////////////////////////////////
-  
+
   .skip-link {
     top: $nav-height + 0.13rem; // position under nav bar
     z-index: 8;

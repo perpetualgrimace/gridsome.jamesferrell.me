@@ -1,7 +1,9 @@
+// TODO: destroy this file
+
 // interactive stuff
 a, label, input, textarea, button,
 [class*=button], [class*=button]:after,
-.nav-link:after, .card-inner {
+.main-nav-link:after, .card-inner {
   /* autoprefixer: off */
   transition:
     color $timing,
