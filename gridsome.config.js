@@ -51,6 +51,16 @@ module.exports = {
     // routing & templates
     /////////////////////////////////////////
 
+    // blog
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/**/blog-list.md",
+        typeName: "Blog",
+        route: "/blog"
+      }
+    },
+
     // blog posts
     {
       use: "@gridsome/source-filesystem",
@@ -59,7 +69,17 @@ module.exports = {
         typeName: "Article",
         route: "/blog/:slug"
       }
-    }
+    },
+
+    // projects
+    // {
+    //   use: "@gridsome/source-filesystem",
+    //   options: {
+    //     path: "content/**/project-detail.md",
+    //     typeName: "Project",
+    //     route: "/projects/:slug"
+    //   }
+    // }
   ],
 
   // markdown parsing

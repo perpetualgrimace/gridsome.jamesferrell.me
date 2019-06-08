@@ -1,23 +1,11 @@
 <page-query>
-  query Home ($page: Int) {
-    articles: allArticle (page: $page) {
-      edges {
-        node {
-          _id
-          title
-          published (format: "MMMM YYYY")
-          description
-          path
-        }
-      }
-    }
-  }
 </page-query>
 
 <script>
+  import ArticleList from "~/components/ArticleList.vue";
   export default {
-    metaInfo: {
-      title: 'Hello, world!'
+    components: {
+      ArticleList
     }
   }
 </script>
@@ -25,15 +13,13 @@
 <template>
   <Layout>
 
-    <ul>
-      <li v-for="{ node } in $page.articles.edges">
-        <g-link :to="node.path">
-          <h2 v-html="node.title"/>
-          <p v-html="node.description"/>
-        </g-link>
-        <span v-html="node.published"/>
-      </li>
-    </ul>
+
+    <h1 class="u-margin-top-xl">hi</h1>
+
+
+    <template slot="sidebar">
+      <ArticleList :limit="3" />
+    </template>
 
   </Layout>
 </template>
