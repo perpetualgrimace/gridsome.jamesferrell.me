@@ -1,16 +1,25 @@
 <script>
   import TagList from "~/components/TagList";
+  import ProjectDeviceMobile from "~/components/ProjectDeviceMobile";
+  import ProjectDeviceLaptop from "~/components/ProjectDeviceLaptop";
+  import ProjectAlbumArt from "~/components/ProjectAlbumArt";
+  import ProjectController from "~/components/ProjectController";
 
   export default {
     name: "Project",
     components: {
-      TagList
+      TagList,
+      ProjectDeviceMobile,
+      ProjectDeviceLaptop,
+      ProjectAlbumArt,
+      ProjectController
     },
     props: {
       // useful defaults
       visible:       { default: true },
       layout:        { default: "web" },
       comingSoon:    { default: false },
+      lazyLoad:      { default: true },
       // defaults as warnings
       title:         { default: "missing `title` prop in Project.vue" },
       slug:          { default: "missing `slug` prop in Project.vue" },
@@ -25,6 +34,28 @@
     computed: {
       splitTags() {
         return this.tags.split(",");
+      },
+      component() {
+        if (this.layout === "web") {
+          // also generate ProjectDeviceLaptop in the template
+          return {
+            name: "ProjectDeviceMobile",
+            img: this.mobileImg
+          };
+        }
+        else if (this.layout === "album") {
+          return {
+            name: "ProjectAlbumArt",
+            img: this.albumImg
+          };
+        }
+        else if (this.layout === "controller") {
+          return {
+            name: "ProjectController",
+            img: this.controllerImg
+          };
+        }
+        else return false;
       }
     }
   };
@@ -54,22 +85,8 @@
         <TagList :tags="splitTags" />
       </div>
 
-
-      <!-- image -->
-      <!-- <?
-      // check content type and add the corresponding image
-      if ($contentType == 'web') {
-        snippet('device-mobile', ['item' => $item]);
-        snippet('device-laptop', ['item' => $item]);
-      } elseif ($contentType == 'album') {
-        snippet('album', ['item' => $item]);
-      } elseif ($contentType == 'controller') {
-        snippet('controller', ['item' => $item]);
-      } else {
-        echo '<p class="dark-theme">Missing ' . $contentType . ' snippet!</p>';
-      }
-
-      ?> -->
+      <component :is="component.name" :img="component.img" />
+      <ProjectDeviceLaptop v-if="layout === 'web'" :img="laptopImg" />
 
     </div>
 
