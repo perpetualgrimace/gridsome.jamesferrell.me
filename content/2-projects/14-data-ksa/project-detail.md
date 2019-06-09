@@ -1,6 +1,6 @@
 ---
 title: "Data KSA"
-slug: data-=ksa
+slug: data-ksa
 color: "#14434B"
 comingSoon: true
 thumbnailLayout: web

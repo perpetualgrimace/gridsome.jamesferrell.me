@@ -2,12 +2,20 @@
   export default {
     name: "Project",
     props: {
-      visible:    { default: true },
-      title:      { default: "missing `title` prop in project.vue" },
-      slug:       { default: "missing `slug` prop in project.vue" },
-      link:       { default: "#missing-`link`-prop-in-project.vue" },
-      comingSoon: { default: false },
-      color:      { default: "pink" }
+      // useful defaults
+      visible:       { default: true },
+      layout:        { default: "web" },
+      comingSoon:    { default: false },
+      // defaults as warnings
+      title:         { default: "missing `title` prop in Project.vue" },
+      slug:          { default: "missing `slug` prop in Project.vue" },
+      link:          { default: "#missing-`link`-prop-in-Project.vue" },
+      color:         { default: "black" },
+      tags:          { default: "missing `tags` prop in Project.vue" },
+      mobileImg:     { default: "missing-`mobileImg`-prop-in-Project.vue" },
+      laptopImg:     { default: "missing-`laptopImg`-prop-in-Project.vue" },
+      albumImg:      { default: "missing-`albumImg`-prop-in-Project.vue" },
+      controllerImg: { default: "missing-`controllerImg`-prop-in-Project.vue" }
     }
   };
 </script>
@@ -15,31 +23,18 @@
 
 <template>
   <article
-    class="project dark-theme"
+    :class="`project ${ layout }-project dark-theme${ comingSoon ? ' is-coming-soon' : '' }`"
     :style="{ 'background-color': color }"
   >
 
-
-    <!-- link -->
-    <!-- <? if ($item->externalLink: ?>
-      <a href="<?= $item->externalLink() ?>" class="project-link" aria-describedby="<?= $slug ?>">
-        <span class="u-screenreader"><?= $linkText ?></span>
-      </a> -->
+    <!-- cover link -->
+    <a v-if="link" :href="link" class="project-link" :aria-describedby="slug" />
     <!-- no link -->
-    <span class="project-link" />
+    <span v-else class="project-link" />
 
-
-    <!-- coming soon -->
-    <p v-if="comingSoon" class="project-banner epsilon">Coming soon</p>
-
-
-    <!-- inner container -->
+    <!-- content -->
     <div class="project-inner">
-
-
-      <!-- caption -->
       <div class="project-caption">
-
         <!-- heading -->
         <h2 class="project-title heading beta" tabindex="-1" :id="slug">
           {{ title }}
@@ -53,8 +48,7 @@
             </li>
           <? endforeach ?>
         </ul> -->
-
-      </div> <!-- .project-caption -->
+      </div>
 
 
       <!-- image -->
@@ -74,6 +68,9 @@
       ?> -->
 
     </div>
+
+    <!-- coming soon -->
+    <p v-if="comingSoon" class="project-banner epsilon">Coming soon</p>
   </article>
 </template>
 

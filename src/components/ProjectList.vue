@@ -7,6 +7,13 @@
           slug
           externalLink
           color
+          thumbnailLayout
+          tags
+          comingSoon
+          mobileImg
+          laptopImg
+          albumImg
+          controllerImg
         }
       }
     }
@@ -34,11 +41,18 @@
     <Project
       v-for="({ node }, i) in $static.projects.edges"
       v-if="i < limit"
-      :link="node.externalLink"
       :title="node.title"
       :slug="node.slug"
-      :key="node.slug"
+      :link="node.externalLink"
       :color="node.color"
+      :layout="node.thumbnailLayout"
+      :tags="node.tags"
+      :comingSoon="node.comingSoon"
+      :mobileImg="node.mobileImg"
+      :laptopImg="node.laptopImg"
+      :albumImg="node.albumImg"
+      :controllerImg="node.controllerImg"
+      :key="node.slug"
     />
   </div>
 </template>
