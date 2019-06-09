@@ -241,7 +241,7 @@
       // other items are in the background; they move less, slower
       & ~ .project-inner .laptop-container,
       & ~ .project-inner .controller,
-      & ~ .project-inner .album-container {
+      & ~ .project-inner .album {
         transform: translateY(-4px);
       }
     }
@@ -295,56 +295,6 @@
     }
     .project:nth-of-type(even) .laptop-container {
       left: 120px; // offset using pixels actually works, because everything is in pixels 😬
-    }
-  }
-
-
-
-
-
-  ////////////////////////////////////
-  // album positioning
-  ////////////////////////////////////
-
-  // make the album look physical
-  .album-img {
-    @include device-shadow;
-    border-radius: $radius;
-  }
-
-
-  // caption left, image right layout
-  @media (min-width: $device-tweakpoint-l) {
-
-    // set container height
-    .album-project {
-      height: rem(400);
-
-      // position album right
-      .album-container {
-        float: right;
-        width: 49.9%;
-        text-align: right;
-      }
-
-      // set album size by height
-      .album-img {
-        height: rem(340);
-        width: auto;
-        max-width: none;
-      }
-
-      // make the caption vertically centerable
-      .project-inner {
-        height: rem(360);
-      }
-
-      // vertically center caption, limit width
-      .project-caption {
-        @include vertical-center;
-        width: 50%;
-        float: left; // needed to make the floated album not clear
-      }
     }
   }
 </style>
