@@ -8,5 +8,6 @@ mobileimg: data-chile-mobile.jpg
 mobileimg2x: data-chile-mobile@2x.jpg
 laptopimg:  data-chile-laptop.jpg
 laptopimg2x: data-chile-laptop@2x.jpg
-externallink: https://en.datachile.io/
+externalLink: https://en.datachile.io/
+order: 16
 ---

@@ -9,5 +9,5 @@ mobileImg: data-ksa-mobile.jpg
 mobileImg2x: data-ksa-mobile@2x.jpg
 laptopImg: data-ksa-laptop.jpg
 laptopImg2x: data-ksa-laptop@2x.jpg
-externalLink:
+order: 14
 ---
