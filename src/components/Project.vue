@@ -19,7 +19,7 @@
       visible:       { default: true },
       layout:        { default: "web" },
       comingSoon:    { default: false },
-      lazyLoad:      { default: true },
+      lazy:          { default: true },
       // defaults as warnings
       title:         { default: "missing `title` prop in Project.vue" },
       slug:          { default: "missing `slug` prop in Project.vue" },
@@ -85,8 +85,8 @@
         <TagList :tags="splitTags" />
       </div>
 
-      <component :is="component.name" :img="component.img" />
-      <ProjectDeviceLaptop v-if="layout === 'web'" :img="laptopImg" />
+      <component :is="component.name" :img="component.img" :lazy="lazy" />
+      <ProjectDeviceLaptop v-if="layout === 'web'" :img="laptopImg" :lazy="lazy" />
 
     </div>
 

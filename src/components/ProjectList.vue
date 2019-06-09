@@ -6,6 +6,7 @@
           title
           slug
           externalLink
+          order
           color
           thumbnailLayout
           tags
@@ -25,13 +26,13 @@
   import Project from "~/components/Project.vue";
 
   export default {
+    name: "ProjectList",
     components: {
       Project
     },
     props: {
       limit: { default: 100 }
-    },
-    name: "ProjectList"
+    }
   }
 </script>
 
@@ -46,6 +47,7 @@
       :link="node.externalLink"
       :color="node.color"
       :layout="node.thumbnailLayout"
+      :lazy="node.order !== $static.projects.edges.length"
       :tags="node.tags"
       :comingSoon="node.comingSoon"
       :mobileImg="node.mobileImg"
