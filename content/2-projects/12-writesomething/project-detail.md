@@ -1,7 +1,7 @@
 ---
 title: WriteSomething
 slug: writesomething
-color: #FA5D48
+color: "#FA5D48"
 thumbnailLayout: web
 tags: "web design,web development,branding"
 mobileImg: writesomething-mobile.png

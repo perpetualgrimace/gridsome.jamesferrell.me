@@ -1,7 +1,7 @@
 ---
 title: "Data KSA"
 slug: data-=ksa
-color: #14434B
+color: "#14434B"
 comingSoon: true
 thumbnailLayout: web
 tags: "web design,front-end development,React,D3plus"

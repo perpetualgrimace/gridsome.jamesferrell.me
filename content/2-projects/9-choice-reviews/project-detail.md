@@ -1,7 +1,7 @@
 ---
 title: "Choice Reviews"
 slug: choice-reviews
-color: #38E08F
+color: "#38E08F"
 thumbnailLayout: web
 tags: "web design,web development"
 mobileImg: choice-mobile.png

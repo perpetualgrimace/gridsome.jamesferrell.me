@@ -1,7 +1,7 @@
 ---
 title: Black Key Recording
 slug: black-key-recording
-color: #F2494D
+color: "#F2494D"
 thumbnailLayout: web
 tags: "web design,web development,branding"
 mobileImg: blackkey-mobile.png

@@ -1,7 +1,7 @@
 ---
 title: "Classic controllers"
 slug: classic-controllers
-color: #9191A0
+color: "#9191A0"
 thumbnailLayout: controller
 tags: digital illustration
 controllerImg: snes-controller.png

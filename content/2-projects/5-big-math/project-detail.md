@@ -1,7 +1,7 @@
 ---
 title: Big math
 slug: big-math
-color: #B32259
+color: "#B32259"
 thumbnailLayout: album
 tags: "branding,audio production,digital illustration"
 albumImg: beyond-the-meridian.jpg

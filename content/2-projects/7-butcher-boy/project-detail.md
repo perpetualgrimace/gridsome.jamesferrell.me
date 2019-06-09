@@ -1,7 +1,7 @@
 ---
 title: Butcher Boy
 slug: butcher-boy
-color: #28847F
+color: "#28847F"
 thumbnailLayout: web
 tags: "web design,web development"
 mobileImg: butcherboy-mobile.png

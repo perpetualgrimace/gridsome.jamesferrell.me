@@ -1,7 +1,7 @@
 ---
 title: Vedantra
 slug: vedantra
-color: #732D60
+color: "#732D60"
 thumbnailLayout: web
 tags: "web design,web development,branding"
 mobileImg: vedantra-mobile.png

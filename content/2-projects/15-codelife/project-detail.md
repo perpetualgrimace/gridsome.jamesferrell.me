@@ -1,7 +1,7 @@
 ---
 title: Codelife
 slug: codelife
-color: #3BD9CC
+color: "#3BD9CC"
 thumbnailLayout: web
 tags: "web design,front-end development,React"
 mobileImg: codelife-mobile.jpg

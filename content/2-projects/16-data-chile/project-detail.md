@@ -1,7 +1,7 @@
 ---
 title: DataChile
 slug: datachile
-color: #3277dc
+color: "#3277dc"
 thumbnaillayout: web
 tags: "web design,front-end development,react,d3plus"
 mobileimg: data-chile-mobile.jpg
