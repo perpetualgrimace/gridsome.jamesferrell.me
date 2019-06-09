@@ -240,7 +240,7 @@
 
       // other items are in the background; they move less, slower
       & ~ .project-inner .laptop-container,
-      & ~ .project-inner .controller-container,
+      & ~ .project-inner .controller,
       & ~ .project-inner .album-container {
         transform: translateY(-4px);
       }
@@ -299,70 +299,7 @@
   }
 
 
-  ////////////////////////////////////
-  // controller positioning
-  ////////////////////////////////////
 
-  // keep image centered within container
-  .controller-container {
-    text-align: center;
-  }
-
-
-  // hide the cord on small viewports
-  @media (max-width: $device-tweakpoint-l - 0.001) {
-    // limit container height
-    .controller-container {
-      overflow: hidden;
-      height: 160px;
-    }
-    // position image so cord is hidden
-    .controller-img {
-      bottom: 75px;
-      max-width: 100%; // flow off the screen
-
-      // when the controller starts to scale down, switch to percentage based units for positioning
-      @media (max-width: 24em - 0.001) {
-        bottom: 0;
-        margin-top: -20%;
-      }
-    }
-  }
-
-
-  // caption left, image right layout
-  @media (min-width: $device-tweakpoint-l) {
-
-    // set container height
-    .controller-project {
-      height: rem(300);
-
-      // position controller right
-      .controller-container {
-        position: absolute;
-        text-align: right;
-        width: 50%;
-        top: -1.5rem;
-        right: 0;
-      }
-
-      // let the image be actual size and break out of the container slightly if needed
-      .controller-img {
-        max-width: none;
-      }
-
-      // make the caption vertically centerable
-      .project-inner {
-        height: rem(220);
-      }
-
-      // vertically center caption, limit width
-      .project-caption {
-        @include vertical-center;
-        width: 50%;
-      }
-    }
-  }
 
 
   ////////////////////////////////////
