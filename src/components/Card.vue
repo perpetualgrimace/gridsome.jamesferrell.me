@@ -2,12 +2,12 @@
   export default {
     name: "Card",
     props: {
-      visible: { default: true },
-      title: { default: "missing `title` prop in Card.vue"},
-      description: { default: "missing `description` prop in Card.vue"},
-      slug: { default: "missing `slug` prop in Card.vue"},
-      link: { default: "#missing-`link`-prop-in-Card.vue"},
-      published: { default: "missing `published` prop in Card.vue"}
+      visible:     { default: true },
+      title:       { default: "missing `title` prop in Card.vue" },
+      slug:        { default: "missing `slug` prop in Card.vue" },
+      link:        { default: "#missing-`link`-prop-in-Card.vue" },
+      description: { default: "missing `description` prop in Card.vue" },
+      published:   { default: "missing `published` prop in Card.vue" }
     }
   };
 </script>
