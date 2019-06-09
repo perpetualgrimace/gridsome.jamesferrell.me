@@ -1,6 +1,4 @@
 <script>
-  import site from "../../content/site.json";
-
   export default {
     name: "SocialLink",
     props: {

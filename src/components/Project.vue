@@ -1,6 +1,11 @@
 <script>
+  import TagList from "~/components/TagList";
+
   export default {
     name: "Project",
+    components: {
+      TagList
+    },
     props: {
       // useful defaults
       visible:       { default: true },
@@ -16,6 +21,11 @@
       laptopImg:     { default: "missing-`laptopImg`-prop-in-Project.vue" },
       albumImg:      { default: "missing-`albumImg`-prop-in-Project.vue" },
       controllerImg: { default: "missing-`controllerImg`-prop-in-Project.vue" }
+    },
+    computed: {
+      splitTags() {
+        return this.tags.split(",");
+      }
     }
   };
 </script>
@@ -41,13 +51,7 @@
         </h2>
 
         <!-- tags -->
-        <!-- <ul class="project-tag-list tag-list">
-          <? foreach ($tags as $tag): ?>
-            <li class="tag-item">
-              <? snippet('tag', ['tag' => $tag]); ?>
-            </li>
-          <? endforeach ?>
-        </ul> -->
+        <TagList :tags="splitTags" />
       </div>
 
 
@@ -175,7 +179,7 @@
   ////////////////////////////////////
 
   // space out tag list
-  .project-tag-list {
+  .project .tag-list {
     margin-top: rem(13); // fudged to fit the baseline
     margin-bottom: $gutter * 1.5;
 
