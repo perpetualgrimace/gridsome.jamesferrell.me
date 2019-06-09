@@ -26,6 +26,7 @@
     <div class="device-screen laptop-screen">
       <img
         v-if="lazy"
+        class="device-img"
         :data-src="src"
         :data-srcset="srcset"
         sizes="524px"
@@ -33,6 +34,7 @@
       />
       <img
         v-else
+        class="device-img"
         :src="src"
         :srcset="srcset"
         sizes="524px"

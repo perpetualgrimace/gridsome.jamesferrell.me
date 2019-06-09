@@ -26,7 +26,7 @@
     <div class="device-screen mobile-screen">
       <img
         v-if="lazy"
-        className="device-image"
+        class="device-image"
         :data-src="src"
         :data-srcset="srcset"
         sizes="144px"
@@ -34,7 +34,7 @@
       />
       <img
         v-else
-        className="device-image"
+        class="device-image"
         :src="src"
         :srcset="srcset"
         sizes="144px"
