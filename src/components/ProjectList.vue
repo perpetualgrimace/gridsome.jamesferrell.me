@@ -32,6 +32,23 @@
     },
     props: {
       limit: { default: 100 }
+    },
+    // laziest lazyloading
+    mounted() {
+      // no SSR errors please
+      if (document !== undefined) {
+        let sources = document.querySelectorAll("[data-src]");
+
+        // set real src attribute from data-src attr
+        sources.forEach(source => {
+          source.setAttribute("src", source.getAttribute("data-src"));
+
+          // if there's a data-srcset attr, use that too
+          if (source.getAttribute("data-srcset")) {
+            source.setAttribute("srcset", source.getAttribute("data-srcset"));
+          }
+        });
+      }
     }
   }
 </script>
