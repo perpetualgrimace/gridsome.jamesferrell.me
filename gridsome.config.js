@@ -30,6 +30,18 @@ module.exports = {
     }
   },
 
+  // icons
+  icon: {
+    favicon: {
+      src: "./src/favicon.png",
+      sizes: [16, 32, 64]
+    },
+    touchicon: {
+      sizes: [57, 114, 72, 144, 60, 120, 76, 152, 180, 192, 160, 96, 16, 32],
+      src: "./src/favicon.png"
+    }
+  },
+
   plugins: [
     // {
     //   use: "@gridsome/plugin-critical",
