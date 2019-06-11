@@ -8,6 +8,7 @@
   }
 </page-query>
 
+
 <script>
   import site from "../../content/site.json";
   import ArticleList from "~/components/ArticleList.vue";
@@ -22,6 +23,7 @@
     }
   }
 </script>
+
 
 <template>
   <Layout>

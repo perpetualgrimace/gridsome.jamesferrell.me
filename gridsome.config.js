@@ -11,7 +11,6 @@ module.exports = {
   siteName: site.title,
   siteDescription: site.description,
   siteUrl: site.baseURL,
-  titleTemplate: `%s | ${site.title}`,
   keywords: site.keywords,
   lang: "en",
   // TODO: more meta
@@ -63,6 +62,35 @@ module.exports = {
     // routing & templates
     /////////////////////////////////////////
 
+    // project list
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/**/project-list.md",
+        typeName: "Projects",
+        route: "/projects"
+      }
+    },
+    // projects
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/**/project-detail.md",
+        typeName: "Project",
+        route: "/projects/:slug"
+      }
+    },
+
+    // about
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/3-about/about.md",
+        typeName: "About",
+        route: "/about"
+      }
+    },
+
     // blog
     {
       use: "@gridsome/source-filesystem",
@@ -80,26 +108,6 @@ module.exports = {
         path: "content/**/blog-article.md",
         typeName: "Article",
         route: "/blog/:slug"
-      }
-    },
-
-    // project list
-    {
-      use: "@gridsome/source-filesystem",
-      options: {
-        path: "content/**/project-list.md",
-        typeName: "Projects",
-        route: "/projects"
-      }
-    },
-
-    // projects
-    {
-      use: "@gridsome/source-filesystem",
-      options: {
-        path: "content/**/project-detail.md",
-        typeName: "Project",
-        route: "/projects/:slug"
       }
     }
   ],
