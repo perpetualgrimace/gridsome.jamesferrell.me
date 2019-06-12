@@ -121,6 +121,16 @@ module.exports = {
       }
     },
 
+    // contact
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/6-contact/contact.md",
+        typeName: "Contact",
+        route: "/contact"
+      }
+    },
+
     // uses
     {
       use: "@gridsome/source-filesystem",
