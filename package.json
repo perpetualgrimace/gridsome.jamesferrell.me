@@ -1,6 +1,7 @@
 {
-  "name": "gridsome-test",
-  "private": true,
+  "name": "gridsome.jamesferrell.me",
+  "version": "5.69",
+  "description": "Version 5 of my portfolio site, but in Vue via Gridsome",
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
@@ -18,5 +19,23 @@
   "devDependencies": {
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0"
-  }
+  },
+  "keywords": [
+    "gridsome",
+    "vue.js",
+    "vue",
+    "vuejs",
+    "sass",
+    "scss",
+    "portfolio",
+    "front-end",
+    "frontend",
+    "design",
+    "responsive",
+    "accessible",
+    "performance",
+    "a11y"
+  ],
+  "author": "James Ferrell",
+  "license": "IDGAF"
 }
