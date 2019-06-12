@@ -1,6 +1,6 @@
 {
   "name": "gridsome.jamesferrell.me",
-  "version": "5.69",
+  "version": "5.6.9",
   "description": "Version 5 of my portfolio site, but in Vue via Gridsome",
   "scripts": {
     "build": "gridsome build",
