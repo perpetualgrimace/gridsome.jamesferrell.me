@@ -36,7 +36,7 @@
     // laziest lazyloading
     mounted() {
       // no SSR errors please
-      if (document !== undefined) {
+      if (typeof document !== "undefined") {
         let sources = document.querySelectorAll("[data-src]");
 
         // set real src attribute from data-src attr
