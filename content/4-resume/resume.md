@@ -1,25 +1,13 @@
-Title: Resumé
+---
+title: Resumé
+---
 
-----
+- TODO: employment-list
+- TODO: internships-list
+- TODO: education-list
+- TODO: skills-list-short
 
-blocks:
-
--
-  template: block-definition-list
-  name: employment-list
--
-  template: block-definition-list
-  name: internships-list
--
-  template: block-definition-list
-  name: education-list
--
-  template: block-bullet-list
-  name: skills-list-short
-
-----
-
-secondary:
+### TODO: sidebar
 
 ## References
 

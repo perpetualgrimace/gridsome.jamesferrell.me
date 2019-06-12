@@ -1,6 +1,6 @@
 <page-query>
-  query About {
-    d: about(path: "/about") {
+  query Uses {
+    d: uses(path: "/uses") {
       title
       headline
       content
@@ -16,7 +16,7 @@
       Fragment
     },
     metaInfo: {
-      title: "About"
+      title: "Uses"
     }
   }
 </script>

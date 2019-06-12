@@ -91,6 +91,16 @@ module.exports = {
       }
     },
 
+    // resume
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/4-resume/resume.md",
+        typeName: "Resume",
+        route: "/resume"
+      }
+    },
+
     // blog
     {
       use: "@gridsome/source-filesystem",
@@ -108,6 +118,16 @@ module.exports = {
         path: "content/**/blog-article.md",
         typeName: "Article",
         route: "/blog/:slug"
+      }
+    },
+
+    // uses
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/uses/uses.md",
+        typeName: "Uses",
+        route: "/uses"
       }
     }
   ],
