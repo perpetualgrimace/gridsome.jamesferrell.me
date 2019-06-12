@@ -9,12 +9,13 @@
 
 <script>
   import { Fragment } from "vue-fragment";
-  import MainNav from "~/components/MainNav.vue";
-  import MainSidebar from "~/components/MainSidebar.vue";
+  import MainNav from "~/components/MainNav";
+  import MainSidebar from "~/components/MainSidebar";
+  import Footer from "~/components/Footer";
 
   export default {
     components: {
-      Fragment, MainNav, MainSidebar
+      Fragment, MainNav, MainSidebar, Footer
     },
     props: {
       nav: { default: true, type: Boolean }
@@ -40,6 +41,8 @@
     </transition>
 
     <MainSidebar />
+
+    <Footer />
 
   </Fragment>
 </template>
