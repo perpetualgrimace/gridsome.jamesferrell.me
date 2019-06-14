@@ -16,7 +16,10 @@
     components: {
       ArticleList
     },
-    data () {
+    metaInfo: {
+      title: "Blog"
+    },
+    data() {
       return {
         site
       }
