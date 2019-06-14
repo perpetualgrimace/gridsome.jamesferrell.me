@@ -1,4 +1,6 @@
 <script>
+  import moment, {fromNow} from "moment";
+
   export default {
     name: "Card",
     props: {
@@ -8,6 +10,11 @@
       link:        { default: "#missing-`link`-prop-in-Card.vue" },
       description: { default: "missing `description` prop in Card.vue" },
       published:   { default: "missing `published` prop in Card.vue" }
+    },
+    computed: {
+      relativeDate() {
+        return moment(this.published).fromNow();
+      }
     }
   };
 </script>
@@ -35,7 +42,9 @@
           {{ description }}
         </p>
 
-        <p class="card-meta milli u-uppercase">{{published}} (TODO: relative date)</p>
+        <p class="card-meta milli u-uppercase">
+          {{ relativeDate }}
+        </p>
       </div>
 
 

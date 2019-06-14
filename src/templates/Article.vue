@@ -11,10 +11,17 @@
 
 
 <script>
+  import moment, {fromNow} from "moment";
+
   export default {
-    metaInfo () {
+    metaInfo() {
       return {
         title: this.$page.d.title
+      }
+    },
+    computed: {
+      relativeDate() {
+        return moment(this.$page.d.published).fromNow();
       }
     }
   }
@@ -29,6 +36,12 @@
       <g-image v-if="$page.d.heroImg" :src="$page.d.heroImg" />
       <div class="content" v-html="$page.d.content" />
     </div>
+    <template slot="sidebar">
+      <dl>
+        <dt>Published</dt>
+        <dd>{{ relativeDate }}</dd>
+      </dl>
+    </template>
   </Layout>
 </template>
 
