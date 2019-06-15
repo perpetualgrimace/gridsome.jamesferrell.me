@@ -15,6 +15,9 @@
     components: {
       ProjectList
     },
+    metaInfo: {
+      title: "Projects"
+    },
     data () {
       return {
         site

@@ -24,7 +24,8 @@
       Card
     },
     props: {
-      limit: { default: 12 }
+      limit: { default: 12 },
+      heading: { default: null }
     },
     name: "ArticleList"
   }
@@ -33,6 +34,9 @@
 
 <template>
   <div class="g-columns">
+    <h2 class="u-margin-bottom" :v-if="heading">
+      {{ heading }}
+    </h2>
     <div class="g-columns g-compact card-list">
       <Card
         v-for="({ node }, i) in $static.articles.edges"

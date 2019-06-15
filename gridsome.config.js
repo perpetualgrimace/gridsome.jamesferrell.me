@@ -12,6 +12,7 @@ module.exports = {
   siteDescription: site.description,
   siteUrl: site.baseURL,
   keywords: site.keywords,
+  titleTemplate: `${site.title} | %s`,
   lang: "en",
   // TODO: more meta
   // environment config
@@ -61,6 +62,16 @@ module.exports = {
     /////////////////////////////////////////
     // routing & templates
     /////////////////////////////////////////
+
+    // home
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/**/home.md",
+        typeName: "Index",
+        route: "/"
+      }
+    },
 
     // project list
     {

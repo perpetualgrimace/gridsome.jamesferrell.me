@@ -38,7 +38,7 @@
         </g-link>
 
         <!-- description -->
-        <p class="card-description epsilon">
+        <p class="card-description epsilon u-margin-top-sm">
           {{ description }}
         </p>
 
