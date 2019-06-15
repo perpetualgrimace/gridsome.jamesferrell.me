@@ -1,6 +1,6 @@
 <static-query>
   query Blog ($page: Int) {
-    articles: allArticle (page: $page) {
+    articles: allArticle (page: $page, sortBy: "published") {
       edges {
         node {
           _id
