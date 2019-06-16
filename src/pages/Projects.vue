@@ -10,12 +10,13 @@
 
 <script>
   import site from "../../content/site.json";
-  import ProjectList from "~/components/ProjectList.vue";import FilterHeader from "~/components/FilterHeader";
-
+  import ProjectList from "~/components/ProjectList.vue";
+  import FilterHeader from "~/components/FilterHeader";
+  import SecondarySidebar from "~/components/SecondarySidebar";
 
   export default {
     components: {
-      ProjectList, FilterHeader
+      ProjectList, FilterHeader, SecondarySidebar
     },
     metaInfo: {
       title: "Projects"
@@ -35,7 +36,7 @@
 
     <ProjectList />
     <template slot="sidebar">
-      <div v-html="$page.d.content" />
+      <SecondarySidebar :content="$page.d.content" />
     </template>
 
   </Layout>

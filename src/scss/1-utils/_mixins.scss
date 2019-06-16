@@ -255,22 +255,22 @@
 @mixin secondary-content-as-primary {
   // compensate for _layout.scss's .section + .section margin-top reset
   > .secondary {
-    padding-top: 2rem;
-  }
+    padding-top: 2.5rem;
 
-  // visual separator
-  &:before {
-    @include pseudo;
-    @include hr;
-    position: absolute;
-    top: 1px;
+    // visual separator
+    &:before {
+      @include pseudo;
+      @include hr;
+      position: absolute;
+      top: 0.5rem;
+    }
   }
 
   // bump up text sizes to primary
   h2 {
     font-size: $gamma;
   }
-  p {
+  p:not(.milli) { // exclude card meta
     font-size: $delta;
   }
 }

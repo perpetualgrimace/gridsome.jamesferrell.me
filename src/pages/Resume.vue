@@ -31,7 +31,7 @@
         :imgSrc="$page.d.heroImg"
       />
     </template>
-    <div v-html="$page.d.content" />
+    <div class="content" v-html="$page.d.content" />
   </Layout>
 </template>
 

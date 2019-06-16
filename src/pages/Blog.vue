@@ -13,10 +13,11 @@
   import site from "../../content/site.json";
   import ArticleList from "~/components/ArticleList";
   import FilterHeader from "~/components/FilterHeader";
+  import SecondarySidebar from "~/components/SecondarySidebar";
+  
   export default {
     components: {
-      ArticleList,
-      FilterHeader
+      ArticleList, FilterHeader, SecondarySidebar
     },
     metaInfo: {
       title: "Blog"
@@ -37,7 +38,7 @@
 
     <ArticleList />
     <template slot="sidebar">
-      <div v-html="$page.d.content" />
+      <SecondarySidebar :content="$page.d.content" />
     </template>
 
   </Layout>

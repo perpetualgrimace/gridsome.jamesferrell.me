@@ -11,9 +11,11 @@
 
 <script>
   import { Fragment } from "vue-fragment";
+  import SecondarySidebar from "~/components/SecondarySidebar";
+
   export default {
     components: {
-      Fragment
+      Fragment, SecondarySidebar
     },
     metaInfo: {
       title: "Contact"
@@ -84,7 +86,7 @@
     </form>
 
     <template slot="sidebar">
-      <div v-html="$page.d.content" />
+      <SecondarySidebar :content="$page.d.content" />
     </template>
   </Layout>
 </template>

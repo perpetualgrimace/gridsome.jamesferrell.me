@@ -116,7 +116,7 @@
 
 .main {
   max-width: $max-main-width;
-  
+
   @media (min-width: $xxxl) {
     @include main-offset-positioning;
   }
@@ -160,7 +160,7 @@
   .secondary-content {
     @include secondary-content-width;
     @include secondary-content-position-right;
-    top: 1.5rem; // default offset
+    top: 1.925rem; // default offset
 
     // offset for pages with image-header
     &.image-header-offset {
@@ -179,7 +179,7 @@
 // contact page layout exceptions
 /////////////////////////////////////////////
 
-// bring up that secondary content more often then normal
+// bring up that secondary content more often then normal (???????????)
 @media (min-width: 48em) and (max-width: $l - 0.001),
 /*OR*/ (min-width: 70em) {
 
