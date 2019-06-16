@@ -44,6 +44,34 @@
 
 
 <style lang="scss">
+
+  // space out the filter-header
+  .filter-header {
+    padding-bottom: 1.5rem;
+
+    // make filter-header stop before the secondary-content sidebar
+    @media (min-width: $xl) {
+      padding-right: $sidebar-width;
+    }
+  }
+
+  // headline positioning
+  .filter-header-headline {
+    margin-bottom: 0.65rem;
+  }
+
+  // tagcloud positioning
+  .filter-headline-label,
+  .filter-tag-list {
+    display: inline-block;
+  }
+
+  // space out label from tagcloud
+  .filter-headline-label {
+    margin-right: 0.5em;
+  }
+
+
   // margin fix
   .filter-header {
     // account for .tag-item bottom margin on filter-header only
