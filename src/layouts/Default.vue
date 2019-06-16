@@ -31,6 +31,9 @@
 
     <transition name="transition-fade" appear>
       <main class="main u-padding-top-off" id="main">
+
+        <slot name="hero" />
+
         <div class="section primary-content">
           <slot />
         </div>

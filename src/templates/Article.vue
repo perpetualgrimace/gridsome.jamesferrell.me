@@ -1,6 +1,7 @@
 <page-query>
   query ($path: String!) {
     d: article (path: $path) {
+      id
       title
       published (format: "D MMMM, YYYY")
       content
@@ -12,8 +13,12 @@
 
 <script>
   import moment, {fromNow} from "moment";
+  import ImageHeader from "~/components/ImageHeader";
 
   export default {
+    components: {
+      ImageHeader
+    },
     metaInfo() {
       return {
         title: this.$page.d.title
@@ -30,10 +35,15 @@
 
 <template>
   <Layout>
+    <template slot="hero">
+      <ImageHeader
+        :id="$page.d.id"
+        :headline="$page.d.title"
+        :imgSrc="$page.d.heroImg"
+      />
+    </template>
     <div class="article">
-      <h1>{{ $page.d.title }}</h1>
-      <span>{{ $page.d.date }}</span>
-      <g-image v-if="$page.d.heroImg" :src="$page.d.heroImg" />
+
       <div class="content" v-html="$page.d.content" />
     </div>
     <template slot="sidebar">

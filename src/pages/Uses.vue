@@ -10,10 +10,11 @@
 
 
 <script>
-  import { Fragment } from "vue-fragment";
+  import ImageHeader from "~/components/ImageHeader";
+
   export default {
     components: {
-      Fragment
+      ImageHeader
     },
     metaInfo: {
       title: "Uses"
@@ -24,6 +25,13 @@
 
 <template>
   <Layout>
+    <template slot="hero">
+      <ImageHeader
+        :id="$page.d.id"
+        :headline="$page.d.headline"
+        :imgSrc="$page.d.heroImg"
+      />
+    </template>
     <div v-html="$page.d.content" />
   </Layout>
 </template>
