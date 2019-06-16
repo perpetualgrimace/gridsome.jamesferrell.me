@@ -10,10 +10,12 @@
 
 <script>
   import site from "../../content/site.json";
-  import ProjectList from "~/components/ProjectList.vue";
+  import ProjectList from "~/components/ProjectList.vue";import FilterHeader from "~/components/FilterHeader";
+
+
   export default {
     components: {
-      ProjectList
+      ProjectList, FilterHeader
     },
     metaInfo: {
       title: "Projects"
@@ -29,7 +31,7 @@
 <template>
   <Layout>
 
-    <h1>All projects</h1>
+    <FilterHeader contentType="projects" />
 
     <ProjectList />
     <template slot="sidebar">

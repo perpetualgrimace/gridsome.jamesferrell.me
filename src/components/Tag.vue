@@ -2,14 +2,25 @@
   export default {
     name: "Tag",
     props: {
-      title: { default: "missing `title` prop in Tag.vue" }
+      title: { default: "missing `title` prop in Tag.vue" },
+      slug: { default: null },
+      selected: { default: false }
     }
   };
 </script>
 
 
 <template>
-  <span class="tag epsilon">
+  <a
+    class="tag epsilon"
+    :class="selected && 'is-selected'"
+    :href="`#${slug}`"
+    v-if="slug"
+  >
+    {{ title }}
+    <span class="u-visually-hidden" v-if="selected"> (currently selected)</span>
+  </a>
+  <span class="tag epsilon" v-else>
     {{ title }}
   </span>
 </template>
@@ -28,17 +39,16 @@
     background-color: $black;
     border-radius: $radius;
     color: $white;
-  }
 
-  // tag-links
-  // TODO: move to TagLink component
-  .tag-link {
-    background-color: $dark-1;
+    // links
+    &[href] {
+      background-color: $dark-1;
 
-    // interactions
-    &:hover, &:focus {
-      color: $white;
-      background-color: $brand-light;
+      // interactions
+      &:hover, &:focus {
+        color: $white;
+        background-color: $brand-light;
+      }
     }
 
     // selected state

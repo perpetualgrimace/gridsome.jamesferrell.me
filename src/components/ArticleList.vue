@@ -34,7 +34,7 @@
 
 <template>
   <div class="g-columns">
-    <h2 class="u-margin-bottom" :v-if="heading">
+    <h2 class="u-margin-bottom" v-if="heading">
       {{ heading }}
     </h2>
     <div class="g-columns g-compact card-list">

@@ -42,8 +42,8 @@
           {{ description }}
         </p>
 
-        <p class="card-meta milli u-uppercase">
-          {{ relativeDate }}
+        <p class="card-meta milli u-uppercase u-margin-top-sm">
+          posted {{ relativeDate }}
         </p>
       </div>
 

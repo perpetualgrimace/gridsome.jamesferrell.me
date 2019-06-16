@@ -11,10 +11,12 @@
 
 <script>
   import site from "../../content/site.json";
-  import ArticleList from "~/components/ArticleList.vue";
+  import ArticleList from "~/components/ArticleList";
+  import FilterHeader from "~/components/FilterHeader";
   export default {
     components: {
-      ArticleList
+      ArticleList,
+      FilterHeader
     },
     metaInfo: {
       title: "Blog"
@@ -31,7 +33,7 @@
 <template>
   <Layout>
 
-    <h1>All articles</h1>
+    <FilterHeader />
 
     <ArticleList />
     <template slot="sidebar">
