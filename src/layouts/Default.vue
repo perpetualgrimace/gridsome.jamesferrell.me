@@ -1,12 +1,3 @@
-<static-query>
-  query {
-    metaData {
-      siteName
-    }
-  }
-</static-query>
-
-
 <script>
   import { Fragment } from "vue-fragment";
   import MainNav from "~/components/MainNav";
@@ -39,6 +30,10 @@
         </div>
         <div class="section secondary-content" v-if="$slots.sidebar">
           <slot name="sidebar" />
+        </div>
+
+        <div class="section cta-content">
+          <slot name="cta" />
         </div>
       </main>
     </transition>

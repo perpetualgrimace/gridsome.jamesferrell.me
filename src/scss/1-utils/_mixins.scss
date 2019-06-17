@@ -373,12 +373,11 @@
 
   // paragraph link stye
   p > a {
-    color: $white;
+    color: rgba($white, 0.9);
 
     // interactions
     &:hover, &:active, &:focus {
-      color: rgba($white, 0.875);
-      text-decoration: underline;
+      color: $white;
     }
   }
 }

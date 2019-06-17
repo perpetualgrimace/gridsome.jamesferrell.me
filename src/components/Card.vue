@@ -130,6 +130,7 @@
     color: $brand-color; // override .heading color
     // stop .card-title from inheriting parent line-height by changing it to a block element ¯\_(ツ)_/¯
     display: block;
+    text-decoration: none;
   }
 
 
@@ -166,6 +167,7 @@
     &:hover, &:focus {
       & + .card-caption .card-title {
         color: $brand-light;
+        text-decoration: underline;
       }
     }
     &:active + .card-caption .card-title {

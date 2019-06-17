@@ -60,7 +60,10 @@ main {
   @include brand-theme;
   @include radial-gloss;
   background-color: $brand-color;
-  color: $white;
+
+  &, & * {
+    color: $white;
+  }
 }
 
 
@@ -122,20 +125,4 @@ img::selection {
 
 main:focus {
   background: $white;
-}
-
-.mfp-wrap:focus {
-  background: none;
-}
-
-
-////////////////////////////////
-// dev
-////////////////////////////////
-
-// browsersync notification
-#__bs_notify__ {
-  @include horizontal-center;
-  opacity: 0.4;
-  pointer-events: none;
 }

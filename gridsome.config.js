@@ -150,6 +150,15 @@ module.exports = {
         typeName: "Uses",
         route: "/uses"
       }
+    },
+
+    // blocks
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/blocks/colophon.md",
+        typeName: "Colophon"
+      }
     }
   ],
 

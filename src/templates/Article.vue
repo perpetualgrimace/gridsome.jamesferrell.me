@@ -14,10 +14,11 @@
 <script>
   import moment, {fromNow} from "moment";
   import ImageHeader from "~/components/ImageHeader";
+  import Colophon from "~/components/Colophon";
 
   export default {
     components: {
-      ImageHeader
+      ImageHeader, Colophon
     },
     metaInfo() {
       return {
@@ -42,15 +43,20 @@
         :imgSrc="$page.d.heroImg"
       />
     </template>
-    <div class="article">
 
+    <div class="article">
       <div class="content" v-html="$page.d.content" />
     </div>
+
     <template slot="sidebar">
       <dl>
         <dt>Published</dt>
         <dd>{{ relativeDate }}</dd>
       </dl>
+    </template>
+
+    <template slot="cta">
+      <Colophon />
     </template>
   </Layout>
 </template>
