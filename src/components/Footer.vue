@@ -40,6 +40,7 @@
   .footer {
     @include radial-gloss;
     box-shadow: inset 0 1rem 2rem -1rem $shadow-dark;
+    z-index: 1;
   }
 
   // footer links

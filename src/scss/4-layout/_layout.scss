@@ -161,16 +161,6 @@
     @include secondary-content-width;
     @include secondary-content-position-right;
     top: 1.925rem; // default offset
-
-    // offset for pages with image-header
-    &.image-header-offset {
-      top: 11.9rem;
-    }
-
-    // offset for pages with filter-header
-    &.filter-header-offset {
-      top: 1.9rem;
-    }
   }
 }
 

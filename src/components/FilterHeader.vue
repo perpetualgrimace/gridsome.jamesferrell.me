@@ -52,6 +52,11 @@
     // make filter-header stop before the secondary-content sidebar
     @media (min-width: $xl) {
       padding-right: $sidebar-width;
+
+      // offset sidebar
+      & ~ .secondary-content {
+        top: 1.9rem;
+      }
     }
   }
 

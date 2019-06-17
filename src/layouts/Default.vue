@@ -18,7 +18,7 @@
       Fragment, MainNav, MainSidebar, Footer
     },
     props: {
-      nav: { default: true, type: Boolean }
+      singleColumn: { default: false, type: Boolean }
     }
   }
 </script>
@@ -34,7 +34,7 @@
 
         <slot name="hero" />
 
-        <div class="section primary-content">
+        <div class="section primary-content" :class="singleColumn && 'single-column'">
           <slot />
         </div>
         <div class="section secondary-content" v-if="$slots.sidebar">

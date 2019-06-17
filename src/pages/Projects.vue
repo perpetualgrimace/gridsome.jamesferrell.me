@@ -30,12 +30,12 @@
 </script>
 
 <template>
-  <Layout>
+  <Layout :singleColumn="true">
 
     <FilterHeader contentType="projects" />
 
     <ProjectList />
-    <template slot="sidebar">
+    <template slot="cta">
       <SecondarySidebar :content="$page.d.content" />
     </template>
 

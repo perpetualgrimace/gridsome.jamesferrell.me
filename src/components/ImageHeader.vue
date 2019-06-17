@@ -68,6 +68,13 @@
     @media (min-width: $xxxl) {
       @include fullwidth;
     }
+
+    // offset sidebar
+    @media (min-width: $xl) {
+      & ~ .secondary-content {
+        top: 11.96rem;
+      }
+    }
   }
 
   // headline

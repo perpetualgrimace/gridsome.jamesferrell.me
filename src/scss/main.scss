@@ -13,6 +13,7 @@
 @import "3-base/theme";
 @import "3-base/lists";
 @import "3-base/tables";
+@import "3-base/link-arrow";
 @import "3-base/form-fields";
 @import "3-base/blockquotes";
 @import "3-base/vertical-margins";
@@ -21,7 +22,6 @@
 // Layout
 @import "4-layout/layout";
 @import "4-layout/nav";
-@import "4-layout/footer";
 
 // Motion
 @import "5-motion/transitions";

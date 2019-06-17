@@ -22,6 +22,11 @@
     { "name": "dribbble", "link": "https://dribbble.com/perpetualgrimace" },
     { "name": "twitter",  "link": "https://twitter.com/perpetualgrimac" }
   ],
+  "moreSocialAccounts": [
+    { "name": "instagram",   "link": "https://instagram.com/perpetualgrimace" },
+    { "name": "facebook",  "link": "https://facebook.com/perpetualgrimace" },
+    { "name": "linkedin", "link": "https://linkedin.com/in/perpetualgrimace" }
+  ],
   "copyright": "© Copyright schmopyright. Steal and improve.",
   "colophon": "This site has been built from the ground up with [Vue](https://vuejs.org/) and [GraphQL](https://graphql.org/) via the [Gridsome](https://gridsome.org/) framework. I wrote a [blog post](./blog/gridsome) about it."
 }

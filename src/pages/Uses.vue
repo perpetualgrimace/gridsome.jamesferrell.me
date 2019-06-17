@@ -4,6 +4,8 @@
       title
       headline
       content
+      sidebarHeading
+      sidebarText
     }
   }
 </page-query>
@@ -11,10 +13,11 @@
 
 <script>
   import ImageHeader from "~/components/ImageHeader";
+  import SecondarySidebar from "~/components/SecondarySidebar";
 
   export default {
     components: {
-      ImageHeader
+      ImageHeader, SecondarySidebar
     },
     metaInfo: {
       title: "Uses"
@@ -32,7 +35,12 @@
         :imgSrc="$page.d.heroImg"
       />
     </template>
+
     <div class="content" v-html="$page.d.content" />
+
+    <template slot="sidebar">
+      <SecondarySidebar :heading="$page.d.sidebarHeading" :text="$page.d.sidebarText" />
+    </template>
   </Layout>
 </template>
 

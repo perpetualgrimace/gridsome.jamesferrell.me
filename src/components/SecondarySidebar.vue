@@ -2,14 +2,52 @@
   export default {
     name: "SecondarySidebar",
     props: {
-      content: { default: '<h2>missing `content` prop in SecondarySidebar.vue</h2>' }
+      content:  { default: null },
+      heading:  { default: null },
+      text:     { default: null },
+      link:     { default: null },
+      linkText: { default: null },
+
+      downloadHeading:  { default: null },
+      downloadText:     { default: null },
+      downloadLink:     { default: null },
+      downloadLinkText: { default: null }
     }
   };
 </script>
 
 
 <template>
-  <aside class="content secondary tertiary-text epsilon" v-html="content" />
+  <!-- use main markdown content as sidebar -->
+  <aside class="content secondary tertiary-text epsilon" v-html="content" v-if="content" />
+
+  <!-- construct sidebar from individual props -->
+  <aside class="content secondary tertiary-text epsilon" v-else-if="heading && text">
+    <h2>{{ heading }}</h2>
+    <p>{{ text }}</p>
+
+    <p class="u-margin-top-sm" v-if="link">
+      <a class="link-arrow" :href="link" v-if="link && link.includes('http')">
+        {{ linkText || link }}
+      </a>
+      <g-link class="link-arrow" :to="link" v-else-if="link">
+        {{ linkText || link }}
+      </g-link>
+    </p>
+
+    <!-- download link -->
+    <h2 v-if="downloadHeading">
+      {{ downloadHeading }}
+    </h2>
+    <p v-if="downloadText">
+      {{ downloadText }}
+    </p>
+    <p class="u-margin-top-sm" v-if="downloadLink">
+      <a class="link-arrow-download" :href="downloadLink" download>
+        {{ downloadLinkText || downloadLink }}
+      </a>
+    </p>
+  </aside>
 </template>
 
 
