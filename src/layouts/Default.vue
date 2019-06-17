@@ -17,7 +17,6 @@
 
 <template>
   <Fragment>
-
     <MainNav />
 
     <transition name="transition-fade" appear>
@@ -28,6 +27,7 @@
         <div class="section primary-content" :class="singleColumn && 'single-column'">
           <slot />
         </div>
+
         <div class="section secondary-content" v-if="$slots.sidebar">
           <slot name="sidebar" />
         </div>
@@ -41,7 +41,6 @@
     <MainSidebar />
 
     <Footer />
-
   </Fragment>
 </template>
 

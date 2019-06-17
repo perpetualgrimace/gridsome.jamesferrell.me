@@ -3,6 +3,7 @@
     d: projects(path: "/projects") {
       title
       headline
+      ctaHeadline
       content
     }
   }
@@ -12,11 +13,11 @@
   import site from "../../content/site.json";
   import ProjectList from "~/components/ProjectList.vue";
   import FilterHeader from "~/components/FilterHeader";
-  import SecondarySidebar from "~/components/SecondarySidebar";
+  import CTA from "~/components/CTA";
 
   export default {
     components: {
-      ProjectList, FilterHeader, SecondarySidebar
+      ProjectList, FilterHeader, CTA
     },
     metaInfo: {
       title: "Projects"
@@ -35,8 +36,9 @@
     <FilterHeader contentType="projects" />
 
     <ProjectList />
+
     <template slot="cta">
-      <SecondarySidebar :content="$page.d.content" />
+      <CTA :heading="$page.d.ctaHeadline" />
     </template>
 
   </Layout>

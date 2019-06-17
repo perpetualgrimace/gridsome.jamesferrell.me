@@ -130,11 +130,14 @@
 
 @media (min-width: $xl) {
 
-  // resize and accommodate gutters for primary content
-  .primary-content {
+  .primary-content,
+  .cta-content {
     @include primary-content-width;
     padding-right: $gutter; // combines with secondary-content's also halfed gutter
+  }
 
+  // resize and accommodate gutters for primary content
+  .primary-content {
     // limit width of inner content and horizontally center
     > * {
       max-width: rem(940);
@@ -145,7 +148,8 @@
 
     // span primary-content and secondary-content area
     // NOTE: currently only used by project-list template
-    &.single-column {
+    &.single-column,
+    &.single-column ~ .cta-content {
       padding-right: $gutter * 2;
       width: 100%;
 

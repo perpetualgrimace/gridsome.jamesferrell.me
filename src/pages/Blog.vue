@@ -14,10 +14,11 @@
   import ArticleList from "~/components/ArticleList";
   import FilterHeader from "~/components/FilterHeader";
   import SecondarySidebar from "~/components/SecondarySidebar";
-  
+  import CTA from "~/components/CTA";
+
   export default {
     components: {
-      ArticleList, FilterHeader, SecondarySidebar
+      ArticleList, FilterHeader, SecondarySidebar, CTA
     },
     metaInfo: {
       title: "Blog"
@@ -39,6 +40,10 @@
     <ArticleList />
     <template slot="sidebar">
       <SecondarySidebar :content="$page.d.content" />
+    </template>
+
+    <template slot="cta">
+      <CTA :heading="$page.d.ctaHeadline" />
     </template>
 
   </Layout>

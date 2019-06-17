@@ -159,6 +159,13 @@ module.exports = {
         path: "content/blocks/colophon.md",
         typeName: "Colophon"
       }
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/blocks/main-sidebar.md",
+        typeName: "MainSidebar"
+      }
     }
   ],
 

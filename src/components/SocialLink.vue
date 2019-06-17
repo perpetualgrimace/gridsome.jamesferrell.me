@@ -24,6 +24,7 @@
   // default styles
   .social-link {
     color: $brand-color;
+    text-decoration: none;
 
     // interactions
     &:hover, &:focus {

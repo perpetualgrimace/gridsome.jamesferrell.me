@@ -16,10 +16,11 @@
 <script>
   import ImageHeader from "~/components/ImageHeader";
   import SecondarySidebar from "~/components/SecondarySidebar";
+  import CTA from "~/components/CTA";
 
   export default {
     components: {
-      ImageHeader, SecondarySidebar
+      ImageHeader, SecondarySidebar, CTA
     },
     metaInfo: {
       title: "About"
@@ -47,6 +48,10 @@
         :link="$page.d.sidebarLink"
         :linkText="$page.d.sidebarLinkText"
       />
+    </template>
+
+    <template slot="cta">
+      <CTA :heading="$page.d.ctaHeadline" />
     </template>
   </Layout>
 </template>

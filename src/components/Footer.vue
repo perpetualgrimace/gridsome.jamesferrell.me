@@ -50,6 +50,7 @@
     display: block;
     padding: 0.5rem;
     text-transform: uppercase;
+    text-decoration: none;
     font-size: $epsilon;
     color: $gray;
 
@@ -61,6 +62,7 @@
     // interactions
     &:hover, &:active, &:focus {
       color: $white;
+      text-decoration: underline;
     }
   }
 

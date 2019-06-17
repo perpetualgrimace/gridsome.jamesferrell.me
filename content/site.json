@@ -27,6 +27,9 @@
     { "name": "facebook",  "link": "https://facebook.com/perpetualgrimace" },
     { "name": "linkedin", "link": "https://linkedin.com/in/perpetualgrimace" }
   ],
-  "copyright": "© Copyright schmopyright. Steal and improve.",
-  "colophon": "This site has been built from the ground up with [Vue](https://vuejs.org/) and [GraphQL](https://graphql.org/) via the [Gridsome](https://gridsome.org/) framework. I wrote a [blog post](./blog/gridsome) about it."
+
+  "ctaHeading": "Do I sound like someone you'd like to work with?",
+  "ctaText": "I'm happy to chat about a new project, or whatever. Let's grab a coffee.",
+  "ctaLink":  "contact",
+  "ctaLinkText":  "Get in touch"
 }

@@ -1,3 +1,11 @@
+<static-query>
+  query MainSidebar {
+    d: mainSidebar(id: "1") {
+      content
+    }
+  }
+</static-query>
+
 <script>
   import site from "../../content/site.json";
   import HamBurger from "./HamBurger.vue";
@@ -22,7 +30,6 @@
 
 <template>
   <div class="main-sidebar">
-
     <div class="tertiary brand-black-theme">
       <div class="tertiary-inner">
 
@@ -30,12 +37,7 @@
           <SocialLink v-for="social in site.socialAccounts" :social="social" :key="social" />
         </ul>
 
-        <footer class="tertiary-copyright tertiary-text epsilon" role="contentinfo">
-          {{ site.copyright }}
-          <!-- TODO: markdown parsing :/ -->
-          <!-- {{ site.colophon }} -->
-        </footer>
-
+        <footer class="tertiary-copyright tertiary-text epsilon" role="contentinfo" v-html="$static.d.content" />
       </div>
     </div>
   </div>
@@ -46,6 +48,10 @@
 
   .main-sidebar {
     z-index: 1; // in front of hero
+
+    & footer a {
+      font-weight: inherit;
+    }
   }
 
   ////////////////////////////////

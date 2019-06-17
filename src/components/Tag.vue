@@ -43,6 +43,7 @@
     // links
     &[href] {
       background-color: $dark-1;
+      text-decoration: none;
 
       // interactions
       &:hover, &:focus {
