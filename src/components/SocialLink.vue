@@ -42,17 +42,12 @@
     // alignment
     display: inline-block;
     vertical-align: middle;
-    top: -1px; // fudge the icon up
+    top: -2px; // fudge the icon up
     width: 1rem;
     height: 1rem;
     margin-right: 0.625em;
     // aesthetic
     border-radius: $radius;
-
-    // scale icon to container
-    svg, image, img {
-      @include absolute-expand;
-    }
   }
 
 </style>
