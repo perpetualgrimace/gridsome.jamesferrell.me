@@ -167,7 +167,6 @@
     &:hover, &:focus {
       & + .card-caption .card-title {
         color: $brand-light;
-        text-decoration: underline;
       }
     }
     &:active + .card-caption .card-title {
@@ -175,7 +174,8 @@
     }
   }
 
-  .card-inner.is-focused {
+  .card-inner.is-focused,
+  .card-inner:hover {
     @include box-shadow-xl;
   }
 
