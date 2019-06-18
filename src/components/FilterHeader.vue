@@ -1,25 +1,59 @@
-<script>
-  import site from "~/../content/site.json";
-  import {uppercaseFirst} from "~/helpers.js"
+<static-query>
+  query ($page: Int) {
+    articles: allArticle (page: $page) {
+      edges {
+        node {
+          id
+          title
+          tags: topic
+        }
+      }
+    },
+    projects: allProject (page: $page) {
+      edges {
+        node {
+          id
+          title
+          tags
+        }
+      }
+    }
+  }
+</static-query>
 
-  import Tag from "~/components/Tag"
+
+<script>
+  import {flattenArray, uppercaseFirst} from "~/helpers.js";
+  import Tag from "~/components/Tag";
 
   export default {
     name: "FilterHeader",
     components: {
       Tag
     },
-    methods: {
-      uppercaseFirst
-    },
     props: {
-      contentType: { default: "articles" },
-      filter: { default: "all" },
-      img: { default: "/images/icons/jf-icon.png" }
+      contentType:    { default: "articles" },
+      selectedFilter: { default: "all" },
+      img:            { default: "/images/icons/jf-icon.png" }
     },
-    data () {
-      return {
-        site
+    methods: {
+      flattenArray, uppercaseFirst
+    },
+    computed: {
+      filters() {
+        let filterList = [];
+        const edges = this.contentType === "articles"
+          ? this.$static.articles.edges
+          : this.$static.projects.edges;
+
+        edges.forEach(
+          edge => filterList.push(edge.node.tags.toLowerCase().split(","))
+        );
+
+        const flattenedFilterArray = flattenArray(filterList);
+        return Array.from(
+          new Set(flattenedFilterArray) // purge duplicates
+        );
       }
     }
   };
@@ -28,17 +62,29 @@
 
 <template>
   <header class="filter-header header">
-    <h1 class="filter-header-headline gamma">{{ uppercaseFirst(filter) }} {{ contentType }}</h1>
+    <h1 class="filter-header-headline gamma">
+      {{ uppercaseFirst(selectedFilter) }} {{ contentType }}
+    </h1>
 
     <!-- filters -->
     <p class="filter-headline-label epsilon">Filter by:</p>
 
     <!-- tag list -->
-    <ul class="filter-tag-list tag-list u-margin-bottom-sm">
-      <li class="filter-tag-item">
-        <Tag slug="all" title="All" :selected="filter === 'all'" />
-      </li>
+    <ul class="filter-tag-list tag-list">
+      <Tag
+        slug="all"
+        title="All"
+        :selected="selectedFilter === 'all'"
+      />
+      <Tag
+        :slug="filter"
+        :key="filter"
+        :title="filter"
+        :selected="selectedFilter === filter"
+        v-for="filter in filters"
+      />
     </ul>
+
   </header>
 </template>
 
@@ -69,6 +115,10 @@
   .filter-headline-label,
   .filter-tag-list {
     display: inline-block;
+  }
+
+  .filter-tag-list .tag:not(:last-child) {
+    margin-right: 0.5em;
   }
 
   // space out label from tagcloud
