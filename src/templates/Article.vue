@@ -4,7 +4,7 @@
       id
       slug
       title
-      published (format: "D MMMM, YYYY")
+      published
       content
       heroImg
     }
@@ -29,7 +29,7 @@
     },
     computed: {
       relativeDate() {
-        return moment(this.$page.d.published).fromNow();
+        return moment(this.$page.d.published, "YYYY-MM-DD").fromNow();
       }
     }
   }

@@ -34,7 +34,7 @@
       <div class="tertiary-inner">
 
         <ul class="tertiary-social-list">
-          <SocialLink v-for="social in site.socialAccounts" :social="social" :key="social" />
+          <SocialLink v-for="social in site.socialAccounts" :social="social" :key="social.name" />
         </ul>
 
         <footer class="tertiary-copyright tertiary-text epsilon" role="contentinfo" v-html="$static.d.content" />
@@ -86,7 +86,7 @@
       padding: rem(40);
       width: 100%;
     }
-    @media (min-width: $l) and (min-height: $s) {
+    @include bp-fixed-nav {
       position: fixed;
     }
   }

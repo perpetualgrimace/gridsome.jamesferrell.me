@@ -13,7 +13,7 @@
     },
     computed: {
       relativeDate() {
-        return moment(this.published).fromNow();
+        return moment(this.published, "YYYY-MM-DD").fromNow();
       }
     }
   };

@@ -2,7 +2,7 @@
   export default {
     name: "Button",
     props: {
-      onClick: { default: null },
+      onClick: { default: null, type: Function },
       type:    { default: null },
       link:    { default: null },
       classes: { default: null },
@@ -13,10 +13,15 @@
 
 
 <template>
-  <!-- render as a button or a link, depending on the props -->
-  <button class="button" :class="classes" :type="type" @click="onClick" v-if="onClick || type">
+  <!-- button with click event -->
+  <button class="button" :class="classes" :type="type" @click="onClick" v-if="onClick">
     {{ text }}
   </button>
+  <!-- button with type only -->
+  <button class="button" :class="classes" :type="type" v-else-if="type && !onClick">
+    {{ text }}
+  </button>
+  <!-- link -->
   <g-link class="button" :class="classes" :to="link" v-else-if="link">
     {{ text }}
   </g-link>

@@ -49,9 +49,9 @@
           {{ headline }}
         </h1>
         <!-- name -->
-        <author class="colophon-caption-name subhead" v-else>
+        <span class="colophon-caption-name subhead" v-else>
           {{ headline }}
-        </author>
+        </span>
 
         <!-- bio -->
         <div
@@ -158,7 +158,7 @@
 
   // JAMES FERRELL positioning
   .colophon-caption-name {
-    display: inline-block; // needed to make <author> use margin
+    display: inline-block; // needed to make span use margin
     margin-bottom: 0.25em;
   }
 
