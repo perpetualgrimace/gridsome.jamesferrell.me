@@ -32,7 +32,7 @@
           <slot name="sidebar" />
         </div>
 
-        <div class="section cta-content">
+        <div class="section cta-content" v-if="$slots.cta">
           <slot name="cta" />
         </div>
       </main>

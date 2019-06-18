@@ -56,7 +56,7 @@
     </template>
 
     <template slot="cta">
-      <Colophon />
+      <Colophon classes="u-margin-bottom-sm" />
     </template>
   </Layout>
 </template>

@@ -43,7 +43,7 @@
     </template>
 
     <template slot="cta">
-      <CTA :heading="$page.d.ctaHeadline" />
+      <CTA :heading="$page.d.ctaHeadline" classes="u-margin-top-sm" />
     </template>
 
   </Layout>
