@@ -78,6 +78,13 @@
         background-color: rgba($brand-dark, 0.25);
       }
     }
+
+    // fudge vertical alignment on big screens
+    @media (min-width: $xl) {
+      & > * {
+        transform: translateY(-1px);
+      }
+    }
   }
 
   // the icon
