@@ -48,6 +48,10 @@
     margin-right: 0.625em;
     // aesthetic
     border-radius: $radius;
+
+    @media (min-width: $xl) {
+      top: -1px; // still more fudging
+    }
   }
 
 </style>
