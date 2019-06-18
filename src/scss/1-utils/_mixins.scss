@@ -38,6 +38,17 @@
 }
 
 ////////////////////////////////
+// breakpoints
+////////////////////////////////
+
+// used by nav and main sidebar
+@mixin bp-fixed-nav {
+  @media (min-width: $l) and (min-height: $s) {
+    @content;
+  }
+}
+
+////////////////////////////////
 // layout & positioning
 ////////////////////////////////
 
@@ -339,22 +350,6 @@
 @mixin nav-toggle-max-width {
   @media (max-width: $xxs - 0.001) {
     max-width: calc(100% - 2rem);
-  }
-}
-
-
-////////////////////////////////
-// sidebar inner styles
-////////////////////////////////
-
-@mixin main-sidebar-positioning {
-  max-width: $max-container-width / 2; // keep line-length reasonable
-  padding: $gutter;
-
-  @media (min-width: $l) {
-    max-width: $sidebar-width;
-    margin: 0 auto;
-    padding: rem(40);
   }
 }
 

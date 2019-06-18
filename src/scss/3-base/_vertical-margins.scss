@@ -42,8 +42,8 @@ main [id]:before {
   pointer-events: none;
 
   // account for fixed nav
-  @media (min-width: $l) and (min-height: $s) {
-    margin-top: -1.5rem;
-    height: 1.5rem;
+  @include bp-fixed-nav {
+    margin-top: -1.25rem;
+    height: 1.25rem;
   }
 }

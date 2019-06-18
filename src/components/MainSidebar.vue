@@ -77,11 +77,17 @@
   }
 
   .tertiary-inner {
-    @include main-sidebar-positioning;
+    max-width: $max-container-width / 2; // keep line-length reasonable
+    padding: $gutter;
 
     @media (min-width: $l) {
+      max-width: $sidebar-width;
+      margin: 0 auto;
+      padding: rem(40);
       width: 100%;
-      max-width: 100%;
+    }
+    @media (min-width: $l) and (min-height: $s) {
+      position: fixed;
     }
   }
 

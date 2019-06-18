@@ -44,12 +44,6 @@
 
 
 <style lang="scss">
-  // NOTE: fixed nav media query:
-  // @media (min-width: $l) and (min-height: $s) {}
-
-  ////////////////////////////////////////////
-  // container
-  ////////////////////////////////////////////
 
   // default positioning and theming
   .main-nav-container {
@@ -64,7 +58,7 @@
     }
 
     // fixed nav on bigger screens
-    @media (min-width: $l) and (min-height: $s) {
+    @include bp-fixed-nav {
       @include box-shadow($shadow);
       position: fixed;
 
