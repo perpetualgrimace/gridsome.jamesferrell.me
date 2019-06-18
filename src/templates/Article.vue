@@ -15,10 +15,11 @@
   import moment, {fromNow} from "moment";
   import ImageHeader from "~/components/ImageHeader";
   import Colophon from "~/components/Colophon";
+  import Paginator from "~/components/Paginator";
 
   export default {
     components: {
-      ImageHeader, Colophon
+      ImageHeader, Colophon, Paginator
     },
     metaInfo() {
       return {
@@ -56,6 +57,7 @@
     </template>
 
     <template slot="cta">
+      <Paginator />
       <Colophon classes="u-margin-bottom-sm" />
     </template>
   </Layout>
