@@ -1,6 +1,7 @@
 ---
 title: "The discipline of self-teaching: Learning a new craft"
 slug: discipline-of-self-teaching
+id: 1
 description: "How to channel your enthusiasm into productivity and learn a new craft, in three easy steps."
 tags: design,motivation,personal growth,inspirational
 topic: problem solving

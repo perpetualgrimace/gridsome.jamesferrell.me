@@ -2,6 +2,7 @@
   query ($path: String!) {
     d: article (path: $path) {
       id
+      slug
       title
       published (format: "D MMMM, YYYY")
       content
@@ -57,7 +58,7 @@
     </template>
 
     <template slot="cta">
-      <Paginator />
+      <Paginator :currentID="$page.d.id" />
       <Colophon classes="u-margin-bottom-sm" />
     </template>
   </Layout>

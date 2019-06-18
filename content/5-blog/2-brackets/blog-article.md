@@ -1,6 +1,7 @@
 ---
 title: "Web tool review: Brackets"
 slug: brackets
+id: 2
 description: "Brackets is an appealing code editor for those just getting started. But can it handle a modern dev environment?"
 tags: design,development,brackets,adobe,code,front end,frontend,front-end,dev,tools,alternative,live preview,brackets extract,html,css,webtools
 topic: software

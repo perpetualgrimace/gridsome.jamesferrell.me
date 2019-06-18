@@ -1,5 +1,20 @@
 <static-query>
+  query Blog ($page: Int) {
+    articles: allArticle (page: $page, sortBy: "published") {
+      edges {
+        node {
+          id
+          title
+          published (format: "MMMM YYYY")
+          description
+          path
+          slug
+        }
+      }
+    }
+  }
 </static-query>
+
 
 <script>
   import GridIcon from "~/svg/GridIcon.svg";
@@ -9,19 +24,67 @@
     components: {
       GridIcon
     },
+    props: {
+      currentID: { default: null }
+    },
     computed: {
-      prev() {
-        return {
-          slug: "blog/slug",
-          label: "previous",
-          title: "prev title"
-        };
+      total() {
+        return this.$static.articles.edges.length.toString();
       },
-      next() {
+      newestNode() {
+        return this.$static.articles.edges.filter(
+          page => page.node.id === this.total.toString()
+        )[0].node;
+      },
+      oldestNode() {
+        return this.$static.articles.edges.filter(
+          page => page.node.id === "1"
+        )[0].node;
+      },
+
+      prev() {
+        // no older articles; wrap around to the newest one instead
+        if (this.currentID === this.oldestNode.id) {
+          return {
+            slug: this.newestNode.path,
+            title: this.newestNode.title,
+            label: "newest"
+          }
+        }
+
+        // else get the previous article
+        const prevID = parseInt(this.currentID) - 1;
+        const prevNode = this.$static.articles.edges.filter(
+          page => page.node.id === prevID.toString()
+        )[0].node;
+
         return {
-          slug: "blog/slug",
-          label: "next",
-          title: "next title"
+          slug: prevNode.path,
+          title: prevNode.title,
+          label: "older"
+        }
+      },
+
+      next() {
+        // no newer articles; wrap around to the oldest one instead
+        if (this.currentID === this.newestNode.id) {
+          return {
+            slug: this.oldestNode.path,
+            title: this.oldestNode.title,
+            label: "oldest"
+          }
+        }
+
+        // else get the next article
+        const nextID = parseInt(this.currentID) + 1;
+        const nextNode = this.$static.articles.edges.filter(
+          page => page.node.id === nextID.toString()
+        )[0].node;
+
+        return {
+          slug: nextNode.path,
+          title: nextNode.title,
+          label: "newer"
         };
       }
     }
@@ -48,7 +111,7 @@
       </li>
 
       <li class="paginator-item paginator-item-middle">
-        <g-link :to="blog" class="paginator-link">
+        <g-link to="/blog" class="paginator-link">
           <span class="paginator-inner">
             <GridIcon />
             <span class="u-visually-hidden">All articles</span>
@@ -96,6 +159,7 @@
     height: rem(90); // needed for alignment hack
     padding: $milli;
     background: #fff;
+    text-decoration: none;
   }
 
   .paginator-inner {

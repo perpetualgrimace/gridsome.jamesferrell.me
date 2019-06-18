@@ -1,6 +1,7 @@
 ---
 title: "Custom Keyboard Commands for Keynote: A Designer's Guide"
 slug: custom-keyboard-commands-for-keynote
+id: 4
 description: As a designer, you're going to have to create a Keynote presentation now and then. Hey, at least it isn't PowerPoint. 🔥
 topic: workflow
 heroImg: "./hero.jpg"
