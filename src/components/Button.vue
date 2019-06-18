@@ -3,6 +3,7 @@
     name: "Button",
     props: {
       onClick: { default: null },
+      type:    { default: null },
       link:    { default: null },
       classes: { default: null },
       text:    { default: "missing `text` prop in Button.vue" }
@@ -13,7 +14,7 @@
 
 <template>
   <!-- render as a button or a link, depending on the props -->
-  <button class="button" :class="classes" @click="onClick" v-if="onClick">
+  <button class="button" :class="classes" :type="type" @click="onClick" v-if="onClick || type">
     {{ text }}
   </button>
   <g-link class="button" :class="classes" :to="link" v-else-if="link">

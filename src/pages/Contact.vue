@@ -4,6 +4,7 @@
       title
       headline
       content
+      submitText
     }
   }
 </page-query>
@@ -12,10 +13,11 @@
 <script>
   import { Fragment } from "vue-fragment";
   import SecondarySidebar from "~/components/SecondarySidebar";
+  import Button from "~/components/Button";
 
   export default {
     components: {
-      Fragment, SecondarySidebar
+      Fragment, SecondarySidebar, Button
     },
     metaInfo: {
       title: "Contact"
@@ -82,7 +84,7 @@
         <textarea name="message" v-model="formData.message"></textarea>
       </div>
 
-      <button type="submit">Submit form</button>
+      <Button type="submit" classes="epsilon u-margin-top-lg" :text="$page.d.submitText" />
     </form>
 
     <template slot="sidebar">

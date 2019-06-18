@@ -13,7 +13,7 @@ successHeading: "Thanks for contacting me."
 successText: "I'll be in touch. Probably within a day or so (but maybe longer on weekends)."
 failHeading: "Something went wrong."
 failText: "It's definitely my fault. Please feel free to email me at (email: hello@jamesferrell.me)."
-submit: Initiate conversation
+submitText: Initiate conversation
 email: "hello@jamesferrell.me"
 ---
 

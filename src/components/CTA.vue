@@ -1,8 +1,12 @@
 <script>
   import site from "../../content/site.json";
+  import Button from "~/components/Button";
 
   export default {
     name: "Colophon",
+    components: {
+      Button
+    },
     props: {
       heading:  { default: site.ctaHeading },
       text:     { default: site.ctaText },
@@ -23,9 +27,8 @@
   <article class="cta brand-theme u-left-center u-margin-bottom-sm" :class="classes">
     <h2>{{ heading }}</h2>
     <p>{{ text }}</p>
-    <p>
-      <g-link class="button-inverted link-arrow epsilon" :to="link">{{ linkText }}</g-link>
-    </p>
+
+    <Button :link="link" classes="button-inverted link-arrow epsilon" :text="linkText" />
   </article>
 </template>
 
