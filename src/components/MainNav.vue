@@ -1,10 +1,10 @@
 <script>
   import site from "../../content/site.json";
-  import HamBurger from "./HamBurger.vue";
-  import MainLogo from "./MainLogo.vue";
+  import HamBurger from "./HamBurger";
+  import MainLogo from "./MainLogo";
 
   export default {
-    name: 'MainNav',
+    name: "MainNav",
     components: {
       HamBurger,
       MainLogo
