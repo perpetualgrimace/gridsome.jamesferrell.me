@@ -13,3 +13,13 @@ export function flattenArray(arr) {
      return a.concat(b);
 }, [])
 }
+
+/**
+takes a URL hash and converts it to tag title
+*/
+export function formatHashAsTag(hash) {
+  return hash
+    .replace("#", "")
+    .replace(/-/g, " ")
+    .replace("front end", "front-end");
+}

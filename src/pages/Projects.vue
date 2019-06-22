@@ -11,7 +11,8 @@
 
 <script>
   import site from "../../content/site.json";
-  import ProjectList from "~/components/ProjectList.vue";
+  import {formatHashAsTag} from "~/helpers.js";
+  import ProjectList from "~/components/ProjectList";
   import FilterHeader from "~/components/FilterHeader";
   import CTA from "~/components/CTA";
 
@@ -23,14 +24,24 @@
       title: "Projects"
     },
     methods: {
+      formatHashAsTag,
       handleSelectFilter(selectedFilter) {
         this.selectedFilter = selectedFilter;
       }
     },
-    data () {
+    data() {
       return {
-        site,
-        selectedFilter: "all" // returned from handleSelectFilter() method
+        site
+      }
+    },
+    mounted() {
+      // no SSR errors please
+      let selectedFilter = "all";
+      if (typeof window !== "undefined") {
+        // get selectedFilter from hash
+        if (window.location.hash || window.location.hash !== "#all") {
+          this.selectedFilter = formatHashAsTag(window.location.hash)
+        }
       }
     }
   }
@@ -39,7 +50,11 @@
 <template>
   <Layout :singleColumn="true">
 
-    <FilterHeader contentType="projects" @selectFilter="handleSelectFilter" />
+    <FilterHeader
+      contentType="projects"
+      @selectFilter="handleSelectFilter"
+      :selectedFilter="selectedFilter"
+    />
 
     <ProjectList :selectedFilter="selectedFilter" />
 
