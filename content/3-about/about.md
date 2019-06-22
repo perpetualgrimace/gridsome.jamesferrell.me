@@ -9,11 +9,11 @@ sidebarLinkText: "Resumé page"
 
 ## About me
 
-I'm [T-shaped](https://www.invisionapp.com/blog/t-shaped-designers/), or [mortar](http://bradfrost.com/blog/post/job-title-its-complicated/), or [multidisciplinary](https://www.toptal.com/designers/visual/multidisciplinary-design) — pick your favorite. I started out as a designer who codes, but my roles tend to evolve into more of a front-end developer who designs. I care most about the code that users interact with. So anything I write will be responsive, performant, and accessible.
+I'm [T-shaped](https://www.invisionapp.com/blog/t-shaped-designers/), or [mortar](http://bradfrost.com/blog/post/job-title-its-complicated/), or [multidisciplinary](https://www.toptal.com/designers/visual/multidisciplinary-design) — pick your favorite. I started out as a designer who codes, but my role tends often evolves into more of a front-end developer who designs. I care most about the code that users interact with. So anything I write will be responsive, performant, and accessible.
 
 And I'm not just hacking away — I'm building design systems with a focus on organization and clean, well documented code.
 
-More broadly, I'm a problem solver. I'm not primarily a *creative* — I'm a *builder*.
+More broadly, I'm a problem solver. I consider myself a *builder*, not a *creative*.
 
 ### TODO: principles-list
 
