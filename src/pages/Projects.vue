@@ -30,7 +30,7 @@
     data () {
       return {
         site,
-        selectedFilter // returned from handleSelectFilter() method
+        selectedFilter: "all" // returned from handleSelectFilter() method
       }
     }
   }
