@@ -2,8 +2,8 @@
   export default {
     name: "Tag",
     props: {
-      title: { default: "missing `title` prop in Tag.vue" },
-      slug: { default: null },
+      title:    { default: "missing `title` prop in Tag.vue" },
+      slug:     { default: null },
       selected: { default: false }
     }
   };
@@ -16,6 +16,7 @@
     :class="selected && 'is-selected'"
     :href="`#${slug}`"
     v-if="slug"
+    @click="$emit('updateFilter', title)"
   >
     {{ title }}
     <span class="u-visually-hidden" v-if="selected"> (currently selected)</span>

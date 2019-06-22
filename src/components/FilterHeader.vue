@@ -50,11 +50,13 @@
           edge => filterList.push(edge.node.tags.toLowerCase().split(","))
         );
 
-        const flattenedFilterArray = flattenArray(filterList);
         return Array.from(
-          new Set(flattenedFilterArray) // purge duplicates
+          new Set(flattenArray(filterList)) // flatten array & purge duplicates
         );
       }
+    },
+    updated() {
+      this.$emit("selectFilter", this.selectedFilter)
     }
   };
 </script>
@@ -70,20 +72,22 @@
     <p class="filter-headline-label epsilon">Filter by:</p>
 
     <!-- tag list -->
-    <ul class="filter-tag-list tag-list">
+    <div class="filter-tag-list tag-list">
       <Tag
         slug="all"
         title="All"
+        @updateFilter="selectedFilter = 'all'"
         :selected="selectedFilter === 'all'"
       />
       <Tag
-        :slug="filter"
+        :slug="filter.replace(' ', '-')"
         :key="filter"
         :title="filter"
         :selected="selectedFilter === filter"
+        @updateFilter="selectedFilter = $event"
         v-for="filter in filters"
       />
-    </ul>
+    </div>
 
   </header>
 </template>

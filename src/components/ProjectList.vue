@@ -31,7 +31,8 @@
       Project
     },
     props: {
-      limit: { default: 100 }
+      limit: { default: 100 },
+      selectedFilter: { default: "all" }
     },
     // laziest lazyloading
     mounted() {
@@ -71,6 +72,7 @@
       :laptopImg="node.laptopImg"
       :albumImg="node.albumImg"
       :controllerImg="node.controllerImg"
+      :selectedFilter="selectedFilter"
       :key="node.slug"
     />
   </div>

@@ -16,24 +16,25 @@
     },
     props: {
       // useful defaults
-      visible:       { default: true },
-      layout:        { default: "web" },
-      comingSoon:    { default: false },
-      lazy:          { default: true },
+      visible:        { default: true },
+      layout:         { default: "web" },
+      comingSoon:     { default: false },
+      lazy:           { default: true },
+      selectedFilter: { default: "all" },
       // defaults as warnings
-      title:         { default: "missing `title` prop in Project.vue" },
-      slug:          { default: "missing `slug` prop in Project.vue" },
-      link:          { default: "#missing-`link`-prop-in-Project.vue" },
-      color:         { default: "black" },
-      tags:          { default: "missing `tags` prop in Project.vue" },
-      mobileImg:     { default: "missing-`mobileImg`-prop-in-Project.vue" },
-      laptopImg:     { default: "missing-`laptopImg`-prop-in-Project.vue" },
-      albumImg:      { default: "missing-`albumImg`-prop-in-Project.vue" },
-      controllerImg: { default: "missing-`controllerImg`-prop-in-Project.vue" }
+      title:          { default: "missing `title` prop in Project.vue" },
+      slug:           { default: "missing `slug` prop in Project.vue" },
+      link:           { default: "#missing-`link`-prop-in-Project.vue" },
+      color:          { default: "black" },
+      tags:           { default: "missing `tags` prop in Project.vue" },
+      mobileImg:      { default: "missing-`mobileImg`-prop-in-Project.vue" },
+      laptopImg:      { default: "missing-`laptopImg`-prop-in-Project.vue" },
+      albumImg:       { default: "missing-`albumImg`-prop-in-Project.vue" },
+      controllerImg:  { default: "missing-`controllerImg`-prop-in-Project.vue" }
     },
     computed: {
       splitTags() {
-        return this.tags.split(",");
+        return this.tags.toLowerCase().split(",");
       },
       component() {
         if (this.layout === "web") {
@@ -56,6 +57,12 @@
           };
         }
         else return false;
+      },
+      isHidden() {
+        if (this.selectedFilter !== "all" && !this.splitTags.includes(this.selectedFilter)) {
+          return true;
+        }
+        return false;
       }
     }
   };
@@ -64,7 +71,7 @@
 
 <template>
   <article
-    :class="`project ${ layout }-project dark-theme${ comingSoon ? ' is-coming-soon' : '' }`"
+    :class="`project ${ layout }-project dark-theme${ comingSoon ? ' is-coming-soon' : '' } ${ isHidden ? 'is-hidden' : 'is-visible' }`"
     :style="{ 'background-color': color }"
   >
 
@@ -82,7 +89,7 @@
         </h2>
 
         <!-- tags -->
-        <TagList :tags="splitTags" />
+        <TagList :tags="splitTags" :selectedFilter="selectedFilter" />
       </div>
 
       <component :is="component.name" :img="component.img" :lazy="lazy" />
@@ -174,6 +181,11 @@
           background-color: $brand-color;
         }
       }
+    }
+
+    // hidden state
+    &.is-hidden {
+      display: none;
     }
   }
 

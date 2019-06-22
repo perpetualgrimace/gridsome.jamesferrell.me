@@ -22,9 +22,15 @@
     metaInfo: {
       title: "Projects"
     },
+    methods: {
+      handleSelectFilter(selectedFilter) {
+        this.selectedFilter = selectedFilter;
+      }
+    },
     data () {
       return {
-        site
+        site,
+        selectedFilter // returned from handleSelectFilter() method
       }
     }
   }
@@ -33,9 +39,9 @@
 <template>
   <Layout :singleColumn="true">
 
-    <FilterHeader contentType="projects" />
+    <FilterHeader contentType="projects" @selectFilter="handleSelectFilter" />
 
-    <ProjectList />
+    <ProjectList :selectedFilter="selectedFilter" />
 
     <template slot="cta">
       <CTA :heading="$page.d.ctaHeadline" />
