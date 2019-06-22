@@ -4,16 +4,26 @@
   export default {
     name: "Card",
     props: {
-      visible:     { default: true },
-      title:       { default: "missing `title` prop in Card.vue" },
-      slug:        { default: "missing `slug` prop in Card.vue" },
-      link:        { default: "#missing-`link`-prop-in-Card.vue" },
-      description: { default: "missing `description` prop in Card.vue" },
-      published:   { default: "missing `published` prop in Card.vue" }
+      title:          { default: "missing `title` prop in Card.vue" },
+      slug:           { default: "missing `slug` prop in Card.vue" },
+      link:           { default: "#missing-`link`-prop-in-Card.vue" },
+      description:    { default: "missing `description` prop in Card.vue" },
+      published:      { default: "missing `published` prop in Card.vue" },
+      selectedFilter: { default: "all" },
+      tags:           { default: "webdev" }
     },
     computed: {
       relativeDate() {
         return moment(this.published, "YYYY-MM-DD").fromNow();
+      },
+      splitTags() {
+        return this.tags.toLowerCase().split(",");
+      },
+      isHidden() {
+        if (this.selectedFilter !== "all" && !this.splitTags.includes(this.selectedFilter)) {
+          return true;
+        }
+        return false;
       }
     }
   };
@@ -21,7 +31,7 @@
 
 
 <template>
-  <article class="card-container g-col">
+  <article class="card-container g-col" :class="isHidden ? 'is-hidden' : 'is-visible'">
 
     <!-- inner container -->
     <div class="card-inner">
@@ -65,6 +75,11 @@
 
   .card-container {
     width: 100%;
+
+    // hidden state
+    &.is-hidden {
+      display: none;
+    }
   }
 
   .card-inner {

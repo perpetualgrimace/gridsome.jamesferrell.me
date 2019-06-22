@@ -9,6 +9,7 @@
           description
           path
           slug
+          tags: topic
         }
       }
     }
@@ -17,7 +18,7 @@
 
 
 <script>
-  import Card from "~/components/Card.vue";
+  import Card from "~/components/Card";
 
   export default {
     components: {
@@ -25,7 +26,8 @@
     },
     props: {
       limit: { default: 12 },
-      heading: { default: null }
+      heading: { default: null },
+      selectedFilter: { default: "all" }
     },
     name: "ArticleList"
   }
@@ -46,6 +48,8 @@
         :description="node.description"
         :published="node.published"
         :slug="node.slug"
+        :tags="node.tags"
+        :selectedFilter="selectedFilter"
         :key="node.slug"
       />
     </div>

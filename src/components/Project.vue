@@ -16,7 +16,6 @@
     },
     props: {
       // useful defaults
-      visible:        { default: true },
       layout:         { default: "web" },
       comingSoon:     { default: false },
       lazy:           { default: true },
@@ -71,7 +70,8 @@
 
 <template>
   <article
-    :class="`project ${ layout }-project dark-theme${ comingSoon ? ' is-coming-soon' : '' } ${ isHidden ? 'is-hidden' : 'is-visible' }`"
+    class="project dark-theme"
+    :class="`${ layout }-project ${ comingSoon ? ' is-coming-soon' : '' } ${ isHidden ? 'is-hidden' : 'is-visible' }`"
     :style="{ 'background-color': color }"
   >
 

@@ -9,6 +9,7 @@
   }
 </page-query>
 
+
 <script>
   import site from "../../content/site.json";
   import {formatHashAsTag} from "~/helpers.js";
@@ -23,29 +24,33 @@
     metaInfo: {
       title: "Projects"
     },
+    data() {
+      return {
+        site,
+        selectedFilter: "all"
+      }
+    },
     methods: {
       formatHashAsTag,
       handleSelectFilter(selectedFilter) {
         this.selectedFilter = selectedFilter;
       }
     },
-    data() {
-      return {
-        site
-      }
-    },
     mounted() {
       // no SSR errors please
-      let selectedFilter = "all";
       if (typeof window !== "undefined") {
         // get selectedFilter from hash
         if (window.location.hash || window.location.hash !== "#all") {
           this.selectedFilter = formatHashAsTag(window.location.hash)
         }
       }
+    },
+    destroyed() {
+      this.selectedFilter = "all";
     }
   }
 </script>
+
 
 <template>
   <Layout :singleColumn="true">
@@ -53,10 +58,10 @@
     <FilterHeader
       contentType="projects"
       @selectFilter="handleSelectFilter"
-      :selectedFilter="selectedFilter"
+      :selectedFilter="selectedFilter || 'all'"
     />
 
-    <ProjectList :selectedFilter="selectedFilter" />
+    <ProjectList :selectedFilter="selectedFilter || 'all'" />
 
     <template slot="cta">
       <CTA :heading="$page.d.ctaHeadline" />

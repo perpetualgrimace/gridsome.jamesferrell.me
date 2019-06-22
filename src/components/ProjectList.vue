@@ -23,7 +23,7 @@
 
 
 <script>
-  import Project from "~/components/Project.vue";
+  import Project from "~/components/Project";
 
   export default {
     name: "ProjectList",

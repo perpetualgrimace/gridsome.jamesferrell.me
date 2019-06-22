@@ -11,6 +11,7 @@
 
 <script>
   import site from "../../content/site.json";
+  import {formatHashAsTag} from "~/helpers.js";
   import ArticleList from "~/components/ArticleList";
   import FilterHeader from "~/components/FilterHeader";
   import SecondarySidebar from "~/components/SecondarySidebar";
@@ -25,8 +26,27 @@
     },
     data() {
       return {
-        site
+        site,
+        selectedFilter: "all"
       }
+    },
+    methods: {
+      formatHashAsTag,
+      handleSelectFilter(selectedFilter) {
+        this.selectedFilter = selectedFilter;
+      }
+    },
+    mounted() {
+      // no SSR errors please
+      if (typeof window !== "undefined") {
+        // get selectedFilter from hash
+        if (window.location.hash || window.location.hash !== "#all") {
+          this.selectedFilter = formatHashAsTag(window.location.hash)
+        }
+      }
+    },
+    destroyed() {
+      this.selectedFilter = "all";
     }
   }
 </script>
@@ -35,9 +55,13 @@
 <template>
   <Layout>
 
-    <FilterHeader />
+    <FilterHeader
+      @selectFilter="handleSelectFilter"
+      :selectedFilter="selectedFilter || 'all'"
+    />
 
-    <ArticleList />
+    <ArticleList :selectedFilter="selectedFilter || 'all'" />
+
     <template slot="sidebar">
       <SecondarySidebar :content="$page.d.content" />
     </template>
