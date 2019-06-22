@@ -3,7 +3,7 @@ title: Black Key Recording
 slug: black-key-recording
 color: "#F2494D"
 thumbnailLayout: web
-tags: "web design,web development,branding"
+tags: "design,front-end development,branding"
 mobileImg: blackkey-mobile.png
 mobileImg2x: blackkey-mobile@2x.png
 laptopImg: blackkey-laptop.png

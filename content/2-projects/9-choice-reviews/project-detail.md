@@ -3,7 +3,7 @@ title: "Choice Reviews"
 slug: choice-reviews
 color: "#38E08F"
 thumbnailLayout: web
-tags: "web design,web development"
+tags: "design,front-end development"
 mobileImg: choice-mobile.png
 mobileImg2x: choice-mobile@2x.png
 laptopImg: choice-laptop.png

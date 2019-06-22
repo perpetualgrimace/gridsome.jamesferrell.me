@@ -3,7 +3,7 @@ title: "Fusion Lamps"
 slug: fusion-lamps
 color: "#697078"
 thumbnailLayout: web
-tags: "web design,branding"
+tags: "design,branding"
 mobileImg: fusion-mobile.png
 mobileImg2x: fusion-mobile@2x.png
 laptopImg: fusion-laptop.png

@@ -3,7 +3,7 @@ title: "Venus Wafers"
 slug: venus-wafers
 color: "#CC9F68"
 thumbnailLayout: web
-tags: web development
+tags: front-end development
 mobileImg: venus-mobile.png
 mobileImg2x: venus-mobile@2x.png
 laptopImg: venus-laptop.png

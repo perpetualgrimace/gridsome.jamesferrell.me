@@ -3,7 +3,7 @@ title: "Advance Medical"
 slug: advance-medical
 color: "#1481CD"
 thumbnailLayout: web
-tags: "web design,web development"
+tags: "design,front-end development"
 mobileImg: advancemedical-mobile.png
 mobileImg2x: advancemedical-mobile@2x.png
 laptopImg: advancemedical-laptop.png

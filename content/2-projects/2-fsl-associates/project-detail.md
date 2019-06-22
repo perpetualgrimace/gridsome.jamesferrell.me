@@ -3,7 +3,7 @@ title: "FSL Associates"
 slug: fsl-associates
 color: "#1784B7"
 thumbnailLayout: web
-tags: web development
+tags: front-end development
 mobileImg: fsl-mobile.png
 mobileImg2x: fsl-mobile@2x.png
 laptopImg: fsl-laptop.png
