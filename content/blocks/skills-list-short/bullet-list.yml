@@ -1,0 +1,21 @@
+list:
+  -
+    title: "Especially good at:"
+    items:
+      - "Responsive web design"
+      - "UI design & prototyping"
+      - "Style guides & design systems"
+      - "Website architecture & wireframing"
+      - "Sketch, Photoshop, & Illustrator"
+      - "Semantic, accessible HTML (HTML5)"
+      - "Clean, well-documented CSS (SCSS, PostCSS, CSS3)"
+      - "Kirby CMS (v2)"
+  -
+    title: "Competent while actively improving:"
+    items:
+      - "Javascript (ES6)"
+      - "Vue & React"
+      - "Gridsome & Gatsby"
+      - "Web performance"
+      - "Git"
+      - "Jekyll"
