@@ -166,6 +166,14 @@ module.exports = {
         path: "content/blocks/main-sidebar.md",
         typeName: "MainSidebar"
       }
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/blocks/**/bullet-list.yml",
+        typeName: "BulletList",
+        yamljson: {}
+      }
     }
   ],
 
@@ -175,7 +183,8 @@ module.exports = {
       externalLinksTarget: false,
       externalLinksRel: ["nofollow"],
       anchorClassName: "heading-anchor-link"
-    }
+    },
+    yamljson: {}
   },
 
   // svg loader

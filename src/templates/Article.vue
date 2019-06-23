@@ -20,7 +20,7 @@
 
   export default {
     components: {
-      ImageHeader, Colophon, Paginator
+      ImageHeader, Colophon, Paginator, BulletList
     },
     metaInfo() {
       return {
