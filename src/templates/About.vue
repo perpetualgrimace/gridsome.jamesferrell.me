@@ -32,30 +32,30 @@
 
 <template>
   <Layout>
+    <template slot="hero">
+      <ImageHeader
+        :id="$page.d.id"
+        :headline="$page.d.headline"
+        :imgSrc="$page.d.heroImg"
+      />
+    </template>
+
     <VueRemarkContent>
-      <template slot="hero">
-        <ImageHeader
-          :id="$page.d.id"
-          :headline="$page.d.headline"
-          :imgSrc="$page.d.heroImg"
-        />
-      </template>
-
       <div class="content" v-html="$page.d.content" />
-
-      <template slot="sidebar">
-        <SecondarySidebar
-          :heading="$page.d.sidebarHeading"
-          :text="$page.d.sidebarText"
-          :link="$page.d.sidebarLink"
-          :linkText="$page.d.sidebarLinkText"
-        />
-      </template>
-
-      <template slot="cta">
-        <CTA :heading="$page.d.ctaHeadline" />
-      </template>
     </VueRemarkContent>
+
+    <template slot="sidebar">
+      <SecondarySidebar
+        :heading="$page.d.sidebarHeading"
+        :text="$page.d.sidebarText"
+        :link="$page.d.sidebarLink"
+        :linkText="$page.d.sidebarLinkText"
+      />
+    </template>
+
+    <template slot="cta">
+      <CTA :heading="$page.d.ctaHeadline" />
+    </template>
   </Layout>
 </template>
 

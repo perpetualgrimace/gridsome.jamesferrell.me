@@ -38,31 +38,31 @@
 
 <template>
   <Layout>
-    <VueRemarkContent>
-      <template slot="hero">
-        <ImageHeader
-          :id="$page.d.id"
-          :headline="$page.d.title"
-          :imgSrc="$page.d.heroImg"
-        />
-      </template>
+    <template slot="hero">
+      <ImageHeader
+        :id="$page.d.id"
+        :headline="$page.d.title"
+        :imgSrc="$page.d.heroImg"
+      />
+    </template>
 
+    <VueRemarkContent>
       <div class="article">
         <div class="content" v-html="$page.d.content" />
       </div>
-
-      <template slot="sidebar">
-        <dl>
-          <dt>Published</dt>
-          <dd>{{ relativeDate }}</dd>
-        </dl>
-      </template>
-
-      <template slot="cta">
-        <Paginator :currentID="$page.d.id" />
-        <Colophon classes="u-margin-bottom-sm" />
-      </template>
     </VueRemarkContent>
+
+    <template slot="sidebar">
+      <dl>
+        <dt>Published</dt>
+        <dd>{{ relativeDate }}</dd>
+      </dl>
+    </template>
+
+    <template slot="cta">
+      <Paginator :currentID="$page.d.id" />
+      <Colophon classes="u-margin-bottom-sm" />
+    </template>
   </Layout>
 </template>
 
