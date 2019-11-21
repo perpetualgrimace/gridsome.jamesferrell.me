@@ -7,6 +7,7 @@ tags: design,motivation,personal growth,inspirational
 topic: problem solving
 hashtag: learning
 published: 2015-05-05
+updated:
 ---
 
 Some people discover the thing that they want to do for the rest of their lives in a moment of clarity. Some refer to this as a calling. At one point, in the midst of their daily routine, EUREKA! They realize this is the thing for them.

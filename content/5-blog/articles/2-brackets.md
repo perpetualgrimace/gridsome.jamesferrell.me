@@ -8,6 +8,7 @@ topic: software
 hashtag: webtools
 heroImg: "./hero.png"
 published: 2015-07-11
+updated: 2017-09-06
 ---
 
 *This was originally meant to be a series. But at this point I'm probably just going to keep a list of the tools I use on my (link: uses text: uses page).*
@@ -36,11 +37,11 @@ In a recent update, you can use Brackets Extract to open up a Photoshop document
 
 Since Brackets was designed for front-end developers, you won't find any support for PHP.
 
-Lately I've been building as many sites with [Kirby CMS](html://getkirby.com) as possible, which uses PHP. Since Brackets was designed for front-end developers, working with back-end code is a chore. There isn't any syntax highlighting or theme colors for PHP, and trying to open Live Preview with a PHP file causes an error message, even if you're running a local server. Another strike.
+Lately *(read: in 2015)* I've been building as many sites with [Kirby CMS](html://getkirby.com) as possible, which uses PHP. Since Brackets was designed for front-end developers, working with back-end code is a chore. There isn't any syntax highlighting or theme colors for PHP, and trying to open Live Preview with a PHP file causes an error message, even if you're running a local server. Another strike.
 
 ## Is it there a place for it today?
 
-While Brackets was my main code editor for a couple of years, it simply doesn't fit into the modern development workflow. And that's a bummer.
+While Brackets was my main code editor for a couple of years, it doesn't feel like it fits into the modern development workflow.
 
 You can still use it as a code editor and set up the functionality of Live Preview through other means, but what's the point? When I realized the main selling point of Brackets had become a hinderance, the only logical course of action was to move on.
 

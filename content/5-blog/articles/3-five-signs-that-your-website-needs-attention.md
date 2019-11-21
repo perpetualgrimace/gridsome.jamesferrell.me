@@ -7,6 +7,7 @@ tags: advertising,marketing
 topic: webdev
 hashtag: webdev
 published: 2015-07-24
+updated:
 ---
 
 ## 1: It isn't responsive

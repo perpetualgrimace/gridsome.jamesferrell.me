@@ -14,7 +14,6 @@
     "@gridsome/transformer-remark": "^0.3.4",
     "@gridsome/vue-remark": "^0.1.5",
     "gridsome": "^0.7.11",
-    "gridsome-transformer-yamljson": "^0.1.5",
     "vue-fragment": "^1.5.1",
     "vue-svg-loader": "^0.12.0"
   },

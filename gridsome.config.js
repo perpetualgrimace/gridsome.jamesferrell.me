@@ -174,9 +174,8 @@ module.exports = {
     {
       use: "@gridsome/source-filesystem",
       options: {
-        path: "content/blocks/**/bullet-list.yml",
-        typeName: "BulletList",
-        yamljson: {}
+        path: "content/blocks/bullet-lists/*.md",
+        typeName: "BulletList"
       }
     }
   ],
@@ -187,8 +186,7 @@ module.exports = {
       externalLinksTarget: false,
       externalLinksRel: ["nofollow"],
       anchorClassName: "heading-anchor-link"
-    },
-    yamljson: {}
+    }
   },
 
   // svg loader

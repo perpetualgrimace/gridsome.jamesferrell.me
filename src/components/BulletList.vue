@@ -4,7 +4,8 @@
       edges {
         node {
           path
-          list: json
+          content
+          slug
         }
       }
     }
@@ -16,13 +17,13 @@
   export default {
     name: "BulletList",
     props: {
-      slug: { default: "custom-keyboard-commands-for-keynote-list" }
+      slug: { default: "keynote-commands-list" }
     },
     computed: {
       list() {
         const edges = this.$static.lists.edges;
-        const currentList = edges.filter(edge => edge.node.path.indexOf(this.slug))[0].node.list;
-        return JSON.parse(currentList);
+        const currentList = edges.filter(edge => edge.node.slug === this.slug)[0].node.content;
+        return currentList;
       }
     }
   };
@@ -31,13 +32,7 @@
 
 <template>
   <div class="block block-list block-bullet-list content epsilon">
-    <div class="block-bullet-list-group" v-for="list in list.list">
-      <h3 className="block-bullet-list-heading">{{ list.title }}</h3>
-      <p>{{ list.description }}</p>
-      <ul>
-        <li v-for="item in list.items" v-html="item" />
-      </ul>
-    </div>
+    <div v-html="list" />
   </div>
 </template>
 
@@ -127,23 +122,6 @@
     // spacing of individual definitions (each definition is wrapped in an li)
     li + li {
       margin-top: 1em;
-    }
-  }
-
-  // bullet list adjustments
-  .block-bullet-list-group {
-
-    & + & {
-      margin-top: 1.6rem;
-    }
-
-    ul {
-      line-height: 1;
-      margin-top: 0.8em;
-
-      li + li {
-        margin-top: 0.25rem;
-      }
     }
   }
 </style>

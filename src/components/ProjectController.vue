@@ -104,12 +104,12 @@
   }
 
   // fudged vertical alignment on huge screens
-  .controller {
+  .controller-img {
     @media (min-width: $xxl) {
       transform: scale(1.125) translateX(10%);
     }
     @media (min-width: $xxxl) {
-      transform: scale(1.25) translate(20%, 5%);
+      border: blue;
     }
   }
 </style>

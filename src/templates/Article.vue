@@ -5,6 +5,7 @@
       slug
       title
       published
+      updated
       content
       heroImg
     }
@@ -30,6 +31,9 @@
     computed: {
       relativeDate() {
         return moment(this.$page.d.published, "YYYY-MM-DD").fromNow();
+      },
+      relativeUpdated() {
+        return this.$page.d.updated ? moment(this.$page.d.updated, "YYYY-MM-DD").fromNow() : null;
       }
     }
   }
@@ -52,6 +56,11 @@
       <dl>
         <dt>Published</dt>
         <dd>{{ relativeDate }}</dd>
+      </dl>
+
+      <dl v-if="relativeUpdated">
+        <dt>Last updated</dt>
+        <dd>{{ relativeUpdated }}</dd>
       </dl>
     </template>
 
