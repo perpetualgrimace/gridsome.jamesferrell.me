@@ -42,6 +42,7 @@
     // set heading style to beta
     h2, h3 {
       font-size: $beta;
+      z-index: auto; // reset anchor link offset
     }
 
     // set vertical spacing
