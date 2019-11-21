@@ -46,11 +46,7 @@
       />
     </template>
 
-    <VueRemarkContent>
-      <div class="article">
-        <div class="content" v-html="$page.d.content" />
-      </div>
-    </VueRemarkContent>
+    <VueRemarkContent class="content" />
 
     <template slot="sidebar">
       <dl>

@@ -42,9 +42,7 @@
       />
     </template>
 
-    <VueRemarkContent>
-      <div class="content" v-html="$page.d.content" />
-    </VueRemarkContent>
+    <VueRemarkContent class="content" />
 
     <template slot="sidebar">
       <SecondarySidebar
