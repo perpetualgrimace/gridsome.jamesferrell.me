@@ -25,6 +25,7 @@ module.exports = {
           @import "@/scss/1-utils/_functions.scss";
           @import "@/scss/1-utils/_variables.scss";
           @import "@/scss/1-utils/_mixins.scss";
+          @import "@/scss/1-utils/_keyframes.scss";
         `
       }
     }

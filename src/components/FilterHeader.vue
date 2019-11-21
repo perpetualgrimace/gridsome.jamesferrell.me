@@ -141,20 +141,7 @@
   }
 
   // states for filter-header component
-  [data-type-item].is-hidden {
+  .project.is-hidden {
     display: none;
-  }
-
-  // add highlight effect
-  [data-type].is-highlighted {
-    animation: highlight 1s ease-out;
-  }
-
-  // hightlight effect
-  @keyframes highlight {
-    from {
-      box-shadow: 0 0 2em rgba($white, 0.25);
-      background-color: darken($black, 15);
-    }
   }
 </style>

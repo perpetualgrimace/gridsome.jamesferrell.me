@@ -11,38 +11,47 @@
 
 
 <template>
-  <a
-    class="tag epsilon"
-    :class="selected && 'is-selected'"
-    :href="`#${slug}`"
-    v-if="slug"
-    @click="$emit('updateFilter', title)"
-  >
-    {{ title }}
-    <span class="u-visually-hidden" v-if="selected"> (currently selected)</span>
-  </a>
-  <span class="tag epsilon" v-else>
-    {{ title }}
-  </span>
+  <li class="tag epsilon" :class="selected && 'is-selected'">
+    <a
+      class="tag-link"
+      :href="`#${slug}`"
+      v-if="slug"
+      @click="$emit('updateFilter', title)"
+    >
+      {{ title }}
+      <span class="u-visually-hidden" v-if="selected"> (currently selected)</span>
+    </a>
+    <span class="tag-span" v-else>
+      {{ title }}
+    </span>
+  </li>
 </template>
 
 
 <style lang="scss">
   .tag {
-    // typography
-    @include body-semibold-font;
-    @include font-smoothing;
-    text-transform: uppercase;
-    // sizing & positoning
     display: inline-block;
-    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
-    // theming
-    background-color: $black;
-    border-radius: $radius;
-    color: $white;
+    margin-bottom: 0.6em;
+
+    // space out adjacent tags
+    &:not(:last-of-type) {
+      margin-right: $gutter / 2;
+    }
+
+    & > * {
+      // typography
+      @include body-semibold-font;
+      @include font-smoothing;
+      text-transform: uppercase;
+      // sizing
+      padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+      // theming
+      border-radius: $radius;
+      color: $white;
+    }
 
     // links
-    &[href] {
+    .tag-link {
       background-color: $dark-1;
       text-decoration: none;
 
@@ -53,10 +62,23 @@
       }
     }
 
+    // non-links
+    .tag-span {
+      display: block;
+      background-color: $black;
+    }
+
     // selected state
     &.is-selected {
-      background-color: $black;
       pointer-events: none;
+
+      .tag-link {
+        background-color: $black;
+      }
+
+      .tag-span {
+        animation: highlight 1.25s ease-out;
+      }
     }
   }
 </style>

@@ -10,7 +10,8 @@
       tags: {
         type: Array,
         default: ["missing-`tags`-prop-in-TagList.vue"]
-      }
+      },
+      selectedFilter: { default: "all", type: String }
     }
   };
 </script>
@@ -18,20 +19,10 @@
 
 <template>
   <ul class="tag-list">
-    <Tag v-for="tag in tags" :title="tag" :key="tag" />
+    <Tag v-for="tag in tags" :title="tag" :key="tag" :selected="selectedFilter === tag" />
   </ul>
 </template>
 
 
 <style lang="scss">
-  // list of tags, each wrapped in an li
-  .tag-list > .tag {
-    display: inline-block;
-    margin-bottom: 0.5em;
-
-    // space out adjacent tags
-    &:not(:last-of-type) {
-      margin-right: $gutter / 2;
-    }
-  }
 </style>

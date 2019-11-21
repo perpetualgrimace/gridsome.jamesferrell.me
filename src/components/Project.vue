@@ -71,7 +71,7 @@
 <template>
   <article
     class="project dark-theme"
-    :class="`${ layout }-project ${ comingSoon ? ' is-coming-soon' : '' } ${ isHidden ? 'is-hidden' : 'is-visible' }`"
+    :class="`${ layout }-project${ comingSoon ? ' is-coming-soon' : '' } ${ isHidden ? 'is-hidden' : 'is-visible' }`"
     :style="{ 'background-color': color }"
   >
 
