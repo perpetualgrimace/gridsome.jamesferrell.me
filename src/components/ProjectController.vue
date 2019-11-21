@@ -24,7 +24,7 @@
   <div class="controller">
     <img
       v-if="lazy"
-      class="device-image"
+      class="project-img controller-img"
       :data-src="src"
       :data-srcset="srcset"
       sizes="320px"
@@ -75,7 +75,6 @@
 
   // caption left, image right layout
   @media (min-width: 68em) {
-
     // position controller right
     .controller {
       position: absolute;
@@ -105,16 +104,12 @@
   }
 
   // fudged vertical alignment on huge screens
-  @media (min-width: $xxl) {
-    .controller {
-      top: -1rem;
-      // border: 1px solid blue; // debug
+  .controller {
+    @media (min-width: $xxl) {
+      transform: scale(1.125) translateX(10%);
     }
-  }
-  @media (min-width: 110em) {
-    .controller {
-      top: 0;
-      // border: 1px solid red; // debug
+    @media (min-width: $xxxl) {
+      transform: scale(1.25) translate(20%, 5%);
     }
   }
 </style>
