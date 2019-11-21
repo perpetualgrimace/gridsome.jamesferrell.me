@@ -167,7 +167,7 @@
         text-transform: uppercase;
         // transitions
         transition:
-          color $timing-gradual,
+          color $timing-long,
           background $timing;
       }
 
@@ -236,25 +236,32 @@
   // make entire project item clickable, hide link by default
   .project-link {
     @include absolute-expand;
-    background-color: rgba($white, 0.05);
     z-index: 3;
-    // to transition
+    background-color: rgba($white, 0.05);
+    // transitions
     opacity: 0;
+    transition: opacity $timing-longest;
 
+    // set transition timing
+    & + .project-inner > *:not(:first-child) {
+      transition: transform $timing-longest;
+
+      // phone is in the foreground; it moves faster
+      &.mobile-container {
+        transition: transform $timing-long;
+      }
+    }
     // interactions
     &:hover, &:focus {
       opacity: 1;
 
-      // phone is in the foreground; it moves farther, faster
-      & ~ .project-inner .mobile-container {
-        transform: translateY(-12px);
-      }
-
-      // other items are in the background; they move less, slower
-      & ~ .project-inner .laptop-container,
-      & ~ .project-inner .controller,
-      & ~ .project-inner .album {
+      & + .project-inner > *:not(:first-child) {
         transform: translateY(-4px);
+
+        // phone is in the foreground; it moves farther
+        &.mobile-container {
+          transform: translateY(-12px);
+        }
       }
     }
   }
