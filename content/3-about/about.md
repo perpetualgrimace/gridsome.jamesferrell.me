@@ -7,6 +7,8 @@ sidebarLink: resume
 sidebarLinkText: "Resumé page"
 ---
 
+import BulletList from "~/components/BulletList"
+
 ## About me
 
 I'm [T-shaped](https://www.invisionapp.com/blog/t-shaped-designers/), or [mortar](http://bradfrost.com/blog/post/job-title-its-complicated/), or [multidisciplinary](https://www.toptal.com/designers/visual/multidisciplinary-design) — pick your favorite. I started out as a designer who codes, but my role tends often evolves into more of a front-end developer who designs. I care most about the code that users interact with. So anything I write will be responsive, performant, and accessible.
@@ -17,7 +19,7 @@ More broadly, I'm a problem solver. I consider myself a *builder*, not a *creati
 
 ### TODO: principles-list
 
-### TODO: skills-list-full
+<BulletList slug="skills-list" />
 
 ## Software & hardware
 

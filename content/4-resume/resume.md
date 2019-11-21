@@ -12,7 +12,10 @@ downloadLink: "jamesferrell-resume-2018-screen.pdf"
 downloadLinkText: Download PDF
 ---
 
+import BulletList from "~/components/BulletList"
+
 - TODO: employment-list
 - TODO: internships-list
 - TODO: education-list
-- TODO: skills-list-short
+
+<BulletList slug="skills-list" />

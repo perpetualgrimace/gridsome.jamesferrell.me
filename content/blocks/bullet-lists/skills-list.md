@@ -1,5 +1,5 @@
 ---
-slug: skills-list-long
+slug: skills-list
 ---
 
 ### Core design skills:
