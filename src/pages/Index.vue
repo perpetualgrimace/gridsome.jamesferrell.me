@@ -27,7 +27,7 @@
 </script>
 
 <template>
-  <Layout>
+  <Layout wrapperClass="disable-anchor-offset">
 
     <template slot="hero">
       <Colophon headline="Introduction" />

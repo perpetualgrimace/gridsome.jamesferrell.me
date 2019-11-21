@@ -9,6 +9,7 @@
       Fragment, MainNav, MainSidebar, Footer
     },
     props: {
+      wrapperClass: { default: null, type: String },
       singleColumn: { default: false, type: Boolean }
     }
   }
@@ -20,7 +21,7 @@
     <MainNav />
 
     <transition name="transition-fade" appear>
-      <main class="main u-padding-top-off" id="main">
+      <main :class="`main u-padding-top-off ${wrapperClass}`" id="main">
 
         <slot name="hero" />
 
