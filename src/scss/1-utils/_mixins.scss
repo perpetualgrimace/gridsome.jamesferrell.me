@@ -331,10 +331,7 @@
   }
 
   // hover state
-  &:hover,
-  &:focus,
-  &:active,
-  &.is-active {
+  &:hover, &:focus {
     background-color: $white; // make room for pseudo element
     color: $white; // make text readable against pseudo element
 

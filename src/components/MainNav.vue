@@ -200,9 +200,9 @@
   // main nav link interactions
   ////////////////////////////////////////////
 
-  .main-nav-link {
+  .main-nav-link:not(.is-active) {
     // simplified hover effect via background-color on smaller screens
-    &:hover, &:active, &:focus, &.is-active {
+    &:hover, &:focus {
       background-color: $brand-color;
       color: $white;
     }
