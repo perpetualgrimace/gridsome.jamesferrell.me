@@ -20,7 +20,7 @@
 
   export default {
     components: {
-      ImageHeader, Colophon, Paginator, BulletList
+      ImageHeader, Colophon, Paginator
     },
     metaInfo() {
       return {
@@ -38,29 +38,31 @@
 
 <template>
   <Layout>
-    <template slot="hero">
-      <ImageHeader
-        :id="$page.d.id"
-        :headline="$page.d.title"
-        :imgSrc="$page.d.heroImg"
-      />
-    </template>
+    <VueRemarkContent>
+      <template slot="hero">
+        <ImageHeader
+          :id="$page.d.id"
+          :headline="$page.d.title"
+          :imgSrc="$page.d.heroImg"
+        />
+      </template>
 
-    <div class="article">
-      <div class="content" v-html="$page.d.content" />
-    </div>
+      <div class="article">
+        <div class="content" v-html="$page.d.content" />
+      </div>
 
-    <template slot="sidebar">
-      <dl>
-        <dt>Published</dt>
-        <dd>{{ relativeDate }}</dd>
-      </dl>
-    </template>
+      <template slot="sidebar">
+        <dl>
+          <dt>Published</dt>
+          <dd>{{ relativeDate }}</dd>
+        </dl>
+      </template>
 
-    <template slot="cta">
-      <Paginator :currentID="$page.d.id" />
-      <Colophon classes="u-margin-bottom-sm" />
-    </template>
+      <template slot="cta">
+        <Paginator :currentID="$page.d.id" />
+        <Colophon classes="u-margin-bottom-sm" />
+      </template>
+    </VueRemarkContent>
   </Layout>
 </template>
 

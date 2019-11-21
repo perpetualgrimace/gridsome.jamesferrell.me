@@ -4,8 +4,8 @@ slug: custom-keyboard-commands-for-keynote
 id: 4
 description: As a designer, you're going to have to create a Keynote presentation now and then. Hey, at least it isn't PowerPoint. 🔥
 topic: workflow
-heroImg: "./hero.jpg"
-thumbImg: "./thumb.jpg"
+heroImg: "./4-assets/hero.jpg"
+thumbImg: "./4-assets/thumb.jpg"
 tags: productivity,efficiency
 hashtag: keynote
 published: 2017-10-31
@@ -110,7 +110,7 @@ Yeah, so I'm a big fan of spending a bit of time up front to customize my tools 
 7. Input your keyboard shortcut
 
 **TODO: figure component with image & figcaption**
-![](./add-custom-app-shortcut-osx.gif)
+![](./4-assets/add-custom-app-shortcut-osx.gif)
 Boom isn't a command and <code>⌘B</code> is already Bold, but you get the point.
 
 ## Now go forth, and be productive

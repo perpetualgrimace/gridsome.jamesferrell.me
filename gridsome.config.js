@@ -94,20 +94,22 @@ module.exports = {
 
     // about
     {
-      use: "@gridsome/source-filesystem",
+      use: "@gridsome/vue-remark",
       options: {
-        path: "content/3-about/about.md",
+        baseDir: "content/3-about",
         typeName: "About",
+        template: "./src/templates/About.vue",
         route: "/about"
       }
     },
 
     // resume
     {
-      use: "@gridsome/source-filesystem",
+      use: "@gridsome/vue-remark",
       options: {
-        path: "content/4-resume/resume.md",
+        baseDir: "content/4-resume",
         typeName: "Resume",
+        template: "./src/templates/Resume.vue",
         route: "/resume"
       }
     },
@@ -116,7 +118,7 @@ module.exports = {
     {
       use: "@gridsome/source-filesystem",
       options: {
-        path: "content/**/blog.md",
+        path: "content/5-blog/blog.md",
         typeName: "Blog",
         route: "/blog"
       }
@@ -124,10 +126,11 @@ module.exports = {
 
     // blog posts
     {
-      use: "@gridsome/source-filesystem",
+      use: "@gridsome/vue-remark",
       options: {
-        path: "content/**/blog-article.md",
+        baseDir: "content/5-blog/articles",
         typeName: "Article",
+        template: "./src/templates/Article.vue",
         route: "/blog/:slug"
       }
     },

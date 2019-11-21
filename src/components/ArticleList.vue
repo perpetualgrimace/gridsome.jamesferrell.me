@@ -3,7 +3,7 @@
     articles: allArticle (page: $page, sortBy: "published") {
       edges {
         node {
-          _id
+          id
           title
           published (format: "MMMM YYYY")
           description
