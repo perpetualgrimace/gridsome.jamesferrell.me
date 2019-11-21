@@ -83,6 +83,14 @@
       }
     }
 
+    // break the avatar out of the grid where there's space
+    .colophon-inner {
+      @media (min-width: $l) and (min-height: 43em) {
+        margin-left: -5rem;
+        z-index: 2;
+      }
+    }
+
     @media (min-width: $xl) {
       & ~ .secondary-content {
         top: 11.5rem;
@@ -119,28 +127,37 @@
     width: calc(#{rem(100)});
 
     @media (max-width: $xs - 0.001) {
-      margin-bottom: 1em;
+      margin: -0.5em auto 1.5em auto;
+      width: calc(#{rem(200)});
+      z-index: 12; /* in front of main-nav */
     }
 
     // bigger avatar on bigger screens
     @media (min-width: $l) {
-      width: calc(#{rem(160)});;
+      width: calc(#{rem(160)});
+    }
+  }
+
+  .colophon-avatar-inner {
+    @media (min-width: $xs) {
+      padding-right: 1em;
+    }
+    @media (min-width: $l) {
+      padding-right: 2em;
     }
   }
 
   .colophon-avatar-img {
     border-radius: 50%;
     overflow: hidden;
-    width: rem(80);
-    height: rem(80);
+    width: 100%;
+    height: 100%;
     // initial placeholder state
     font-size: rem(58);
 
     @media (min-width: $l) {
-      width: rem(120);
-      height: rem(120);
-      // initial placeholder state
       font-size: rem(80);
+      transform: scale(1.125);
     }
   }
 
