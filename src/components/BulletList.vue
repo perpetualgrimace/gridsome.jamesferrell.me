@@ -40,5 +40,13 @@
 <style lang="scss">
   .bullet-list {
     @include list-block;
+
+    @media (min-width: 35em) {
+      h3[id="grouping-and-locking"] + p + ul {
+        break-after: always;
+
+        & + h3 { margin-top: 0; }
+      }
+    }
   }
 </style>
