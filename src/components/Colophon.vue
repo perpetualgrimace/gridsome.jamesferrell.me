@@ -12,12 +12,12 @@
   export default {
     name: "Colophon",
     props: {
-      headline:     { default: site.title },
-      classes:      { default: null },
-      img:          { default: "/images/jamesatar.jpg" },
-      img2x:        { default: "/images/jamesatar@2x.jpg" }
+      headline: { default: site.title },
+      classes:  { default: null },
+      img:      { default: "/images/jamesatar.jpg" },
+      img2x:    { default: "/images/jamesatar@2x.jpg" }
     },
-    data () {
+    data() {
       return {
         site,
         faceClicked: false
@@ -146,7 +146,6 @@
     @media (max-width: $xs - 0.001) {
       margin: -0.5em auto 1.5em auto;
       width: calc(#{rem(200)});
-      z-index: 12; // in front of main-nav
     }
 
     // bigger avatar on bigger screens

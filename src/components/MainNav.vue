@@ -9,9 +9,16 @@
       HamBurger,
       MainLogo
     },
-    data () {
+    data() {
       return {
-        site
+        site,
+        menuOpen: false
+      }
+    },
+    methods: {
+      toggleMenu: function(e) {
+        if (e) e.preventDefault();
+        this.menuOpen = !this.menuOpen;
       }
     }
   };
@@ -25,14 +32,17 @@
       <a class="button-inverted skip-link u-visually-hidden" href="#main">Skip to content</a>
 
       <!-- nav menu toggle for small screens -->
-      <HamBurger />
+      <HamBurger :onClick="toggleMenu" :menuOpen="menuOpen" />
 
-      <!-- logo + name for small screens -->
       <MainLogo />
 
       <!-- main nav -->
-      <!-- TODO: functional nav on mobile -->
-      <ul id="nav" class="main-nav-list is-collapsed">
+      <ul id="nav" class="main-nav-list" :class="menuOpen ? 'is-expanded' : 'is-collapsed'">
+        <li class="main-nav-item u-hide-above-s">
+          <g-link to="/" class="main-nav-link" exact-active-class="is-active">
+            home
+          </g-link>
+        </li>
         <li class="main-nav-item" v-for="nav in site.mainNav">
           <g-link :to="nav.link" class="main-nav-link" active-class="is-active" exact-active-class="is-active">
             {{ nav.title }}
@@ -127,10 +137,15 @@
       padding-left: 1.125rem;
     }
 
-    // expanded menu state via js
+    // expanded menu state
     &.is-expanded {
       @include dropdown-visible;
       @include nav-toggle-max-width;
+      z-index: 30;
+      transition:
+        opacity $timing,
+        transform $timing;
+      transition-delay: 0.2s;
 
       // position expanded list directly below menu toggle button
       @media (max-width: $s - 0.001) {
@@ -202,15 +217,7 @@
   ////////////////////////////////////////////
 
   .main-nav-link:not(.is-active) {
-    // simplified hover effect via background-color on smaller screens
-    &:hover, &:focus {
-      background-color: $brand-color;
-      color: $white;
-    }
-    // fancy hover via pseudo element on bigger screens
-    @media (min-width: $l) {
-      @include fancy-nav-hover;
-    }
+    @include fancy-nav-hover;
   }
 
 

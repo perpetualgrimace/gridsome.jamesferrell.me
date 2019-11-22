@@ -187,6 +187,10 @@
     color: $brand-color;
   }
 
+  .grid-icon {
+    transition: transform $timing;
+  }
+
   ////////////////////////////////
   // flexbox enhancement
   ////////////////////////////////

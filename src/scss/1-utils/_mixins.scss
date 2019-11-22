@@ -309,14 +309,6 @@
   z-index: 1;
 }
 
-
-// nav-logo style
-@mixin nav-logo {
-  // make the same height as the main navbar
-  height: $nav-height;
-}
-
-
 // apply fancy hover interactions to a link
 @mixin fancy-nav-hover {
   &:after {
@@ -326,7 +318,14 @@
     background: $brand-light;
     background-image: linear-gradient(to bottom, $brand-light, $brand-color);
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateX(-100%);
+    transition:
+      opacity $timing,
+      transform $timing;
+
+    @media (min-width: $s) {
+      transform: translateY(100%);
+    }
   }
 
   // hover state

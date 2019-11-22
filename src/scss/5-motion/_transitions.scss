@@ -3,7 +3,7 @@
 // interactive stuff
 a, label, input, textarea, button,
 [class*=button], [class*=button]:after,
-.main-nav-link:after, .card-inner {
+.card-inner {
   transition:
     color $timing,
     text-decoration-color $timing,
@@ -22,25 +22,7 @@ svg * {
     opacity $timing;
 }
 
-// nav list smooth expand / collapse
-.nav-list,
-.dropdown {
-  transition:
-    opacity $timing,
-    transform $timing;
-}
-
-// nav toggle
-.nav-toggle {
-  transition:
-    opacity $timing,
-    background-color $timing-long;
-}
-
 // transform only
-.hamburger,
-.hamburger-bun,
-.grid-icon,
 .secondary-link > svg,
 [class*=link-arrow]:before {
   transition: transform $timing;
