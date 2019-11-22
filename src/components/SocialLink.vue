@@ -26,6 +26,11 @@
     color: $brand-color;
     text-decoration: none;
 
+    @supports (text-decoration-color: currentColor) {
+      text-decoration: underline;
+      text-decoration-color: $brand-black;
+    }
+
     // interactions
     &:hover, &:focus {
       color: $brand-light;

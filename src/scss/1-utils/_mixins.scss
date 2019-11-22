@@ -350,6 +350,28 @@
   }
 }
 
+// list block shared style
+@mixin list-block {
+  // if it's too small for columns, bump up font sizes
+  @media (max-width: 35em - 0.001) {
+    h3 { font-size: $bigger-than-delta; }
+    p, li { font-size: $delta; }
+    em { font-size: $epsilon; } // subhead
+  }
+  // halfway between $xs and $s
+  @media (min-width: 35em) {
+    columns: 2;
+    column-gap: $gutter * 2;
+
+    ul, p { break-inside: avoid; }
+    h2 {
+      column-span: all;
+      margin-bottom: 0.5em;
+    }
+    h3 { break-after: avoid; }
+  }
+}
+
 
 ////////////////////////////////
 // brand-theme base styles

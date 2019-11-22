@@ -12,22 +12,37 @@ main {
   @include font-smoothing;
   color: $dark-2;
 
+  // headings
   h1, h2, h3, h4, h5, h6,
   .heading {
     color: $black;
+
+    // links inside headings, but not the auto-generated ones
+    & > a:not([aria-hidden="true"]) {
+      color: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+      text-decoration-color: $light-2;
+      transition:
+        $timing color,
+        $timing text-decoration-color;
+
+      &:hover, &:focus {
+        text-decoration-color: $brand-light;
+        color: $brand-black;
+      }
+    }
   }
 
   // links
   a {
     color: $brand-color;
+    text-decoration-color: $light-2;
 
     &:hover,
     &:focus {
       color: $brand-light;
-    }
-
-    &:active {
-      color: $brand-light;
+      text-decoration-color: currentColor;
     }
   }
 

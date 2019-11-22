@@ -6,6 +6,7 @@ a, label, input, textarea, button,
 .main-nav-link:after, .card-inner {
   transition:
     color $timing,
+    text-decoration-color $timing,
     opacity $timing,
     background $timing,
     border $timing,

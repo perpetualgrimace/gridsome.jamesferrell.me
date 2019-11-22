@@ -54,8 +54,8 @@
 
     &-active {
       transition:
-        opacity 0.25s ease-out,
-        transform 0.25s ease-out;
+        opacity $timing 0.25s,
+        transform $timing 0.25s;
     }
   }
 </style>
