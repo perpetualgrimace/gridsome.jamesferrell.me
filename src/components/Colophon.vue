@@ -31,7 +31,6 @@
     <div class="colophon-inner">
 
       <!-- my face -->
-      <!-- TODO: animate my dumb face in -->
       <div class="colophon-avatar">
         <div class="colophon-avatar-inner">
           <img
@@ -130,7 +129,7 @@
     @media (max-width: $xs - 0.001) {
       margin: -0.5em auto 1.5em auto;
       width: calc(#{rem(200)});
-      z-index: 12; /* in front of main-nav */
+      z-index: 12; // in front of main-nav
     }
 
     // bigger avatar on bigger screens
@@ -140,6 +139,7 @@
   }
 
   .colophon-avatar-inner {
+    animation: popIn $timing-longest 0.45s; // page transition duration + delay
     @media (min-width: $xs) {
       padding-right: 1em;
     }

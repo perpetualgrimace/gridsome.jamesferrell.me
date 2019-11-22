@@ -77,7 +77,7 @@
       }
 
       .tag-span {
-        animation: highlight 1.25s ease-out;
+        animation: highlight $timing;
       }
     }
   }

@@ -56,6 +56,11 @@
       transition:
         opacity $timing 0.25s,
         transform $timing 0.25s;
+
+      // hide avatar when loading in
+      & .colophon-avatar-inner {
+        opacity: 0;
+      }
     }
   }
 </style>

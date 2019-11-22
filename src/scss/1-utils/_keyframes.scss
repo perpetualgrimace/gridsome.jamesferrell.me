@@ -1,7 +1,15 @@
-// hightlight effect
+// tag selected
 @keyframes highlight {
   from {
     box-shadow: 0 0 2em rgba($white, 0.25);
     background-color: darken($black, 15);
+  }
+}
+
+// pop in
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
   }
 }
