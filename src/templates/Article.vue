@@ -52,6 +52,9 @@
 
     <VueRemarkContent class="content" />
 
+    <!-- TODO: time to read -->
+    <!-- TODO: twitter share link -->
+    <!-- TODO: style sidebar -->
     <template slot="sidebar">
       <dl>
         <dt>Published</dt>

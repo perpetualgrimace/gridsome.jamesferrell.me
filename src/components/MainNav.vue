@@ -31,6 +31,7 @@
       <MainLogo />
 
       <!-- main nav -->
+      <!-- TODO: functional nav on mobile -->
       <ul id="nav" class="main-nav-list is-collapsed">
         <li class="main-nav-item" v-for="nav in site.mainNav">
           <g-link :to="nav.link" class="main-nav-link" active-class="is-active" exact-active-class="is-active">

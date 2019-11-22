@@ -53,7 +53,7 @@
 
 
 <template>
-  <Layout :singleColumn="true" wrapperClass="disable-anchor-offset">
+  <Layout :singleColumn="true">
 
     <FilterHeader
       contentType="projects"

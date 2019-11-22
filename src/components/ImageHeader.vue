@@ -9,7 +9,7 @@
   }
 </script>
 
-
+<!-- TODO: hero images -->
 <template>
   <header class="image-header header dark-theme" role="banner">
 

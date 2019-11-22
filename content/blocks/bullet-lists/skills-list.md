@@ -2,13 +2,7 @@
 slug: skills-list
 ---
 
-### Core design skills:
-- UI design & prototyping
-- Mobile & responsive design
-- Sketch, Photoshop, Illustrator
-- Content architecture & wireframing
-- Keynote presentations
-
+## Skills & Capabilities
 
 ### Core development skills:
 - Design systems development
@@ -17,6 +11,13 @@ slug: skills-list
 - Single page apps (React, Vue, & Svelte)
 - Static site generators (Jekyll)
 - Flat file CMS’s (Kirby)
+
+### Core design skills:
+- UI design & prototyping
+- Mobile & responsive design
+- Sketch, Photoshop, Illustrator
+- Content architecture & wireframing
+- Keynote presentations
 
 
 ### Capable but not excited about:

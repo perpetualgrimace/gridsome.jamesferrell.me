@@ -53,7 +53,7 @@
 
 
 <template>
-  <Layout wrapperClass="disable-anchor-offset">
+  <Layout>
 
     <FilterHeader
       @selectFilter="handleSelectFilter"

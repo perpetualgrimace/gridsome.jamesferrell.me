@@ -33,7 +33,7 @@
 
 
 <template>
-  <Layout wrapperClass="disable-anchor-offset">
+  <Layout>
     <template slot="hero">
       <ImageHeader
         :id="$page.d.id"

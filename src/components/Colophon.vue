@@ -31,6 +31,7 @@
     <div class="colophon-inner">
 
       <!-- my face -->
+      <!-- TODO: animate my dumb face in -->
       <div class="colophon-avatar">
         <div class="colophon-avatar-inner">
           <img

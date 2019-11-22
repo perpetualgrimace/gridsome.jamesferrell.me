@@ -8,6 +8,7 @@ sidebarLinkText: "Resumé page"
 ---
 
 import BulletList from "~/components/BulletList"
+import DefinitionList from "~/components/DefinitionList"
 
 ## About me
 
@@ -17,7 +18,7 @@ And I'm not just hacking away — I'm building design systems with a focus on o
 
 More broadly, I'm a problem solver. I consider myself a *builder*, not a *creative*.
 
-### TODO: principles-list
+<DefinitionList slug="principles-list" />
 
 <BulletList slug="skills-list" />
 

@@ -3,7 +3,6 @@
     d: index(path: "/") {
       title
       projectsHeading
-      projectsLink
       blogHeading
       content
     }
@@ -27,7 +26,7 @@
 </script>
 
 <template>
-  <Layout wrapperClass="disable-anchor-offset">
+  <Layout>
 
     <template slot="hero">
       <Colophon headline="Introduction" />

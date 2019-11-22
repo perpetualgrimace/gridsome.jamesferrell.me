@@ -21,7 +21,7 @@
     <MainNav />
 
     <transition name="transition-fade" appear>
-      <main :class="`main u-padding-top-off ${wrapperClass}`" id="main">
+      <main class="main u-padding-top-off" id="main">
 
         <slot name="hero" />
 

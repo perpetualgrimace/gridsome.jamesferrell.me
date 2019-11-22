@@ -1,6 +1,7 @@
 <page-query>
-  query Uses {
-    d: uses(path: "/uses") {
+  query ($path: String!) {
+    d: uses (path: $path) {
+      id
       title
       headline
       content
@@ -37,7 +38,7 @@
       />
     </template>
 
-    <div class="content" v-html="$page.d.content" />
+    <VueRemarkContent class="content" />
 
     <template slot="sidebar">
       <SecondarySidebar :heading="$page.d.sidebarHeading" :text="$page.d.sidebarText" />

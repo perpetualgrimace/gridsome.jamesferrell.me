@@ -29,29 +29,3 @@ main .content ~ * {
 .content figure > figcaption {
   margin-top: 0.5em;
 }
-
-
-////////////////////////////////
-// anchor link offset
-////////////////////////////////
-
-// add anchor link offset to any element with an id
-main:not(.disable-anchor-offset) [id]:before {
-  @include pseudo;
-  visibility: hidden;
-  pointer-events: none;
-
-  // account for fixed nav
-  @include bp-fixed-nav {
-    margin-top: -5rem;
-    height: 5rem;
-  }
-}
-// prevent heading offset from obscuring other elements
-main:not(.disable-anchor-offset) {
-  z-index: 1;
-
-  h2, h3, h4, h5, h6 {
-    z-index: -1;
-  }
-}

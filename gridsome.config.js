@@ -148,10 +148,11 @@ module.exports = {
 
     // uses
     {
-      use: "@gridsome/source-filesystem",
+      use: "@gridsome/vue-remark",
       options: {
-        path: "content/uses/uses.md",
+        baseDir: "content/uses",
         typeName: "Uses",
+        template: "./src/templates/Uses.vue",
         route: "/uses"
       }
     },
@@ -176,6 +177,13 @@ module.exports = {
       options: {
         path: "content/blocks/bullet-lists/*.md",
         typeName: "BulletList"
+      }
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/blocks/definition-lists/*.md",
+        typeName: "DefinitionList"
       }
     }
   ],

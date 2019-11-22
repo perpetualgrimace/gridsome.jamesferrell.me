@@ -47,3 +47,5 @@ If getting started is the hardest part, then the path to mastery is by far the l
 On your journey, you will encounter plateaus and self-doubt. There is only one shortcut: find people better than you. Spend time with them, learn from them, and welcome their feedback.
 
 Also, start calling yourself the thing that you want to be. Because until you do so, no one — including yourself — will take you seriously. _Right now_ is the perfect time to announce to the world that you are a doer-of-the-thing.
+
+Then, follow through and do the thing.

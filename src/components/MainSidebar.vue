@@ -43,7 +43,7 @@
   </div>
 </template>
 
-
+<!-- TODO: fix wonky half sidebar at the bottom of small screens -->
 <style lang="scss">
 
   .main-sidebar {

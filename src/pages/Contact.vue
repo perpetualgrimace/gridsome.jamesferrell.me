@@ -50,7 +50,7 @@
   }
 </script>
 
-
+<!-- TODO: the entire :damn: contaact form -->
 <template>
   <Layout>
 
@@ -87,6 +87,7 @@
       <Button type="submit" classes="epsilon u-margin-top-lg" :text="$page.d.submitText" />
     </form>
 
+    <!-- TODO: instagram, facebook, linkedin -->
     <template slot="sidebar">
       <SecondarySidebar :content="$page.d.content" />
     </template>

@@ -37,6 +37,8 @@
 </template>
 
 
+<!-- TODO: style bullet list -->
+<!-- TODO: trim unused block styles -->
 <style lang="scss">
   ////////////////////////////////
   // list block types

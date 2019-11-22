@@ -47,7 +47,6 @@
 
 <style lang="scss">
   // shared styles
-  // TODO: device wrapper component?
   .device-shell {
     @include device-shadow;
     background: $black;
