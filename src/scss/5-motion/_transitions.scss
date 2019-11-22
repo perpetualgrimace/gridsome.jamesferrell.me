@@ -14,10 +14,6 @@ a, label, input, textarea, button,
     box-shadow $timing;
 }
 
-.tertiary {
-  transition: transform $timing-long;
-}
-
 // svgs
 svg * {
   transition:

@@ -52,7 +52,7 @@
           {{ description }}
         </p>
 
-        <p class="card-meta milli u-uppercase u-margin-top-sm">
+        <p class="card-meta milli u-uppercase">
           posted {{ relativeDate }}
         </p>
       </div>
@@ -135,8 +135,20 @@
   // caption positioning
   .card-caption {
     margin-top: 0;
-    // padding-left: $gutter;
+    // pin relative date to bottom right
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    & :nth-last-child(2) {
+      margin-bottom: auto;
+    }
+
+    & :last-child {
+      text-align: right;
+      margin-bottom: -0.5em;
+    }
   }
 
 
@@ -151,7 +163,7 @@
 
   // adjust line height
   .card-description {
-    line-height: 1.25;
+    @include sidebar-paragraph-spacing;
   }
 
 

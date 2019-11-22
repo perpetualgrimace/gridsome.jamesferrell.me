@@ -86,15 +86,45 @@
 
   // switch to inline list style when the space is available
   @media (min-width: $xs) {
-    .footer-nav {
-      padding-top: rem(13);
-      padding-bottom: rem(13);
-    }
     .footer-nav-list {
       text-align: center;
     }
     .footer-nav-item {
       display: inline-block;
+    }
+  }
+
+  // in between the stacked gray nav, and the centered gray nav
+  @media (min-width: $xs) and (max-width: $l - 0.001) {
+    .footer[class] {
+      background: $brand-black;
+      margin-bottom: -2rem;
+    }
+    .footer-nav {
+      margin-top: -#{rem(13)};
+      margin-bottom: -#{rem(13)};
+
+      .footer-nav-list {
+        display: flex;
+        justify-content: space-between;
+        // override grid
+        &.g-col {
+          width: calc(100% + #{$gutter});
+          max-width: calc(100% + #{$gutter});
+          margin: 0 -#{$gutter / 2};
+        }
+
+        & > * {
+          flex: 1 0 16.666%;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $l) {
+    .footer-nav {
+      padding-top: rem(13);
+      padding-bottom: rem(13);
     }
   }
 

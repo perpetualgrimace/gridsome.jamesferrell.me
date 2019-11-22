@@ -32,13 +32,12 @@
 
 
 /////////////////////////////////////////////
-// tertiary sidebar small screen treatments
+// sidebar small screen treatments
 /////////////////////////////////////////////
 
 // display bio and social links horizontally where that makes sense
 .main-sidebar {
-
-  // add padding for tertiary-sidebar sections on smaller viewports
+  // add padding for sidebar sections on smaller viewports
   // NOTE: needed to line up with the rest of the layout
   @media (max-width: $l - 0.001) {
     > * {
@@ -51,11 +50,6 @@
     display: flex;
     align-items: center;
     background: $brand-black;
-
-    // each is exactly half width
-    > * {
-      width: 50%;
-    }
   }
 }
 
@@ -76,7 +70,7 @@
 
 @media (min-width: $l) {
 
-  // position tertiary-sidebar on the left side of the screen
+  // position sidebar on the left side of the screen
   .main-sidebar {
     @include secondary-content-width;
     position: absolute;

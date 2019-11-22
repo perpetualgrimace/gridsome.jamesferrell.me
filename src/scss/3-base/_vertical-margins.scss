@@ -29,3 +29,7 @@ main .content ~ * {
 .content figure > figcaption {
   margin-top: 0.5em;
 }
+
+.secondary p {
+  @include sidebar-paragraph-spacing;
+}

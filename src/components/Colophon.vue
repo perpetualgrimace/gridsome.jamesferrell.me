@@ -55,7 +55,7 @@
 
         <!-- bio -->
         <div
-          class="colophon-caption-bio tertiary-text"
+          class="colophon-caption-bio"
           :class="headline === site.title && 'epsilon'"
           v-html="$static.d.content"
         />
@@ -106,6 +106,10 @@
     @media (min-width: $m) {
       padding: rem(30) rem(40);
     }
+  }
+
+  .colophon-caption-bio > p {
+    @include sidebar-paragraph-spacing;
   }
 
 

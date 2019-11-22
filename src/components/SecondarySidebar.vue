@@ -19,10 +19,10 @@
 
 <template>
   <!-- use main markdown content as sidebar -->
-  <aside class="content secondary tertiary-text epsilon" v-html="content" v-if="content" />
+  <aside class="content secondary epsilon" v-html="content" v-if="content" />
 
   <!-- construct sidebar from individual props -->
-  <aside class="content secondary tertiary-text epsilon" v-else-if="heading && text">
+  <aside class="content secondary epsilon" v-else-if="heading && text">
     <h2>{{ heading }}</h2>
     <p>{{ text }}</p>
 
@@ -69,7 +69,7 @@
       @include secondary-content-as-primary;
     }
     @media (min-width: $xl) {
-      & h2:not(.gamma) {
+      h2:not(.gamma) {
         font-size: $delta;
       }
     }
@@ -78,11 +78,7 @@
   // set secondary list item line-height and spacing
   // used in blog-article-secondary meta list
   .secondary-item {
-    line-height: 1.25;
-
-    & + & {
-      margin-top: 1.25em;
-    }
+    @include sidebar-paragraph-spacing;
   }
 
   // give the label some room to breath
