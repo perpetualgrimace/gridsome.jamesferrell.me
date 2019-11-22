@@ -12,14 +12,22 @@
   export default {
     name: "Colophon",
     props: {
-      headline: { default: site.title },
-      classes:  { default: null },
-      img:      { default: "/images/jamesatar.jpg" },
-      img2x:    { default: "/images/jamesatar@2x.jpg" }
+      headline:     { default: site.title },
+      classes:      { default: null },
+      img:          { default: "/images/jamesatar.jpg" },
+      img2x:        { default: "/images/jamesatar@2x.jpg" }
     },
     data () {
       return {
-        site
+        site,
+        faceClicked: false
+      }
+    },
+    methods: {
+      onFaceClick: function() {
+        if (!this.faceClicked) alert("Hey, that's not very nice 😬");
+        this.faceClicked++;
+        console.log("Please don't click my face again.");
       }
     }
   };
@@ -35,9 +43,14 @@
         <div class="colophon-avatar-inner">
           <img
             class="colophon-avatar-img"
+            :class="faceClicked ? 'is-clicked' : ''"
             :src="img"
             :srcset="`${img} 1x, ${img2x} 2x`"
             alt="😬"
+            draggable="false"
+            aria-hidden
+            title=" ...is there something on my face? 😬"
+            @click="onFaceClick"
           />
         </div>
       </div>
@@ -163,6 +176,16 @@
     @media (min-width: $l) {
       font-size: rem(80);
       transform: scale(1.125);
+    }
+
+    &:not(.is-clicked):hover {
+      cursor: pointer;
+      animation: pulse 2s 1s;
+    }
+    &.is-clicked {
+      cursor: not-allowed;
+
+      &:active { animation: pulse 0.1s; }
     }
   }
 

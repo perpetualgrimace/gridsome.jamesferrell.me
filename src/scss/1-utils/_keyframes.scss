@@ -13,3 +13,11 @@
     transform: scale(0);
   }
 }
+
+// pop in
+@keyframes pulse {
+  50% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+}
