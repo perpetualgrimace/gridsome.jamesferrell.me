@@ -77,7 +77,7 @@
       }
 
       .tag-span {
-        animation: highlight $timing;
+        animation: highlight $timing-longest;
       }
     }
   }

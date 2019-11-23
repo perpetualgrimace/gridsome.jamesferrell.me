@@ -1,5 +1,5 @@
 ---
-title: Big math
+title: Big Math
 slug: big-math
 color: "#B32259"
 thumbnailLayout: album
