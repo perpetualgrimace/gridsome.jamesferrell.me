@@ -94,13 +94,13 @@
       min-height: 10rem;
 
       .colophon-inner {
-        padding: 2rem 9.5rem;
+        padding: 2rem 4.5rem 2rem 9.5rem;
       }
     }
 
     // break the avatar out of the grid where there's space
-    .colophon-inner {
-      @media (min-width: $l) and (min-height: 43em) {
+    .colophon-avatar {
+      @media (min-width: $l) {
         margin-left: -5rem;
         z-index: 2;
       }

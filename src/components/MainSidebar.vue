@@ -29,16 +29,14 @@
 
 
 <template>
-  <div class="main-sidebar">
-    <div class="main-sidebar brand-black-theme">
-      <div class="main-sidebar-inner">
+  <div class="main-sidebar brand-black-theme">
+    <div class="main-sidebar-inner">
 
-        <ul class="main-sidebar-social-list">
-          <SocialLink v-for="social in site.socialAccounts" :social="social" :key="social.name" />
-        </ul>
+      <ul class="main-sidebar-social-list">
+        <SocialLink v-for="social in site.socialAccounts" :social="social" :key="social.name" />
+      </ul>
 
-        <footer class="main-sidebar-copyright epsilon" role="contentinfo" v-html="$static.d.content" />
-      </div>
+      <footer class="main-sidebar-copyright epsilon" role="contentinfo" v-html="$static.d.content" />
     </div>
   </div>
 </template>
