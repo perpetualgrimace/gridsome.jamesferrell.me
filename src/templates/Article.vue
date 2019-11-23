@@ -76,5 +76,7 @@
 
 
 <style lang="scss">
-
+  .content p > img {
+    width: 100%;
+  }
 </style>

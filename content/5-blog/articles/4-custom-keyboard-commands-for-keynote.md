@@ -45,7 +45,7 @@ What I'm getting at is, Keynote's default keyboard shortcuts are weird and you s
 7. Input your keyboard shortcut
 
 ![](./4-assets/add-custom-app-shortcut-osx.gif)
-Boom isn’t a command and <code>⌘B</code> is already Bold, but you get the point.
+Boom isn’t a command and `⌘B` is already Bold, but you get the point.
 
 ## Now go forth, and be productive
 

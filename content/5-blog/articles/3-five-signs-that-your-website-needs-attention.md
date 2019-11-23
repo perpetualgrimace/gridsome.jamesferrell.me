@@ -6,6 +6,7 @@ description: "As time marches on, so does the web. Let's make sure your website 
 tags: advertising,marketing
 topic: webdev
 hashtag: webdev
+heroImg: "./3-assets/hero.jpg"
 published: 2015-07-24
 updated:
 ---

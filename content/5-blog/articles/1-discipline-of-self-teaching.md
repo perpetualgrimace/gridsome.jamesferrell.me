@@ -4,13 +4,14 @@ slug: discipline-of-self-teaching
 id: 1
 description: "How to channel your enthusiasm into productivity and learn a new craft, in three easy steps."
 tags: design,motivation,personal growth,inspirational
+heroImg: "./1-assets/hero.jpg"
 topic: problem solving
 hashtag: learning
 published: 2015-05-05
 updated:
 ---
 
-Some people discover the thing that they want to do for the rest of their lives in a moment of clarity. Some refer to this as a calling. At one point, in the midst of their daily routine, EUREKA! They realize this is the thing for them.
+Some people discover the thing that they want to do for the rest of their lives in a moment of clarity. Some refer to this as a calling. At one point, in the midst of their daily routine, **EUREKA**! They realize this is the thing for them.
 
 I think it’s safe to say that most of us don’t experience that moment — [some weirdos](http://bermancreative.com/blog/subjectivity-vs-objectivity) aside. Generally speaking, we become momentarily interested in a thing, and then we stumble upon another interesting thing, and then we lose interest in that other thing that we found interesting before, and then we move on. We repeat this process endlessly and, over time, we wind up learning a little about a lot of things.
 
@@ -34,7 +35,7 @@ It’s time to dive in headfirst.
 
 Pick up a tool that feels relevant to the task at hand. You’ve already learned about that tool, so use it. I’ll just wait here.
 
-…
+![Spike from Cowboy Beebop patiently waits, leaning against a wall and nonchalantly tossing a coin and catching it](./1-assets/waiting.gif)
 
 You did it! See, that wasn’t so bad, right? I mean, the thing you did is probably at least a little bad, but that’s not the point. You’ve learned from the experience and you can do it better next time.
 

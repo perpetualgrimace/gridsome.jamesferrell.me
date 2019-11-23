@@ -2,14 +2,15 @@
   export default {
     name: "ImageHeader",
     props: {
-      headline: {default: "missing `headline` prop in ImageHeader.vue"},
-      subhead: {default: null},
-      imgSrc: {default: null},
+      headline:   {default: "missing `headline` prop in ImageHeader.vue"},
+      subhead:    {default: null},
+      imgSrc:     {default: null},
+      defaultImg: {default: "/images/workspace-hero.jpg"}
     }
   }
 </script>
 
-<!-- TODO: hero images -->
+
 <template>
   <header class="image-header header dark-theme" role="banner">
 
@@ -20,7 +21,7 @@
       </span>
     </h1>
 
-    <!-- <g-image v-if="$page.d.imgSrc" :src="$page.d.imgSrc" /> -->
+    <g-image class="image-header-img" :src="imgSrc || defaultImg" draggable="false" />
 
   </header>
 </template>
@@ -38,10 +39,9 @@
   }
 
   // hero image container
-  .hero {
+  .image-header-img {
     @include absolute-expand;
-    background-size: cover;
-    background-position: center;
+    object-fit: cover;
   }
 
 
