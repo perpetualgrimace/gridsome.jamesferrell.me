@@ -43,8 +43,6 @@
 
 <style lang="scss">
   .main-sidebar {
-    z-index: 1; // in front of hero
-
     & footer a {
       font-weight: inherit;
     }
@@ -94,12 +92,14 @@
 
   .main-sidebar-inner {
     padding: $gutter;
+    z-index: 2; // in front of footer on small screens
 
     @media (min-width: $l) {
       max-width: $sidebar-width;
       margin: 0 auto;
       padding: rem(40);
       width: 100%;
+      z-index: 1; // clickable on big screens
     }
     @include bp-fixed-nav {
       position: fixed;
