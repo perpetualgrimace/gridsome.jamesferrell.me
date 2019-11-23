@@ -28,6 +28,7 @@
         if (!this.faceClicked) alert("Hey, that's not very nice 😬");
         this.faceClicked++;
         console.log("Please don't click my face again.");
+        if (this.faceClicked >= 20) alert("kbyeeee");
       }
     }
   };
@@ -51,6 +52,7 @@
             aria-hidden
             title=" ...is there something on my face? 😬"
             @click="onFaceClick"
+            :style="faceClicked ? `transform: scale(${ 1 - (faceClicked * 0.05) })` : null"
           />
         </div>
       </div>
@@ -183,8 +185,7 @@
     }
     &.is-clicked {
       cursor: not-allowed;
-
-      &:active { animation: pulse 0.1s; }
+      transition: transform $timing-longest;
     }
   }
 

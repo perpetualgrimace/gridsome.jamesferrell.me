@@ -75,7 +75,7 @@
 
       // interactions
       &:hover, &:focus {
-        background-color: rgba($brand-dark, 0.25);
+        background-color: lighten($brand-black, 1);
       }
     }
 
