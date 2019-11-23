@@ -59,7 +59,7 @@
   <div class="project-list">
     <Project
       v-for="({ node }, i) in $static.projects.edges"
-      v-if="i < limit"
+      v-if="i < limit && node.order"
       :title="node.title"
       :slug="node.slug"
       :link="node.externalLink"
