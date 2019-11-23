@@ -176,6 +176,10 @@
         cursor: default;
         background-color: transparent !important;
 
+        &:hover + .project-inner .device-container {
+          transform: none;
+        }
+
         &:hover + .project-banner {
           color: $white;
           background-color: $brand-color;
