@@ -10,7 +10,7 @@
   "dependencies": {
     "@gridsome/plugin-critical": "^0.1.6",
     "@gridsome/plugin-sitemap": "^0.2.2",
-    "@gridsome/source-filesystem": "^0.6.1",
+    "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.3.4",
     "@gridsome/vue-remark": "^0.1.5",
     "gridsome": "^0.7.11",
