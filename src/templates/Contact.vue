@@ -137,14 +137,39 @@
             <label for="name" class="label">
               {{ $page.d.labelName }}
             </label>
-            <input type="text" name="name" id="name" v-model="formData.name" autofocus ref="nameField"/>
+            <input
+              class="contact-form-input"
+              :class="validationError === 'emptyName' ? 'is-invalid' : ''"
+              type="text"
+              name="name"
+              id="name"
+              v-model="formData.name"
+              ref="nameField"
+            />
+            <label class="contact-form-error" :class="validationError && validationError === 'emptyName' ? 'is-visible' : 'is-hidden'" for="name">
+              {{ $page.d.emptyName }}
+            </label>
           </div>
           <!-- email -->
           <div class="g-col g-6 u-padding-top-off">
             <label for="email">
               {{ $page.d.labelEmail }}
             </label>
-            <input type="text" name="email" id="email" v-model="formData.email" ref="emailField" />
+            <input
+              class="contact-form-input"
+              :class="validationError === 'emptyEmail' || validationError === 'invalidEmail' ? 'is-invalid' : ''"
+              type="text"
+              name="email"
+              id="email"
+              v-model="formData.email"
+              ref="emailField"
+            />
+            <label class="contact-form-error" :class="validationError && validationError === 'emptyEmail' ? 'is-visible' : 'is-hidden'" for="email">
+              {{ $page.d.emptyEmail }}
+            </label>
+            <label class="contact-form-error" :class="validationError && validationError === 'invalidEmail' ? 'is-visible' : 'is-hidden'" for="email">
+              {{ $page.d.invalidEmail }}
+            </label>
           </div>
         </div>
 
@@ -154,7 +179,17 @@
             <label for="text">
               {{ $page.d.labelText }}
             </label>
-            <textarea class="contact-form-textarea" name="text" id="text" v-model="formData.text" ref="textField" />
+            <textarea
+              class="contact-form-textarea"
+              :class="validationError === 'emptyText' ? 'is-invalid' : ''"
+              name="text"
+              id="text"
+              v-model="formData.text"
+              ref="textField"
+            />
+            <label class="contact-form-error" :class="validationError && validationError === 'emptyText' ? 'is-visible' : 'is-hidden'" for="text">
+              {{ $page.d.emptyText }}
+            </label>
           </div>
         </div>
 
@@ -233,7 +268,7 @@
     }
 
     // validation errors
-    &.error {
+    &.contact-form-error {
       @include body-bold-font;
       position: absolute;
       color: $error-color;
@@ -249,6 +284,16 @@
         transform: translateY(-100%);
         opacity: 0;
       }
+    }
+  }
+
+  // invalid fields get a red border
+  .contact-form .contact-form-input.is-invalid,
+  .contact-form .contact-form-textarea.is-invalid {
+    outline: 1px solid $error-color;
+
+    &:focus {
+      outline-width: 2px;
     }
   }
 </style>
