@@ -7,10 +7,10 @@
       labelName
       labelEmail
       labelText
-      errorName
-      errorEmail
-      errorEmailInvalid
-      errorText
+      emptyName
+      emptyEmail
+      invalidEmail
+      emptyText
       successHeading
       successText
       failHeading
@@ -26,7 +26,7 @@
 
 <script>
   import {Fragment} from "vue-fragment";
-  import {spam} from "~/helpers.js";
+  import {isEmail, spam} from "~/helpers.js";
   import SecondarySidebar from "~/components/SecondarySidebar";
   import Button from "~/components/Button";
 
@@ -41,7 +41,9 @@
       return {
         formData: {},
         submitted: false,
-        status: null
+        status: null,
+        hasMounted: false,
+        validationError: null
       }
     },
     methods: {
@@ -53,6 +55,28 @@
       handleSubmit(e) {
         const encodedEmail = this.encode({'form-name': e.target.getAttribute('name'), ...this.formData});
 
+        // validation
+        if (!this.formData.name || this.formData.name === "") {
+          this.validationError = "emptyName";
+          this.$refs.nameField.focus();
+          return false;
+        }
+        else if (!this.formData.email || this.formData.email === "") {
+          this.validationError = "emptyEmail";
+          this.$refs.emailField.focus();
+          return false;
+        }
+        else if (!isEmail(this.formData.email)) {
+          this.validationError = "invalidEmail";
+          this.$refs.emailField.focus();
+          return false;
+        }
+        else if (!this.formData.text || this.formData.text === "") {
+          this.validationError = "emptyText";
+          this.$refs.textField.focus();
+          return false;
+        }
+
         // spam detection
         let spamCount = 0;
         spam.forEach(s => encodedEmail.includes(s.replace(/\s/g, "%20")) ? spamCount++ : null);
@@ -63,6 +87,7 @@
           return null;
         }
 
+        // we're good, submit the form
         fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -78,6 +103,13 @@
           console.log(error);
         });
       }
+    },
+    mounted() {
+      // show the form
+      this.hasMounted = true;
+
+      // re-focus the name field once the app hydrates
+      this.$nextTick(() => this.$refs.nameField.focus());
     }
   }
 </script>
@@ -86,11 +118,12 @@
 <template>
   <Layout>
 
-    <Fragment v-if="submitted === false">
+    <Fragment v-if="hasMounted && submitted === false">
       <h1 class="gamma">{{ $page.d.title }}</h1>
 
       <form
         class="contact-form g-columns u-margin-top-lg u-padding-top-xs"
+        :class=""
         name="contact"
         method="post"
         v-on:submit.prevent="handleSubmit"
@@ -104,14 +137,14 @@
             <label for="name" class="label">
               {{ $page.d.labelName }}
             </label>
-            <input type="text" name="name" id="name" v-model="formData.name" autofocus required />
+            <input type="text" name="name" id="name" v-model="formData.name" autofocus ref="nameField"/>
           </div>
           <!-- email -->
           <div class="g-col g-6 u-padding-top-off">
             <label for="email">
               {{ $page.d.labelEmail }}
             </label>
-            <input type="email" name="email" id="email" v-model="formData.email" required />
+            <input type="text" name="email" id="email" v-model="formData.email" ref="emailField" />
           </div>
         </div>
 
@@ -121,7 +154,7 @@
             <label for="text">
               {{ $page.d.labelText }}
             </label>
-            <textarea class="contact-form-textarea" name="text" id="text" v-model="formData.text" required />
+            <textarea class="contact-form-textarea" name="text" id="text" v-model="formData.text" ref="textField" />
           </div>
         </div>
 
