@@ -2,10 +2,16 @@
   export default {
     name: "Tag",
     props: {
-      title:    { default: "missing `title` prop in Tag.vue" },
-      slug:     { default: null },
-      selected: { default: false },
-      el:       { default: "li" }
+      title:        { default: "missing `title` prop in Tag.vue" },
+      contentType:  { default: "articles" },
+      slug:         { default: null },
+      selected:     { default: false },
+      el:           { default: "li" }
+    },
+    computed: {
+      link() {
+        return `/${ this.contentType === "articles" ? "blog" : "projects" }#${ this.slug }`
+      }
     }
   };
 </script>
@@ -15,7 +21,7 @@
   <component :is="el" class="tag epsilon" :class="selected && 'is-selected'">
     <a
       class="tag-link"
-      :href="`/blog/#${slug}`"
+      :href="link"
       v-if="slug"
       @click="$emit('updateFilter', title)"
     >

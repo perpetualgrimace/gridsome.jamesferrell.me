@@ -74,18 +74,20 @@
     <!-- tag list -->
     <div class="filter-tag-list tag-list">
       <Tag
-        slug="all"
         title="All"
-        @updateFilter="selectedFilter = 'all'"
+        slug="all"
+        :contentType="contentType"
         :selected="selectedFilter === 'all'"
+        @updateFilter="selectedFilter = 'all'"
       />
       <Tag
-        :slug="filter.replace(' ', '-')"
-        :key="filter"
-        :title="filter"
-        :selected="selectedFilter === filter"
-        @updateFilter="selectedFilter = $event"
         v-for="filter in filters"
+        :title="filter"
+        :slug="filter.replace(' ', '-')"
+        :selected="selectedFilter === filter"
+        :contentType="contentType"
+        :key="filter"
+        @updateFilter="selectedFilter = $event"
       />
     </div>
 
