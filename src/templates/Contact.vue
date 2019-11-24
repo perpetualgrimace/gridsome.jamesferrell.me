@@ -207,23 +207,29 @@
     </Fragment>
 
     <!-- unfortunately, sir, it appears that you are a robot -->
-    <div class="contact-message content" v-else-if="status === 'spam'">
-      <h1>{{ $page.d.spamHeading }}</h1>
-      <p>{{ $page.d.spamText1 }}</p>
-      <p>{{ $page.d.spamText2 }}</p>
-    </div>
+    <transition name="transition-fade" appear v-else-if="status === 'spam'">
+      <div class="contact-message content">
+        <h1>{{ $page.d.spamHeading }}</h1>
+        <p>{{ $page.d.spamText1 }}</p>
+        <p>{{ $page.d.spamText2 }}</p>
+      </div>
+    </transition>
 
     <!-- message sent -->
-    <div class="contact-message content" v-else-if="status === 'success'">
-      <h1>{{ $page.d.successHeading }}</h1>
-      <p>{{ $page.d.successText }}</p>
-    </div>
+    <transition name="transition-fade" appear v-else-if="status === 'success'">
+      <div class="contact-message content">
+        <h1>{{ $page.d.successHeading }}</h1>
+        <p>{{ $page.d.successText }}</p>
+      </div>
+    </transition>
 
     <!-- message not sent -->
-    <div class="contact-message content" v-else-if="status === 'fail'">
-      <h1>{{ $page.d.failHeading }}</h1>
-      <p>{{ $page.d.failText }}</p>
-    </div>
+    <transition name="transition-fade" appear v-else-if="status === 'fail'">
+      <div class="contact-message content">
+        <h1>{{ $page.d.failHeading }}</h1>
+        <p>{{ $page.d.failText }}</p>
+      </div>
+    </transition>
 
     <template slot="sidebar" v-if="!status">
       <VueRemarkContent class="content secondary epsilon" />
