@@ -52,7 +52,10 @@
             aria-hidden
             title=" ...is there something on my face? 😬"
             @click="onFaceClick"
-            :style="faceClicked ? `transform: scale(${ 1 - (faceClicked * 0.05) })` : null"
+            :style="faceClicked ? `
+              transform: scale(${ 1 - (faceClicked * 0.05) });
+              opacity: ${ 1 - (faceClicked * 0.03) };
+            ` : null"
           />
         </div>
       </div>
@@ -185,7 +188,7 @@
     }
     &.is-clicked {
       cursor: not-allowed;
-      transition: transform $timing-longest;
+      transition: transform 0.2s cubic-bezier(0, 0.25, 0.6, 4);
     }
   }
 
