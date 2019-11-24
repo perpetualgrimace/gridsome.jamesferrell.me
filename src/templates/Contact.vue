@@ -1,6 +1,6 @@
 <page-query>
-  query Contact {
-    d: contact(path: "/contact") {
+  query ($path: String!) {
+    d: contact (path: $path) {
       title
       headline
       content
@@ -54,6 +54,8 @@
 <template>
   <Layout>
 
+    <h1>{{ $page.d.title }}</h1>
+
     <form
       name="contact"
       method="post"
@@ -89,7 +91,7 @@
 
     <!-- TODO: instagram, facebook, linkedin -->
     <template slot="sidebar">
-      <SecondarySidebar :content="$page.d.content" />
+      <VueRemarkContent class="content secondary epsilon" />
     </template>
   </Layout>
 </template>

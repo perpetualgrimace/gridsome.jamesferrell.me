@@ -1,5 +1,5 @@
 ---
-title: Contact
+title: Contact me
 socialHeading: "Find me elsewhere:"
 headline: Contact me
 labelName: Your name
@@ -16,7 +16,12 @@ failText: "It's definitely my fault. Please feel free to email me at hello at ja
 submitText: Initiate conversation
 email: "hello@jamesferrell.me"
 ---
+import ContactSidebarLinks from "~/components/ContactSidebarLinks"
 
 ## Rather use your email client than this form?
 
 I hear you. My email address is <hello@jamesferrell.me>.
+
+## Find me elsewhere:
+
+<ContactSidebarLinks />

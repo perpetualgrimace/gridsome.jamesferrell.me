@@ -135,10 +135,11 @@ module.exports = {
 
     // contact
     {
-      use: "@gridsome/source-filesystem",
+      use: "@gridsome/vue-remark",
       options: {
-        path: "content/6-contact/contact.md",
+        baseDir: "content/6-contact",
         typeName: "Contact",
+        template: "./src/templates/Contact.vue",
         route: "/contact"
       }
     },
