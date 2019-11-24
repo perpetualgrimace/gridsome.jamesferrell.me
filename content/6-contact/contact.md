@@ -10,9 +10,12 @@ errorEmail: "It'd be difficult to get back to you without this."
 errorEmailInvalid: "That's your email address huh 😒"
 errorText: "Please tell me about your project, or favorite band, or whatever."
 successHeading: "Thanks for contacting me."
-successText: "I'll be in touch. Probably within a day or so (but maybe longer on weekends)."
+successText: "I'll be in touch within a day or two."
 failHeading: "Something went wrong."
 failText: "It's definitely my fault. Please feel free to email me at hello at jamesferrell dot me."
+spamHeading: "Well this is awkward."
+spamText1: "I've determined that your email is either spammy, scammy, or vulgar. If you have good intentions, clean it up and try again."
+spamText2: "Or, send an email to hello at jamesferrell dot me."
 submitText: Initiate conversation
 email: "hello@jamesferrell.me"
 ---

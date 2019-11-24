@@ -15,6 +15,9 @@
       successText
       failHeading
       failText
+      spamHeading
+      spamText1
+      spamText2
       submitText
     }
   }
@@ -23,6 +26,7 @@
 
 <script>
   import {Fragment} from "vue-fragment";
+  import {spam} from "~/helpers.js";
   import SecondarySidebar from "~/components/SecondarySidebar";
   import Button from "~/components/Button";
 
@@ -33,7 +37,7 @@
     metaInfo: {
       title: "Contact"
     },
-    data: function() {
+    data() {
       return {
         formData: {},
         submitted: false,
@@ -47,15 +51,23 @@
           .join('&')
       },
       handleSubmit(e) {
+        const encodedEmail = this.encode({'form-name': e.target.getAttribute('name'), ...this.formData});
+
+        // spam detection
+        let spamCount = 0;
+        spam.forEach(s => encodedEmail.includes(s.replace(/\s/g, "%20")) ? spamCount++ : null);
+
+        if(spamCount >= 1) {
+          this.submitted = true;
+          this.status = "spam";
+          return null;
+        }
+
         fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: this.encode({
-            'form-name': e.target.getAttribute('name'),
-            ...this.formData,
-          }),
+          body: encodedEmail
         })
-        // TODO: success/error states
         .then(() => {
           this.submitted = true;
           this.status = "success";
@@ -92,14 +104,14 @@
             <label for="name" class="label">
               {{ $page.d.labelName }}
             </label>
-            <input type="text" name="name" id="name" v-model="formData.name" required autofocus />
+            <input type="text" name="name" id="name" v-model="formData.name" autofocus />
           </div>
           <!-- email -->
           <div class="g-col g-6 u-padding-top-off">
             <label for="email">
               {{ $page.d.labelEmail }}
             </label>
-            <input type="email" name="email" id="email" v-model="formData.email" required />
+            <input type="email" name="email" id="email" v-model="formData.email" />
           </div>
         </div>
 
@@ -125,6 +137,13 @@
         </div>
       </form>
     </Fragment>
+
+    <!-- unfortunately, sir, it appears that you are a robot -->
+    <div class="contact-message content" v-else-if="status === 'spam'">
+      <h1>{{ $page.d.spamHeading }}</h1>
+      <p>{{ $page.d.spamText1 }}</p>
+      <p>{{ $page.d.spamText2 }}</p>
+    </div>
 
     <!-- message sent -->
     <div class="contact-message content" v-else-if="status === 'success'">

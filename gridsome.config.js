@@ -190,8 +190,7 @@ module.exports = {
   transformers: {
     remark: {
       externalLinksTarget: false,
-      externalLinksRel: ["nofollow"],
-      anchorClassName: "heading-anchor-link"
+      externalLinksRel: ["nofollow"]
     }
   },
 

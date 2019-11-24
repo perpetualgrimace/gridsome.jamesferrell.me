@@ -75,3 +75,5 @@ export function generateTwitterLink(title, url, hashtags) {
   // construct the link
   return `https://twitter.com/share?url=${url}&text=${title}&via=perpetualgrimac${andHashtags}`;
 }
+
+export const spam = ["cryptocurrency", "frsdiev", "fkaakiev", "serien", "sport", "dariusror", "supreme", "are you in", "jeffreythoup", "sex", "williamrot", "fuck", "juicy", "woman", "in your town", "austinlipse", "sexy", "rih.co", "tebow", "cecilbeawn", "find yourself", "night in your city", "a girl", "win", "won", "iphone x", "wayneshevy", "biz", "danielpinia", "forex", "bitcoin", "joshuaskarp", "high potency", "chemist", "warehouse", "not a robot", "andrewvox", "learn how to earn", "stanleyexave", "how to generate", "high-quality traffic", "for your blog", "chicas", "sexys", "la noche", "tu pueblo", "arshon technology", "electronic product", "hello dear", "president message", "in below", "return on investment", "zreitev", "dating", "dissertation", "essay", "trust god", "postal contact info", "the falling away"];
