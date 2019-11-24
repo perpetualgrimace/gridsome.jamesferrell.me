@@ -23,7 +23,7 @@ import ContactSidebarLinks from "~/components/ContactSidebarLinks"
 
 ## Rather use your email client than this form?
 
-I hear you. My email address is <hello@jamesferrell.me>.
+I hear you. My email address is [hello at jamesferrell dot me](mailto:&#104;&#101;&#108;&#108;&#111;&#064;&#106;&#097;&#109;&#101;&#115;&#102;&#101;&#114;&#114;&#101;&#108;&#108;&#046;&#109;&#101;).
 
 ## Find me elsewhere:
 
