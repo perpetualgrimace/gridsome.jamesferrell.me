@@ -37,7 +37,7 @@ In a recent update, you can use Brackets Extract to open up a Photoshop document
 
 Since Brackets was designed for front-end developers, you won't find any support for PHP.
 
-Lately *(read: in 2015)* I've been building as many sites with [Kirby CMS](html://getkirby.com) as possible, which uses PHP. Since Brackets was designed for front-end developers, working with back-end code is a chore. There isn't any syntax highlighting or theme colors for PHP, and trying to open Live Preview with a PHP file causes an error message, even if you're running a local server. Another strike.
+Lately *(read: 2015 at time of writing)* I've been building as many sites with [Kirby CMS](html://getkirby.com) as possible, which uses PHP. Since Brackets was designed for front-end developers, working with back-end code is a chore. There isn't any syntax highlighting or theme colors for PHP, and trying to open Live Preview with a PHP file causes an error message, even if you're running a local server. Another strike.
 
 ## Is it there a place for it today?
 

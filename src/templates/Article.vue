@@ -8,20 +8,30 @@
       updated
       content
       heroImg
+      topic
+      hashtag
     }
   }
 </page-query>
 
 
 <script>
+  import {Fragment} from "vue-fragment";
   import moment, {fromNow} from "moment";
-  import ImageHeader from "~/components/ImageHeader";
+
+  import TwitterIcon from "../../static/images/icons/social/share-icon-twitter.svg";
+
+  import site from "../../content/site.json";
+  import {formatTagAsSlug, generateTwitterLink, minutesToRead} from "~/helpers.js";
+
   import Colophon from "~/components/Colophon";
+  import ImageHeader from "~/components/ImageHeader";
   import Paginator from "~/components/Paginator";
+  import Tag from "~/components/Tag";
 
   export default {
     components: {
-      ImageHeader, Colophon, Paginator
+      Fragment, TwitterIcon, Colophon, ImageHeader, Paginator, Tag
     },
     metaInfo() {
       return {
@@ -34,6 +44,19 @@
       },
       relativeUpdated() {
         return this.$page.d.updated ? moment(this.$page.d.updated, "YYYY-MM-DD").fromNow() : null;
+      },
+      timeToRead() {
+        return minutesToRead(this.$page.d.content);
+      },
+      tagSlug() {
+        return formatTagAsSlug(this.$page.d.topic);
+      },
+      twitterLink() {
+        return generateTwitterLink(
+          this.$page.d.title,
+          `https://${site.baseURL}/blog/${this.$page.d.slug}`,
+          this.$page.d.hashtag
+        )
       }
     }
   }
@@ -52,18 +75,33 @@
 
     <VueRemarkContent class="content" />
 
-    <!-- TODO: time to read -->
-    <!-- TODO: twitter share link -->
-    <!-- TODO: style sidebar -->
     <template slot="sidebar">
-      <dl>
-        <dt>Published</dt>
-        <dd>{{ relativeDate }}</dd>
-      </dl>
+      <dl class="epsilon article-sidebar">
+        <dt>Category:</dt>
+        <dd><Tag :title="$page.d.topic" :slug="tagSlug" el="span" /></dd>
+        <br />
 
-      <dl v-if="relativeUpdated">
-        <dt>Last updated</dt>
-        <dd>{{ relativeUpdated }}</dd>
+        <dt>Published:</dt>
+        <dd>{{ relativeDate }}</dd>
+        <br />
+
+        <Fragment v-if="relativeUpdated">
+          <dt>Last updated:</dt>
+          <dd>{{ relativeUpdated }}</dd>
+          <br />
+        </Fragment>
+
+        <dt>Estimated time to read:</dt>
+        <dd>{{ timeToRead }}</dd>
+        <br />
+
+        <dt class="u-visually-hidden">Share:</dt>
+        <dd>
+          <a :href="twitterLink" class="secondary-link article-sidebar-link" target="_blank">
+            <TwitterIcon />
+            <span class="article-sidebar-link-text">Tweet this article</span>
+          </a>
+        </dd>
       </dl>
     </template>
 
@@ -78,5 +116,35 @@
 <style lang="scss">
   .content p > img {
     width: 100%;
+  }
+
+  // text next to label where there's room
+  .article-sidebar {
+    dt, dd  { display: inline-block; }
+    dt      { margin-right: 0.25em; }
+    dd      { margin-bottom: 0.875em; }
+    dd .tag { margin-bottom: -0.2rem; } // offset tag padding
+  }
+
+  // twitter link
+  .article-sidebar-link {
+    text-decoration: none;
+
+    & > svg {
+      margin-right: 0.25em;
+    }
+
+    & > * {
+      display: inline-block;
+      vertical-align: middle;
+      pointer-events: none;
+    }
+
+    &:hover svg,
+    &:focus svg {
+      transform: scale(1.125) rotate(-6deg);
+
+      path { fill: $twitter-color; }
+    }
   }
 </style>

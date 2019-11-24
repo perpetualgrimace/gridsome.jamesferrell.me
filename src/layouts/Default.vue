@@ -1,5 +1,5 @@
 <script>
-  import { Fragment } from "vue-fragment";
+  import {Fragment} from "vue-fragment";
   import MainNav from "~/components/MainNav";
   import MainSidebar from "~/components/MainSidebar";
   import Footer from "~/components/Footer";

@@ -224,6 +224,11 @@
     display: none !important;
   }
 }
+.u-hide-below-xl {
+  @media (max-width: $xl - 0.001) {
+    display: none !important;
+  }
+}
 
 // hide on large screens
 .u-hide-above-s {

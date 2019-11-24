@@ -4,17 +4,18 @@
     props: {
       title:    { default: "missing `title` prop in Tag.vue" },
       slug:     { default: null },
-      selected: { default: false }
+      selected: { default: false },
+      el:       { default: "li" }
     }
   };
 </script>
 
 
 <template>
-  <li class="tag epsilon" :class="selected && 'is-selected'">
+  <component :is="el" class="tag epsilon" :class="selected && 'is-selected'">
     <a
       class="tag-link"
-      :href="`#${slug}`"
+      :href="`/blog/#${slug}`"
       v-if="slug"
       @click="$emit('updateFilter', title)"
     >
@@ -24,7 +25,7 @@
     <span class="tag-span" v-else>
       {{ title }}
     </span>
-  </li>
+  </component>
 </template>
 
 

@@ -67,6 +67,7 @@
     // expand background on bigger screens
     @media (min-width: $xxxl) {
       @include fullwidth;
+      z-index: -1; // but dont let it overlap the MainSidebar tho
     }
 
     // offset sidebar
