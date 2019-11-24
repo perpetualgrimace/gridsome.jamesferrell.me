@@ -27,8 +27,8 @@
       onFaceClick: function() {
         if (!this.faceClicked) alert("Hey, that's not very nice 😬");
         this.faceClicked++;
-        console.log("Please don't click my face again.");
-        if (this.faceClicked >= 20) alert("kbyeeee");
+        if (this.faceClicked === 10) alert("Stahp! 😫");
+        if (this.faceClicked >= 20) alert("kbye 👋");
       }
     }
   };
