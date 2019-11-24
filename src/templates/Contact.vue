@@ -118,12 +118,13 @@
 <template>
   <Layout>
 
-    <Fragment v-if="hasMounted && submitted === false">
+    <Fragment v-if="submitted === false">
       <h1 class="gamma">{{ $page.d.title }}</h1>
 
       <form
         class="contact-form g-columns u-margin-top-lg u-padding-top-xs"
-        :class=""
+        :class="hasMounted ? 'is-visible' : 'is-hidden'"
+        :tabindex="!hasMounted ? '-1' : null"
         name="contact"
         method="post"
         v-on:submit.prevent="handleSubmit"
@@ -243,6 +244,12 @@
   .contact-form {
     @media (min-width: $xl) {
       padding-right: $gutter * 2;
+    }
+
+    &.is-hidden {
+      opacity: 0;
+      z-index: -1;
+      pointer-events: none;
     }
   }
 
