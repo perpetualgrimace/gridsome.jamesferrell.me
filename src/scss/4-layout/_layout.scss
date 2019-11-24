@@ -10,8 +10,10 @@
     min-height: 100vh;
     flex-direction: column;
   }
-  .main {
-    flex: 1;
+  .main, .primary-content:only-child {
+    display: flex; // allow main content to be centered
+    flex-direction: column;
+    flex: 1 0 auto;
   }
 }
 
@@ -124,7 +126,7 @@
 
 @media (min-width: $xl) {
 
-  .primary-content,
+  .primary-content:not(:last-child),
   .cta-content {
     @include primary-content-width;
     padding-right: $gutter; // combines with secondary-content's also halfed gutter

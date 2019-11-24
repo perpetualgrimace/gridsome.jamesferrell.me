@@ -47,15 +47,9 @@ input, textarea {
   width: 100%;
 }
 input[type=checkbox],
-input[type=radio]{
-  vertical-align: middle;
-}
-input[type=submit],
 input[type=radio],
-input[type=checkbox],
-button,
-label {
-  cursor: pointer;
+svg {
+  vertical-align: middle;
 }
 
 // Let users resize textareas
@@ -66,13 +60,10 @@ textarea {
 // Reset buttons
 button {
   overflow: visible;
-  cursor: pointer;
   background: transparent;
   border: none;
-  -webkit-appearance: button;
-  display: block;
-  outline: none;
-  -webkit-box-shadow: none;
+  appearance: button;
+  display: inline-block;
   box-shadow: none;
 
   &::-moz-focus-inner {
@@ -110,20 +101,6 @@ html {
 article, aside, details, figcaption, figure, img, // img added by me
 footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
-}
-
-// Sub + superscript
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  vertical-align: baseline;
-}
-sup {
-  top: -0.5em;
-}
-sub {
-  bottom: -0.25em;
 }
 
 // Remove linked image border

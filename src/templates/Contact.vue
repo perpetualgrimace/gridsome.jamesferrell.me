@@ -4,6 +4,17 @@
       title
       headline
       content
+      labelName
+      labelEmail
+      labelText
+      errorName
+      errorEmail
+      errorEmailInvalid
+      errorText
+      successHeading
+      successText
+      failHeading
+      failText
       submitText
     }
   }
@@ -11,7 +22,7 @@
 
 
 <script>
-  import { Fragment } from "vue-fragment";
+  import {Fragment} from "vue-fragment";
   import SecondarySidebar from "~/components/SecondarySidebar";
   import Button from "~/components/Button";
 
@@ -24,7 +35,9 @@
     },
     data: function() {
       return {
-        formData: {}
+        formData: {},
+        submitted: false,
+        status: null
       }
     },
     methods: {
@@ -43,54 +56,89 @@
           }),
         })
         // TODO: success/error states
-        .then(() => console.log(this.formData))
-        .catch(error => console.log(error))
+        .then(() => {
+          this.submitted = true;
+          this.status = "success";
+        })
+        .catch(error => {
+          this.submitted = true;
+          this.status = "fail";
+          console.log(error);
+        });
       }
     }
   }
 </script>
 
-<!-- TODO: the entire :damn: contaact form -->
+
 <template>
   <Layout>
 
-    <h1>{{ $page.d.title }}</h1>
+    <Fragment v-if="submitted === false">
+      <h1 class="gamma">{{ $page.d.title }}</h1>
 
-    <form
-      name="contact"
-      method="post"
-      v-on:submit.prevent="handleSubmit"
-      action="/success/"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-    >
-      <input type="hidden" name="form-name" value="contact" />
-      <p hidden>
-        <label>
-          Don’t fill this out: <input name="bot-field" />
-        </label>
-      </p>
-      <div class="sender-info">
-        <div>
-          <label for="name" class="label" >Your name</label>
-          <input type="text" name="name" v-model="formData.name" />
+      <form
+        class="contact-form g-columns u-margin-top-lg u-padding-top-xs"
+        name="contact"
+        method="post"
+        v-on:submit.prevent="handleSubmit"
+        action="/success/"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <div class="g-columns">
+          <!-- name -->
+          <div class="g-col g-6 u-padding-top-off">
+            <label for="name" class="label">
+              {{ $page.d.labelName }}
+            </label>
+            <input type="text" name="name" id="name" v-model="formData.name" required autofocus />
+          </div>
+          <!-- email -->
+          <div class="g-col g-6 u-padding-top-off">
+            <label for="email">
+              {{ $page.d.labelEmail }}
+            </label>
+            <input type="email" name="email" id="email" v-model="formData.email" required />
+          </div>
         </div>
-        <div>
-          <label for="email">Your email</label>
-          <input type="email" name="email" v-model="formData.email" />
+
+        <!-- text -->
+        <div class="g-columns">
+          <div class="g-col u-padding-top-off">
+            <label for="text">
+              {{ $page.d.labelText }}
+            </label>
+            <textarea class="contact-form-textarea" name="text" id="text" v-model="formData.text" required />
+          </div>
         </div>
-      </div>
 
-      <div class="message-wrapper">
-        <label for="message">Message</label>
-        <textarea name="message" v-model="formData.message"></textarea>
-      </div>
+        <!-- netlify fields -->
+        <input type="hidden" name="form-name" value="contact" />
+        <label hidden>If you're a robot, please fill this out: <input name="bot-field" /></label>
 
-      <Button type="submit" classes="epsilon u-margin-top-lg" :text="$page.d.submitText" />
-    </form>
+        <!-- submit button -->
+        <div class="g-columns">
+          <div class="g-col u-padding-top-xs">
+            <Button type="submit" classes="epsilon u-margin-top-off" :text="$page.d.submitText" />
+          </div>
+        </div>
+      </form>
+    </Fragment>
 
-    <!-- TODO: instagram, facebook, linkedin -->
-    <template slot="sidebar">
+    <!-- message sent -->
+    <div class="contact-message content" v-else-if="status === 'success'">
+      <h1>{{ $page.d.successHeading }}</h1>
+      <p>{{ $page.d.successText }}</p>
+    </div>
+
+    <!-- message not sent -->
+    <div class="contact-message content" v-else-if="status === 'fail'">
+      <h1>{{ $page.d.failHeading }}</h1>
+      <p>{{ $page.d.failText }}</p>
+    </div>
+
+    <template slot="sidebar" v-if="!status">
       <VueRemarkContent class="content secondary epsilon" />
     </template>
   </Layout>
@@ -98,4 +146,57 @@
 
 
 <style lang="scss">
+
+  .contact-form {
+    @media (min-width: $xl) {
+      padding-right: $gutter * 2;
+    }
+  }
+
+  .contact-form-textarea {
+    height: calc(15vh + 10vw);
+  };
+
+  .contact-message {
+    display: flex;
+    flex: 1 0 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  // labels
+  label {
+    display: block;
+    padding-bottom: $gutter; // extend clickable area
+    // compensate for padding
+    margin-bottom: -0.75rem;
+    color: $dark-1;
+
+    &:hover, &:active {
+      color: $brand-light;
+    }
+
+    // validation errors
+    &.error {
+      @include body-bold-font;
+      position: absolute;
+      color: $error-color;
+      top: auto;
+      padding-bottom: 0; // reset padding
+      z-index: -1; // place behind fields
+      // transitionable properties
+      transform: none;
+      opacity: 1;
+
+      // default hidden state, toggled via js
+      &.is-hidden {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+    }
+  }
 </style>
