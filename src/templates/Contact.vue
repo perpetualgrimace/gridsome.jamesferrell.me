@@ -104,14 +104,14 @@
             <label for="name" class="label">
               {{ $page.d.labelName }}
             </label>
-            <input type="text" name="name" id="name" v-model="formData.name" autofocus />
+            <input type="text" name="name" id="name" v-model="formData.name" autofocus required />
           </div>
           <!-- email -->
           <div class="g-col g-6 u-padding-top-off">
             <label for="email">
               {{ $page.d.labelEmail }}
             </label>
-            <input type="email" name="email" id="email" v-model="formData.email" />
+            <input type="email" name="email" id="email" v-model="formData.email" required />
           </div>
         </div>
 
