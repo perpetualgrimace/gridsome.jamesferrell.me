@@ -17,7 +17,7 @@
 
   "socialAccounts": [
     { "name": "github",   "link": "https://github.com/perpetualgrimace" },
-    { "name": "codepen",  "link": "https://codepen.com/perpetualgrimace" },
+    { "name": "codepen",  "link": "https://codepen.io/perpetualgrimace" },
     { "name": "dribbble", "link": "https://dribbble.com/perpetualgrimace" },
     { "name": "twitter",  "link": "https://twitter.com/perpetualgrimac" }
   ],
