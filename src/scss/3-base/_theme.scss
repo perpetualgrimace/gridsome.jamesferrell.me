@@ -64,6 +64,19 @@ main {
     margin-left: 0.1em;
     margin-right: 0.1em;
   }
+
+  pre > code {
+    display: block;
+    padding: 0.5em 1em;
+    background-color: $black;
+    color: $light-1;
+    overflow-x: auto;
+  }
+
+  pre {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
 }
 
 

@@ -5,7 +5,8 @@
         node {
           id
           title
-          published (format: "MMMM YYYY")
+          published
+          updated
           description
           path
           slug
@@ -47,6 +48,7 @@
         :title="node.title"
         :description="node.description"
         :published="node.published"
+        :updated="node.updated"
         :slug="node.slug"
         :tags="node.tags"
         :selectedFilter="selectedFilter"

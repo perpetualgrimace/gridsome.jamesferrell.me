@@ -9,12 +9,19 @@
       link:           { default: "#missing-`link`-prop-in-Card.vue" },
       description:    { default: "missing `description` prop in Card.vue" },
       published:      { default: "missing `published` prop in Card.vue" },
+      updated:        { default: null },
       selectedFilter: { default: "all" },
       tags:           { default: "webdev" }
     },
     computed: {
       relativeDate() {
         return moment(this.published, "YYYY-MM-DD").fromNow();
+      },
+      relativeUpdatedDate() {
+        if (this.updated) {
+          return moment(this.updated, "YYYY-MM-DD").fromNow();
+        }
+        else return null;
       },
       splitTags() {
         return this.tags.toLowerCase().split(",");
@@ -53,7 +60,9 @@
         </p>
 
         <p class="card-meta milli u-uppercase">
-          posted {{ relativeDate }}
+          published {{ relativeDate }}
+          <span v-if="relativeUpdatedDate"> |  updated {{ relativeUpdatedDate }}
+          </span>
         </p>
       </div>
 
