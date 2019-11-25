@@ -26,9 +26,9 @@ Okay, yes — no, you're right — this is a relatively small portfolio site wi
 
 But like, that's one of the things I'm tired of dealing with. That whole _server_ thing.
 
-I no longer need to pay for hosting or log into some clunky hosting panel any more, because the files are hosted on the [Github repo](https://github.com/perpetualgrimace/gridsome.jamesferrell.me). When I push my changes, [Netlify](https://netlify.com) automagically rebuilds and redeploys the live site. If that's not deserving of a rocket ship emoji or three, I don't know what is! 🚀🚀🚀
+I no longer need to pay for hosting or log into some clunky hosting panel, because the files are hosted on the [Github repo](https://github.com/perpetualgrimace/gridsome.jamesferrell.me). When I push my changes, [Netlify](https://netlify.com) automagically rebuilds and redeploys the live site. If that's not deserving of a rocket ship emoji or three, I don't know what is! 🚀🚀🚀
 
-Also, webfaction, one of the very few hosts that I've enjoyed using, was [bought out by godaddy](https://community.webfaction.com/questions/21806/webfaction-joins-forces-with-godaddy).
+Also, webfaction, one of the very few hosts that I've enjoyed using, was [bought out by godaddy](https://community.webfaction.com/questions/21806/webfaction-joins-forces-with-godaddy). 👎👎👎
 
 Finally, I'm using [Netlify Forms](https://www.netlify.com/products/forms/) for my [contact](/contact) page, which was pretty easy to set up. Man, remember when submitting a form used to require a server? Not any more. 😌
 
