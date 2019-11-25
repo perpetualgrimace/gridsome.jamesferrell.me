@@ -1,5 +1,5 @@
 ---
-title: "My website is a progressive web app now"
+title: "My website is a progressive web app now"
 slug: gridsome
 id: 5
 description: Some thoughts on rebuilding my website with Gridsome.
