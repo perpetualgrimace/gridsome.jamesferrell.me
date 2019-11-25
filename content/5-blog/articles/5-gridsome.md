@@ -32,7 +32,7 @@ Also, webfaction, one of the very few hosts that I've enjoyed using, was [bought
 
 Finally, I'm using [Netlify Forms](https://www.netlify.com/products/forms/) for my [contact](/contact) page, which was pretty easy to set up. Man, remember when submitting a form used to require a server? Not any more. 😌
 
-## * *gulp* *
+## \*gulp\*
 
 You know what, that is _exactly_ what I do every time I need to spin up a legacy site, because because I know that at some point I updated node and/or npm, which means that gulp will no longer run and I'll need to update it, which means that my build will no longer run because the syntax I originally used was depreciated.
 
