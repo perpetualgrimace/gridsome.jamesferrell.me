@@ -26,6 +26,10 @@ main .content ~ * {
   // border: 1px solid blue; // debugging
 }
 
+.content ul + [class*="list"] {
+	margin-top: 2em;
+}
+
 .content figure > figcaption {
   margin-top: 0.5em;
 }
