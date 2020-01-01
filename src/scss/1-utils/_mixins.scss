@@ -281,7 +281,7 @@
   h2 {
     font-size: $gamma;
   }
-  p:not(.milli) { // exclude card meta
+  p:not([class*="card-"]) { // exclude card meta
     font-size: $delta;
   }
 }

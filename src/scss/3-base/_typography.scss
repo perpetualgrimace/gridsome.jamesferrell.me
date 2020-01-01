@@ -16,6 +16,10 @@ dt {
 // italic type
 em, i {
   @include body-italic-font;
+
+  & > a {
+    font-style: inherit;
+  }
 }
 
 // heading type
