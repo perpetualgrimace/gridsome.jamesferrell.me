@@ -20,7 +20,7 @@ You’re, uh — you’re with me, right...?
 
 Yeah, so I’m a big fan of spending a bit of time up front to customize my tools in a way that makes them easier to use in the long run. The less I have to think about what I’m doing, the more efficient I can be, which means I have more time for important things like watching cat videos.
 
-What I'm getting at is, Keynote's default keyboard shortcuts are weird and you should change them.
+What I’m getting at is, Keynote’s default keyboard shortcuts are weird and you should change them.
 
 *Quick aside: If you’re unsure how to set up custom keyboard shortcuts for specific MacOS applications, you will find instructions — and a gif — [at the end of this article](#how-to-set-up-shortcuts-in-macos).*
 

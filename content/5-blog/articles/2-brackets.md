@@ -11,7 +11,7 @@ published: 2015-07-11
 updated: 2017-09-06
 ---
 
-*This was originally meant to be a series. But at this point I'm probably just going to keep a list of the tools I use on my [uses page](/uses).*
+*This was originally meant to be a series. Instead, I keep a list of the tools I use on my [uses page](/uses).*
 
 ***
 
