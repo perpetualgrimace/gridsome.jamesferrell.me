@@ -102,7 +102,6 @@
       z-index: 1; // clickable on big screens
     }
     @include bp-fixed-nav {
-      position: fixed;
       display: flex;
       flex-direction: column;
       min-height: calc(100% - #{$nav-height});

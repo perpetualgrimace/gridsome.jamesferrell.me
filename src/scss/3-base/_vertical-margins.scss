@@ -26,6 +26,10 @@ main .content ~ * {
   // border: 1px solid blue; // debugging
 }
 
+.content * + h3 {
+	margin-top: 1em;
+}
+
 .content ul + [class*="list"] {
 	margin-top: 2em;
 }

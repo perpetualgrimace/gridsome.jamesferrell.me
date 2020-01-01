@@ -7,8 +7,8 @@ slug: skills-list
 ### Core development skills:
 - Design systems development
 - Semantic, accessible HTML (WCAG)
-- Clean, well-documented CSS (SCSS & PostCSS)
-- Single page apps (React, Vue, & Svelte)
+- Clean, well-documented CSS (SCSS & PostCSS)
+- Single page apps (React, Vue, & Svelte)
 - Static site generators (Jekyll)
 - Flat file CMS’s (Kirby)
 
