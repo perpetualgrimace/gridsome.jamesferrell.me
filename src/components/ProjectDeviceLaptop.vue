@@ -7,12 +7,12 @@
     },
     computed: {
       src() {
-        return `./images/projects/${this.img}`;
+        return `/images/projects/${this.img}`;
       },
       srcset() {
         return `
-          ./images/projects/${this.img} 1x,
-          ./images/projects/${this.img.replace(".", "@2x.")} 2x
+          /images/projects/${this.img} 1x,
+          /images/projects/${this.img.replace(".", "@2x.")} 2x
         `
       }
     }
