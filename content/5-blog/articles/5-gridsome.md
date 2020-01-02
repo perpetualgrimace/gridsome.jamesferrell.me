@@ -70,7 +70,7 @@ Go ahead, click some links. I’ll wait.
 
 At [Datawheel](http://datawheel.us) I work in React day to day, and have never particularly liked it *(that’s its own blog post)*. I’ve heard nothing but positive things about Vue, and felt like this was a good opportunity to dive in and give it a spin.
 
-And after spending some time with it, I do enjoy using Vue. In a Vue component, the HTML is HTML, the business logic is mostly kept away from the markup, a putting the component styles in a style block within the same file actually makes a ton of sense. Separation of concerns, meet approachability.
+And after spending some time with it, I do enjoy using Vue. In a Vue component, the HTML is HTML, the business logic is mostly kept away from the markup, and putting the component styles in a style block within the same file actually makes a ton of sense. Separation of concerns, meet approachability.
 
 ## Downsides:
 
@@ -132,8 +132,8 @@ As far as I can tell, the Gridsome team basically consists of two people working
 
 ## Did I make the right choice?
 
-I’m glad I made the jump. I had to make some changes in the way I store my content and assets, but overall, between the good Gridsome docs, the responsiveness of the Gridsome community, the approachability of Vue, and my current level of experience with Javascript, rebuilding my site with gridsome was relatively painless. And I really like the snappy, *appy* feel and developer experience now that everything is in place.
+I’m glad I made the jump. I had to make some changes in the way I store my content and assets, but overall, between the good Gridsome documentation, the responsiveness of the Gridsome community, the approachability of Vue, and my current level of experience with Javascript, rebuilding my site with gridsome was relatively painless. And I really like the snappy, appy feel and developer experience now that everything is in place.
 
-Also, it was a good learning experience.
+It was also a good learning experience.
 
 Thanks for reading, and I encourage you to go check out [Gridsome](https://gridsome.ord).
