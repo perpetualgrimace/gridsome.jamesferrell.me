@@ -34,6 +34,16 @@ main .content ~ * {
 	margin-top: 2em;
 }
 
+// nested lists
+.content li > ul {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+
+	& li {
+		line-height: 1.25;
+	}
+}
+
 .content figure > figcaption {
   margin-top: 0.5em;
 }
