@@ -4,6 +4,9 @@ slug: utility-software-list
 
 ## Handy utilities
 
+### [Rocket](https://matthewpalmer.net/rocket/)
+Slack-style emoji picker. ❤️
+
 ### [Cardhop](https://flexibits.com/cardhop)
 Contacts app made by the same folks who made Fantastical. Like with Fantastical, they nailed it.
 
