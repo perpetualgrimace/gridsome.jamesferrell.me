@@ -20,7 +20,7 @@
       ArticleList, ProjectList, Colophon, Button
     },
     metaInfo: {
-      title: "Front-end designer"
+      title: "UX developer"
     },
   }
 </script>

@@ -1,5 +1,5 @@
 ---
-title: "Front-end Designer"
+title: "UX developer"
 projectsHeading: "My work:"
 blogHeading: "My writing:"
 ---
