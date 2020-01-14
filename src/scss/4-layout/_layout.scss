@@ -62,28 +62,29 @@
 @media (min-width: $l) {
 
   // position sidebar on the left side of the screen
-  .main-sidebar {
-    @include secondary-content-width;
-    position: absolute;
-    top: 0;
-    left: 0;
+  // .main-sidebar {
+  //   @include secondary-content-width;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
 
-    // extend background to the bottom of the screen
-    &:before {
-      @include pseudo;
-      position: fixed; // absolute won't reach the bottom, so fixed it is
-      width: inherit;
-      top: 0;
-      height: 100%; // the whole dang ol' screen
-      background: $brand-black;
-    }
-  }
+  //   // extend background to the bottom of the screen
+  //   &:before {
+  //     @include pseudo;
+  //     position: fixed; // absolute won't reach the bottom, so fixed it is
+  //     width: inherit;
+  //     top: 0;
+  //     height: 100%; // the whole dang ol' screen
+  //     background: $brand-black;
+  //   }
+  // }
 
   // position nav and main so that take up the right side of the screen
   .main-nav-container,
   .main {
-    @include primary-content-width;
-    @include primary-content-positioning;
+    width: 100%;
+    // @include primary-content-width;
+    // @include primary-content-positioning;
   }
 }
 
@@ -101,57 +102,11 @@
 /////////////////////////////////////////////
 
 .main {
-  max-width: $max-main-width;
+  // max-width: $max-main-width;
 
-  @media (min-width: $xxxl) {
-    @include main-offset-positioning;
-  }
-}
-
-
-/////////////////////////////////////////////
-// 3 column layout
-/////////////////////////////////////////////
-
-@media (min-width: $xl) {
-
-  .primary-content:not(:last-child),
-  .cta-content {
-    @include primary-content-width;
-    padding-right: $gutter; // combines with secondary-content's also halfed gutter
-  }
-
-  // resize and accommodate gutters for primary content
-  .primary-content {
-    // limit width of inner content and horizontally center
-    > * {
-      max-width: rem(940);
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-
-    // span primary-content and secondary-content area
-    // NOTE: currently only used by project-list template
-    &.single-column,
-    &.single-column ~ .cta-content {
-      padding-right: $gutter * 2;
-      width: 100%;
-
-      // bigger width limit of inner content
-      > * {
-        max-width: rem(1220);
-      }
-    }
-  }
-
-
-  // bring secondary content to the right
-  .secondary-content {
-    @include secondary-content-width;
-    @include secondary-content-position-right;
-    top: 1.925rem; // default offset
-  }
+  // @media (min-width: $xxxl) {
+  //   @include main-offset-positioning;
+  // }
 }
 
 
@@ -160,22 +115,22 @@
 /////////////////////////////////////////////
 
 // bring up that secondary content more often then normal (???????????)
-@media (min-width: 48em) and (max-width: $l - 0.001),
-/*OR*/ (min-width: 70em) {
+// @media (min-width: 48em) and (max-width: $l - 0.001),
+// /*OR*/ (min-width: 70em) {
 
-  // copied from primary-content 3 col layout; needed
-  .contact-primary-content {
-    @include primary-content-width;
-    padding-right: 3rem; // a little extra white space is nice here
-  }
+//   // copied from primary-content 3 col layout; needed
+//   .contact-primary-content {
+//     @include primary-content-width;
+//     padding-right: 3rem; // a little extra white space is nice here
+//   }
 
-  // copied from secondary-content 3 col layout and modified; also needed
-  .contact-secondary-content {
-    @include secondary-content-width;
-    @include secondary-content-position-right;
-    top: 1.9rem; // custom offset for this page
-  }
-}
+//   // copied from secondary-content 3 col layout and modified; also needed
+//   .contact-secondary-content {
+//     @include secondary-content-width;
+//     @include secondary-content-position-right;
+//     top: 1.9rem; // custom offset for this page
+//   }
+// }
 
 
 /////////////////////////////////////////////
@@ -184,12 +139,12 @@
 
 // add padding to sections
 // TODO: investigate whether this affects anything but secondary content
-.section {
-  @include clearfix;
-  clear: both; // when clearfix just isn't enough
+// .section {
+//   @include clearfix;
+//   clear: both; // when clearfix just isn't enough
 
-  // remove redundant padding
-  & + & {
-    padding-top: 0;
-  }
-}
+//   // remove redundant padding
+//   & + & {
+//     padding-top: 0;
+//   }
+// }

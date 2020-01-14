@@ -4,10 +4,8 @@
     { "title": "about", "link": "/about" },
     { "title": "resumé", "link": "/resume" },
     { "title": "blog", "link": "/blog" },
+    { "title": "uses", "link": "/uses" },
     { "title": "contact", "link": "/contact" }
-  ],
-  "secondaryNav": [
-    { "title": "uses", "link": "/uses" }
   ],
 
   "title": "James Ferrell",

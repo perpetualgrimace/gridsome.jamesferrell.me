@@ -87,7 +87,6 @@
 
   // home hero
   .main > .colophon:first-child {
-    @include fullwidth;
 
     @media (max-width: $m - 0.001) {
       padding: 1rem;
@@ -104,7 +103,7 @@
     // break the avatar out of the grid where there's space
     .colophon-avatar {
       @media (min-width: $l) {
-        margin-left: -5rem;
+        // margin-left: -5rem;
         z-index: 2;
       }
     }

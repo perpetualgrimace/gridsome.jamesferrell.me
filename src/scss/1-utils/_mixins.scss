@@ -232,36 +232,6 @@
 // layout helpers
 ////////////////////////////////
 
-@mixin primary-content-width {
-  width: 75%; // fallback
-  width: calc(100% - #{$sidebar-width});
-}
-
-@mixin primary-content-positioning {
-  left: 25%; // fallback
-  left: calc(#{$sidebar-width});
-}
-
-@mixin main-offset-positioning {
-  // offset main container by half the sidebar width
-  left: 12.5%;
-  left: calc(#{$half-sidebar-width});
-  // center main container
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@mixin secondary-content-width {
-  width: 25%; // fallback
-  width: calc(#{$sidebar-width});
-}
-
-@mixin secondary-content-position-right {
-  position: absolute;
-  padding-left: $gutter; // combines with primary-content's also halfed gutter
-  right: 0;
-}
-
 // style secondary content like primary content, add visual separator
 @mixin secondary-content-as-primary {
   // compensate for _layout.scss's .section + .section margin-top reset
@@ -295,7 +265,7 @@
 @mixin dropdown-hidden {
   position: absolute;
   width: auto;
-  transform: translate(0, -1rem);
+  transform: scale(1.05);
   opacity: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;

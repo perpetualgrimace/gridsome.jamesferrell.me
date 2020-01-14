@@ -166,8 +166,8 @@ module.exports = {
     {
       use: "@gridsome/source-filesystem",
       options: {
-        path: "content/blocks/main-sidebar.md",
-        typeName: "MainSidebar"
+        path: "content/blocks/footer.md",
+        typeName: "Footer"
       }
     },
     {

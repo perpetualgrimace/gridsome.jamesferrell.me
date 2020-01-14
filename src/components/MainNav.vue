@@ -31,10 +31,11 @@
       <!-- skip link -->
       <a class="button-inverted skip-link u-visually-hidden" href="#main">Skip to content</a>
 
+      <MainLogo :tabbable="!menuOpen" />
+      
       <!-- nav menu toggle for small screens -->
       <HamBurger :onClick="toggleMenu" :menuOpen="menuOpen" />
 
-      <MainLogo />
 
       <!-- main nav -->
       <ul id="nav" class="main-nav-list" :class="menuOpen ? 'is-expanded' : 'is-collapsed'">
@@ -87,10 +88,11 @@
   // positioning
   .main-nav {
     height: $nav-height;
+    display: flex;
 
     // layout adjustments on bigger screens
     @media (min-width: $m) {
-      max-width: $max-main-width;
+      // max-width: $max-main-width;
     }
 
     // offset nav-link padding on 3 column layout
@@ -119,38 +121,40 @@
     @media (max-width: $s - 0.001) {
       @include dropdown-hidden;
       @include box-shadow-lg;
-      max-width: $sidebar-width;
-      right: $gutter;
-      border-radius: 0 0 $radius-lg $radius-lg;
-    }
+      // max-width: $sidebar-width;
+      display: flex;
+      flex-direction: column;
+      max-height: $nav-height;
+      z-index: -1;
 
-    // medium screens
-    @media (min-width: $s) and (max-width: $l - 0.001) {
-      // position next to nav-logo
-      position: absolute;
-      top: 0;
-      left: 11.75rem;
-    }
-
-    // fix alignment
-    @media (min-width: $s) {
-      padding-left: 1.125rem;
-    }
-
-    // expanded menu state
-    &.is-expanded {
-      @include dropdown-visible;
-      @include nav-toggle-max-width;
-      z-index: 30;
-      transition:
-        opacity $timing,
-        transform $timing;
-      transition-delay: 0.2s;
-
-      // position expanded list directly below menu toggle button
-      @media (max-width: $s - 0.001) {
-        margin-top: -0.78rem; // fudged
+      &.is-collapsed .main-nav-link {
+        display: none;
       }
+
+      // expanded menu state
+      &.is-expanded {
+        @include dropdown-visible;
+        @include absolute-expand;
+        background-color: rgba($brand-black, 0.95);
+        backdrop-filter: blur(4px);
+        position: fixed;
+        max-height: 100%;
+        z-index: 30;
+        transition:
+          opacity $timing,
+          transform $timing;
+      }
+    }
+
+    // centered between logo and right screen edge
+    @media (min-width: $s) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    // left-aligned
+    @media (min-width: $m) {
+      margin-left: $gutter;
     }
   }
 
@@ -164,12 +168,11 @@
     width: 100%;
     height: auto;
     float: left;
-    background-color: $white;
 
     @media (max-width: $s - 0.001) {
-      & + & {
-        border-top: 1px solid $light-1;
-      }
+      flex: 1 1 auto;
+      display: flex;
+
       &:last-of-type {
         border-radius: 0 0 $radius-lg $radius-lg;
         overflow: hidden;
@@ -180,6 +183,7 @@
     @media (min-width: $s) {
       width: auto;
       display: block;
+      background-color: $white;
     }
   }
 
@@ -190,34 +194,39 @@
 
   // nav links
   .main-nav-link {
-    display: block;
-    line-height: 40px;
-    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 1 100%;
+    width: 100%;
     z-index: 1;
     overflow: hidden;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+
+    @media (max-width: $s - 0.001) {
+      font-size: calc(2vh + #{$milli});
+      padding: 0.25em $gutter * 2;
+
+      &:focus {
+        outline-offset: -2px;
+      }
+    }
 
     // extra padding where screen real estate allows
     @media (min-width: $s) {
       padding: 0 rem(9);
       line-height: $nav-height; // vertically center
       font-size: $epsilon;
+
+      // interactions
+      &:not(.is-active) {
+        @include fancy-nav-hover;
+      }
     }
 
     // active page
     &.is-active {
       color: $dark-2;
     }
-  }
-
-
-  ////////////////////////////////////////////
-  // main nav link interactions
-  ////////////////////////////////////////////
-
-  .main-nav-link:not(.is-active) {
-    @include fancy-nav-hover;
   }
 
 

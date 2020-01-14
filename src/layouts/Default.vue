@@ -1,12 +1,11 @@
 <script>
   import {Fragment} from "vue-fragment";
   import MainNav from "~/components/MainNav";
-  import MainSidebar from "~/components/MainSidebar";
   import Footer from "~/components/Footer";
 
   export default {
     components: {
-      Fragment, MainNav, MainSidebar, Footer
+      Fragment, MainNav, Footer
     },
     props: {
       wrapperClass: { default: null, type: String },
@@ -38,8 +37,6 @@
         </div>
       </main>
     </transition>
-
-    <MainSidebar />
 
     <Footer />
   </Fragment>

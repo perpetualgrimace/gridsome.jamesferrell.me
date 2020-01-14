@@ -40,41 +40,62 @@
     height: 30px;
     max-width: 10rem;
     z-index: 1; // position above logo on tiny viewports
-    // anchor menu text to right side when toggled
-    text-align: right;
-    // theming
-    background-color: $white;
-    border-radius: $radius-lg;
-    transition: max-width $timing;
 
     // menu toggle text
     .hamburger-text {
       font-size: 18px; // set in pixels like the icon and links
-      color: $brand-color;
+      color: inherit;
     }
 
     // click me
-    &.is-inactive:hover .hamburger-icon,
-    &.is-inactive:focus .hamburger-icon {
-      transform: scale(1.125);
+    &.is-inactive {
+      transition-property: color; // override default link style
+
+      &:hover, &:focus {
+        .hamburger-icon {
+          transform: scale(1.125);
+        }
+      }
     }
 
     // nav-toggle active state
     &.is-active {
-      @include nav-toggle-max-width;
-      width: calc(100% - 2rem);
-      max-width: $sidebar-width;
-      background-color: $brand-color;
+      // sized to menu item height
+      width: calc(100vh / 7);
+      height: calc(100vh / 7);
+      padding: 0;
+      // absolutely position, then offset in a way that's transitionable
+      position: absolute;
+      top: -$gutter;
+      right: -$gutter;
+      transform: translate(-$gutter, $gutter);
+      // centered X
+      display: flex;
+      background-color: transparent;
       border-radius: $radius-lg $radius-lg 0 0;
       box-shadow: none;
+      z-index: 31;
 
       &:focus {
         outline-offset: 2px;
       }
 
       .hamburger-text {
-        color: $white;
+        @include visually-hidden;
+        color: transparent;
       }
+
+      .hamburger-icon {
+        margin: auto;
+        width: 1rem;
+        height: 1rem;
+        transform: scale(1.5) rotate(-90deg) translateX(0.375em); // frickin' fudged
+      }
+    }
+
+    &:hover *, 
+    &:focus * {
+      color: $white;
     }
   }
 
@@ -82,7 +103,7 @@
   .hamburger-icon {
     display: inline-block;
     margin-left: 0.4rem;
-    transition: transform $timing-fast;
+    transition: transform $timing;
   }
 
   // hamburger initial state
@@ -91,7 +112,7 @@
     width: 16px;
     height: 2px;
     border-radius: 1px;
-    background-color: $brand-color;
+    background-color: currentColor;
     transition: transform $timing;
 
     // stacked buns
@@ -103,10 +124,6 @@
   // hamburger active state
   .hamburger-icon.is-active {
     transform: translateX(5px);
-
-    .hamburger-icon-bun {
-      background-color: $white;
-    }
 
     .hamburger-icon-bun-top {
       transform: rotateZ(45deg) translateY(7px);

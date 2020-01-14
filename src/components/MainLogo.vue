@@ -5,7 +5,8 @@
     name: "MainLogo",
     props: {
       img: { default: "/images/icons/jf-icon.png" },
-      img2x: { default: "/images/icons/jf-icon@2x.png" }
+      img2x: { default: "/images/icons/jf-icon@2x.png" },
+      tabbable: { default: true }
     },
     data () {
       return {
@@ -17,7 +18,7 @@
 
 
 <template>
-  <g-link to="/" class="main-logo" active-class="" exact-active-class="is-active">
+  <g-link to="/" class="main-logo" active-class="" exact-active-class="is-active" :tabindex="tabbable ? null : '-1'">
 
     <span class="main-logo-icon">
       <img class="main-logo-icon-img"
@@ -43,7 +44,8 @@
     // sizing
     display: block;
     height: $nav-height;
-    max-width: 11.5rem;
+    max-width: $logo-width;
+    flex: 1 1 $logo-width;
     padding-left: 2rem;
     line-height: $nav-height;
     // theming
@@ -51,27 +53,21 @@
 
     // override default
     & .main-logo-text {
+      font-size: 18px;
       color: $white;
+
+      @media (min-width: $s) {
+        top: -1px;
+      }
     }
 
 
     // sidebar layout
     @media (min-width: $l) {
-      // sizing
-      width: $sidebar-width;
-      max-width: $sidebar-width;
       // pin to top left
-      position: absolute;
-      left: -$sidebar-width; // offset sidebar
+      left: -0.5rem;
       // theming
       @include box-shadow;
-
-      & .main-logo-text {
-        // scale up text
-        font-size: $delta;
-        // positioning
-        display: inline-block; // allow positioning
-      }
 
       // interactions
       &:hover, &:focus {
@@ -80,10 +76,8 @@
     }
 
     // fudge vertical alignment on big screens
-    @media (min-width: $xl) {
-      & > * {
-        transform: translateY(-1px);
-      }
+    & > * {
+      transform: translateY(-1px);
     }
   }
 
@@ -97,14 +91,9 @@
     display: inline-block;
     margin-right: 6px;
     vertical-align: middle;
-    top: -1px; // fudge the icon up
     // theming
     border-radius: $radius;
-
-    @media (min-width: $l) {
-      top: -0.125rem;
-      margin-right: 10px;
-    }
+    top: -0.125rem;
   }
 
   // tweakpoint to hide text
