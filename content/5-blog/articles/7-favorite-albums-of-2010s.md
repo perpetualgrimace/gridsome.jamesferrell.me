@@ -52,7 +52,7 @@ Plini has some definite synergy with Intervals: groovy, melodic instrumental mus
 
 This album is everything great about 2010’s Valley of Smoke, dialed up to 11 — proggy post metal at its best. The gruff vocals and grind-influenced drums won’t be for everyone — including metal snobs who dismiss it as not being brutal or fast enough (⁉️). But this is an extremely well-written collection of songs with lots of memorable moments. I saw the band perform this album in its entirety and it was glorious.
 
-[My one and only YouTube drum cover](https://www.youtube.com/watch?v=P7OzZHSMIus) is of a nine minute song from this album. I have conflicting thoughts about the situation with Danny Walker, but I can’t deny that he’s had a big influence on my drumming.
+[My one and only YouTube drum cover](https://www.youtube.com/watch?v=xBwMKoMChh4) is of a nine minute song from this album. I have conflicting thoughts about the situation with Danny Walker, but I can’t deny that he’s had a big influence on my drumming.
 
 ## Meshuggah — [Koloss](https://www.youtube.com/watch?v=fTYXbFsWg-M&list=PLM-zsQgjdEs-CKOKICC1AnI4drmve-8xm&index=2&t=0s)
 *Released 2012  |  55 minutes*
