@@ -73,6 +73,8 @@
 		@include bp-fixed-nav {
 			@include box-shadow($shadow);
 			position: fixed;
+			left: 0;
+			right: 0;
 
 			& + .main {
 				margin-top: $nav-height;
