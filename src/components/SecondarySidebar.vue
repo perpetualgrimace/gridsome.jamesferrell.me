@@ -65,9 +65,6 @@
   // style secondary text content in stacked layout
   // NOTE: to be used on texty pages with texty secondary content
   .secondary-content[class] { // specificy increase needed to override main.css
-    @media (max-width: $xl - 0.001) {
-      @include secondary-content-as-primary;
-    }
     @media (min-width: $xl) {
       h2:not(.gamma) {
         font-size: $delta;

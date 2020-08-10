@@ -4,37 +4,37 @@
 
 // default type
 html {
-  @include body-font;
+	@include body-font;
 }
 
 // bold type
 strong, b, a,
 dt {
-  @include body-bold-font;
+	@include body-bold-font;
 }
 
 // italic type
 em, i {
-  @include body-italic-font;
+	@include body-italic-font;
 
-  & > a {
-    font-style: inherit;
-  }
+	& > a {
+		font-style: inherit;
+	}
 }
 
 // heading type
 .heading,
 h1, h2, h3, h4, h5, h6 {
-  @include display-font;
-  letter-spacing: normal;
-  text-transform: none;
+	@include display-font;
+	letter-spacing: normal;
+	text-transform: none;
 }
 
 // semibold type
 button, input[type='button'], label,
 .subhead {
-  @include body-semibold-font;
-  text-transform: uppercase;
+	@include body-semibold-font;
+	text-transform: uppercase;
 }
 
 // type size defaults
@@ -50,40 +50,40 @@ h2 ~ h3 { font-size: $bigger-than-delta; }
 
 // type size overrides
 .alpha {
-  font-size: $alpha;
+	font-size: $alpha;
 }
 .beta  {
-  font-size: $beta;
+	font-size: $beta;
 }
 .gamma,
 .gamma p,
 .gamma li {
-  font-size: $gamma;
+	font-size: $gamma;
 }
 .delta,
 .delta p,
 .delta li {
-  font-size: $delta;
+	font-size: $delta;
 }
 .epsilon,
 .epsilon p,
 .epsilon li {
-  font-size: $epsilon;
+	font-size: $epsilon;
 }
 .milli,
 .milli p,
 .milli li  {
-  font-size: $milli;
+	font-size: $milli;
 }
 
 
 // default line-height
 html {
-  line-height: 1.5;
+	line-height: 1.5;
 }
 
 // heading line-height
 h1, h2, h3, h4, h5, h6,
 .heading, .display {
-  line-height: 1;
+	line-height: 1;
 }

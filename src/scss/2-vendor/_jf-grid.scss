@@ -40,19 +40,19 @@ $split-amount:      2;    // In a compact grid, $grid-padding is divided by this
 
 // set font size on html element, then use REM units wherever possible
 html {
-  font-size: 100%; // 16px
+	font-size: 100%; // 16px
 
-  @media (min-width: $breakpoint-s) {
-    font-size: 112.5%; // 18px
-  }
+	@media (min-width: $breakpoint-s) {
+		font-size: 112.5%; // 18px
+	}
 
-  @media (min-width: $breakpoint-l) {
-    font-size: 125%; // 20px
-  }
+	@media (min-width: $breakpoint-l) {
+		font-size: 125%; // 20px
+	}
 
-  @media (min-width: 110em) {
-    font-size: 137.5%; // 22px
-  }
+	@media (min-width: 110em) {
+		font-size: 137.5%; // 22px
+	}
 }
 
 
@@ -62,36 +62,36 @@ html {
 
 // container
 .g-container {
-  width: 100%; // needed when content isn't wide enough
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: $grid-padding;
+	width: 100%; // needed when content isn't wide enough
+	max-width: $max-width;
+	margin: 0 auto;
+	padding: $grid-padding;
 }
 
 // main grid
 .g-columns {
-  @include clearfix; // necessary because floats
+	@include clearfix; // necessary because floats
 
-  .g-col {
-    margin-top: 0;
-    box-sizing: border-box;
-    float: left;
-    width: 100%; // initial
-    max-width: 100%;
-    padding: $grid-padding;
-  }
+	.g-col {
+		margin-top: 0;
+		box-sizing: border-box;
+		float: left;
+		width: 100%; // initial
+		max-width: 100%;
+		padding: $grid-padding;
+	}
 
-  // nested columns
-  .g-columns {
-    margin: -$grid-padding; // offset padding
-  }
-  @media screen and (min-width: $breakpoint-m) {
-    @for $i from 1 through $column-count {
-      .g-#{$i} {
-        width: #{ $i * (100% / $column-count) };
-      }
-    }
-  }
+	// nested columns
+	.g-columns {
+		margin: -$grid-padding; // offset padding
+	}
+	@media screen and (min-width: $breakpoint-m) {
+		@for $i from 1 through $column-count {
+			.g-#{$i} {
+				width: #{ $i * (100% / $column-count) };
+			}
+		}
+	}
 }
 
 
@@ -101,46 +101,46 @@ html {
 
 // double grid width on smaller viewports before collapsing into one
 .g-columns.g-doubling {
-  @media screen and (min-width: $breakpoint-s) and (max-width: $breakpoint-l - 0.001) {
-    @for $i from 1 through ($column-count - 1) {
-      .g-#{$i} {
-        width: #{ $i * (100% / ($column-count / 2)) };
-      }
-    }
-    // reset width for nested columns
-    .g-columns .g-col {
-      width: 100% !important;
-    }
-  }
+	@media screen and (min-width: $breakpoint-s) and (max-width: $breakpoint-l - 0.001) {
+		@for $i from 1 through ($column-count - 1) {
+			.g-#{$i} {
+				width: #{ $i * (100% / ($column-count / 2)) };
+			}
+		}
+		// reset width for nested columns
+		.g-columns .g-col {
+			width: 100% !important;
+		}
+	}
 }
 
 // keep the same column span across all viewports
 .g-columns.g-constant {
-  margin: $grid-padding; // offset padding
-  @for $i from 1 through $column-count {
-    .g-#{$i} {
-      width: #{ $i * (100% / $column-count) };
-    }
-  }
+	margin: $grid-padding; // offset padding
+	@for $i from 1 through $column-count {
+		.g-#{$i} {
+			width: #{ $i * (100% / $column-count) };
+		}
+	}
 }
 
 // compact grid with smaller padding
 .g-columns.g-compact {
-  // offset smaller column padding by adding padding to the container -- with the power of math!
-  padding: $grid-padding - ($grid-padding / $split-amount);
+	// offset smaller column padding by adding padding to the container -- with the power of math!
+	padding: $grid-padding - ($grid-padding / $split-amount);
 
-  .g-col {
-    padding: $grid-padding / $split-amount;
+	.g-col {
+		padding: $grid-padding / $split-amount;
 
-    .g-columns {
-      margin: -($grid-padding / $split-amount);
-    }
-  }
+		.g-columns {
+			margin: -($grid-padding / $split-amount);
+		}
+	}
 }
 
 // no gutters
 .g-columns.g-gutterless .g-col {
-  padding: 0;
+	padding: 0;
 }
 
 
@@ -150,27 +150,27 @@ html {
 
 // add .g-debug to parent
 .g-debug {
-  // container
-  .g-container {
-    outline: orange solid 2px;
-    box-shadow: inset 0 0 0 $gutter rgba(orange, 0.1)
-  }
-  // column groups and modifiers
-  .g-columns {
-    outline: blue solid 2px;
-    box-shadow: inset 0 0 0 $gutter rgba(blue, 0.1)
-  }
-  .g-compact {
-    outline: purple solid 2px;
-    box-shadow: inset 0 0 0 $gutter rgba(purple, 0.1)
-  }
-  .g-gutterless {
-    outline: indigo solid 2px;
-    box-shadow: inset 0 0 0 $gutter rgba(indigo, 0.1)
-  }
-  // individual columns
-  .g-col {
-    outline: green solid 2px;
-    box-shadow: inset 0 0 0 $gutter rgba(green, 0.1)
-  }
+	// container
+	.g-container {
+		outline: orange solid 2px;
+		box-shadow: inset 0 0 0 $gutter rgba(orange, 0.1)
+	}
+	// column groups and modifiers
+	.g-columns {
+		outline: blue solid 2px;
+		box-shadow: inset 0 0 0 $gutter rgba(blue, 0.1)
+	}
+	.g-compact {
+		outline: purple solid 2px;
+		box-shadow: inset 0 0 0 $gutter rgba(purple, 0.1)
+	}
+	.g-gutterless {
+		outline: indigo solid 2px;
+		box-shadow: inset 0 0 0 $gutter rgba(indigo, 0.1)
+	}
+	// individual columns
+	.g-col {
+		outline: green solid 2px;
+		box-shadow: inset 0 0 0 $gutter rgba(green, 0.1)
+	}
 }

@@ -1,24 +1,4 @@
 /////////////////////////////////////////////
-// sweet sticky footer via flexbox
-/////////////////////////////////////////////
-
-// https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
-// NOTE: needed for ginormous screens
-@supports (flex-wrap: wrap) {
-  body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-  .main, .primary-content:only-child {
-    display: flex; // allow main content to be centered
-    flex-direction: column;
-    flex: 1 0 auto;
-  }
-}
-
-
-/////////////////////////////////////////////
 // primary and secondary content defaults
 /////////////////////////////////////////////
 
