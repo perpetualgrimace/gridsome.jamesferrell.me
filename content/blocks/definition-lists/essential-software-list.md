@@ -4,8 +4,8 @@ slug: essential-software-list
 
 ## Essentials
 
-### [Vivaldi](https://vivaldi.com/)
-Currently trying this out as my main browser. It’s very customizable and — more importantly — fast and efficient.
+### [Firefox](https://firefox.com/)
+Something something support browser diversity. Also, it has very nice front-end dev tools.
 
 ### [Spark](https://sparkmailapp.com/)
 Spark is good enough for managing my email for now. I’ll always miss [Mailbox](https://www.theverge.com/2015/12/8/9873268/why-dropbox-mailbox-shutdown) though. 😭
