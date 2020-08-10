@@ -78,14 +78,14 @@
 
 	// footer links
 	.footer-nav-link, 
-	.social-link {
+	.footer .social-link {
 		@include body-semibold-font;
 		@include font-smoothing;
 		padding: 0.5rem;
 		text-transform: uppercase;
 		text-decoration: none;
 		font-size: $epsilon;
-		color: $gray;
+		color: $light-2;
 
 		// active page link
 		&.is-active {
@@ -110,6 +110,10 @@
 				transform: scale(1.075);
 			}
 		}
+	}
+
+	.footer .social-text {
+		color: inherit;
 	}
 
 	.footer-nav-break {
