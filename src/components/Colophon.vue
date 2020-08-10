@@ -158,7 +158,7 @@
 	}
 
 	.colophon-avatar-inner {
-		animation: popIn $timing-longest 0.45s; // page transition duration + delay
+		// animation: popIn $timing-longest 0.45s; // page transition duration + delay
 
 		@media (min-width: $xs) {
 			padding-right: 1em;

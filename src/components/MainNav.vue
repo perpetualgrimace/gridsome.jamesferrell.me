@@ -215,6 +215,10 @@
 			font-size: calc(2vh + #{$milli});
 			padding: 0.25em $gutter * 2;
 
+			&:hover, &:focus {
+				color: $white;
+			}
+
 			&:focus {
 				outline-offset: -2px;
 			}
