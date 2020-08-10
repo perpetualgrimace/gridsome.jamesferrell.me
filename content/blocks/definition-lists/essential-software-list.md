@@ -10,6 +10,9 @@ Something something support browser diversity. Also, it has very nice front-end
 ### [Spark](https://sparkmailapp.com/)
 Spark is good enough for managing my email for now. I’ll always miss [Mailbox](https://www.theverge.com/2015/12/8/9873268/why-dropbox-mailbox-shutdown) though. 😭
 
+### [Notion](https://notion.so)
+One app for all your note taking, TODO list, and project planning needs.
+
 ### [Fantastical](https://flexibits.com/fantastical)
 The perfect calendar app. I can quickly add calendar events with human language. I’m terrible with dates, so a good calendar app is crucial.
 

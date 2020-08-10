@@ -41,7 +41,7 @@
     <VueRemarkContent class="content" />
 
     <template slot="sidebar">
-      <SecondarySidebar :heading="$page.d.sidebarHeading" :text="$page.d.sidebarText" />
+      <SecondarySidebar class="uses-sidebar" :heading="$page.d.sidebarHeading" :text="$page.d.sidebarText" />
     </template>
 
     <template slot="cta">
@@ -52,4 +52,10 @@
 
 
 <style lang="scss">
+  .uses-sidebar {
+    @media (max-width: $l - 0.001) {
+      // style secondary content in stacked layout
+      @include secondary-content-as-primary;
+    }
+  }
 </style>

@@ -74,8 +74,10 @@
       // dirty hacks to keep headings and paragraphs together :/
       h3[id="terminal"] + p,
       h3[id="icon-slate"] + p,
-      h3[id="bettersnaptool"] + p {
-        break-after: always;
+      h3[id="memory-clean"] + p,
+      h3[id="fantastical"] + p {
+        break-before: avoid;
+        margin-bottom: 5em;
 
         & + h3 { margin-top: 0; }
       }
