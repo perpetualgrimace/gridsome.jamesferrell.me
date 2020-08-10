@@ -154,11 +154,6 @@
 			margin-right: auto;
 		}
 
-		// left-aligned
-		@media (min-width: $m) {
-			margin-left: $gutter;
-		}
-
 		@media (max-height: $xxs - 0.001) {
 			flex-direction: row;
 			flex-wrap: wrap;
@@ -223,7 +218,7 @@
 
 		// extra padding where screen real estate allows
 		@media (min-width: $s) {
-			padding: 0 rem(9);
+			padding: 0 calc(0.5em + 0.5vw);
 			line-height: $nav-height; // vertically center
 			font-size: $epsilon;
 
@@ -231,6 +226,9 @@
 			&:not(.is-active) {
 				@include fancy-nav-hover;
 			}
+		}
+		@media (min-width: $m) {
+			padding: 0 calc(0.5em + 1vw);
 		}
 
 		// active page

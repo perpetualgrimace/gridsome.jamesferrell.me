@@ -62,12 +62,10 @@
     }
 
 
-    // sidebar layout
+    // big screen layout
     @media (min-width: $l) {
       // pin to top left
       left: -0.5rem;
-      // theming
-      @include box-shadow;
 
       // interactions
       &:hover, &:focus {

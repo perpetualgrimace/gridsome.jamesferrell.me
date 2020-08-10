@@ -4,31 +4,31 @@
 
 // body fonts
 @mixin body-font {
-  font-family: "source-sans-pro", "Source Sans Pro", "Geneva Regular", Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 400;
+	font-family: "source-sans-pro", "Source Sans Pro", "Geneva Regular", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: 400;
 }
 @mixin body-italic-font {
-  font-family: "source-sans-pro", "Source Sans Pro", "Geneva Regular", Helvetica, Arial, sans-serif;
-  font-style: italic;
-  font-weight: 400;
+	font-family: "source-sans-pro", "Source Sans Pro", "Geneva Regular", Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400;
 }
 @mixin body-semibold-font {
-  font-family: "source-sans-pro", "Source Sans Pro", "Geneva Regular", Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 600;
+	font-family: "source-sans-pro", "Source Sans Pro", "Geneva Regular", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: 600;
 }
 @mixin body-bold-font {
-  font-family: "source-sans-pro", "Source Sans Pro", "Geneva Regular", Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 700;
+	font-family: "source-sans-pro", "Source Sans Pro", "Geneva Regular", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: 700;
 }
 
 // heading fonts
 @mixin display-font {
-  font-family: "freight-display-pro", garamond, serif;
-  font-style: normal;
-  font-weight: 600;
+	font-family: "freight-display-pro", garamond, serif;
+	font-style: normal;
+	font-weight: 600;
 }
 
 // font smoothing
@@ -43,9 +43,9 @@
 
 // used by nav and main sidebar
 @mixin bp-fixed-nav {
-  @media (min-width: $l) and (min-height: $s) {
-    @content;
-  }
+	@media (min-width: $l) and (min-height: $s) {
+		@content;
+	}
 }
 
 ////////////////////////////////
@@ -54,78 +54,78 @@
 
 // break out of container and be full width
 @mixin fullwidth {
-  margin-left: auto; // fallbacks
-  margin-right: auto;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+	margin-left: auto; // fallbacks
+	margin-right: auto;
+	margin-left: calc(-50vw + 50%);
+	margin-right: calc(-50vw + 50%);
 }
 
 // Psuedo elements
 @mixin pseudo {
-  content: '';
-  display: block;
+	content: '';
+	display: block;
 }
 
 // Fill up an absolutely 100% amount of space; let yourself be huge
 @mixin absolute-expand {
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  width: 100%;
-  height: 100%;
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 // vertically center exactly one child element via flexbox
 @mixin flex-vertical-center {
-  display: flex;
-  align-items: center;
-  height: 100%;
+	display: flex;
+	align-items: center;
+	height: 100%;
 }
 
 // Centered elements, the dumb but sometimes useful way
 @mixin absolute-center {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 @mixin vertical-center {
-  top: 50%;
-  transform: translate(0, -50%);
+	top: 50%;
+	transform: translate(0, -50%);
 }
 @mixin horizontal-center {
-  left: 50%;
-  transform: translate(-50%, 0);
+	left: 50%;
+	transform: translate(-50%, 0);
 }
 
 // Good ol' clearfix
 @mixin clearfix {
-  &:after {
-    content: " ";
-    display: table;
-    clear: both;
-  }
+	&:after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
 }
 
 // No wiggle
 @mixin no-wiggle {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
 }
 
 // Auto-ellipsis
 @mixin ellipsis {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 @mixin visually-hidden {
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
 }
 
 
@@ -135,37 +135,37 @@
 
 // hidpi mixin, somewhat inspired by responsive.scss.
 @mixin hidpi($multiplier: 1.5) {
-  @media (min-device-pixel-ratio: $multiplier), (min-resolution: (96dpi * $multiplier)) {
-    @content;
-  }
+	@media (min-device-pixel-ratio: $multiplier), (min-resolution: (96dpi * $multiplier)) {
+		@content;
+	}
 }
 
 // Svg background with fallback and retina support
 @mixin svg($filename, $path : "img/") {
-  background-image: url(../../#{$path}#{$filename}.png);
-  background-image:
-    linear-gradient(transparent, transparent),
-    url(../../#{$path}#{$filename}.svg);
+	background-image: url(../../#{$path}#{$filename}.png);
+	background-image:
+		linear-gradient(transparent, transparent),
+		url(../../#{$path}#{$filename}.svg);
 
-  // hi res
-  @include hidpi {
-    background-image: url(../../#{$path}#{$filename}@2x.png);
-    background-image:
-      linear-gradient(transparent, transparent),
-      url(../../#{$path}#{$filename}.svg);
-  }
+	// hi res
+	@include hidpi {
+		background-image: url(../../#{$path}#{$filename}@2x.png);
+		background-image:
+			linear-gradient(transparent, transparent),
+			url(../../#{$path}#{$filename}.svg);
+	}
 }
 
 // Repeating patterns
 @mixin pattern($filename: pattern, $extension: png) {
-  background-image: url(../../img/backgrounds/#{$filename}.#{$extension});
-  background-repeat: repeat;
-  background-size: auto;
-  background-position: -20% 0;
+	background-image: url(../../img/backgrounds/#{$filename}.#{$extension});
+	background-repeat: repeat;
+	background-size: auto;
+	background-position: -20% 0;
 
-  @include hidpi {
-    background-image: url(../../img/backgrounds/#{$filename}@2x.#{$extension});
-  }
+	@include hidpi {
+		background-image: url(../../img/backgrounds/#{$filename}@2x.#{$extension});
+	}
 }
 
 
@@ -174,11 +174,11 @@
 ////////////////////////////////
 
 @mixin brand-color-depth {
-  background-image: radial-gradient(at top, $brand-light 0%, $brand-color 49%, $brand-dark 100%);
+	background-image: radial-gradient(at top, $brand-light 0%, $brand-color 49%, $brand-dark 100%);
 }
 
 @mixin radial-gloss {
-  background-image: radial-gradient(at top, rgba($white, 0.1) 0%, rgba($white, 0) 100%);
+	background-image: radial-gradient(at top, rgba($white, 0.1) 0%, rgba($white, 0) 100%);
 }
 
 
@@ -188,30 +188,30 @@
 
 // box shadow
 @mixin box-shadow($shadow-color: $shadow) {
-  box-shadow: 0 1px 0.25em $shadow-color;
+	box-shadow: 0 1px 0.25em $shadow-color;
 }
 @mixin box-shadow-lg($shadow-color: $shadow) {
-  box-shadow: 0 1px 0.5em $shadow-color;
+	box-shadow: 0 1px 0.5em $shadow-color;
 }
 @mixin box-shadow-xl($shadow-color: $shadow) {
-  box-shadow: 0 1px 1em $shadow-color;
+	box-shadow: 0 1px 1em $shadow-color;
 }
 @mixin box-shadow-focus($shadow-color: rgba($brand-light, 0.5)) {
-  box-shadow: 0 0 0.25em $shadow-color;
+	box-shadow: 0 0 0.25em $shadow-color;
 }
 @mixin device-shadow {
-  box-shadow:
-    0 2px 4px 0 rgba(0, 0, 0, 0.20),
-    0 2px 12px 0 rgba($black, 0.33);
+	box-shadow:
+		0 2px 4px 0 rgba(0, 0, 0, 0.20),
+		0 2px 12px 0 rgba($black, 0.33);
 }
 
 // text shadow
 @mixin text-shadow($shadow-color: $shadow) {
-  text-shadow: 0 1px 0.25em $shadow-color;
+	text-shadow: 0 1px 0.25em $shadow-color;
 }
 
 @mixin text-shadow-lg($shadow-color: $shadow-dark) {
-  text-shadow: 0 1px 0.5em $shadow-color;
+	text-shadow: 0 1px 0.5em $shadow-color;
 }
 
 
@@ -220,11 +220,11 @@
 ////////////////////////////////
 
 @mixin hr {
-  border: 0;
-  display: inline-block;
-  width: 2rem;
-  height: 2px;
-  background: $light-2;
+	border: 0;
+	display: inline-block;
+	width: 2rem;
+	height: 2px;
+	background: $light-2;
 }
 
 
@@ -234,26 +234,26 @@
 
 // style secondary content like primary content, add visual separator
 @mixin secondary-content-as-primary {
-  // compensate for _layout.scss's .section + .section margin-top reset
-  > .secondary {
-    padding-top: 2.5rem;
+	// compensate for _layout.scss's .section + .section margin-top reset
+	> .secondary {
+		padding-top: 2.5rem;
 
-    // visual separator
-    &:before {
-      @include pseudo;
-      @include hr;
-      position: absolute;
-      top: 0.5rem;
-    }
-  }
+		// visual separator
+		&:before {
+			@include pseudo;
+			@include hr;
+			position: absolute;
+			top: 0.5rem;
+		}
+	}
 
-  // bump up text sizes to primary
-  h2 {
-    font-size: $gamma;
-  }
-  p:not([class*="card-"]) { // exclude card meta
-    font-size: $delta;
-  }
+	// bump up text sizes to primary
+	h2 {
+		font-size: $gamma;
+	}
+	p:not([class*="card-"]) { // exclude card meta
+		font-size: $delta;
+	}
 }
 
 
@@ -263,89 +263,89 @@
 
 // dropdown mixins for hidden and visible states
 @mixin dropdown-hidden {
-  position: absolute;
-  width: auto;
-  transform: scale(1.05);
-  opacity: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-  z-index: -100;
+	position: absolute;
+	width: auto;
+	transform: scale(1.05);
+	opacity: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+	z-index: -100;
 }
 @mixin dropdown-visible {
-  transform: translate(0, 0);
-  opacity: 1;
-  clip: auto;
-  overflow: visible;
-  z-index: 1;
+	transform: translate(0, 0);
+	opacity: 1;
+	clip: auto;
+	overflow: visible;
+	z-index: 1;
 }
 
 // apply fancy hover interactions to a link
 @mixin fancy-nav-hover {
-  &:after {
-    @include pseudo;
-    @include absolute-expand;
-    z-index: -1; // hide behind text
-    background: $brand-light;
-    background-image: linear-gradient(to bottom, $brand-light, $brand-color);
-    opacity: 0;
-    transform: translateX(-100%);
-    transition:
-      opacity $timing,
-      transform $timing;
+	&:after {
+		@include pseudo;
+		@include absolute-expand;
+		z-index: -1; // hide behind text
+		background: $brand-light;
+		background-image: linear-gradient(to bottom, $brand-light, $brand-color);
+		opacity: 0;
+		transform: translateX(-100%);
+		transition:
+			opacity $timing,
+			transform $timing;
 
-    @media (min-width: $s) {
-      transform: translateY(100%);
-    }
-  }
+		@media (min-width: $s) {
+			transform: translateY(100%);
+		}
+	}
 
-  // hover state
-  &:hover, &:focus {
-    background-color: $white; // make room for pseudo element
-    color: $white; // make text readable against pseudo element
+	// hover state
+	&:hover, &:focus {
+		background-color: $white; // make room for pseudo element
+		color: $white; // make text readable against pseudo element
 
-    // show pseudo element
-    &:after {
-      opacity: 1;
-      transform: none;
-    }
-  }
+		// show pseudo element
+		&:after {
+			opacity: 1;
+			transform: none;
+		}
+	}
 }
 
 // nav toggle max width
 @mixin nav-toggle-max-width {
-  @media (max-width: $xxs - 0.001) {
-    max-width: calc(100% - 2rem);
-  }
+	@media (max-width: $xxs - 0.001) {
+		max-width: calc(100% - 2rem);
+	}
 }
 
 // list block shared style
 @mixin list-block {
-  // if it's too small for columns, bump up font sizes
-  @media (max-width: 35em - 0.001) {
-    h3 { font-size: $bigger-than-delta; }
-    p, li { font-size: $delta; }
-    em { font-size: $epsilon; } // subhead
-  }
-  // halfway between $xs and $s
-  @media (min-width: 35em) {
-    columns: 2;
-    column-gap: $gutter * 2;
+	// if it's too small for columns, bump up font sizes
+	@media (max-width: 35em - 0.001) {
+		h3 { font-size: $bigger-than-delta; }
+		p, li { font-size: $delta; }
+		em { font-size: $epsilon; } // subhead
+	}
+	// halfway between $xs and $s
+	@media (min-width: 35em) {
+		columns: 2;
+		column-gap: $gutter * 2;
 
-    ul, p { break-inside: avoid; }
-    h2 {
-      column-span: all;
-      margin-bottom: 0.5em;
-    }
-    h3 { break-after: avoid; }
-  }
+		ul, p { break-inside: avoid; }
+		h2 {
+			column-span: all;
+			margin-bottom: 0.5em;
+		}
+		h3 { break-after: avoid; }
+	}
 }
 
 @mixin sidebar-paragraph-spacing {
-  line-height: 1.25;
+	line-height: 1.25;
 
-  & + p {
-    margin-top: 0.625em;
-  }
+	& + p {
+		margin-top: 0.625em;
+	}
 }
 
 
@@ -354,20 +354,20 @@
 ////////////////////////////////
 
 @mixin brand-theme {
-  @include font-smoothing;
+	@include font-smoothing;
 
-  // heading link style
-  h2, h3, h4, h5, h6 {
-    color: $white;
-  }
+	// heading link style
+	h2, h3, h4, h5, h6 {
+		color: $white;
+	}
 
-  // paragraph link stye
-  p > a {
-    color: rgba($white, 0.9);
+	// paragraph link stye
+	p > a {
+		color: rgba($white, 0.9);
 
-    // interactions
-    &:hover, &:active, &:focus {
-      color: $white;
-    }
-  }
+		// interactions
+		&:hover, &:active, &:focus {
+			color: $white;
+		}
+	}
 }

@@ -23,12 +23,14 @@
 
 				<slot name="hero" />
 
-				<div class="section primary-content" :class="singleColumn && 'single-column'">
-					<slot />
-				</div>
+				<div class="content-wrapper" :class="singleColumn ? 'single-column' : 'with-sidebar'">
+					<div class="section primary-content">
+						<slot />
+					</div>
 
-				<div class="section secondary-content" v-if="$slots.sidebar">
-					<slot name="sidebar" />
+					<div class="section secondary-content" v-if="$slots.sidebar">
+						<slot name="sidebar" />
+					</div>					
 				</div>
 
 				<div class="section cta-content" v-if="$slots.cta">
