@@ -153,6 +153,10 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
+		// right aligned
+		@media (min-width: $l) {
+			margin-right: $gutter;
+		}
 
 		@media (max-height: $xxs - 0.001) {
 			flex-direction: row;
@@ -218,7 +222,7 @@
 
 		// extra padding where screen real estate allows
 		@media (min-width: $s) {
-			padding: 0 calc(0.5em + 0.5vw);
+			padding: 0 0.75em;
 			line-height: $nav-height; // vertically center
 			font-size: $epsilon;
 
