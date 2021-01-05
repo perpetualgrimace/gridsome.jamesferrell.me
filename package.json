@@ -13,13 +13,13 @@
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.3.4",
     "@gridsome/vue-remark": "^0.1.5",
-    "gridsome": "^0.7.19",
+    "gridsome": "^0.7.23",
     "vue-fragment": "^1.5.1",
     "vue-svg-loader": "^0.12.0"
   },
   "devDependencies": {
-    "node-sass": "^4.14.1",
-    "sass-loader": "^7.1.0"
+    "sass": "^1.32.0",
+    "sass-loader": "^7.3.1"
   },
   "keywords": [
     "gridsome",
