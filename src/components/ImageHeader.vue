@@ -83,12 +83,9 @@
     display: inline-block;
     z-index: 1;
     top: -0.25rem; // fudge into x-height vertical alignment
-
-    // adjust text alignment on bigger screens
-    @media (min-width: $xxxl) {
-      width: $max-main-width - 4rem;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    width: $max-main-width - 4rem;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>
