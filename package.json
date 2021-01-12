@@ -4,7 +4,7 @@
   "description": "Version 5 of my portfolio site, but in Vue via Gridsome",
   "scripts": {
     "build": "gridsome build",
-    "dev": "gridsome develop",
+    "dev": "open http://localhost:8888/ && gridsome develop",
     "explore": "gridsome explore"
   },
   "dependencies": {
