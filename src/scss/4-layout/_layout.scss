@@ -41,7 +41,7 @@
 
 .content-wrapper,
 .content-wrapper ~ * {
-	max-width: $max-main-width;
+	max-width: $inner-width;
 	margin-left: auto;
 	margin-right: auto;
 }

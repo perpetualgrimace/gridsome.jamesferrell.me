@@ -12,12 +12,12 @@
 <script>
   import ArticleList from "~/components/ArticleList";
   import ProjectList from "~/components/ProjectList";
-  import Colophon from "~/components/Colophon";
+  import HomeHero from "~/components/HomeHero";
   import Button from "~/components/Button";
 
   export default {
     components: {
-      ArticleList, ProjectList, Colophon, Button
+      ArticleList, ProjectList, HomeHero, Button
     },
     metaInfo: {
       title: "UX developer"
@@ -29,7 +29,7 @@
   <Layout>
 
     <template slot="hero">
-      <Colophon headline="Introduction" />
+      <HomeHero />
     </template>
 
     <h2 class="u-padding-bottom">{{$page.d.projectsHeading}}</h2>

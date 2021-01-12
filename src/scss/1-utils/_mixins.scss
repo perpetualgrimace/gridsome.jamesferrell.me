@@ -378,3 +378,21 @@
 		}
 	}
 }
+
+////////////////////////////////
+// hero
+////////////////////////////////
+
+@mixin hero-base {
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+	padding: $gutter;
+	max-width: $outer-width;
+	min-height: $hero-height;
+	border-radius: $radius-lg;
+
+	> * {
+		max-width: $inner-width;
+	}
+}

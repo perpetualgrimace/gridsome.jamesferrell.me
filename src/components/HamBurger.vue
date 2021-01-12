@@ -34,8 +34,8 @@
 		@include absolute-vertical-center;
 		right: $gutter;
 		padding: 0 10px 0 9px; // somewhat fudged
-		line-height: 30px;
-		height: 30px;
+		line-height: $nav-height;
+		height: $nav-height;
 		max-width: 10rem;
 		z-index: 1; // position above logo on tiny viewports
 

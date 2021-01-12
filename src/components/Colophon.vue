@@ -96,7 +96,7 @@
 			padding: calc(1rem + 1vh);
 
 			.colophon-inner {
-				max-width: calc(#{$max-container-width} + 6vw);
+				max-width: calc(#{$inner-width} + 6vw);
 				margin-left: auto;
 				margin-right: auto;
 			}

@@ -74,16 +74,16 @@ $radius-md : rem(12);
 $radius-lg : rem(22);
 
 // used by _jf-grid.scss
-$gutter              : 1rem;
-$max-container-width : rem(1000);
-$max-main-width      : rem(1200);
-$sidebar-width       : rem(300);
-$half-sidebar-width  : rem(150);
+$gutter        : 1rem;
+$inner-width   : rem(1160);
+$outer-width   : rem(1200);
+$hero-height   : rem(400);
+$sidebar-width : rem(300);
 
 // used by Nav.vue
 $nav-height     : rem(50);
-$logo-width     : calc(200px + 2rem);
 $logo-icon-size : 30px;
+$logo-width     : calc(#{$logo-icon-size} + 3px + 11.5em);
 
 ////////////////////////////////
 // motion

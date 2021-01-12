@@ -83,7 +83,7 @@
     display: inline-block;
     z-index: 1;
     top: -0.25rem; // fudge into x-height vertical alignment
-    width: $max-main-width - 4rem;
+    width: $inner-width - 4rem;
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;

@@ -26,8 +26,8 @@
 
 
 <template>
-	<div class="main-nav-container">
-		<nav class="main-nav" role="navigation">
+	<div class="main-nav">
+		<nav class="main-nav-inner" role="navigation">
 			<!-- skip link -->
 			<a class="button-inverted skip-link u-visually-hidden" href="#main">Skip to content</a>
 
@@ -58,7 +58,7 @@
 <style lang="scss">
 
 	// default positioning and theming
-	.main-nav-container {
+	.main-nav {
 		top: 0;
 		z-index: 11;
 		margin-bottom: 0;
@@ -82,19 +82,12 @@
 	////////////////////////////////////////////
 
 	// positioning
-	.main-nav {
+	.main-nav-inner {
 		height: $nav-height;
+		width: $inner-width;
+		max-width: 100%;
+		margin: 0 auto;
 		display: flex;
-
-		// layout adjustments on bigger screens
-		@media (min-width: $bp-md) {
-			// max-width: $max-main-width;
-		}
-
-		// offset nav-link padding on 3 column layout
-		@media (min-width: $bp-lg) {
-			padding-left: 0.5rem;
-		}
 	}
 
 	// base style for nav elements
@@ -182,6 +175,9 @@
 			&:not(:last-of-type) {
 				margin-right: 2px;
 			}
+			&:last-of-type {
+				margin-right: -0.75em; // offset link padding
+			}
 		}
 	}
 
@@ -214,7 +210,7 @@
 			}
 		}
 
-		// extra padding where screen real estate allows
+		// big screens
 		@media (min-width: $bp-sm) {
 			padding: 0 0.75em;
 			line-height: $nav-height; // vertically center

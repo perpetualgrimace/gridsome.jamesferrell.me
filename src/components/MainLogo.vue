@@ -46,7 +46,7 @@
 		height: $nav-height;
 		max-width: $logo-width;
 		flex: 1 1 $logo-width;
-		padding-left: 2rem;
+		padding-left: $gutter;
 		line-height: $nav-height;
 
 		// override default

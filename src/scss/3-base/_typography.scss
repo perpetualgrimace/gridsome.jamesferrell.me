@@ -40,7 +40,13 @@ button, input[type='button'], label,
 }
 
 // type size defaults
-h1             { font-size: $font-xxl; }
+h1 {
+	font-size: $font-xxl;
+
+	@media (min-width: $bp-md) {
+		font-size: $font-xxxl;
+	}
+}
 h2             { font-size: $font-xl; }
 h3, p, li      { font-size: $font-md;}
 h4, figcaption { font-size: $font-sm;}
