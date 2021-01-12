@@ -19,6 +19,7 @@
 	<Fragment>
 		<MainNav />
 
+		<transition name="transition-fade" appear>
 			<main class="main u-padding-top-off" id="main">
 
 				<slot name="hero" />
@@ -37,6 +38,7 @@
 					<slot name="cta" />
 				</div>
 			</main>
+		</transition>
 
 		<Footer />
 	</Fragment>
@@ -51,8 +53,8 @@
 
 		&-active {
 			transition:
-				opacity $duration-sm 0.25s,
-				transform $duration-sm 0.25s;
+				opacity $duration-md,
+				transform $duration-sm;
 
 			// hide avatar when loading in
 			& .colophon-avatar-inner {
