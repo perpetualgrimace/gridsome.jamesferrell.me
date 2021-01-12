@@ -43,7 +43,7 @@
 
 // used by nav and main sidebar
 @mixin bp-fixed-nav {
-	@media (min-height: $bp-sm) {
+	@media (min-height: $bp-xxs) {
 		@content;
 	}
 }
