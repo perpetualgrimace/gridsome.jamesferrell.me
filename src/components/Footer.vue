@@ -52,7 +52,7 @@
 <style lang="scss">
 	.footer {
 		@include radial-gloss;
-		background-color: $brand-black !important;
+		background-color: $black !important;
 		// box-shadow: inset 0 1rem 2rem -1rem $shadow-dark;
 		z-index: 1;
 	}
@@ -62,7 +62,7 @@
 	}
 
 	.footer-nav-list {
-		@media (min-width: $s) {
+		@media (min-width: $bp-sm) {
 			display: flex;
 			flex-wrap: wrap;
 			align-items: center;
@@ -71,7 +71,7 @@
 	}
 
 	.footer-nav-item + .footer-nav-item {
-		@media (max-width: $s - 0.001) {
+		@media (max-width: $bp-sm - 0.001) {
 			border-top: 2px solid rgba($white, 0.125);
 		}
 	}
@@ -84,7 +84,7 @@
 		padding: 0.5rem;
 		text-transform: uppercase;
 		text-decoration: none;
-		font-size: $epsilon;
+		font-size: $font-sm;
 		color: $light-2;
 
 		// active page link
@@ -98,7 +98,7 @@
 			text-decoration: underline;
 		}
 
-		@media (max-width: $s - 0.001) {
+		@media (max-width: $bp-sm - 0.001) {
 			display: block;
 			// offset padding
 			margin-left: -0.5em;
@@ -122,7 +122,7 @@
 	}
 
 	.footer-copyright {
-		@media (min-width: $s) and (max-width: $l - 0.001) {
+		@media (min-width: $bp-sm) and (max-width: $bp-lg - 0.001) {
 			text-align: center;
 			margin-top: -0.5em !important;
 		}

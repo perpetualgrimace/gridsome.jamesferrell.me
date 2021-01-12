@@ -51,8 +51,8 @@
 
 		&-active {
 			transition:
-				opacity $timing 0.25s,
-				transform $timing 0.25s;
+				opacity $duration-sm 0.25s,
+				transform $duration-sm 0.25s;
 
 			// hide avatar when loading in
 			& .colophon-avatar-inner {

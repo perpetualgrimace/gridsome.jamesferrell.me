@@ -49,27 +49,27 @@
 		padding-left: 2rem;
 		line-height: $nav-height;
 		// theming
-		background: $brand-black;
+		background: $black;
 
 		// override default
 		& .main-logo-text {
 			font-size: 18px;
 			color: $white;
 
-			@media (min-width: $s) {
+			@media (min-width: $bp-sm) {
 				top: -1px;
 			}
 		}
 
 
 		// big screen layout
-		@media (min-width: $l) {
+		@media (min-width: $bp-lg) {
 			// pin to top left
 			left: -0.5rem;
 
 			// interactions
 			&:hover, &:focus {
-				background-color: lighten($brand-black, 1);
+				background-color: lighten($black, 1);
 			}
 		}
 
@@ -90,7 +90,7 @@
 		margin-right: 6px;
 		vertical-align: middle;
 		// theming
-		border-radius: $radius;
+		border-radius: $radius-md;
 		top: -0.125rem;
 	}
 

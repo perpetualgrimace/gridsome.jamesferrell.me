@@ -50,7 +50,7 @@
     border-bottom: 2px solid transparent; // initial state
     // default padding and border-radius; may be overwritten by button variants
     padding: 0.65em 1.25em 0.55em 1.25em; // forever fudged
-    border-radius: $radius;
+    border-radius: $radius-md;
 
     // transitionable gradient fill
     &:after {

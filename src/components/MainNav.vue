@@ -62,10 +62,10 @@
 		top: 0;
 		z-index: 11;
 		margin-bottom: 0;
-		background-color: $brand-black;
+		background-color: $black;
 
 		// background color
-		@media (min-width: $s) {
+		@media (min-width: $bp-sm) {
 			background-color: $white;
 		}
 
@@ -93,12 +93,12 @@
 		display: flex;
 
 		// layout adjustments on bigger screens
-		@media (min-width: $m) {
+		@media (min-width: $bp-md) {
 			// max-width: $max-main-width;
 		}
 
 		// offset nav-link padding on 3 column layout
-		@media (min-width: $l) {
+		@media (min-width: $bp-lg) {
 			padding-left: 0.5rem;
 		}
 	}
@@ -107,7 +107,7 @@
 	.main-nav * {
 		@include body-semibold-font;
 		@include font-smoothing;
-		font-size: $epsilon;
+		font-size: $font-sm;
 		text-transform: uppercase;
 		text-decoration: none;
 		color: $gray;
@@ -120,7 +120,7 @@
 
 	.main-nav-list {
 		// small screens
-		@media (max-width: $s - 0.001) {
+		@media (max-width: $bp-sm - 0.001) {
 			@include dropdown-hidden;
 			@include box-shadow-lg;
 			// max-width: $sidebar-width;
@@ -137,28 +137,28 @@
 			&.is-expanded {
 				@include dropdown-visible;
 				@include absolute-expand;
-				background-color: rgba($brand-black, 0.95);
+				background-color: rgba($black, 0.95);
 				backdrop-filter: blur(4px);
 				position: fixed;
 				max-height: 100%;
 				z-index: 30;
 				transition:
-					opacity $timing,
-					transform $timing;
+					opacity $duration-sm,
+					transform $duration-sm;
 			}
 		}
 
 		// centered between logo and right screen edge
-		@media (min-width: $s) {
+		@media (min-width: $bp-sm) {
 			margin-left: auto;
 			margin-right: auto;
 		}
 		// right aligned
-		@media (min-width: $l) {
+		@media (min-width: $bp-lg) {
 			margin-right: $gutter;
 		}
 
-		@media (max-height: $xxs - 0.001) {
+		@media (max-height: $bp-xxxs - 0.001) {
 			flex-direction: row;
 			flex-wrap: wrap;
 		}
@@ -175,7 +175,7 @@
 		height: auto;
 		float: left;
 
-		@media (max-width: $s - 0.001) {
+		@media (max-width: $bp-sm - 0.001) {
 			flex: 1 1 auto;
 			display: flex;
 
@@ -185,13 +185,13 @@
 		}
 
 		// large screen style
-		@media (min-width: $s) {
+		@media (min-width: $bp-sm) {
 			width: auto;
 			display: block;
 			background-color: $white;
 		}
 
-		@media (max-height: $xxs - 0.001) {
+		@media (max-height: $bp-xxxs - 0.001) {
 			flex-basis: 50%;
 		}
 	}
@@ -211,8 +211,8 @@
 		z-index: 1;
 		overflow: hidden;
 
-		@media (max-width: $s - 0.001) {
-			font-size: calc(2vh + #{$milli});
+		@media (max-width: $bp-sm - 0.001) {
+			font-size: calc(2vh + #{$font-xs});
 			padding: 0.25em $gutter * 2;
 
 			&:hover, &:focus {
@@ -225,17 +225,17 @@
 		}
 
 		// extra padding where screen real estate allows
-		@media (min-width: $s) {
+		@media (min-width: $bp-sm) {
 			padding: 0 0.75em;
 			line-height: $nav-height; // vertically center
-			font-size: $epsilon;
+			font-size: $font-sm;
 
 			// interactions
 			&:not(.is-active) {
 				@include fancy-nav-hover;
 			}
 		}
-		@media (min-width: $m) {
+		@media (min-width: $bp-md) {
 			padding: 0 calc(0.5em + 1vw);
 		}
 
@@ -255,7 +255,7 @@
 		z-index: 8;
 		transform: translateX(-100%);
 
-		@media (min-width: $l) {
+		@media (min-width: $bp-lg) {
 			left: 1.5rem;
 		}
 

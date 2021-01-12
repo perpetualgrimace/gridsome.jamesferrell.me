@@ -5,25 +5,25 @@ a, label, input, textarea, button,
 [class*=button], [class*=button]:after,
 .card-inner {
   transition:
-    color $timing,
-    text-decoration-color $timing,
-    opacity $timing,
-    background $timing,
-    border $timing,
-    transform $timing,
-    box-shadow $timing;
+    color $duration-sm,
+    text-decoration-color $duration-sm,
+    opacity $duration-sm,
+    background $duration-sm,
+    border $duration-sm,
+    transform $duration-sm,
+    box-shadow $duration-sm;
 }
 
 // svgs
 svg * {
   transition:
-    fill $timing,
-    stroke $timing,
-    opacity $timing;
+    fill $duration-sm,
+    stroke $duration-sm,
+    opacity $duration-sm;
 }
 
 // transform only
 .secondary-link > svg,
 [class*=link-arrow]:before {
-  transition: transform $timing;
+  transition: transform $duration-sm;
 }

@@ -41,7 +41,7 @@
   .bullet-list {
     @include list-block;
 
-    @media (min-width: 35em) {
+    @media (min-width: $bp-xs) {
       h3[id="grouping-and-locking"] + p + ul {
         break-after: always;
 

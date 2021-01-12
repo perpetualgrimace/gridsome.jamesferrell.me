@@ -21,17 +21,17 @@
 .main-sidebar {
 	// add padding for sidebar sections on smaller viewports
 	// NOTE: needed to line up with the rest of the layout
-	@media (max-width: $l - 0.001) {
+	@media (max-width: $bp-lg - 0.001) {
 		> * {
 			padding: 1rem;
 		}
 	}
 
 	// display bio and social links horizontally where that makes sense
-	@media (min-width: $xs) and (max-width: $l - 0.001) {
+	@media (min-width: $bp-xxs) and (max-width: $bp-lg - 0.001) {
 		display: flex;
 		align-items: center;
-		background: $brand-black;
+		background: $black;
 	}
 }
 
@@ -46,7 +46,7 @@
 	margin-right: auto;
 }
 
-@media (min-width: $l) {
+@media (min-width: $bp-lg) {
 	.content-wrapper.with-sidebar {
 		display: flex;
 		align-items: baseline;

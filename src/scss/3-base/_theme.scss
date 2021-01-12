@@ -24,12 +24,12 @@ main {
 			font-weight: inherit;
 			text-decoration-color: $light-2;
 			transition:
-				$timing color,
-				$timing text-decoration-color;
+				$duration-sm color,
+				$duration-sm text-decoration-color;
 
 			&:hover, &:focus {
 				text-decoration-color: $brand-light;
-				color: $brand-black;
+				color: $black;
 			}
 		}
 	}
@@ -53,10 +53,10 @@ main {
 
 	// code blocks
 	code {
-		background: $brand-black;
+		background: $black;
 		color: $light-1;
 		padding: 0.1em 0.5em;
-		border-radius: $radius;
+		border-radius: $radius-md;
 	}
 	// space out code blocks within paragraphs
 	p > code,
@@ -102,7 +102,7 @@ main {
 // remember to move this into its own file if it gets unruly
 .brand-black-theme {
 	@include brand-theme;
-	background: $brand-black;
+	background: $black;
 	color: rgba($white, 0.66);
 }
 

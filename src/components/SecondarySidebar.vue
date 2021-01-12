@@ -54,7 +54,7 @@
 <style lang="scss">
 	// set secondary heading font size
 	.secondary > h2 {
-		font-size: $delta;
+		font-size: $font-md;
 	}
 
 	// space out secondary headings
@@ -65,12 +65,12 @@
 	// style secondary text content in stacked layout
 	// NOTE: to be used on texty pages with texty secondary content
 	.secondary-content[class] { // specificy increase needed to override main.css
-		@media (max-width: $l - 0.001) {
+		@media (max-width: $bp-lg - 0.001) {
 			padding-top: 0; // offset double padding
 		}
-		@media (min-width: $xl) {
+		@media (min-width: $bp-xl) {
 			h2:not(.gamma) {
-				font-size: $delta;
+				font-size: $font-md;
 			}
 		}
 	}
@@ -97,7 +97,7 @@
 	// flexbox enhancement
 	@supports (flex-wrap: wrap) {
 		// small screens only
-		@media (max-width: $xl - 0.001) {
+		@media (max-width: $bp-xl - 0.001) {
 
 			// space out the items in a flexy way
 			.secondary-meta-list {
@@ -140,7 +140,7 @@
 	// targets opposite of _layout.scss media query (contact page exceptions);
 	// where secondary-content is positioned below contact-form
 	@media (min-width: 24em) and (max-width: 48em - 0.001),
-	/*OR*/ (min-width: $l) and (max-width: 70em - 0.001) {
+	/*OR*/ (min-width: $bp-lg) and (max-width: 70em - 0.001) {
 
 		// style secondary content in stacked layout
 		.contact-secondary-content {
@@ -164,7 +164,7 @@
 
 	// minor spacing tweak for blog-list as secondary content (on home page)
 	.secondary-content-blog-list {
-		@media (max-width: $xl - 0.001) {
+		@media (max-width: $bp-xl - 0.001) {
 			margin-bottom: -0.5rem;
 		}
 	}

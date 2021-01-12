@@ -242,7 +242,7 @@
 <style lang="scss">
 
   .contact-form {
-    @media (min-width: $xl) {
+    @media (min-width: $bp-xl) {
       padding-right: $gutter * 2;
     }
 

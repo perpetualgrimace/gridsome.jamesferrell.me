@@ -24,9 +24,9 @@ Table of contents:
 ////////////////////////////////
 
 // variables
-$breakpoint-s:      $s;
-$breakpoint-m:      $l;
-$breakpoint-l:      $xxl;
+$breakpoint-s:      $bp-sm;
+$breakpoint-m:      $bp-lg;
+$breakpoint-l:      $bp-xxl;
 
 $max-width:         $max-container-width; // Keep line width in check. If undesired, set to 100% or auto.
 $column-count:      12;   // The html in this demo is marked up for 12 columns, but you can make it whatever.

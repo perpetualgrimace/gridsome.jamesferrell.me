@@ -88,11 +88,11 @@
 	// home hero
 	.main > .colophon:first-child {
 
-		@media (max-width: $m - 0.001) {
+		@media (max-width: $bp-md - 0.001) {
 			padding: 1rem;
 		}
 
-		@media (min-width: $l) {
+		@media (min-width: $bp-lg) {
 			padding: calc(1rem + 1vh);
 
 			.colophon-inner {
@@ -102,7 +102,7 @@
 			}
 
 			p {
-				font-size: calc(#{$epsilon} + 1vw);
+				font-size: calc(#{$font-sm} + 1vw);
 			}
 
 			.colophon-avatar {
@@ -117,12 +117,12 @@
 		padding: $gutter;
 
 		// face on top on small screens
-		@media (max-width: $xs - 0.001) {
+		@media (max-width: $bp-xxs - 0.001) {
 			flex-wrap: wrap;
 		}
 
 		// more padding
-		@media (min-width: $m) {
+		@media (min-width: $bp-md) {
 			padding: rem(30) rem(40);
 		}
 	}
@@ -141,29 +141,29 @@
 	.colophon-avatar {
 		min-width: calc(#{rem(100)});
 
-		@media (max-width: $xs - 0.001) {
+		@media (max-width: $bp-xxs - 0.001) {
 			margin: -0.5em auto 1.5em auto;
 			min-width: calc(#{rem(200)});
 		}
 
-		@media (min-width: $xs) {
+		@media (min-width: $bp-xxs) {
 			margin-top: auto;
 			margin-bottom: auto;
 		}
 
 		// bigger avatar on bigger screens
-		@media (min-width: $l) {
+		@media (min-width: $bp-lg) {
 			min-width: calc(#{rem(160)});
 		}
 	}
 
 	.colophon-avatar-inner {
-		// animation: popIn $timing-longest 0.45s; // page transition duration + delay
+		// animation: popIn $duration-lg 0.45s; // page transition duration + delay
 
-		@media (min-width: $xs) {
+		@media (min-width: $bp-xxs) {
 			padding-right: 1em;
 		}
-		@media (min-width: $l) {
+		@media (min-width: $bp-lg) {
 			padding-right: 2em;
 		}
 	}
@@ -176,7 +176,7 @@
 		// initial placeholder state
 		font-size: rem(58);
 
-		@media (min-width: $l) {
+		@media (min-width: $bp-lg) {
 			font-size: rem(80);
 			transform: scale(1.125);
 		}

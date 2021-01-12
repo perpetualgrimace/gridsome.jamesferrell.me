@@ -52,7 +52,7 @@
       margin-top: 0.25em;
       text-transform: uppercase;
     }
-    @media (min-width: 35em) {
+    @media (min-width: $bp-xs) {
       // make datawheel text bigger and span across columns
       h3[id="front-end-designer-at-datawheel"] {
         &,
@@ -64,7 +64,7 @@
 
         & + p + p,
         & + p + p + p {
-          font-size: $delta;
+          font-size: $font-md;
         }
 
         & + p + p + p {

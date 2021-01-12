@@ -93,7 +93,7 @@
 
   .card-inner {
     @include box-shadow;
-    padding: $delta;
+    padding: $font-md;
     background: #fff;
   }
 
@@ -104,41 +104,39 @@
     display: inline-block;
     vertical-align: top;
 
-    @media (min-width: $s) {
+    @media (min-width: $bp-sm) {
       vertical-align: middle;
     }
   }
 
 
   // thumbnail image size
-  .card-thumb {
-    background: $light-1;
-    width: $thumb-width;
-    height: $thumb-height;
+  // .card-thumb {
+  //   background: $light-1;
 
-    // extend clickable zone
-    &:after {
-      @include pseudo;
-      position: absolute;
-      width: $gutter;
-      height: 100%;
-      top: 0;
-      left: 100%;
-      z-index: 1;
-    }
+  //   // extend clickable zone
+  //   &:after {
+  //     @include pseudo;
+  //     position: absolute;
+  //     width: $gutter;
+  //     height: 100%;
+  //     top: 0;
+  //     left: 100%;
+  //     z-index: 1;
+  //   }
 
-    // hovering image triggers adjacent title
-    &:hover + .card-caption > .card-title {
-      color: $brand-light;
-    }
-  }
+  //   // hovering image triggers adjacent title
+  //   &:hover + .card-caption > .card-title {
+  //     color: $brand-light;
+  //   }
+  // }
 
-  // image size
-  .card-img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
+  // // image size
+  // .card-img {
+  //   object-fit: cover;
+  //   width: 100%;
+  //   height: 100%;
+  // }
 
 
   // caption positioning
@@ -177,13 +175,13 @@
 
 
   // small screen treatment
-  @media (max-width: $s - 0.001) {
+  @media (max-width: $bp-sm - 0.001) {
     .card-meta {
       display: none;
     }
   }
   // three column treatment
-  @media (min-width: $xl) {
+  @media (min-width: $bp-xl) {
     .secondary-content .card-meta {
       display: none;
     }

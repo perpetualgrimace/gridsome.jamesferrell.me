@@ -3,108 +3,92 @@
 ////////////////////////////////
 
 // brand palette
-$brand-color: #0483DD;
-
-$brand-light: #2F99E4;
-$brand-dark:  #0062AA;
-$brand-black: #033860;
-
-// ui colors
-$success-color: #3DDC97;
-$error-color: #FF495C;
+$brand-light : #2F99E4;
+$brand-color : #0483DD;
+$brand-dark  : #0062AA;
 
 // neutrals
-$white:   #FFFFFF;
-$light-1: #F2F5FC;
-$light-2: #CACED9;
-$gray:    #A4A9B7;
-$dark-1:  #7F8594;
-$dark-2:  #596073;
-$black:   #343C50;
+$white   : #FFFFFF;
+$light-1 : #F2F5FC;
+$light-2 : #CACED9;
+$light-3 : #A4A9B7;
+$gray    : #7F8594;
+$dark-1  : #596073;
+$dark-2  : #343C50;
+$dark-3  : #181C25;
+$black   : #101319;
 
 // shadow
-$shadow: rgba($dark-1, 0.35);
-$shadow-dark: rgba($black, 0.5);
+$shadow      : rgba($gray, 0.1);
+$shadow-dark : rgba($black, 0.2);
+
+// ui colors
+$success-color : #3DDC97;
+$error-color   : #FF495C;
 
 // social media colors
-$facebook-color:  #3b5998;
-$twitter-color:   #00aced;
-$dribbble-color:  #ea4c89;
-$github-color:    #4078c0;
-$codepen-color:   #47cf73;
-$linkedin-color:  #0077B5;
-$instagram-color: #e4405f;
-
+$facebook-color  : #3b5998;
+$twitter-color   : #00aced;
+$dribbble-color  : #ea4c89;
+$github-color    : #4078c0;
+$codepen-color   : #47cf73;
+$linkedin-color  : #0077B5;
+$instagram-color : #e4405f;
 
 ////////////////////////////////
 // font sizes
 ////////////////////////////////
 
-$alpha:   rem(56);
-$beta:    rem(38);
-$gamma:   rem(30);
-$delta:   rem(20); // 1rem
-$epsilon: rem(16);
-$milli:   rem(13);
-
-$bigger-than-delta: rem(23); // use sparingly
+$font-xs   : rem(11);
+$font-sm   : rem(16);
+$font-md   : rem(20); // 1rem
+$font-lg   : rem(23);
+$font-xl   : rem(30);
+$font-xxl  : rem(38);
+$font-xxxl : rem(56);
 
 ////////////////////////////////
 // breakpoints
 ////////////////////////////////
 
-// t-shirt sizing ftw
-$xxs:  20em;
-$xs:   30em;
-$s:    40em;
-$m:    56em;
-$l:    64.5em;
-$xl:   84em;
-$xxl:  92em;
-$xxxl: 100em;
-
+$bp-xxxs : 20rem;
+$bp-xxs  : 30rem;
+$bp-xs   : 35rem;
+$bp-sm   : 40rem;
+$bp-md   : 56rem;
+$bp-lg   : 64.5rem;
+$bp-xl   : 84rem;
+$bp-xxl  : 92rem;
+$bp-xxxl : 100rem;
 
 ////////////////////////////////
 // miscellaneous measurements
 ////////////////////////////////
 
 // border
-$border-width:       1px;
-$border-width-thick: 0.25em;
+$border-width : 2px;
 
 // border radius
-$radius:     rem(4);
-$radius-lg:  rem(6);
+$radius-sm : rem(6);
+$radius-md : rem(12);
+$radius-lg : rem(22);
 
 // used by _jf-grid.scss
-$gutter: 1rem;
-$max-container-width: 50rem; // 1000px
-$max-main-width:      60rem; // 1200px
-$sidebar-width:       15rem; // 300px
-$half-sidebar-width: 7.5rem; // 150px
+$gutter              : 1rem;
+$max-container-width : rem(1000);
+$max-main-width      : rem(1200);
+$sidebar-width       : rem(300);
+$half-sidebar-width  : rem(150);
 
-// used by _nav.scss
-$nav-height: 3.3rem;
-$logo-width: calc(200px + 2rem);
-$logo-icon-size: 30px;
-
-// used by _cards.scss
-$thumb-width: 8rem;
-$thumb-height: 6rem;
-
+// used by Nav.vue
+$nav-height     : rem(50);
+$logo-width     : calc(200px + 2rem);
+$logo-icon-size : 30px;
 
 ////////////////////////////////
 // motion
 ////////////////////////////////
 
-$timing: 0.2s ease-out;
-$timing-fast: 0.1s ease-out;
-$timing-long: 0.275s ease-out;
-$timing-longest: 0.4s ease-out;
-
-// motion debugging
-$timing-debug: 2s;
-// $timing: $timing-debug;
-// $timing-fast: $timing-debug;
-// $timing-long: $timing-debug;
-// $timing-longest: $timing-debug;
+$duration-sm: 0.2s ease-out;
+$duration-md: 0.275s ease-out;
+$duration-lg: 0.4s ease-out;

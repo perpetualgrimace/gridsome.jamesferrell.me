@@ -41,7 +41,7 @@
 
     // set heading style to beta
     h2, h3 {
-      font-size: $beta;
+      font-size: $font-xxl;
       z-index: auto; // reset anchor link offset
     }
 
@@ -66,7 +66,7 @@
     margin-top: 0.25rem;
 
     // three column layout
-    @media (min-width: $l) {
+    @media (min-width: $bp-lg) {
       margin-top: 0;
     }
   }

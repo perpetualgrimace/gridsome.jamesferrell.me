@@ -76,7 +76,7 @@
 			box-shadow: none;
 			z-index: 31;
 
-			@media (max-height: $xxs - 0.001) {
+			@media (max-height: $bp-xxxs - 0.001) {
 				right: 0;
 				top: 0;
 			}
@@ -108,7 +108,7 @@
 	.hamburger-icon {
 		display: inline-block;
 		margin-left: 0.4rem;
-		transition: transform $timing;
+		transition: transform $duration-sm;
 	}
 
 	// hamburger initial state
@@ -118,7 +118,7 @@
 		height: 2px;
 		border-radius: 1px;
 		background-color: currentColor;
-		transition: transform $timing;
+		transition: transform $duration-sm;
 
 		// stacked buns
 		& + & {

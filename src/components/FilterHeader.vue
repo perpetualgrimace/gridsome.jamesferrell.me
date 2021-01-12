@@ -104,7 +104,7 @@
     max-width: 100% !important;
 
     // make filter-header stop before the secondary-content sidebar
-    @media (min-width: $xl) {
+    @media (min-width: $bp-xl) {
       padding-right: $sidebar-width;
 
       // offset sidebar

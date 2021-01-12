@@ -43,7 +43,7 @@
 
 // used by nav and main sidebar
 @mixin bp-fixed-nav {
-	@media (min-width: $l) and (min-height: $s) {
+	@media (min-width: $bp-lg) and (min-height: $bp-sm) {
 		@content;
 	}
 }
@@ -249,10 +249,10 @@
 
 	// bump up text sizes to primary
 	h2 {
-		font-size: $gamma;
+		font-size: $font-xl;
 	}
 	p:not([class*="card-"]) { // exclude card meta
-		font-size: $delta;
+		font-size: $font-md;
 	}
 }
 
@@ -290,10 +290,10 @@
 		opacity: 0;
 		transform: translateX(-100%);
 		transition:
-			opacity $timing,
-			transform $timing;
+			opacity $duration-sm,
+			transform $duration-sm;
 
-		@media (min-width: $s) {
+		@media (min-width: $bp-sm) {
 			transform: translateY(100%);
 		}
 	}
@@ -313,7 +313,7 @@
 
 // nav toggle max width
 @mixin nav-toggle-max-width {
-	@media (max-width: $xxs - 0.001) {
+	@media (max-width: $bp-xxxs - 0.001) {
 		max-width: calc(100% - 2rem);
 	}
 }
@@ -321,13 +321,12 @@
 // list block shared style
 @mixin list-block {
 	// if it's too small for columns, bump up font sizes
-	@media (max-width: 35em - 0.001) {
-		h3 { font-size: $bigger-than-delta; }
-		p, li { font-size: $delta; }
-		em { font-size: $epsilon; } // subhead
+	@media (max-width: $bp-xs - 0.001) {
+		h3 { font-size: $font-lg; }
+		p, li { font-size: $font-md; }
+		em { font-size: $font-sm; } // subhead
 	}
-	// halfway between $xs and $s
-	@media (min-width: 35em) {
+	@media (min-width: $bp-xs) {
 		columns: 2;
 		column-gap: $gutter * 2;
 

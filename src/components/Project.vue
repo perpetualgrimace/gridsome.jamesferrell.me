@@ -121,7 +121,7 @@
     max-height: rem(420);
     padding: 1rem;
     text-align: center;
-    box-shadow: inset 0 -6px 30px -6px rgba($brand-black, 0.175);
+    box-shadow: inset 0 -6px 30px -6px rgba($black, 0.175);
 
     // minor height+padding adjustment
     @media (min-width: $device-tweakpoint-s) {
@@ -130,7 +130,7 @@
     }
 
     // enough room to show entire laptop screen
-    @media (min-width: $s) {
+    @media (min-width: $bp-sm) {
       max-height: none;
       padding-bottom: 1.875rem;
     }
@@ -167,8 +167,8 @@
         text-transform: uppercase;
         // transitions
         transition:
-          color $timing-long,
-          background $timing;
+          color $duration-md,
+          background $duration-sm;
       }
 
       // interactions
@@ -244,15 +244,15 @@
     background-color: rgba($white, 0.05);
     // transitions
     opacity: 0;
-    transition: opacity $timing-longest;
+    transition: opacity $duration-lg;
 
     // set transition timing
     & + .project-inner > *:not(:first-child) {
-      transition: transform $timing-longest;
+      transition: transform $duration-lg;
 
       // phone is in the foreground; it moves faster
       &.mobile-container {
-        transition: transform $timing-long;
+        transition: transform $duration-md;
       }
     }
     // interactions

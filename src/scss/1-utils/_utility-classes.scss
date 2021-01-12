@@ -16,27 +16,27 @@
 // switch alignment around 630px width (mobile first)
 .u-center-left {
   text-align: center;
-  @media (min-width: $m) { text-align: left; }
+  @media (min-width: $bp-md) { text-align: left; }
 }
 .u-center-right {
   text-align: center;
-  @media (min-width: $m) { text-align: right; }
+  @media (min-width: $bp-md) { text-align: right; }
 }
 .u-left-center {
   text-align: left;
-  @media (min-width: $m) { text-align: center; }
+  @media (min-width: $bp-md) { text-align: center; }
 }
 .u-left-right {
   text-align: left;
-  @media (min-width: $m) { text-align: right; }
+  @media (min-width: $bp-md) { text-align: right; }
 }
 .u-right-left {
   text-align: right;
-  @media (min-width: $m) { text-align: left; }
+  @media (min-width: $bp-md) { text-align: left; }
 }
 .u-right-center {
   text-align: right;
-  @media (min-width: $m) { text-align: center; }
+  @media (min-width: $bp-md) { text-align: center; }
 }
 
 // make a link look like body text
@@ -79,14 +79,14 @@
 
 // vertically center child elements via flexbox
 .u-vertical-center {
-  @media(min-width: $m) {
+  @media(min-width: $bp-md) {
     @include flex-vertical-center;
   }
 }
 
 // stretch to fill container with the power of flexbox
 .u-full-height {
-  @media(min-width: $m) {
+  @media(min-width: $bp-md) {
     display: flex;
   }
 }
@@ -210,39 +210,39 @@
 
 // hide on small screens
 .u-hide-below-xs {
-  @media (max-width: $xs - 0.001) {
+  @media (max-width: $bp-xxs - 0.001) {
     display: none !important;
   }
 }
 .u-hide-below-m {
-  @media (max-width: $m - 0.001) {
+  @media (max-width: $bp-md - 0.001) {
     display: none !important;
   }
 }
 .u-hide-below-l {
-  @media (max-width: $l - 0.001) {
+  @media (max-width: $bp-lg - 0.001) {
     display: none !important;
   }
 }
 .u-hide-below-xl {
-  @media (max-width: $xl - 0.001) {
+  @media (max-width: $bp-xl - 0.001) {
     display: none !important;
   }
 }
 
 // hide on large screens
 .u-hide-above-s {
-  @media (min-width: $s) {
+  @media (min-width: $bp-sm) {
     display: none !important;
   }
 }
 .u-hide-above-m {
-  @media (min-width: $m) {
+  @media (min-width: $bp-md) {
     display: none !important;
   }
 }
 .u-hide-above-l {
-  @media (min-width: $l) {
+  @media (min-width: $bp-lg) {
     display: none !important;
   }
 }

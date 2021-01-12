@@ -157,7 +157,7 @@
     display: block;
     width: 100%;
     height: rem(90); // needed for alignment hack
-    padding: $milli;
+    padding: $font-xs;
     background: #fff;
     text-decoration: none;
   }
@@ -188,7 +188,7 @@
   }
 
   .grid-icon {
-    transition: transform $timing;
+    transition: transform $duration-sm;
   }
 
   ////////////////////////////////
@@ -198,7 +198,7 @@
   // list icon in the middle, older/newer links take up the rest of the space
   @supports (display: flex) {
     // bigger screens only
-    @media (min-width: $xs) {
+    @media (min-width: $bp-xxs) {
       .paginator-list {
         display: flex;
       }

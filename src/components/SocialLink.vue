@@ -28,7 +28,7 @@
 
 		@supports (text-decoration-color: currentColor) {
 			text-decoration: underline;
-			text-decoration-color: $brand-black;
+			text-decoration-color: $black;
 		}
 
 		// interactions
@@ -52,9 +52,9 @@
 		height: 1rem;
 		margin-right: 0.625em;
 		// aesthetic
-		border-radius: $radius;
+		border-radius: $radius-md;
 
-		@media (min-width: $xl) {
+		@media (min-width: $bp-xl) {
 			top: -1px; // still more fudging
 		}
 	}

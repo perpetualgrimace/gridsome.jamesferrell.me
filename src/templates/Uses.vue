@@ -53,7 +53,7 @@
 
 <style lang="scss">
   .uses-sidebar {
-    @media (max-width: $l - 0.001) {
+    @media (max-width: $bp-lg - 0.001) {
       // style secondary content in stacked layout
       @include secondary-content-as-primary;
     }

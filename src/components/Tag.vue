@@ -53,7 +53,7 @@
       // sizing
       padding: 0.2rem 0.5rem 0.2rem 0.5rem;
       // theming
-      border-radius: $radius;
+      border-radius: $radius-md;
       color: $white;
     }
 
@@ -84,7 +84,7 @@
       }
 
       .tag-span {
-        animation: highlight $timing-longest;
+        animation: highlight $duration-lg;
       }
     }
   }

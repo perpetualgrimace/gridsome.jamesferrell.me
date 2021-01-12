@@ -50,7 +50,7 @@
   // make the album look physical
   .album-img {
     @include device-shadow;
-    border-radius: $radius;
+    border-radius: $radius-md;
   }
 
 
