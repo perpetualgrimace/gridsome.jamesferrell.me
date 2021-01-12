@@ -30,10 +30,8 @@
 <style lang="scss">
 	// nav toggle button container
 	.hamburger {
-		@include box-shadow(rgba($black, 0.25));
 		// positioning
-		position: absolute;
-		top: 0.675rem;
+		@include absolute-vertical-center;
 		right: $gutter;
 		padding: 0 10px 0 9px; // somewhat fudged
 		line-height: 30px;
@@ -100,7 +98,7 @@
 
 		&:hover *, 
 		&:focus * {
-			color: $white;
+			color: $brand-color;
 		}
 	}
 

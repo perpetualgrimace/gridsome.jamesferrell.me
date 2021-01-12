@@ -63,13 +63,9 @@
 		z-index: 11;
 		margin-bottom: 0;
 
-		// background color
-		@media (min-width: $bp-sm) {
-			background-color: $light-1;
-		}
-
 		// fixed nav on bigger screens
 		@include bp-fixed-nav {
+			background-color: $light-1;
 			position: fixed;
 			left: 0;
 			right: 0;
@@ -173,23 +169,23 @@
 		height: auto;
 		float: left;
 
+		// small screens
 		@media (max-width: $bp-sm - 0.001) {
 			flex: 1 1 auto;
 			display: flex;
-
-			&:last-of-type {
-				border-radius: 0 0 $radius-lg $radius-lg;
-			}
+		}
+		@media (max-height: $bp-xxxs - 0.001) {
+			flex-basis: 50%;
 		}
 
-		// large screen style
+		// big screens
 		@media (min-width: $bp-sm) {
 			width: auto;
 			display: block;
-		}
 
-		@media (max-height: $bp-xxxs - 0.001) {
-			flex-basis: 50%;
+			&:not(:last-of-type) {
+				margin-right: 2px;
+			}
 		}
 	}
 
@@ -229,17 +225,40 @@
 			font-size: $font-sm;
 
 			// interactions
-			&:not(.is-active) {
-				@include fancy-nav-hover;
+			&:before {
+				// sizing & positioning
+				@include pseudo;
+				position: absolute;
+				left: 0;
+				right: 0;
+				width: 100%;
+				height: rem(30);
+				z-index: -1; // behind text
+				// theming
+				background-color: $white;
+				border-radius: $radius-sm;
+				// transitions
+				opacity: 0;
+				transition: 
+					opacity $duration-xs,
+					background-color $duration-sm;
 			}
-		}
-		@media (min-width: $bp-md) {
-			padding: 0 calc(0.5em + 1vw);
-		}
 
-		// active page
-		&.is-active {
-			color: $dark-2;
+			// transition in
+			&:hover, &:focus {
+
+				&:before {
+					opacity: 1;
+				}
+			}
+			&.is-active {
+				color: $white;
+
+				&:before {
+					background-color: $brand-color;
+					opacity: 1;
+				}
+			}
 		}
 	}
 

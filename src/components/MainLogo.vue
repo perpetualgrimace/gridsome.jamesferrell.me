@@ -84,13 +84,14 @@
 		// theming
 		border-radius: $radius-sm;
 		top: -0.125rem;
+		transition: background-color $duration-sm;
 
 		// hover / current state
 		// TODO: smooth transition
 		.main-logo:hover &,
 		.main-logo:focus &,
 		.main-logo.is-active & {
-			@include brand-color-depth;
+			background-color: $brand-color;
 		}
 	}
 

@@ -43,7 +43,7 @@
 
 // used by nav and main sidebar
 @mixin bp-fixed-nav {
-	@media (min-width: $bp-lg) and (min-height: $bp-sm) {
+	@media (min-height: $bp-sm) {
 		@content;
 	}
 }
@@ -177,6 +177,7 @@
 ////////////////////////////////
 
 @mixin brand-color-depth {
+	background-color: $brand-color;
 	background-image: radial-gradient(at top, $brand-light 0%, $brand-color 49%, $brand-dark 100%);
 }
 
