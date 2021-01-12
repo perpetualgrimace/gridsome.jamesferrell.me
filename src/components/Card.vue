@@ -50,16 +50,16 @@
       <div class="card-caption">
 
         <!-- heading -->
-        <g-link :to="link" class="card-title heading delta" tabindex="-1" :id="slug">
+        <g-link :to="link" class="card-title heading u-font-md" tabindex="-1" :id="slug">
           {{ title }}
         </g-link>
 
         <!-- description -->
-        <p class="card-description epsilon u-margin-top-sm">
+        <p class="card-description u-font-sm u-margin-top-sm">
           {{ description }}
         </p>
 
-        <p class="card-meta milli u-uppercase">
+        <p class="card-meta u-font-xs u-uppercase">
           published {{ relativeDate }}
           <span v-if="relativeUpdatedDate"> |  updated {{ relativeUpdatedDate }}
           </span>

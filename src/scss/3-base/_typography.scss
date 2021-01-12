@@ -2,18 +2,19 @@
 // refactor
 ////////////////////////////////
 
-// default type
+// default
 html {
 	@include body-font;
+	line-height: 1.5;
 }
 
-// bold type
+// bold
 strong, b, a,
 dt {
 	@include body-bold-font;
 }
 
-// italic type
+// italic
 em, i {
 	@include body-italic-font;
 
@@ -22,15 +23,16 @@ em, i {
 	}
 }
 
-// heading type
+// heading
 .heading,
 h1, h2, h3, h4, h5, h6 {
 	@include display-font;
 	letter-spacing: normal;
 	text-transform: none;
+	line-height: 1;
 }
 
-// semibold type
+// semibold
 button, input[type='button'], label,
 .subhead {
 	@include body-semibold-font;
@@ -44,46 +46,3 @@ h3, p, li      { font-size: $font-md;}
 h4, figcaption { font-size: $font-sm;}
 h5, h6,
 small, label   { font-size: $font-xs;}
-
-// bump up font-size for h3s that follow after an h2
-h2 ~ h3 { font-size: $font-lg; }
-
-// type size overrides
-.alpha {
-	font-size: $font-xxxl;
-}
-.beta  {
-	font-size: $font-xxl;
-}
-.gamma,
-.gamma p,
-.gamma li {
-	font-size: $font-xl;
-}
-.delta,
-.delta p,
-.delta li {
-	font-size: $font-md;
-}
-.epsilon,
-.epsilon p,
-.epsilon li {
-	font-size: $font-sm;
-}
-.milli,
-.milli p,
-.milli li  {
-	font-size: $font-xs;
-}
-
-
-// default line-height
-html {
-	line-height: 1.5;
-}
-
-// heading line-height
-h1, h2, h3, h4, h5, h6,
-.heading, .display {
-	line-height: 1;
-}

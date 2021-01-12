@@ -74,7 +74,7 @@
 				<!-- bio -->
 				<div
 					class="colophon-caption-bio"
-					:class="headline === site.title && 'epsilon'"
+					:class="headline === site.title && 'u-font-sm'"
 					v-html="$static.d.content"
 				/>
 			</div>

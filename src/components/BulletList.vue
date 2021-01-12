@@ -31,7 +31,7 @@
 
 
 <template>
-  <div class="bullet-list content epsilon">
+  <div class="bullet-list content u-font-sm">
     <div v-html="list" />
   </div>
 </template>

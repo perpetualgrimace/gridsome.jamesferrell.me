@@ -62,7 +62,6 @@
 		top: 0;
 		z-index: 11;
 		margin-bottom: 0;
-		background-color: $black;
 
 		// background color
 		@media (min-width: $bp-sm) {
@@ -71,7 +70,6 @@
 
 		// fixed nav on bigger screens
 		@include bp-fixed-nav {
-			@include box-shadow($shadow);
 			position: fixed;
 			left: 0;
 			right: 0;

@@ -28,7 +28,7 @@
     <h2>{{ heading }}</h2>
     <p>{{ text }}</p>
 
-    <Button :link="link" classes="button-inverted link-arrow epsilon" :text="linkText" />
+    <Button :link="link" classes="button-inverted link-arrow u-font-sm" :text="linkText" />
   </article>
 </template>
 
@@ -39,7 +39,7 @@
     padding: 1.5rem 2rem 2rem 2rem;
     border-radius: 2px;
 
-    // set heading style to beta
+    // set heading style to u-font-xxl
     h2, h3 {
       font-size: $font-xxl;
       z-index: auto; // reset anchor link offset

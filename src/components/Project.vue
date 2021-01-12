@@ -84,7 +84,7 @@
     <div class="project-inner">
       <div class="project-caption">
         <!-- heading -->
-        <h2 class="project-title heading beta" tabindex="-1" :id="slug">
+        <h2 class="project-title heading u-font-xxl" tabindex="-1" :id="slug">
           {{ title }}
         </h2>
 
@@ -98,7 +98,7 @@
     </div>
 
     <!-- coming soon -->
-    <p v-if="comingSoon" class="project-banner epsilon">Coming soon</p>
+    <p v-if="comingSoon" class="project-banner u-font-sm">Coming soon</p>
   </article>
 </template>
 

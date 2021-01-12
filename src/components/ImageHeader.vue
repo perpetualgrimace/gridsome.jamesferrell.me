@@ -16,7 +16,7 @@
 
     <h1 class="image-header-headline">
       {{ headline }}
-      <span class="header-subhead delta" v-if="subhead">
+      <span class="header-subhead u-font-md" v-if="subhead">
         <span class="u-screenreader">: </span>{{ subhead }}
       </span>
     </h1>

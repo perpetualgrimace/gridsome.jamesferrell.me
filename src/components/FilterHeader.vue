@@ -64,12 +64,12 @@
 
 <template>
   <header class="filter-header header">
-    <h1 class="filter-header-headline gamma">
+    <h1 class="filter-header-headline u-font-xl">
       {{ uppercaseFirst(selectedFilter) }} {{ contentType }}
     </h1>
 
     <!-- filters -->
-    <p class="filter-headline-label epsilon">Filter by:</p>
+    <p class="filter-headline-label u-font-sm">Filter by:</p>
 
     <!-- tag list -->
     <div class="filter-tag-list tag-list">

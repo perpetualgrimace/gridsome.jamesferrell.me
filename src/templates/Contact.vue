@@ -119,7 +119,7 @@
   <Layout>
 
     <Fragment v-if="submitted === false">
-      <h1 class="gamma">{{ $page.d.title }}</h1>
+      <h1 class="u-font-xl">{{ $page.d.title }}</h1>
 
       <form
         class="contact-form g-columns u-margin-top-lg u-padding-top-xs"
@@ -201,7 +201,7 @@
         <!-- submit button -->
         <div class="g-columns">
           <div class="g-col u-padding-top-xs">
-            <Button type="submit" classes="epsilon u-margin-top-off" :text="$page.d.submitText" />
+            <Button type="submit" classes="u-font-sm u-margin-top-off" :text="$page.d.submitText" />
           </div>
         </div>
       </form>
@@ -233,7 +233,7 @@
     </transition>
 
     <template slot="sidebar" v-if="!status">
-      <VueRemarkContent class="content secondary epsilon" />
+      <VueRemarkContent class="content secondary u-font-sm" />
     </template>
   </Layout>
 </template>

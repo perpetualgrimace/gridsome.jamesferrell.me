@@ -19,10 +19,10 @@
 
 <template>
 	<!-- use main markdown content as sidebar -->
-	<aside class="content secondary epsilon" v-html="content" v-if="content" />
+	<aside class="content secondary u-font-sm" v-html="content" v-if="content" />
 
 	<!-- construct sidebar from individual props -->
-	<aside class="content secondary epsilon" v-else-if="heading && text">
+	<aside class="content secondary u-font-sm" v-else-if="heading && text">
 		<h2>{{ heading }}</h2>
 		<p>{{ text }}</p>
 
@@ -69,7 +69,7 @@
 			padding-top: 0; // offset double padding
 		}
 		@media (min-width: $bp-xl) {
-			h2:not(.gamma) {
+			h2:not(.u-font-xl) {
 				font-size: $font-md;
 			}
 		}

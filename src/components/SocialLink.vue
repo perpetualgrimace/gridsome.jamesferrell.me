@@ -10,7 +10,7 @@
 
 <template>
 	<li class="social-item">
-		<a :href="social.link" :class="`social-link social-link-${social.name} u-uppercase epsilon`">
+		<a :href="social.link" :class="`social-link social-link-${social.name} u-uppercase u-font-sm`">
 			<span class="social-icon">
 				<img class="social-svg" :src="`/images/icons/social/${social.name}.svg`" alt="">
 			</span>

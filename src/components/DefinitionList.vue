@@ -31,7 +31,7 @@
 
 
 <template>
-  <div class="definition-list content epsilon">
+  <div class="definition-list content u-font-sm">
     <div v-html="list" />
   </div>
 </template>
@@ -50,6 +50,7 @@
     h2[id="employment"] ~ h3 + p {
       display: block; // necessary to honor margin adjustment
       margin-top: 0.25em;
+      font-size: $font-sm;
       text-transform: uppercase;
     }
     @media (min-width: $bp-xs) {

@@ -320,6 +320,10 @@
 
 // list block shared style
 @mixin list-block {
+	// bump up font-size for h3s that follow after an h2
+	h2 ~ h3 {
+		font-size: $font-lg;
+	}
 	// if it's too small for columns, bump up font sizes
 	@media (max-width: $bp-xs - 0.001) {
 		h3 { font-size: $font-lg; }

@@ -2,16 +2,19 @@
 // typography
 ////////////////////////////////
 
+// font sizes
+.u-font-xs   { font-size : $font-xs; }
+.u-font-sm   { font-size : $font-sm; }
+.u-font-md   { font-size : $font-md; }
+.u-font-lg   { font-size : $font-lg; }
+.u-font-xl   { font-size : $font-xl; }
+.u-font-xxl  { font-size : $font-xxl; }
+.u-font-xxxl { font-size : $font-xxxl; }
+
 // alignment classes -- the same on all screen sizes
-.u-left {
-  text-align: left;
-}
-.u-right {
-  text-align: right;
-}
-.u-center {
-  text-align: center;
-}
+.u-left   { text-align: left; }
+.u-right  { text-align: right; }
+.u-center { text-align: center; }
 
 // switch alignment around 630px width (mobile first)
 .u-center-left {

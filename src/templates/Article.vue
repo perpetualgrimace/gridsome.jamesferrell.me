@@ -76,7 +76,7 @@
     <VueRemarkContent class="content" />
 
     <template slot="sidebar">
-      <dl class="epsilon article-sidebar">
+      <dl class="u-font-sm article-sidebar">
         <dt>Category:</dt>
         <dd><Tag :title="$page.d.topic" :slug="tagSlug" el="span" /></dd>
         <br />

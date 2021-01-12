@@ -42,7 +42,7 @@
 						<SocialLink  :social="social" :key="social.name" />
 					</li>
 				</ul>
-				<div class="footer-copyright epsilon g-col g-6" role="contentinfo" v-html="$static.d.content" />
+				<div class="footer-copyright u-font-sm g-col g-6" role="contentinfo" v-html="$static.d.content" />
 			</div>
 		</div>
 	</footer>

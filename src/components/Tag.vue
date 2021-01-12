@@ -18,7 +18,7 @@
 
 
 <template>
-  <component :is="el" class="tag epsilon" :class="selected && 'is-selected'">
+  <component :is="el" class="tag u-font-sm" :class="selected && 'is-selected'">
     <a
       class="tag-link"
       :href="link"

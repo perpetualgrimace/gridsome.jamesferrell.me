@@ -99,7 +99,7 @@
       <li class="paginator-item paginator-item-first">
         <g-link :to="prev.slug" class="paginator-link u-margin-top-off-children">
           <span class="paginator-inner">
-            <span class="paginator-label u-uppercase epsilon">
+            <span class="paginator-label u-uppercase u-font-sm">
               {{ prev.label }}
             </span>
             <span class="u-visually-hidden"> article: </span>
@@ -122,7 +122,7 @@
       <li class="paginator-item paginator-item-second">
         <g-link :to="next.slug" class="paginator-link u-margin-top-off-children">
           <span class="paginator-inner">
-            <span class="paginator-label u-uppercase epsilon">
+            <span class="paginator-label u-uppercase u-font-sm">
               {{ next.label }}
             </span>
             <span class="u-visually-hidden"> article: </span>
