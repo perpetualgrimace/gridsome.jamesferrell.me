@@ -56,7 +56,7 @@ $bp-xxs  : 30rem;
 $bp-xs   : 35rem;
 $bp-sm   : 40rem;
 $bp-md   : 56rem;
-$bp-lg   : 64.5rem;
+$bp-lg   : 64rem;
 $bp-xl   : 84rem;
 $bp-xxl  : 92rem;
 $bp-xxxl : 100rem;
@@ -75,7 +75,6 @@ $radius-lg : rem(22);
 
 // used by _jf-grid.scss
 $gutter        : 1rem;
-$inner-width   : rem(1160);
 $outer-width   : rem(1200);
 $hero-height   : rem(400);
 $sidebar-width : rem(300);

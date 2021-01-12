@@ -31,9 +31,9 @@
 	// nav toggle button container
 	.hamburger {
 		// positioning
-		@include absolute-vertical-center;
-		right: $gutter;
-		padding: 0 10px 0 9px; // somewhat fudged
+		position: absolute;
+		right: 0;
+		padding: 0 $gutter;
 		line-height: $nav-height;
 		height: $nav-height;
 		max-width: 10rem;

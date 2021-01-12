@@ -59,12 +59,6 @@
 			}
 		}
 
-		// big screen layout
-		@media (min-width: $bp-lg) {
-			// pin to top left
-			left: -0.5rem;
-		}
-
 		// fudge vertical alignment on big screens
 		& > * {
 			transform: translateY(-1px);

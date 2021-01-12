@@ -65,7 +65,7 @@
 
 		// fixed nav on bigger screens
 		@include bp-fixed-nav {
-			background-color: $light-1;
+			background-color: rgba($light-1, 0.95);
 			position: fixed;
 			left: 0;
 			right: 0;
@@ -84,7 +84,7 @@
 	// positioning
 	.main-nav-inner {
 		height: $nav-height;
-		width: $inner-width;
+		width: $outer-width;
 		max-width: 100%;
 		margin: 0 auto;
 		display: flex;

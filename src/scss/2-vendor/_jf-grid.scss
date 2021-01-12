@@ -28,7 +28,7 @@ $breakpoint-s:      $bp-sm;
 $breakpoint-m:      $bp-lg;
 $breakpoint-l:      $bp-xxl;
 
-$max-width:         $inner-width; // Keep line width in check. If undesired, set to 100% or auto.
+$max-width:         $outer-width; // Keep line width in check. If undesired, set to 100% or auto.
 $column-count:      12;   // The html in this demo is marked up for 12 columns, but you can make it whatever.
 $grid-padding:      $gutter; // REM is recommended here for scaling, but other units work too. Percentages get awkward at large viewports if max-width is set.
 $split-amount:      2;    // In a compact grid, $grid-padding is divided by this number. Should be > 2.
@@ -40,18 +40,16 @@ $split-amount:      2;    // In a compact grid, $grid-padding is divided by this
 
 // set font size on html element, then use REM units wherever possible
 html {
-	font-size: 100%; // 16px
+	font-size: 100%;
 
 	@media (min-width: $breakpoint-s) {
-		font-size: 112.5%; // 18px
+		font-size: 18px;
 	}
-
+	@media (min-width: $breakpoint-m) {
+		font-size: 20px;
+	}
 	@media (min-width: $breakpoint-l) {
-		font-size: 125%; // 20px
-	}
-
-	@media (min-width: 110em) {
-		font-size: 137.5%; // 22px
+		font-size: 20px;
 	}
 }
 
