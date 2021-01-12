@@ -142,13 +142,9 @@
 			}
 		}
 
-		// centered between logo and right screen edge
+		// right aligned
 		@media (min-width: $bp-sm) {
 			margin-left: auto;
-			margin-right: auto;
-		}
-		// right aligned
-		@media (min-width: $bp-lg) {
 			margin-right: $gutter;
 		}
 
