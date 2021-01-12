@@ -97,7 +97,7 @@
 
       // vertically center caption, limit width
       .project-caption {
-        @include vertical-center;
+        @include absolute-vertical-center;
         width: 50%;
       }
     }

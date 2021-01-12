@@ -82,7 +82,7 @@
 
       // vertically center caption, limit width
       .project-caption {
-        @include vertical-center;
+        @include absolute-vertical-center;
         width: 50%;
         float: left; // needed to make the floated album not clear
       }

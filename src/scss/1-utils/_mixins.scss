@@ -83,15 +83,18 @@
 
 // Centered elements, the dumb but sometimes useful way
 @mixin absolute-center {
+	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
-@mixin vertical-center {
+@mixin absolute-vertical-center {
+	position: absolute;
 	top: 50%;
 	transform: translate(0, -50%);
 }
-@mixin horizontal-center {
+@mixin absolute-horizontal-center {
+	position: absolute;
 	left: 50%;
 	transform: translate(-50%, 0);
 }

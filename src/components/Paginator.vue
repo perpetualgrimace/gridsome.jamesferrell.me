@@ -163,7 +163,7 @@
   }
 
   .paginator-inner {
-    @include vertical-center;
+    @include absolute-vertical-center;
     display: block; // required; spans hate positioning
     line-height: 0.01; // fix list icon alignment
   }
