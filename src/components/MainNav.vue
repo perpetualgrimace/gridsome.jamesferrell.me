@@ -65,7 +65,7 @@
 
 		// background color
 		@media (min-width: $bp-sm) {
-			background-color: $white;
+			background-color: $light-1;
 		}
 
 		// fixed nav on bigger screens
@@ -128,7 +128,7 @@
 			z-index: -1;
 
 			&.is-collapsed .main-nav-link {
-				display: none;
+				@include visually-hidden;
 			}
 
 			// expanded menu state
@@ -186,7 +186,6 @@
 		@media (min-width: $bp-sm) {
 			width: auto;
 			display: block;
-			background-color: $white;
 		}
 
 		@media (max-height: $bp-xxxs - 0.001) {
@@ -209,6 +208,7 @@
 		z-index: 1;
 		overflow: hidden;
 
+		// small screens
 		@media (max-width: $bp-sm - 0.001) {
 			font-size: calc(2vh + #{$font-xs});
 			padding: 0.25em $gutter * 2;

@@ -29,7 +29,7 @@
 			/>
 		</span>
 
-		<span class="main-logo-text subhead">
+		<span class="main-logo-text u-font-md subhead">
 			{{ site.title }}
 		</span>
 		<span class="u-visually-hidden"> home</span>
@@ -48,29 +48,21 @@
 		flex: 1 1 $logo-width;
 		padding-left: 2rem;
 		line-height: $nav-height;
-		// theming
-		background: $black;
 
 		// override default
 		& .main-logo-text {
-			font-size: 18px;
-			color: $white;
+			@include body-bold-font;
+			color: $dark-1;
 
 			@media (min-width: $bp-sm) {
 				top: -1px;
 			}
 		}
 
-
 		// big screen layout
 		@media (min-width: $bp-lg) {
 			// pin to top left
 			left: -0.5rem;
-
-			// interactions
-			&:hover, &:focus {
-				background-color: lighten($black, 1);
-			}
 		}
 
 		// fudge vertical alignment on big screens
@@ -81,17 +73,25 @@
 
 	// the icon
 	.main-logo-icon {
-		@include brand-color-depth;
+		background-color: $dark-2;
 		// sizing
 		width: $logo-icon-size;
 		height: $logo-icon-size;
 		// positioning
 		display: inline-block;
-		margin-right: 6px;
+		margin-right: 3px;
 		vertical-align: middle;
 		// theming
-		border-radius: $radius-md;
+		border-radius: $radius-sm;
 		top: -0.125rem;
+
+		// hover / current state
+		// TODO: smooth transition
+		.main-logo:hover &,
+		.main-logo:focus &,
+		.main-logo.is-active & {
+			@include brand-color-depth;
+		}
 	}
 
 	// tweakpoint to hide text
