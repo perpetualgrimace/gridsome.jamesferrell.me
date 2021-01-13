@@ -66,6 +66,7 @@
 		// fixed nav on bigger screens
 		@include bp-fixed-nav {
 			background-color: rgba($light-1, 0.95);
+			background-image: linear-gradient(from top, $light-1, rgba($light-1, 0.95));
 			position: fixed;
 			left: 0;
 			right: 0;
@@ -83,21 +84,14 @@
 
 	// positioning
 	.main-nav-inner {
+		@include outer-wrapper(0);
 		height: $nav-height;
-		width: $outer-width;
-		max-width: 100%;
-		margin: 0 auto;
 		display: flex;
 	}
 
 	// base style for nav elements
 	.main-nav * {
-		@include body-semibold-font;
-		@include font-smoothing;
-		font-size: $font-sm;
-		text-transform: uppercase;
-		text-decoration: none;
-		color: $gray;
+		@include nav-link-base;
 	}
 
 
@@ -212,45 +206,9 @@
 
 		// big screens
 		@media (min-width: $bp-sm) {
-			padding: 0 0.75em;
+			@include nav-link-hover;
 			line-height: $nav-height; // vertically center
 			font-size: $font-sm;
-
-			// interactions
-			&:before {
-				// sizing & positioning
-				@include pseudo;
-				position: absolute;
-				left: 0;
-				right: 0;
-				width: 100%;
-				height: rem(30);
-				z-index: -1; // behind text
-				// theming
-				background-color: $white;
-				border-radius: $radius-sm;
-				// transitions
-				opacity: 0;
-				transition: 
-					opacity $duration-xs,
-					background-color $duration-sm;
-			}
-
-			// transition in
-			&:hover, &:focus {
-
-				&:before {
-					opacity: 1;
-				}
-			}
-			&.is-active {
-				color: $white;
-
-				&:before {
-					background-color: $brand-color;
-					opacity: 1;
-				}
-			}
 		}
 	}
 

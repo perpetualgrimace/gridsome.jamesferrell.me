@@ -31,12 +31,6 @@
 	font-weight: 600;
 }
 
-// font smoothing
-@mixin font-smoothing {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
 ////////////////////////////////
 // breakpoints
 ////////////////////////////////
@@ -51,6 +45,14 @@
 ////////////////////////////////
 // layout & positioning
 ////////////////////////////////
+
+@mixin outer-wrapper($padding: $gutter) {
+	width: $outer-width;
+	max-width: 100%;
+	padding: #{$padding};
+	margin-left: auto;
+	margin-right: auto;
+}
 
 // break out of container and be full width
 @mixin fullwidth {
@@ -283,42 +285,58 @@
 	z-index: 1;
 }
 
-// apply fancy hover interactions to a link
-@mixin fancy-nav-hover {
-	&:after {
-		@include pseudo;
-		@include absolute-expand;
-		z-index: -1; // hide behind text
-		background: $brand-light;
-		background-image: linear-gradient(to bottom, $brand-light, $brand-color);
-		opacity: 0;
-		transform: translateX(-100%);
-		transition:
-			opacity $duration-sm,
-			transform $duration-sm;
-
-		@media (min-width: $bp-sm) {
-			transform: translateY(100%);
-		}
-	}
-
-	// hover state
-	&:hover, &:focus {
-		background-color: $white; // make room for pseudo element
-		color: $white; // make text readable against pseudo element
-
-		// show pseudo element
-		&:after {
-			opacity: 1;
-			transform: none;
-		}
-	}
-}
-
 // nav toggle max width
 @mixin nav-toggle-max-width {
 	@media (max-width: $bp-xxxs - 0.001) {
 		max-width: calc(100% - 2rem);
+	}
+}
+
+@mixin nav-link-base {
+	@include body-semibold-font;
+	font-size: $font-sm;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: $gray;
+}
+
+@mixin nav-link-hover {
+	padding: 0 0.75em;
+
+	// interactions
+	&:before {
+		// sizing & positioning
+		@include pseudo;
+		@include absolute-vertical-center;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: rem(30);
+		z-index: -1; // behind text
+		// theming
+		background-color: $white;
+		border-radius: $radius-sm;
+		// transitions
+		opacity: 0;
+		transition: 
+			opacity $duration-xs,
+			background-color $duration-sm;
+	}
+
+	// transition in
+	&:hover, &:focus {
+
+		&:before {
+			opacity: 1;
+		}
+	}
+	&.is-active {
+		color: $white;
+
+		&:before {
+			background-color: $brand-color;
+			opacity: 1;
+		}
 	}
 }
 
@@ -361,7 +379,6 @@
 ////////////////////////////////
 
 @mixin brand-theme {
-	@include font-smoothing;
 
 	// heading link style
 	h2, h3, h4, h5, h6 {

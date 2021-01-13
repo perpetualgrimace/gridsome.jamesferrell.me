@@ -38,7 +38,6 @@
     $text-color:    $white
   ) {
     @include body-semibold-font;
-    @include font-smoothing;
     display: inline-block;
     overflow: hidden; // clip :after gradient fill
     z-index: 1; // needed to make :after pseudo element visible
@@ -50,7 +49,7 @@
     border-bottom: 2px solid transparent; // initial state
     // default padding and border-radius; may be overwritten by button variants
     padding: 0.65em 1.25em 0.55em 1.25em; // forever fudged
-    border-radius: $radius-md;
+    border-radius: $radius-sm;
 
     // transitionable gradient fill
     &:after {

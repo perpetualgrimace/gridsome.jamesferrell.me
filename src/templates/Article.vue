@@ -125,26 +125,4 @@
     dd      { margin-bottom: 0.875em; }
     dd .tag { margin-bottom: -0.2rem; } // offset tag padding
   }
-
-  // twitter link
-  .article-sidebar-link {
-    text-decoration: none;
-
-    & > svg {
-      margin-right: 0.25em;
-    }
-
-    & > * {
-      display: inline-block;
-      vertical-align: middle;
-      pointer-events: none;
-    }
-
-    &:hover svg,
-    &:focus svg {
-      transform: scale(1.125) rotate(-6deg);
-
-      path { fill: $twitter-color; }
-    }
-  }
 </style>

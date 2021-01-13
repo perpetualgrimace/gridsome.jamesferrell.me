@@ -82,8 +82,7 @@
 	}
 
 	// give the label some room to breath
-	.secondary-label,
-	.share-icon-twitter-svg {
+	.secondary-label {
 		margin-right: 0.25em;
 	}
 
@@ -119,20 +118,6 @@
 				> .secondary-item:first-of-type {
 					margin-top: 1em;
 				}
-			}
-		}
-	}
-
-	// twitter link
-	.secondary-link[href*='twitter'] {
-		// interactions
-		&:hover svg,
-		&:focus svg {
-			transform: scale(1.25) rotateZ(-6deg);
-
-			// change fill to twitter color
-			path {
-				fill: $twitter-color;
 			}
 		}
 	}

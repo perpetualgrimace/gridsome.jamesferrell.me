@@ -17,7 +17,7 @@
 
 <template>
   <ul class="secondary-social-list u-list-reset">
-    <SocialLink v-for="social in site.moreSocialAccounts" :social="social" :key="social.name" />
+    <!-- <SocialLink v-for="social in site.moreSocialAccounts" :social="social" :key="social.name" /> -->
   </ul>
 </template>
 

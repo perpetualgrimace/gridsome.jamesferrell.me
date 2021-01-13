@@ -17,9 +17,7 @@
     { "name": "github",   "link": "https://github.com/perpetualgrimace" },
     { "name": "codepen",  "link": "https://codepen.io/perpetualgrimace" },
     { "name": "dribbble", "link": "https://dribbble.com/perpetualgrimace" },
-    { "name": "twitter",  "link": "https://twitter.com/perpetualgrimac" }
-  ],
-  "moreSocialAccounts": [
+    { "name": "twitter",  "link": "https://twitter.com/perpetualgrimac" },
     { "name": "instagram",   "link": "https://instagram.com/perpetualgrimace" },
     { "name": "facebook",  "link": "https://facebook.com/perpetualgrimace" },
     { "name": "linkedin", "link": "https://linkedin.com/in/perpetualgrimace" }

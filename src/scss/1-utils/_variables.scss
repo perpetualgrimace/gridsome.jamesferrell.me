@@ -27,13 +27,15 @@ $success-color : #3DDC97;
 $error-color   : #FF495C;
 
 // social media colors
-$facebook-color  : #3b5998;
-$twitter-color   : #00aced;
-$dribbble-color  : #ea4c89;
-$github-color    : #4078c0;
-$codepen-color   : #47cf73;
-$linkedin-color  : #0077B5;
-$instagram-color : #e4405f;
+$socialColors : (
+	"facebook"  : #3b5998,
+	"twitter"   : #00aced,
+	"dribbble"  : #ea4c89,
+	"github"    : #4078c0,
+	"codepen"   : #47cf73,
+	"linkedin"  : #0077B5,
+	"instagram" : #e4405f
+);
 
 ////////////////////////////////
 // font sizes

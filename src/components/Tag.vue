@@ -48,7 +48,6 @@
     & > * {
       // typography
       @include body-semibold-font;
-      @include font-smoothing;
       text-transform: uppercase;
       // sizing
       padding: 0.2rem 0.5rem 0.2rem 0.5rem;

@@ -5,78 +5,73 @@
 // page background
 html {
 	background: $light-1;
+	color: $dark-1;
 }
 
-// main style
-main {
-	@include font-smoothing;
-	color: $dark-2;
+// headings
+h1, h2, h3, h4, h5, h6,
+.heading {
+	color: $black;
 
-	// headings
-	h1, h2, h3, h4, h5, h6,
-	.heading {
-		color: $black;
-
-		// links inside headings, but not the auto-generated ones
-		& > a:not([aria-hidden="true"]) {
-			color: inherit;
-			font-family: inherit;
-			font-weight: inherit;
-			text-decoration-color: $light-2;
-			transition:
-				$duration-sm color,
-				$duration-sm text-decoration-color;
-
-			&:hover, &:focus {
-				text-decoration-color: $brand-light;
-				color: $black;
-			}
-		}
-	}
-
-	// links
-	a {
-		color: $brand-color;
+	// links inside headings, but not the auto-generated ones
+	& > a:not([aria-hidden="true"]) {
+		color: inherit;
+		font-family: inherit;
+		font-weight: inherit;
 		text-decoration-color: $light-2;
+		transition:
+			$duration-sm color,
+			$duration-sm text-decoration-color;
 
-		&:hover,
-		&:focus {
-			color: $brand-light;
-			text-decoration-color: currentColor;
+		&:hover, &:focus {
+			text-decoration-color: $brand-light;
+			color: $black;
 		}
 	}
+}
 
-	// horizontal rule
-	hr {
-		@include hr;
-	}
+// links
+a {
+	color: $brand-color;
+	text-decoration-color: $light-2;
 
-	// code blocks
-	code {
-		background: $black;
-		color: $light-1;
-		padding: 0.1em 0.5em;
-		border-radius: $radius-md;
+	&:hover,
+	&:focus {
+		color: $brand-light;
+		text-decoration-color: currentColor;
 	}
-	// space out code blocks within paragraphs
-	p > code,
-	li > code {
-		margin-left: 0.1em;
-		margin-right: 0.1em;
-	}
+}
 
-	pre > code {
-		display: block;
-		padding: 0.5em 1em;
-		background-color: $black;
-		color: $light-1;
-		overflow-x: auto;
-	}
+// horizontal rule
+hr {
+	@include hr;
+}
 
-	pre {
-		margin-top: 2em;
-		margin-bottom: 2em;
-	}
+// code blocks
+code {
+	background: $black;
+	color: $light-1;
+	padding: 0.1em 0.5em;
+	border-radius: $radius-md;
+}
+// space out code blocks within paragraphs
+p > code,
+li > code {
+	margin-left: 0.1em;
+	margin-right: 0.1em;
+}
+
+pre > code {
+	display: block;
+	padding: 0.5em 1em;
+	background-color: $black;
+	color: $light-1;
+	overflow-x: auto;
+}
+
+pre {
+	margin-top: 2em;
+	margin-bottom: 2em;
 }
 
 

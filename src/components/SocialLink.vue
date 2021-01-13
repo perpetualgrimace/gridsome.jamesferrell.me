@@ -23,40 +23,39 @@
 <style lang="scss">
 	// default styles
 	.social-link {
-		color: $brand-color;
-		text-decoration: none;
+		@include nav-link-base;
 
-		@supports (text-decoration-color: currentColor) {
-			text-decoration: underline;
-			text-decoration-color: $black;
+		// custom colors
+		@each $color, $hex in $socialColors {
+			&[href*="#{$color}"] {
+				&:hover, &:focus {
+					color: $hex;
+				}
+			}
 		}
 
-		// interactions
+		// icons inherit custom color
 		&:hover, &:focus {
-			color: $brand-light;
-
-			.social-text {
-				text-decoration: underline;
+			.social-icon {
+				background-color: currentColor;
+				transform: scale(1.125);
 			}
 		}
 	}
 
 	// icon style and placement
 	.social-icon {
-		@include brand-color-depth;
 		// alignment
 		display: inline-block;
 		vertical-align: middle;
 		top: -2px; // fudge the icon up
 		width: 1rem;
 		height: 1rem;
-		margin-right: 0.625em;
-		// aesthetic
-		border-radius: $radius-md;
-
-		@media (min-width: $bp-xl) {
-			top: -1px; // still more fudging
-		}
+		margin-right: 0.375em;
+		// theming
+		background-color: $dark-1;
+		border-radius: $radius-sm;
+		transition: transform $duration-xs;
 	}
 
 </style>
