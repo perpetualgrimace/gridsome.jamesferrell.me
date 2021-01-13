@@ -385,13 +385,16 @@
 		color: $white;
 	}
 
-	// paragraph link stye
-	p > a {
-		color: rgba($white, 0.9);
+	p {
+		color: $light-1;
 
-		// interactions
-		&:hover, &:active, &:focus {
+		& > a {
 			color: $white;
+
+			// interactions
+			&:hover, &:active, &:focus {
+				color: $white;
+			}
 		}
 	}
 }

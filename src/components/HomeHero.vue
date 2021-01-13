@@ -80,6 +80,7 @@
 	// home hero
 	.home-hero {
 		@include hero-base;
+		margin-bottom: $gutter * 1.5;
 
 		@media (min-width: $bp-lg) {
 			.home-hero-avatar {
@@ -92,6 +93,44 @@
 	////////////////////////////////
 	// layout
 	////////////////////////////////
+
+	.home-hero-inner {
+		display: grid;
+		grid-gap: $gutter;
+		grid-template-columns: repeat(12, 1fr);
+
+		.home-hero-avatar {
+			grid-column: 1 / 7;
+			margin: auto 0 auto auto;
+		}
+
+		.home-hero-headline {
+			grid-column: 7 / 13;
+			margin: auto auto auto 0;
+		}
+
+		.home-hero-bio {
+			grid-column: 1 / 13;
+
+			@media (min-width: $bp-xs) {
+				grid-column: 2 / 12;
+			}
+		}
+
+		@media (min-width: $bp-sm) {
+			column-gap: $gutter * 2;
+
+			.home-hero-avatar {
+				grid-column: 1 / 4;
+				grid-row: 1 / span 2;
+			}
+
+			.home-hero-headline,
+			.home-hero-bio {
+				grid-column: 4 / 12;
+			}
+		}
+	}
 
 	.home-hero-avatar {
 		margin-bottom: $gutter; // non-grid fallback

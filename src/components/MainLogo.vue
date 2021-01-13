@@ -29,7 +29,7 @@
 			/>
 		</span>
 
-		<span class="main-logo-text u-font-md subhead">
+		<span class="main-logo-text u-font-md">
 			{{ site.title }}
 		</span>
 		<span class="u-visually-hidden"> home</span>
@@ -51,7 +51,7 @@
 
 		// override default
 		& .main-logo-text {
-			@include body-bold-font;
+			@include body-semibold-font;
 			color: $dark-1;
 
 			@media (min-width: $bp-sm) {
