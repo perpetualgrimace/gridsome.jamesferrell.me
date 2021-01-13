@@ -65,12 +65,25 @@
 
 		// fixed nav on bigger screens
 		@include bp-fixed-nav {
-			background-color: rgba($light-1, 0.95);
-			background-image: linear-gradient(from top, $light-1, rgba($light-1, 0.95));
 			position: fixed;
 			left: 0;
 			right: 0;
+			// theming
+			background-color: rgba($light-1, 0.95); // fallback
+			background: linear-gradient(to bottom, $light-1, rgba($light-1, 0.9));
+			
+			// glass edge
+			&:after {
+				@include pseudo;
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				height: 1px;
+				background-color: $light-1;
+			}
 
+			// offset fixed nav height
 			& + .main {
 				margin-top: $nav-height;
 			}
