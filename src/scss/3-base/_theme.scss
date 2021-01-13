@@ -11,7 +11,7 @@ html {
 // headings
 h1, h2, h3, h4, h5, h6,
 .heading {
-	color: $black;
+	color: $dark-2;
 
 	// links inside headings, but not the auto-generated ones
 	& > a:not([aria-hidden="true"]) {
