@@ -157,7 +157,7 @@
         // theming
         color: $black;
         background-color: $light-2;
-        box-shadow: 0 1px 1em rgba($black, 0.9);
+        @include box-shadow-xl;
         // typography
         text-align: center;
         text-transform: uppercase;
