@@ -41,23 +41,21 @@
 
 			<!-- my face -->
 			<div class="home-hero-avatar">
-				<div class="home-hero-avatar-inner">
-					<img
-						class="home-hero-avatar-img"
-						:class="faceClicked ? 'is-clicked' : ''"
-						:src="img"
-						:srcset="`${img} 1x, ${img2x} 2x`"
-						alt="😬"
-						draggable="false"
-						aria-hidden
-						title=" ...is there something on my face? 😬"
-						@click="onFaceClick"
-						:style="faceClicked ? `
-							transform: scale(${ 1 - (faceClicked * 0.05) });
-							opacity: ${ 1 - (faceClicked * 0.03) };
-						` : null"
-					/>
-				</div>
+				<img
+					class="home-hero-avatar-img"
+					:class="faceClicked ? 'is-clicked' : ''"
+					:src="img"
+					:srcset="`${img} 1x, ${img2x} 2x`"
+					alt="😬"
+					draggable="false"
+					aria-hidden
+					title=" ...is there something on my face? 😬"
+					@click="onFaceClick"
+					:style="faceClicked ? `
+						transform: scale(${ 1 - (faceClicked * 0.05) });
+						opacity: ${ 1 - (faceClicked * 0.03) };
+					` : null"
+				/>
 			</div>
 
 			<!-- name & bio -->
@@ -81,12 +79,6 @@
 	.home-hero {
 		@include hero-base;
 		margin-bottom: $gutter * 1.5;
-
-		@media (min-width: $bp-lg) {
-			.home-hero-avatar {
-				width: calc(#{rem(160)} + 2vw);
-			}
-		}
 	}
 
 
@@ -97,9 +89,16 @@
 	.home-hero-inner {
 		@include grid;
 
+		@media (max-width: $bp-xs - 0.001) {
+			padding: $gutter;
+		}
+
 		.home-hero-avatar {
 			grid-column: 1 / 7;
-			margin: auto 0 auto auto;
+			
+			@supports (display: grid) {
+				margin: auto 0 auto auto;
+			}
 		}
 
 		.home-hero-headline {
@@ -130,12 +129,10 @@
 
 	.home-hero-avatar {
 		margin-bottom: $gutter; // non-grid fallback
-	}
 
-	// avatar sizing
-	.home-hero-avatar-inner {
-		width: rem(160);
-		margin-left: auto;
+		@media (min-width: $bp-md) {
+			width: rem(160);
+		}
 	}
 
 	.home-hero-avatar-img {

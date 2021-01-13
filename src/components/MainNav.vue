@@ -97,7 +97,7 @@
 
 	// positioning
 	.main-nav-inner {
-		@include layout-wrapper(0, $inner-width);
+		@include layout-wrapper(0, $outer-width);
 		height: $nav-height;
 		display: flex;
 	}

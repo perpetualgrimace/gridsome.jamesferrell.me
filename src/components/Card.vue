@@ -175,20 +175,6 @@
   }
 
 
-  // small screen treatment
-  @media (max-width: $bp-sm - 0.001) {
-    .card-meta {
-      display: none;
-    }
-  }
-  // three column treatment
-  @media (min-width: $bp-xl) {
-    .secondary-content .card-meta {
-      display: none;
-    }
-  }
-
-
   ////////////////////////////////////
   // link & interactions
   ////////////////////////////////////

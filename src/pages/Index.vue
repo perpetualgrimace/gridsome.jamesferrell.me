@@ -60,7 +60,7 @@
       grid-column: 8 / 13;
     }
   }
-  
+
   @media (min-width: $bp-sm) {
     .home-content-wrapper .primary-content,
     .home-content-wrapper .secondary-content {
@@ -73,6 +73,15 @@
     }
     .home-content-wrapper .secondary-content {
       grid-column: 1 / 4;
+      order: -1;
+    }
+  }
+  @media (min-width: $bp-xl) {
+    .home-content-wrapper .primary-content {
+      grid-column: 5 / 14;
+    }
+    .home-content-wrapper .secondary-content {
+      grid-column: 2 / 5;
       order: -1;
     }
   }
