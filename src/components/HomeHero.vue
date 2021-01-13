@@ -95,9 +95,7 @@
 	////////////////////////////////
 
 	.home-hero-inner {
-		display: grid;
-		grid-gap: $gutter;
-		grid-template-columns: repeat(12, 1fr);
+		@include grid;
 
 		.home-hero-avatar {
 			grid-column: 1 / 7;
@@ -118,8 +116,6 @@
 		}
 
 		@media (min-width: $bp-sm) {
-			column-gap: $gutter * 2;
-
 			.home-hero-avatar {
 				grid-column: 1 / 4;
 				grid-row: 1 / span 2;
@@ -139,6 +135,7 @@
 	// avatar sizing
 	.home-hero-avatar-inner {
 		width: rem(160);
+		margin-left: auto;
 	}
 
 	.home-hero-avatar-img {

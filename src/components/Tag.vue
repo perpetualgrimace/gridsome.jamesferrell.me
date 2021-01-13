@@ -52,7 +52,7 @@
       // sizing
       padding: 0.2rem 0.5rem 0.2rem 0.5rem;
       // theming
-      border-radius: $radius-md;
+      border-radius: $radius-sm;
       color: $white;
     }
 
@@ -71,7 +71,7 @@
     // non-links
     .tag-span {
       display: block;
-      background-color: $black;
+      background-color: $dark-2;
     }
 
     // selected state
@@ -79,7 +79,7 @@
       pointer-events: none;
 
       .tag-link {
-        background-color: $black;
+        background-color: $dark-2;
       }
 
       .tag-span {

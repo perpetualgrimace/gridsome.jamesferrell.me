@@ -26,7 +26,7 @@
 </script>
 
 <template>
-  <Layout>
+  <Layout wrapperClass="home">
 
     <template slot="hero">
       <HomeHero />
@@ -46,4 +46,34 @@
 
 
 <style lang="scss">
+
+  .home-content-wrapper .primary-content,
+  .home-content-wrapper .secondary-content {
+    grid-column: 1 / 13;
+  }
+
+  @media (min-width: $bp-xxs) and (max-width: $bp-xs - 0.001) {
+    .home-content-wrapper .primary-content {
+      grid-column: 1 / 8;
+    }
+    .home-content-wrapper .secondary-content {
+      grid-column: 8 / 13;
+    }
+  }
+  
+  @media (min-width: $bp-sm) {
+    .home-content-wrapper .primary-content,
+    .home-content-wrapper .secondary-content {
+      grid-column: 2 / 12;
+    }
+  }
+  @media (min-width: $bp-md) {
+    .home-content-wrapper .primary-content {
+      grid-column: 4 / 13;
+    }
+    .home-content-wrapper .secondary-content {
+      grid-column: 1 / 4;
+      order: -1;
+    }
+  }
 </style>

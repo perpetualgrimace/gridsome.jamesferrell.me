@@ -71,7 +71,7 @@
 			// theming
 			background-color: rgba($light-1, 0.95); // fallback
 			background: linear-gradient(to bottom, $light-1, rgba($light-1, 0.9));
-			
+
 			// glass edge
 			&:after {
 				@include pseudo;
@@ -97,7 +97,7 @@
 
 	// positioning
 	.main-nav-inner {
-		@include outer-wrapper(0);
+		@include layout-wrapper(0, $inner-width);
 		height: $nav-height;
 		display: flex;
 	}

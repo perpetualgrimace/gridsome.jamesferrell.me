@@ -68,7 +68,7 @@
     top: 372px;
     width: 690px;
     height: 14px;
-    background: $gray;
+    background: $light-3;
     border-radius: 2px 2px 0 0;
     z-index: 1;
   }
@@ -80,7 +80,7 @@
     top: 380px;
     width: 690px;
     height: 12px;
-    background: $dark-1;
+    background: $gray;
     border-radius: 7.5% / 100%; // now *that's* a CSS trick
   }
 </style>

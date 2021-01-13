@@ -109,10 +109,6 @@
   // project
   ////////////////////////////////////
 
-  // tweakpoints
-  $device-tweakpoint-s: 36em;
-  $device-tweakpoint-l: 68em;
-
   // default project style
   .project {
     @include radial-gloss; // background style added in template
@@ -124,7 +120,7 @@
     box-shadow: inset 0 -6px 30px -6px rgba($black, 0.175);
 
     // minor height+padding adjustment
-    @media (min-width: $device-tweakpoint-s) {
+    @media (min-width: $bp-xs) {
       max-height: rem(530);
       padding-top: 1.5rem;
     }
@@ -136,7 +132,7 @@
     }
 
     // add bigger padding
-    @media (min-width: $device-tweakpoint-l) {
+    @media (min-width: $bp-lg) {
       padding-left: 2rem;
       padding-right: 2rem;
       // left align text and laptop-container
@@ -217,7 +213,7 @@
     margin-bottom: $gutter * 1.5;
 
     // add more margin at left-aligned layout
-    @media (min-width: $device-tweakpoint-l) {
+    @media (min-width: $bp-lg) {
       margin-bottom: $gutter * 1.5;
     }
   }
@@ -288,7 +284,7 @@
 
   // hide phone and only show laptop
   .project .mobile-container {
-    @media (min-width: $device-tweakpoint-s) {
+    @media (min-width: $bp-xs) {
       // position mobile container
       position: absolute;
       bottom: -1rem;
@@ -300,11 +296,11 @@
 
   // hide laptop
   .project .laptop-container {
-    @media (max-width: $device-tweakpoint-s - 0.001) {
+    @media (max-width: $bp-xs - 0.001) {
       display: none;
     }
     // awkwardly resposition laptop
-    @media (min-width: $device-tweakpoint-s) and (max-width: 42em - 0.001) {
+    @media (min-width: $bp-xs) and (max-width: 42em - 0.001) {
       margin-left: 1rem;
     }
   }
@@ -312,7 +308,7 @@
 
   // flipped device layout for even items:
   // phone left, laptop right
-  @media (min-width: $device-tweakpoint-l) {
+  @media (min-width: $bp-lg) {
     .project:nth-of-type(even) .mobile-container {
       right: auto; // reset right positioning
     }

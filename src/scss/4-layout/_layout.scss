@@ -1,4 +1,6 @@
-
+.content-wrapper {
+	@include grid;
+}
 
 /////////////////////////////////////////////
 // 2 column layout
@@ -6,11 +8,11 @@
 
 .content-wrapper,
 .content-wrapper ~ * {
-	@include outer-wrapper(0);
+	@include layout-wrapper;
 }
 
 .content-wrapper > .section {
-	padding: $gutter;
+	
 }
 
 @media (min-width: $bp-lg) {

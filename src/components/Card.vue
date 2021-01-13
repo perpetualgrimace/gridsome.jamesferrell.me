@@ -92,9 +92,10 @@
   }
 
   .card-inner {
-    @include box-shadow;
+    @include box-shadow-lg;
     padding: $font-md;
-    background: #fff;
+    background-color: $white;
+    border-radius: $radius-sm;
   }
 
 
@@ -226,7 +227,7 @@
 
       // set ideal width, let cards grow or shrink as necessary
       > .card-container {
-        flex: 1 1 20rem;
+        flex: 1 1 16rem;
       }
 
       // needed to make the inner container fill up parent container

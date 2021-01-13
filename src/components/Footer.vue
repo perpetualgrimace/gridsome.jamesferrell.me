@@ -59,7 +59,7 @@
 
 <style lang="scss">
 	.footer {
-		@include outer-wrapper;
+		@include layout-wrapper;
 		// fallback layout
 		display: flex;
 		flex-wrap: wrap;

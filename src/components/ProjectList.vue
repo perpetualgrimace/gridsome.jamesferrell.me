@@ -82,7 +82,7 @@
 <style lang="scss">
   // add rounded corners to list
   .project-list {
-    border-radius: 2px;
+    border-radius: $radius-md;
     overflow: hidden;
   }
 </style>

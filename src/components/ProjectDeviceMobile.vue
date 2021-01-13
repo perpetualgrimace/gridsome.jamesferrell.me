@@ -49,7 +49,7 @@
   // shared styles
   .device-shell {
     @include device-shadow;
-    background: $black;
+    background: $dark-3;
     border: 1px solid $dark-1;
     border-radius: 20px;
   }

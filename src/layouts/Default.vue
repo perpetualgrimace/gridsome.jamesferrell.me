@@ -24,7 +24,7 @@
 
 				<slot name="hero" />
 
-				<div class="content-wrapper" :class="singleColumn ? 'single-column' : 'with-sidebar'">
+				<div class="content-wrapper" :class="wrapperClass ? `${wrapperClass}-content-wrapper` :  singleColumn ? 'single-column' : 'with-sidebar'">
 					<div class="section primary-content">
 						<slot />
 					</div>

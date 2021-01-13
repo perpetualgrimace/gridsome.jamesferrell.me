@@ -46,8 +46,8 @@
 // layout & positioning
 ////////////////////////////////
 
-@mixin outer-wrapper($padding: $gutter) {
-	width: $outer-width;
+@mixin layout-wrapper($padding: $gutter, $width: $outer-width) {
+	width: $width;
 	max-width: 100%;
 	padding: #{$padding};
 	margin-left: auto;
@@ -238,6 +238,16 @@
 // layout helpers
 ////////////////////////////////
 
+@mixin grid {
+	display: grid;
+	grid-gap: $gutter;
+	grid-template-columns: repeat(12, 1fr);
+
+	@media (min-width: $bp-sm) {
+		column-gap: $gutter * 2;
+	}
+}
+
 // style secondary content like primary content, add visual separator
 @mixin secondary-content-as-primary {
 	// compensate for _layout.scss's .section + .section margin-top reset
@@ -410,7 +420,11 @@
 	padding: $gutter;
 	max-width: $outer-width;
 	min-height: $hero-height;
-	border-radius: $radius-lg;
+	border-radius: $radius-md;
+
+	@media (min-width: $bp-sm) {
+		border-radius: $radius-lg;
+	}
 
 	> * {
 		max-width: $outer-width;
