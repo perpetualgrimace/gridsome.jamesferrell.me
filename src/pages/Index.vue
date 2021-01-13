@@ -37,7 +37,7 @@
     <Button link="projects" classes="link-arrow u-font-sm u-margin-top" text="More projects" />
 
     <template slot="sidebar">
-      <ArticleList :heading="$page.d.blogHeading" :limit="3" />
+      <ArticleList :heading="$page.d.blogHeading" :limit="4" />
       <Button link="blog" classes="link-arrow u-font-sm u-margin-top" text="More articles" />
     </template>
 

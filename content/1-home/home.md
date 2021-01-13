@@ -1,5 +1,5 @@
 ---
 title: "UX developer"
-projectsHeading: "My work:"
-blogHeading: "My blog:"
+projectsHeading: "Recent work"
+blogHeading: "Latest articles"
 ---
