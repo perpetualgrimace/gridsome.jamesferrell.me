@@ -24,7 +24,7 @@
 
 
 <template>
-  <article class="cta brand-theme u-left-center u-margin-bottom-sm" :class="classes">
+  <article class="cta brand-theme u-left-center u-margin-top-lg u-margin-bottom-sm" :class="classes">
     <h2>{{ heading }}</h2>
     <p>{{ text }}</p>
 
@@ -35,9 +35,8 @@
 
 <style lang="scss">
   .cta {
-    // add padding to container
+    @include hero-radius;
     padding: 1.5rem 2rem 2rem 2rem;
-    border-radius: 2px;
 
     // set heading style to u-font-xxl
     h2, h3 {

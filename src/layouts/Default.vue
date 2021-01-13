@@ -31,11 +31,11 @@
 
 					<div class="section secondary-content" v-if="$slots.sidebar">
 						<slot name="sidebar" />
-					</div>					
-				</div>
+					</div>
 
-				<div class="section cta-content" v-if="$slots.cta">
-					<slot name="cta" />
+					<div class="section cta-content" v-if="$slots.cta">
+						<slot name="cta" />
+					</div>
 				</div>
 			</main>
 		</transition>

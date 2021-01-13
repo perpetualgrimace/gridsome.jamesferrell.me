@@ -9,12 +9,12 @@
 	}
 
 	// full width by default
-	& > .section                 { grid-column: 1 / 13; }
+	& > .section                 { grid-column:  1 / 13; }
 
 	// keep line-length in check as screen gets wider
 	&.single-column > .section   {
-		@media (min-width: $bp-md) { grid-column: 2 / 12; }
-		@media (min-width: $bp-xl) { grid-column: 3 / 13; }
+		@media (min-width: $bp-md) { grid-column:  2 / 12; }
+		@media (min-width: $bp-xl) { grid-column:  3 / 13; }
 	}
 
 	// secondary content right
@@ -25,6 +25,7 @@
 		}
 		@media (min-width: $bp-md) {
 			& > .primary-content     { grid-column:  2 / 10; }
+			& > .cta-content         { grid-column:  2 / 12; }
 		}
 		@media (min-width: $bp-lg) {
 			& > .primary-content     { grid-column:  3 / 10; }
@@ -34,6 +35,7 @@
 		@media (min-width: $bp-xl) {
 			& > .primary-content     { grid-column:  4 / 12; }
 			& > .secondary-content   { grid-column: 12 / 15; }
+			& > .cta-content         { grid-column:  3 / 13; }
 		}
 	}
 }

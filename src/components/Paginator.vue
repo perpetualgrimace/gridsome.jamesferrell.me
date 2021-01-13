@@ -119,7 +119,7 @@
         </g-link>
       </li>
 
-      <li class="paginator-item paginator-item-second">
+      <li class="paginator-item paginator-item-last">
         <g-link :to="next.slug" class="paginator-link u-margin-top-off-children">
           <span class="paginator-inner">
             <span class="paginator-label u-uppercase u-font-sm">
@@ -140,12 +140,24 @@
 
 <style lang="scss">
 
-  .paginator-list {
-    @include box-shadow;
+  .paginator {
+    @include hero-radius;
+    @include box-shadow-lg;
   }
 
   .paginator-item-first {
     border-bottom: 1px solid $light-1;
+
+    .paginator-link {
+      @media (max-width: $bp-xxs) {
+        border-top-left-radius: $radius-md;
+        border-top-right-radius: $radius-md;
+      }
+      @media (min-width: $bp-xxs) {
+        @include hero-radius(border-top-left-radius);
+        @include hero-radius(border-bottom-left-radius);
+      }
+    }
   }
 
   // hide blog list icon by default
@@ -153,18 +165,28 @@
     display: none;
   }
 
+  .paginator-item-last .paginator-link {
+    @media (max-width: $bp-xxs) {
+      border-bottom-left-radius: $radius-md;
+      border-bottom-right-radius: $radius-md;
+    }
+    @media (min-width: $bp-xxs) {
+      @include hero-radius(border-top-right-radius);
+      @include hero-radius(border-bottom-right-radius);
+    }
+  }
+
   .paginator-link {
-    display: block;
+    display: flex;
     width: 100%;
     height: rem(90); // needed for alignment hack
     padding: $font-xs;
-    background: #fff;
+    background: $white;
     text-decoration: none;
   }
 
   .paginator-inner {
-    @include absolute-vertical-center;
-    display: block; // required; spans hate positioning
+    margin: auto;
     line-height: 0.01; // fix list icon alignment
   }
 
@@ -216,8 +238,7 @@
       // smaller middle icon
       .paginator-item-middle {
         display: block; // icon is display:none by default
-        flex: 1;
-        max-width: rem(60); // probably breaks ie11
+        flex: 0 0 rem(80);
         // reset and adjust borders
         border-left: 1px solid $light-1;
         border-right: 1px solid $light-1;

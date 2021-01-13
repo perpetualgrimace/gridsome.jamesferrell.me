@@ -85,32 +85,10 @@
 
 <style lang="scss">
 
-	// home hero
-	.main > .colophon:first-child {
-
-		@media (max-width: $bp-md - 0.001) {
-			padding: 1rem;
-		}
-
-		@media (min-width: $bp-lg) {
-			padding: calc(1rem + 1vh);
-
-			.colophon-inner {
-				max-width: calc(#{$outer-width} + 6vw);
-				margin-left: auto;
-				margin-right: auto;
-			}
-
-			p {
-				font-size: calc(#{$font-sm} + 1vw);
-			}
-
-			.colophon-avatar {
-				min-width: calc(#{rem(160)} + 2vw);
-			}
-		}
+	.colophon {
+		@include hero-radius;
 	}
-
+	
 	// add padding to inner container
 	.colophon-inner {
 		display: flex;
