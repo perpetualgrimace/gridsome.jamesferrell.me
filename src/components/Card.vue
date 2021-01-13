@@ -17,12 +17,12 @@
       relativeDate() {
         return moment(this.published, "YYYY-MM-DD").fromNow();
       },
-      relativeUpdatedDate() {
-        if (this.updated) {
-          return moment(this.updated, "YYYY-MM-DD").fromNow();
-        }
-        else return null;
-      },
+      // relativeUpdatedDate() {
+      //   if (this.updated) {
+      //     return moment(this.updated, "YYYY-MM-DD").fromNow();
+      //   }
+      //   else return null;
+      // },
       splitTags() {
         return this.tags.toLowerCase().split(",");
       },
@@ -60,9 +60,9 @@
         </p>
 
         <p class="card-meta u-font-xs u-uppercase">
-          published {{ relativeDate }}
-          <span v-if="relativeUpdatedDate"> |  updated {{ relativeUpdatedDate }}
-          </span>
+            published {{ relativeDate }}
+          <!-- <span class="card-meta-updated" v-if="relativeUpdatedDate">, updated {{ relativeUpdatedDate }}
+          </span> -->
         </p>
       </div>
 
@@ -96,6 +96,11 @@
     padding: $font-md;
     background-color: $white;
     border-radius: $radius-sm;
+
+    &:hover, &:focus-within {
+      transform: scale(1.025);
+      @include box-shadow-xl;
+    }
   }
 
 
