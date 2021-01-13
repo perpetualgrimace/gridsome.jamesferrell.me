@@ -37,8 +37,10 @@
     <Button link="projects" classes="link-arrow u-font-sm u-margin-top" text="More projects" />
 
     <template slot="sidebar">
-      <ArticleList :heading="$page.d.blogHeading" :limit="4" />
-      <Button link="blog" classes="link-arrow u-font-sm u-margin-top" text="More articles" />
+      <div class="sticky-wrapper">
+        <ArticleList :heading="$page.d.blogHeading" :limit="4" />
+        <Button link="blog" classes="link-arrow u-font-sm u-margin-top" text="More articles" />
+      </div>
     </template>
 
   </Layout>
@@ -74,6 +76,11 @@
     .home-content-wrapper .secondary-content {
       grid-column: 1 / 4;
       order: -1;
+
+      & > .sticky-wrapper {
+        position: sticky;
+        top: 0;
+      }
     }
   }
   @media (min-width: $bp-xl) {
