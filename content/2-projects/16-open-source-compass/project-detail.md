@@ -3,7 +3,7 @@ title: Open Source Compass
 slug: open-source-compass
 color: "#86BC25"
 thumbnailLayout: web
-tags: "front-end development,react,d3plus"
+tags: "front-end development,react"
 mobileImg: osc-mobile.png
 mobileImg2x: osc-mobile@2x.png
 laptopImg: osc-laptop.jpg

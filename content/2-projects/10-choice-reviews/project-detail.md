@@ -3,7 +3,7 @@ title: "Choice Reviews"
 slug: choice-reviews
 color: "#38E08F"
 thumbnailLayout: web
-tags: "design,front-end development"
+tags: "design,front-end development,kirby cms"
 mobileImg: choice-mobile.png
 mobileImg2x: choice-mobile@2x.png
 laptopImg: choice-laptop.png
