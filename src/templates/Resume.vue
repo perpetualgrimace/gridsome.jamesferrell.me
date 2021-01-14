@@ -18,12 +18,12 @@
 
 <script>
   import ImageHero from "~/components/ImageHero";
-  import SecondarySidebar from "~/components/SecondarySidebar";
+  import Sidebar from "~/components/Sidebar";
   import CTA from "~/components/CTA";
 
   export default {
     components: {
-      ImageHero, SecondarySidebar, CTA
+      ImageHero, Sidebar, CTA
     },
     metaInfo: {
       title: "Resumé"
@@ -45,7 +45,7 @@
     <VueRemarkContent class="content" />
 
     <template slot="sidebar">
-      <SecondarySidebar
+      <Sidebar
         :heading="$page.d.sidebarHeading"
         :text="$page.d.sidebarText"
         :link="$page.d.sidebarLink"

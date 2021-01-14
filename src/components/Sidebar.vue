@@ -1,6 +1,6 @@
 <script>
 	export default {
-		name: "SecondarySidebar",
+		name: "Sidebar",
 		props: {
 			content:  { default: null },
 			heading:  { default: null },

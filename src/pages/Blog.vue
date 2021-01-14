@@ -14,12 +14,12 @@
   import {formatHashAsTag} from "~/helpers.js";
   import ArticleList from "~/components/ArticleList";
   import FilterHero from "~/components/FilterHero";
-  import SecondarySidebar from "~/components/SecondarySidebar";
+  import Sidebar from "~/components/Sidebar";
   import CTA from "~/components/CTA";
 
   export default {
     components: {
-      ArticleList, FilterHero, SecondarySidebar, CTA
+      ArticleList, FilterHero, Sidebar, CTA
     },
     metaInfo: {
       title: "Blog"
