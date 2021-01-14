@@ -396,6 +396,7 @@
 
 @mixin hero-radius($property: border-radius) {
 	#{$property}: $radius-md;
+	transition: border-radius $duration-xs;
 
 	@media (min-width: $bp-lg) {
 		#{$property}: $radius-lg;
@@ -404,7 +405,6 @@
 
 @mixin hero-base {
 	@include hero-radius;
-	transition: border-radius $duration-xs;
 
 	display: flex; // fallback
 	align-items: center;

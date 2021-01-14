@@ -36,7 +36,6 @@
 <style lang="scss">
   .cta {
     @include hero-radius;
-    transition: border-radius $duration-xs;
     padding: 1.5rem 2rem 2rem 2rem;
 
     // set heading style to u-font-xxl
