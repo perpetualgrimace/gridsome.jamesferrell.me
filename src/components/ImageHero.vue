@@ -25,6 +25,10 @@
       <div class="image-hero-meta" v-if="$slots.meta">
         <slot name="meta" />
       </div>
+
+      <div class="image-hero-filters" v-if="$slots.filters">
+        <slot name="filters" />
+      </div>
     </div>
 
     <g-image class="image-hero-img" :src="imgSrc || defaultImg" draggable="false" />
@@ -66,6 +70,11 @@
       &:last-child {
         margin-bottom: auto;
       }
+    }
+
+    .image-hero-filters {
+      margin-top: 0.5em;
+      margin-bottom: auto;
     }
 
     .image-hero-meta {

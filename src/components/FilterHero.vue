@@ -25,16 +25,16 @@
 <script>
   import {flattenArray, uppercaseFirst} from "~/helpers.js";
   import Tag from "~/components/Tag";
+  import ImageHero from "~/components/ImageHero";
 
   export default {
     name: "FilterHero",
     components: {
-      Tag
+      Tag, ImageHero
     },
     props: {
       contentType:    { default: "articles" },
-      selectedFilter: { default: "all" },
-      img:            { default: "/images/icons/jf-icon.png" }
+      selectedFilter: { default: "all" }
     },
     methods: {
       flattenArray, uppercaseFirst
@@ -63,69 +63,45 @@
 
 
 <template>
-  <header class="filter-hero hero">
-    <h1 class="filter-hero-headline u-font-xl">
-      {{ uppercaseFirst(selectedFilter) }} {{ contentType }}
-    </h1>
+  <ImageHero :headline="`${ uppercaseFirst(selectedFilter) } ${ contentType }`">
+    <template slot="filters">
+      <!-- filters -->
+      <p class="u-visually-hidden">Filter by:</p>
 
-    <!-- filters -->
-    <p class="filter-headline-label u-font-sm">Filter by:</p>
-
-    <!-- tag list -->
-    <div class="filter-tag-list tag-list">
-      <Tag
-        title="All"
-        slug="all"
-        :contentType="contentType"
-        :selected="selectedFilter === 'all'"
-        @updateFilter="selectedFilter = 'all'"
-      />
-      <Tag
-        v-for="filter in filters"
-        :title="filter"
-        :slug="filter.replace(' ', '-')"
-        :selected="selectedFilter === filter"
-        :contentType="contentType"
-        :key="filter"
-        @updateFilter="selectedFilter = $event"
-      />
-    </div>
-
-  </header>
+      <!-- tag list -->
+      <ul class="filter-tag-list tag-list u-center-left">
+        <Tag
+          title="All"
+          slug="all"
+          :contentType="contentType"
+          :selected="selectedFilter === 'all'"
+          @updateFilter="selectedFilter = 'all'"
+        />
+        <Tag
+          v-for="filter in filters"
+          :title="filter"
+          :slug="filter.replace(' ', '-')"
+          :selected="selectedFilter === filter"
+          :contentType="contentType"
+          :key="filter"
+          @updateFilter="selectedFilter = $event"
+        />
+      </ul>      
+    </template>  
+  </ImageHero>
 </template>
 
 
 <style lang="scss">
-  // headline positioning
-  .filter-hero-headline {
-    margin-bottom: 0.65rem;
-  }
-
-  // tagcloud positioning
-  .filter-headline-label,
-  .filter-tag-list {
-    display: inline-block;
-  }
-
   .filter-tag-list .tag:not(:last-child) {
     margin-right: 0.5em;
   }
-
-  // space out label from tagcloud
-  .filter-headline-label {
-    margin-right: 0.5em;
+  .tag:hover .tag-link {
+    color: $white;
+    background-color: $brand-light;
   }
-
-
-  // margin fix
-  .filter-hero {
-    // account for .tag-item bottom margin on filter-hero only
-    // NOTE: applying this globaly messes up the work-item tag placement
-    margin-bottom: 0;
-  }
-
-  // states for filter-hero component
-  .project.is-hidden {
-    display: none;
+  .filter-tag-list .tag.is-selected .tag-link {
+    color: $white;
+    background-color: $brand-color;
   }
 </style>

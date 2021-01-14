@@ -55,11 +55,13 @@
 <template>
   <Layout :singleColumn="true">
 
-    <FilterHero
-      contentType="projects"
-      @selectFilter="handleSelectFilter"
-      :selectedFilter="selectedFilter || 'all'"
-    />
+    <template slot="hero">
+      <FilterHero
+        contentType="projects"
+        @selectFilter="handleSelectFilter"
+        :selectedFilter="selectedFilter || 'all'"
+      />
+    </template>
 
     <ProjectList :selectedFilter="selectedFilter || 'all'" />
 

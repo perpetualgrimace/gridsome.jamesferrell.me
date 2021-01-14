@@ -54,13 +54,16 @@
 
 <template>
   <Layout singleColumn="true">
+    <template slot="hero">
+      <FilterHero
+        @selectFilter="handleSelectFilter"
+        :selectedFilter="selectedFilter || 'all'"
+      />
+    </template>
 
-    <FilterHero
-      @selectFilter="handleSelectFilter"
-      :selectedFilter="selectedFilter || 'all'"
-    />
-
-    <ArticleList :selectedFilter="selectedFilter || 'all'" />
+    <div class="article-list-content">
+      <ArticleList :selectedFilter="selectedFilter || 'all'" />
+    </div>
 
     <template slot="cta">
       <CTA :heading="$page.d.ctaHeadline" classes="u-margin-top-sm" />
