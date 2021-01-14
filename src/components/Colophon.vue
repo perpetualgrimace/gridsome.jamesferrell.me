@@ -62,12 +62,8 @@
 
 			<!-- name & bio -->
 			<div class="colophon-caption">
-				<!-- hidden h1 (home page) -->
-				<h1 class="u-visually-hidden" v-if="headline !== site.title">
-					{{ headline }}
-				</h1>
 				<!-- name -->
-				<span class="colophon-caption-name subhead" v-else>
+				<span class="colophon-caption-name subhead">
 					{{ headline }}
 				</span>
 
@@ -107,7 +103,11 @@
 	}
 
 	.colophon-caption-bio > p {
-		@include sidebar-paragraph-spacing;
+		line-height: 1.25;
+
+		& + p {
+			margin-top: 0.625em;
+		}
 	}
 
 
@@ -177,7 +177,7 @@
 	// JAMES FERRELL positioning
 	.colophon-caption-name {
 		display: inline-block; // needed to make span use margin
-		margin-bottom: 0.25em;
+		margin-bottom: 0.5em;
 	}
 
 

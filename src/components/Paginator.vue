@@ -141,8 +141,8 @@
 <style lang="scss">
 
   .paginator {
-    @include hero-radius;
     @include box-shadow-lg;
+    border-radius: $radius-md;
     transition: border-radius $duration-xs;
   }
 
@@ -150,13 +150,13 @@
     border-bottom: 1px solid $light-1;
 
     .paginator-link {
-      @media (max-width: $bp-xxs) {
+      @media (max-width: $bp-xxs - 0.001) {
         border-top-left-radius: $radius-md;
         border-top-right-radius: $radius-md;
       }
       @media (min-width: $bp-xxs) {
-        @include hero-radius(border-top-left-radius);
-        @include hero-radius(border-bottom-left-radius);
+        border-top-left-radius: $radius-md;
+        border-bottom-left-radius: $radius-md;
       }
     }
   }
@@ -167,13 +167,13 @@
   }
 
   .paginator-item-last .paginator-link {
-    @media (max-width: $bp-xxs) {
+    @media (max-width: $bp-xxs - 0.001) {
       border-bottom-left-radius: $radius-md;
       border-bottom-right-radius: $radius-md;
     }
     @media (min-width: $bp-xxs) {
-      @include hero-radius(border-top-right-radius);
-      @include hero-radius(border-bottom-right-radius);
+      border-top-right-radius: $radius-md;
+      border-bottom-right-radius: $radius-md;
     }
   }
 

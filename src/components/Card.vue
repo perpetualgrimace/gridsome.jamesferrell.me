@@ -176,7 +176,11 @@
 
   // adjust line height
   .card-description {
-    @include sidebar-paragraph-spacing;
+    line-height: 1.25;
+
+    & + p {
+      margin-top: 0.625em;
+    }
   }
 
 

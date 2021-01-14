@@ -60,14 +60,5 @@
   .cta > p:last-of-type > [class*='link-arrow'] {
     margin-top: 0.75rem;
   }
-
-  // adjust margin when a CTA follows a sidebar container
-  .secondary-content + .primary-content > .cta {
-    margin-top: 0.25rem;
-
-    // three column layout
-    @media (min-width: $bp-lg) {
-      margin-top: 0;
-    }
-  }
+  
 </style>
