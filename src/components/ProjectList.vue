@@ -32,7 +32,8 @@
     },
     props: {
       limit: { default: 100 },
-      selectedFilter: { default: "all" }
+      selectedFilter: { default: "all" },
+      overlap: { default: false }
     },
     // laziest lazyloading
     mounted() {
@@ -56,7 +57,7 @@
 
 
 <template>
-  <div class="project-list">
+  <div class="project-list" :class="overlap ? 'is-overlapping' : ''">
     <Project
       v-for="({ node }, i) in $static.projects.edges"
       v-if="i < limit && node.order"
@@ -84,5 +85,12 @@
   .project-list {
     border-radius: $radius-md;
     overflow: hidden;
+    z-index: 1; /* in front of hero overlay */
+  }
+
+  .project-list.is-overlapping {
+    @media (min-width: $bp-md) {
+      margin-top: -$hero-overlap;
+    }
   }
 </style>

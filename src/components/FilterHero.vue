@@ -63,7 +63,7 @@
 
 
 <template>
-  <ImageHero :headline="`${ uppercaseFirst(selectedFilter) } ${ contentType }`">
+  <ImageHero :headline="`${ uppercaseFirst(selectedFilter) } ${ contentType }`" :overlapped="true">
     <template slot="filters">
       <!-- filters -->
       <p class="u-visually-hidden">Filter by:</p>

@@ -243,11 +243,10 @@
 <style lang="scss">
 
   .contact-form {
-    @include hero-radius;
+    padding: $gutter;
     @include box-shadow-lg;
     background-color: $white;
-    padding: $gutter;
-    transition: border-radius $duration-xs;
+    border-radius: $radius-md;
 
     @media (min-width: $bp-md) {
       margin-top: -$hero-overlap;

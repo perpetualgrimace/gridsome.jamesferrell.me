@@ -112,11 +112,11 @@
   // default project style
   .project {
     @include radial-gloss; // background style added in template
-    overflow: hidden;
     // default layout properties
     max-height: rem(420);
     padding: 1rem;
     text-align: center;
+    overflow: hidden;
     box-shadow: inset 0 -6px 30px -6px rgba($black, 0.175);
 
     // minor height+padding adjustment
@@ -263,6 +263,10 @@
           transform: translateY(-12px);
         }
       }
+    }
+
+    &:focus {
+      outline-offset: -$border-width;
     }
   }
 

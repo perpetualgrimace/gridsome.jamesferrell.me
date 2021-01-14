@@ -53,7 +53,7 @@
 
 
 <template>
-  <Layout singleColumn="true">
+  <Layout :singleColumn="true">
     <template slot="hero">
       <FilterHero
         @selectFilter="handleSelectFilter"
@@ -61,7 +61,7 @@
       />
     </template>
 
-    <div class="article-list-content">
+    <div class="article-list-content is-overlapping">
       <ArticleList :selectedFilter="selectedFilter || 'all'" />
     </div>
 
@@ -74,4 +74,9 @@
 
 
 <style lang="scss">
+  .article-list-content.is-overlapping {
+    @media (min-width: $bp-md) {
+      margin-top: -$hero-overlap - 0.45;
+    }
+  }
 </style>

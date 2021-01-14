@@ -63,7 +63,7 @@
       />
     </template>
 
-    <ProjectList :selectedFilter="selectedFilter || 'all'" />
+    <ProjectList :selectedFilter="selectedFilter || 'all'" :overlap="true" />
 
     <template slot="cta">
       <CTA :heading="$page.d.ctaHeadline" />
