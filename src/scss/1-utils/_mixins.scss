@@ -428,7 +428,6 @@
 
 @mixin hero-radius($property: border-radius) {
 	#{$property}: $radius-md;
-	transition: border-radius $duration-xs;
 
 	@media (min-width: $bp-lg) {
 		#{$property}: $radius-lg;
@@ -437,6 +436,7 @@
 
 @mixin hero-base {
 	@include hero-radius;
+	transition: border-radius $duration-xs;
 
 	display: flex; // fallback
 	align-items: center;
@@ -468,6 +468,6 @@
 
 	.tag .tag-link {
 	  color: $dark-1;
-	  background-color: $white;
+	  background-color: rgba($light-1, 0.75);
 	}
 }

@@ -143,6 +143,7 @@
   .paginator {
     @include hero-radius;
     @include box-shadow-lg;
+    transition: border-radius $duration-xs;
   }
 
   .paginator-item-first {
@@ -183,6 +184,11 @@
     padding: $font-xs;
     background: $white;
     text-decoration: none;
+    transition:
+      color $duration-sm,
+      background-color $duration-sm,
+      box-shadow $duration-sm,
+      border-radius $duration-sm;
   }
 
   .paginator-inner {

@@ -87,6 +87,7 @@
 
 	.colophon {
 		@include hero-radius;
+		transition: border-radius $duration-xs;
 	}
 	
 	// add padding to inner container
