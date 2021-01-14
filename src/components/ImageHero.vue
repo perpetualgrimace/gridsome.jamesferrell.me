@@ -5,14 +5,15 @@
       headline:   {default: "missing `headline` prop in ImageHero.vue"},
       subhead:    {default: null},
       imgSrc:     {default: null},
-      defaultImg: {default: "/images/workspace-hero.jpg"}
+      defaultImg: {default: "/images/workspace-hero.jpg"},
+      overlapped: {default: false}
     }
   }
 </script>
 
 
 <template>
-  <header class="image-hero hero dark-theme" role="banner">
+  <header class="image-hero hero dark-theme" :class="overlapped ? 'is-overlapped' : ''" role="banner">
 
     <div class="image-hero-inner">
       <h1 class="image-hero-headline u-center-left">
@@ -89,6 +90,14 @@
           margin-right: $gutter;
         }
       }
+    }
+  }
+
+  // offset overlapped content so heading is still centered
+  .image-hero.is-overlapped .image-hero-inner {
+    @media (min-width: $bp-md) {
+      margin-bottom: $gutter;
+      padding-bottom: $hero-overlap / 2;
     }
   }
 

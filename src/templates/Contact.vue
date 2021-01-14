@@ -27,12 +27,12 @@
 <script>
   import {Fragment} from "vue-fragment";
   import {isEmail, spam} from "~/helpers.js";
-  import SecondarySidebar from "~/components/SecondarySidebar";
   import Button from "~/components/Button";
+  import ImageHero from "~/components/ImageHero";
 
   export default {
     components: {
-      Fragment, SecondarySidebar, Button
+      Fragment, Button, ImageHero
     },
     metaInfo: {
       title: "Contact"
@@ -116,13 +116,14 @@
 
 
 <template>
-  <Layout>
+  <Layout singleColumn="true">
+    <template slot="hero">
+      <ImageHero :headline="$page.d.title" :overlapped="true" />
+    </template>
 
     <Fragment v-if="submitted === false">
-      <h1 class="u-font-xl">{{ $page.d.title }}</h1>
-
       <form
-        class="contact-form g-columns u-margin-top-lg u-padding-top-xs"
+        class="contact-form u-padding-top-xs"
         :class="hasMounted ? 'is-visible' : 'is-hidden'"
         :tabindex="!hasMounted ? '-1' : null"
         name="contact"
@@ -134,8 +135,8 @@
       >
         <div class="g-columns">
           <!-- name -->
-          <div class="g-col g-6 u-padding-top-off">
-            <label for="name" class="label">
+          <div class="field g-col g-6 u-padding-top-off">
+            <label for="name" class="label u-font-sm">
               {{ $page.d.labelName }}
             </label>
             <input
@@ -152,8 +153,8 @@
             </label>
           </div>
           <!-- email -->
-          <div class="g-col g-6 u-padding-top-off">
-            <label for="email">
+          <div class="field g-col g-6 u-padding-top-off">
+            <label for="email" class="label u-font-sm">
               {{ $page.d.labelEmail }}
             </label>
             <input
@@ -176,8 +177,8 @@
 
         <!-- text -->
         <div class="g-columns">
-          <div class="g-col u-padding-top-off">
-            <label for="text">
+          <div class="field g-col u-padding-top-off">
+            <label for="text" class="label u-font-sm">
               {{ $page.d.labelText }}
             </label>
             <textarea
@@ -205,6 +206,10 @@
           </div>
         </div>
       </form>
+
+      <!-- or, email me -->
+      <VueRemarkContent class="content u-font-sm u-left-center u-margin-top-lg" />
+
     </Fragment>
 
     <!-- unfortunately, sir, it appears that you are a robot -->
@@ -231,10 +236,6 @@
         <p>{{ $page.d.failText }}</p>
       </div>
     </transition>
-
-    <template slot="sidebar" v-if="!status">
-      <VueRemarkContent class="content secondary u-font-sm" />
-    </template>
   </Layout>
 </template>
 
@@ -242,14 +243,24 @@
 <style lang="scss">
 
   .contact-form {
-    @media (min-width: $bp-xl) {
-      padding-right: $gutter * 2;
+    @include hero-radius;
+    @include box-shadow-lg;
+    background-color: $white;
+    padding: $gutter;
+    transition: border-radius $duration-xs;
+
+    @media (min-width: $bp-md) {
+      margin-top: -$hero-overlap;
     }
 
     &.is-hidden {
       opacity: 0;
       z-index: -1;
       pointer-events: none;
+    }
+
+    .g-col {
+      z-index: 1;
     }
   }
 
@@ -274,11 +285,6 @@
     padding-bottom: $gutter; // extend clickable area
     // compensate for padding
     margin-bottom: -0.75rem;
-    color: $dark-1;
-
-    &:hover, &:active {
-      color: $brand-light;
-    }
 
     // validation errors
     &.contact-form-error {
@@ -303,10 +309,10 @@
   // invalid fields get a red border
   .contact-form .contact-form-input.is-invalid,
   .contact-form .contact-form-textarea.is-invalid {
-    outline: 1px solid $error-color;
+    border-color: $error-color;
 
-    &:focus {
-      outline-width: 2px;
+    & ~ .contact-form-error {
+      color: $error-color;
     }
   }
 </style>

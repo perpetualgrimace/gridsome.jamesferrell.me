@@ -177,9 +177,6 @@
 			&:not(:last-of-type) {
 				margin-right: 2px;
 			}
-			&:last-of-type {
-				margin-right: -0.75em; // offset link padding
-			}
 		}
 	}
 

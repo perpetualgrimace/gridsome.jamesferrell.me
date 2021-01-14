@@ -142,7 +142,8 @@ img::selection {
 
 // focus style
 :focus {
-	outline: 2px solid $brand-color;
+	outline: $border-width solid rgba($brand-light, 0.5);
+	outline-offset: $border-width * 2;
 }
 
 main:focus {
