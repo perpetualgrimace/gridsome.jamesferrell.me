@@ -248,6 +248,19 @@
 	}
 }
 
+// subgrid hasn't launched yet, so fake it on big screens
+@mixin subgrid($cols: 10) {
+	@media (min-width: $bp-lg) {
+	  display: grid;
+	  grid-template-columns: repeat($cols, 1fr);
+	  grid-column-gap: $gutter * 2;
+
+	  & > * {
+	    grid-column: 2 / 10;
+	  }
+	}
+}
+
 // style secondary content like primary content, add visual separator
 @mixin secondary-content-as-primary {
 	// compensate for _layout.scss's .section + .section margin-top reset
@@ -451,5 +464,10 @@
 		padding: $gutter;
 		width: $outer-width;
 		max-width: 100%;
+	}
+
+	.tag .tag-link {
+	  color: $dark-1;
+	  background-color: $white;
 	}
 }

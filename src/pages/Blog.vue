@@ -53,7 +53,7 @@
 
 
 <template>
-  <Layout>
+  <Layout singleColumn="true">
 
     <FilterHero
       @selectFilter="handleSelectFilter"
@@ -61,10 +61,6 @@
     />
 
     <ArticleList :selectedFilter="selectedFilter || 'all'" />
-
-    <template slot="sidebar">
-      <SecondarySidebar :content="$page.d.content" />
-    </template>
 
     <template slot="cta">
       <CTA :heading="$page.d.ctaHeadline" classes="u-margin-top-sm" />

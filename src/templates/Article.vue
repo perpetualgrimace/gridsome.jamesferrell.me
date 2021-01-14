@@ -19,8 +19,6 @@
   import {Fragment} from "vue-fragment";
   import moment, {fromNow} from "moment";
 
-  import TwitterIcon from "../../static/images/icons/social/share-icon-twitter.svg";
-
   import site from "../../content/site.json";
   import {formatTagAsSlug, generateTwitterLink, minutesToRead} from "~/helpers.js";
 
@@ -31,7 +29,7 @@
 
   export default {
     components: {
-      Fragment, TwitterIcon, Colophon, ImageHero, Paginator, Tag
+      Fragment, Colophon, ImageHero, Paginator, Tag
     },
     metaInfo() {
       return {
@@ -64,46 +62,27 @@
 
 
 <template>
-  <Layout>
+  <Layout singleColumn="true">
     <template slot="hero">
       <ImageHero
         :id="$page.d.id"
         :headline="$page.d.title"
         :imgSrc="$page.d.heroImg"
-      />
+      >
+        <template slot="meta">
+          <p class="article-meta u-font-sm">
+            Posted <i>{{ relativeDate }}</i> <Fragment v-if="relativeUpdated">
+              and updated <i>{{relativeUpdated}}</i>
+            </Fragment> in <Tag :title="$page.d.topic" :slug="tagSlug" el="span" />
+          </p>
+          <p class="article-meta u-font-sm">
+            Estimated time to read: <i>{{ timeToRead }}</i>
+          </p>
+        </template>
+      </ImageHero>
     </template>
 
-    <VueRemarkContent class="content" />
-
-    <template slot="sidebar">
-      <dl class="u-font-sm article-sidebar">
-        <dt>Category:</dt>
-        <dd><Tag :title="$page.d.topic" :slug="tagSlug" el="span" /></dd>
-        <br />
-
-        <dt>Published:</dt>
-        <dd>{{ relativeDate }}</dd>
-        <br />
-
-        <Fragment v-if="relativeUpdated">
-          <dt>Last updated:</dt>
-          <dd>{{ relativeUpdated }}</dd>
-          <br />
-        </Fragment>
-
-        <dt>Estimated time to read:</dt>
-        <dd>{{ timeToRead }}</dd>
-        <br />
-
-        <dt class="u-visually-hidden">Share:</dt>
-        <dd>
-          <a :href="twitterLink" class="secondary-link article-sidebar-link" target="_blank">
-            <TwitterIcon />
-            <span class="article-sidebar-link-text">Tweet this article</span>
-          </a>
-        </dd>
-      </dl>
-    </template>
+    <VueRemarkContent class="article-content content" />
 
     <template slot="cta">
       <Paginator :currentID="$page.d.id" />
@@ -118,11 +97,16 @@
     width: 100%;
   }
 
-  // text next to label where there's room
-  .article-sidebar {
-    dt, dd  { display: inline-block; }
-    dt      { margin-right: 0.25em; }
-    dd      { margin-bottom: 0.875em; }
-    dd .tag { margin-bottom: -0.2rem; } // offset tag padding
+  .article-content {
+    @include subgrid;
+  }
+
+  .article-meta {
+    @include text-shadow;
+    color: $light-2;
+
+    i {
+      color: $white;
+    }
   }
 </style>

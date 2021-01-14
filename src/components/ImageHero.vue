@@ -14,12 +14,18 @@
 <template>
   <header class="image-hero hero dark-theme" role="banner">
 
-    <h1 class="image-hero-headline u-center-left">
-      {{ headline }}
-      <span class="hero-subhead u-font-md" v-if="subhead">
-        <span class="u-screenreader">: </span>{{ subhead }}
-      </span>
-    </h1>
+    <div class="image-hero-inner">
+      <h1 class="image-hero-headline u-center-left">
+        {{ headline }}
+        <span class="hero-subhead u-font-md" v-if="subhead">
+          <span class="u-screenreader">: </span>{{ subhead }}
+        </span>
+      </h1>
+
+      <div class="image-hero-meta" v-if="$slots.meta">
+        <slot name="meta" />
+      </div>
+    </div>
 
     <g-image class="image-hero-img" :src="imgSrc || defaultImg" draggable="false" />
 
@@ -41,14 +47,39 @@
     }
   }
 
-  // headline
-  .image-hero-headline {
+  // text container
+  .image-hero-inner {
     margin-bottom: $gutter / 2;
     z-index: 1;
-    grid-column: 2 / 12;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    // layout
+    grid-column: 1 / 13;
 
-    @media (min-width: $bp-lg) {
-      grid-column: 3 / 13
+    @media (min-width: $bp-xs) { grid-column: 2 / 12; }
+    @media (min-width: $bp-lg) { grid-column: 3 / 11 }
+
+    .image-hero-headline {
+      margin-top: auto;
+
+      &:last-child {
+        margin-bottom: auto;
+      }
+    }
+
+    .image-hero-meta {
+      margin-top: auto;
+
+      @media (min-width: $bp-xxs) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        & > :first-child {
+          margin-right: $gutter;
+        }
+      }
     }
   }
 
