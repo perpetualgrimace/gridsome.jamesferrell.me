@@ -30,6 +30,7 @@
 <style lang="scss">
 	// nav toggle button container
 	.hamburger {
+		@include nav-link-base;
 		// positioning
 		position: absolute;
 		right: 0;

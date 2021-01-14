@@ -102,11 +102,6 @@
 		display: flex;
 	}
 
-	// base style for nav elements
-	.main-nav * {
-		@include nav-link-base;
-	}
-
 
 	////////////////////////////////////////////
 	// main nav list
@@ -195,6 +190,7 @@
 
 	// nav links
 	.main-nav-link {
+		@include nav-link-base;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;

@@ -1,11 +1,13 @@
 <script>
 	import site from "../../content/site.json";
+	import LogoIcon from "~/svg/LogoIcon.svg";
 
 	export default {
 		name: "MainLogo",
+		components: {
+			LogoIcon
+		},
 		props: {
-			img: { default: "/images/icons/jf-icon.png" },
-			img2x: { default: "/images/icons/jf-icon@2x.png" },
 			tabbable: { default: true }
 		},
 		data () {
@@ -21,12 +23,7 @@
 	<g-link to="/" class="main-logo" active-class="" exact-active-class="is-active" :tabindex="tabbable ? null : '-1'">
 
 		<span class="main-logo-icon">
-			<img class="main-logo-icon-img"
-				:src="img"
-				:srcset="`${img} 1x, ${img2x} 2x`"
-				sizes="100vw"
-				alt=" JF"
-			/>
+			<LogoIcon />
 		</span>
 
 		<span class="main-logo-text u-font-md">
@@ -41,6 +38,7 @@
 <style lang="scss">
 	// the link
 	.main-logo {
+		@include nav-link-base;
 		// sizing
 		display: block;
 		height: $nav-height;
@@ -68,6 +66,7 @@
 	// the icon
 	.main-logo-icon {
 		background-color: $dark-2;
+		color: $white;
 		// sizing
 		width: $logo-icon-size;
 		height: $logo-icon-size;
@@ -78,14 +77,24 @@
 		// theming
 		border-radius: $radius-sm;
 		top: -0.125rem;
-		transition: background-color $duration-sm;
+		transition: 
+			color $duration-xs,
+			background-color $duration-xs;
 
 		// hover / current state
-		// TODO: smooth transition
-		.main-logo:hover &,
-		.main-logo:focus &,
+		.main-logo:hover &, .main-logo:focus & {
+			background-color: $brand-light;
+		}
 		.main-logo.is-active & {
 			background-color: $brand-color;
+		}
+
+		& > svg {
+			vertical-align: top;
+
+			& > path {
+				fill: currentColor;
+			}
 		}
 	}
 
@@ -93,24 +102,6 @@
 	@media (max-width: 16em - 0.001) {
 		.main-logo-text {
 			@include visually-hidden;
-		}
-	}
-
-	// alt text treatment
-	.main-logo-icon-img {
-		// typography / sizing (fudged)
-		@include body-semibold-font;
-		font-size: 26px;
-		letter-spacing: -2px;
-		line-height: 1.1;
-		// theming
-		color: $white;
-
-		// account for the broken image icon in newish chrome (fudged)
-		@supports (-webkit-appearance:none) {
-			&:not([src]) {
-				top: -16px;
-			}
 		}
 	}
 </style>
