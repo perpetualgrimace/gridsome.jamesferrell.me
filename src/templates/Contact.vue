@@ -117,7 +117,7 @@
 <template>
   <Layout singleColumn="true">
     <template slot="hero">
-      <ImageHero :headline="$page.d.title" :overlapped="true" />
+      <ImageHero :headline="$page.d.title" :overlapped="!submitted" />
     </template>
 
     <Fragment v-if="submitted === false">
@@ -213,8 +213,8 @@
 
     <!-- unfortunately, sir, it appears that you are a robot -->
     <transition name="transition-fade" appear v-else-if="status === 'spam'">
-      <div class="contact-message content">
-        <h1>{{ $page.d.spamHeading }}</h1>
+      <div class="contact-message u-left-center content">
+        <h2 class="u-font-xxl">{{ $page.d.spamHeading }}</h2>
         <p>{{ $page.d.spamText1 }}</p>
         <p>{{ $page.d.spamText2 }}</p>
       </div>
@@ -222,16 +222,16 @@
 
     <!-- message sent -->
     <transition name="transition-fade" appear v-else-if="status === 'success'">
-      <div class="contact-message content">
-        <h1>{{ $page.d.successHeading }}</h1>
+      <div class="contact-message u-left-center content">
+        <h2 class="u-font-xxl">{{ $page.d.successHeading }}</h2>
         <p>{{ $page.d.successText }}</p>
       </div>
     </transition>
 
     <!-- message not sent -->
     <transition name="transition-fade" appear v-else-if="status === 'fail'">
-      <div class="contact-message content">
-        <h1>{{ $page.d.failHeading }}</h1>
+      <div class="contact-message u-left-center content">
+        <h2 class="u-font-xxl">{{ $page.d.failHeading }}</h2>
         <p>{{ $page.d.failText }}</p>
       </div>
     </transition>
@@ -267,14 +267,9 @@
   };
 
   .contact-message {
-    display: flex;
-    flex: 1 0 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    max-width: 100%;
     width: 100%;
+    max-width: 30rem;
+    margin: $gutter auto;
   }
 
   // labels

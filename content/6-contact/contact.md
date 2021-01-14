@@ -12,7 +12,7 @@ successText: "I'll be in touch within a day or two."
 failHeading: "Something went wrong."
 failText: "Please feel free to try again or email me at hello at jamesferrell dot me."
 spamHeading: "Well this is awkward."
-spamText1: "I've determined that your email is either spammy, scammy, or vulgar. If you have good intentions, clean it up and try again."
+spamText1: "I've determined that your email is either spammy, scammy, or vulgar. If you have good intentions, clean it up and try again."
 spamText2: "Or, send an email to hello at jamesferrell dot me."
 submitText: Initiate conversation
 email: "hello@jamesferrell.me"
