@@ -23,7 +23,6 @@ svg * {
 }
 
 // transform only
-.secondary-link > svg,
 [class*=link-arrow]:before {
   transition: transform $duration-sm;
 }

@@ -93,7 +93,7 @@
 
 
 <template>
-  <nav class="paginator u-margin-bottom-sm">
+  <nav class="paginator u-margin-top-sm u-margin-bottom-sm">
     <ul class="paginator-list u-center u-margin-top-off-children">
 
       <li class="paginator-item paginator-item-first">

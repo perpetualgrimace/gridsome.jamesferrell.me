@@ -19,10 +19,10 @@
 
 <template>
 	<!-- use main markdown content as sidebar -->
-	<aside class="content secondary u-font-sm" v-html="content" v-if="content" />
+	<aside class="content sidebar u-font-sm" v-html="content" v-if="content" />
 
 	<!-- construct sidebar from individual props -->
-	<aside class="content secondary u-font-sm" v-else-if="heading && text">
+	<aside class="content sidebar u-font-sm" v-else-if="heading && text">
 		<h2>{{ heading }}</h2>
 		<p>{{ text }}</p>
 
@@ -52,8 +52,8 @@
 
 
 <style lang="scss">
-	.secondary {
-		// style secondary content like primary content, add visual separator
+	.sidebar {
+		// when the sidebar is below
 		@media (max-width: $bp-sm - 0.001) {
 			// compensate for _layout.scss's .section + .section margin-top reset
 			padding-top: 2.5rem;
@@ -65,21 +65,25 @@
 				position: absolute;
 				top: 0.5rem;
 			}
-
-			// bump up text sizes to primary
-			h2 {
-				font-size: $font-xl;
-			}
-			p:not([class*="card-"]) { // exclude card meta
-				font-size: $font-md;
-			}
 		}
 
+		// when the sidebar is on the side
 		@media (min-width: $bp-sm) {
-			line-height: 1.25;
+			h2 {
+				margin-top: 0.4375em; // fudged; can't use align-items: baseline with grid
+				font-size: $font-md;
+			}
+			p {
+				font-size: $font-sm;
+				line-height: 1.25;
+			}
 
-			& + p {
-				margin-top: 0.625em;
+			&.content > h2 + p {
+				margin-top: 0.75em;
+			}
+
+			&.content > p + p {
+				margin-top: 0.5em;
 			}
 		}
 	}

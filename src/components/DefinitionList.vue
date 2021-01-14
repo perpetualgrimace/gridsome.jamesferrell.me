@@ -41,7 +41,7 @@
     @include list-block;
 
     // paragraphs
-    p {
+    &[class] p {
       margin-top: 0.75em;
       line-height: 1.275;
     }
@@ -50,7 +50,8 @@
     h2[id="employment"] ~ h3 + p {
       display: block; // necessary to honor margin adjustment
       margin-top: 0.25em;
-      font-size: $font-sm;
+      margin-bottom: -0.25em;
+      font-size: $font-xs;
       text-transform: uppercase;
     }
     @media (min-width: $bp-xs) {
@@ -61,11 +62,6 @@
         & + p + p,
         & + p + p + p {
           column-span: all;
-        }
-
-        & + p + p,
-        & + p + p + p {
-          font-size: $font-md;
         }
 
         & + p + p + p {

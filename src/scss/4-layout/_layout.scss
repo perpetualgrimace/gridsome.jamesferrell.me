@@ -20,6 +20,8 @@
 
 		// secondary content right
 		&.with-sidebar {
+			justify-content: baseline;
+
 			@media (min-width: $bp-sm) {
 				& > .primary-content     { grid-column:  1 / 10; }
 				& > .secondary-content   { grid-column: 10 / 13; }

@@ -7,15 +7,10 @@
   margin-top: 0.625em;
 }
 
-// space out all components that follow main content
-main .content ~ * {
-  margin-top: 2rem;
-}
-
 // content typography spacing
 .content h2 + p,
 .content p + p {
-  margin-top: 0.9em;
+  margin-top: 1.25em;
 }
 
 .content p + h2,
@@ -26,12 +21,20 @@ main .content ~ * {
   // border: 1px solid blue; // debugging
 }
 
-.content * + h3 {
-	margin-top: 1em;
+.content > [class*="list"]:not(:first-child) {
+	margin-top: 1.875rem;
+
+	& + [class*="list"] {
+		margin-top: 2.125rem;
+	}
 }
 
-.content ul + [class*="list"] {
-	margin-top: 2em;
+.content > [class*="list"] + h2 {
+	margin-top: 1.375em;
+}
+
+.content * + h3 {
+	margin-top: 1em;
 }
 
 // nested lists

@@ -341,14 +341,21 @@
 
 // list block shared style
 @mixin list-block {
+
+	p, li { font-size: $font-sm; }
+
+	h2 {
+		margin-bottom: 1em;
+	}
+
 	// bump up font-size for h3s that follow after an h2
 	h2 ~ h3 {
-		font-size: $font-lg;
+		font-size: $font-md;
+		margin-top: 1em;
 	}
 	// if it's too small for columns, bump up font sizes
 	@media (max-width: $bp-xs - 0.001) {
 		h3 { font-size: $font-lg; }
-		p, li { font-size: $font-md; }
 		em { font-size: $font-sm; } // subhead
 	}
 	@media (min-width: $bp-xs) {
