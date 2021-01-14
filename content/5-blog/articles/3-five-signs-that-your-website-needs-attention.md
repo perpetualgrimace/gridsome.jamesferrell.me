@@ -15,7 +15,7 @@ updated:
 
 Ethan Marcotte wrote [the book on responsive web design](http://abookapart.com/products/responsive-web-design) in 2011. It is now {{ new Date().getFullYear() }}.
 
-In case you’re unfamiliar with the subject, a modern website is no longer a fixed width ’desktop’ experience. And to be honest, it never was. The web is accessible on everything from phones to tablets to watches to video game consoles, all of which come in a multitude of shapes, sizes, and resolutions. Using media queries and percentage-based units, we can account for all of those screen sizes and more — _right now_.
+In case you’re unfamiliar with the subject, a modern website is no longer a fixed width ‘desktop’ experience. And to be honest, it never was. The web is accessible on everything from phones to tablets to watches to video game consoles, all of which come in a multitude of shapes, sizes, and resolutions. Using media queries and percentage-based units, we can account for all of those screen sizes and more — _right now_.
 
 This is the way the web was meant to be. Embrace it.
 
