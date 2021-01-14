@@ -13,13 +13,13 @@
   import site from "../../content/site.json";
   import {formatHashAsTag} from "~/helpers.js";
   import ArticleList from "~/components/ArticleList";
-  import FilterHeader from "~/components/FilterHeader";
+  import FilterHero from "~/components/FilterHero";
   import SecondarySidebar from "~/components/SecondarySidebar";
   import CTA from "~/components/CTA";
 
   export default {
     components: {
-      ArticleList, FilterHeader, SecondarySidebar, CTA
+      ArticleList, FilterHero, SecondarySidebar, CTA
     },
     metaInfo: {
       title: "Blog"
@@ -55,7 +55,7 @@
 <template>
   <Layout>
 
-    <FilterHeader
+    <FilterHero
       @selectFilter="handleSelectFilter"
       :selectedFilter="selectedFilter || 'all'"
     />

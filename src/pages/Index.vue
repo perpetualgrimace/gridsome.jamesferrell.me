@@ -52,7 +52,6 @@
 
 
 <style lang="scss">
-
   .home-content-wrapper .primary-content,
   .home-content-wrapper .secondary-content   { grid-column: 1 / 13; }
 

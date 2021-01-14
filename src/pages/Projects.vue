@@ -14,12 +14,12 @@
   import site from "../../content/site.json";
   import {formatHashAsTag} from "~/helpers.js";
   import ProjectList from "~/components/ProjectList";
-  import FilterHeader from "~/components/FilterHeader";
+  import FilterHero from "~/components/FilterHero";
   import CTA from "~/components/CTA";
 
   export default {
     components: {
-      ProjectList, FilterHeader, CTA
+      ProjectList, FilterHero, CTA
     },
     metaInfo: {
       title: "Projects"
@@ -55,7 +55,7 @@
 <template>
   <Layout :singleColumn="true">
 
-    <FilterHeader
+    <FilterHero
       contentType="projects"
       @selectFilter="handleSelectFilter"
       :selectedFilter="selectedFilter || 'all'"

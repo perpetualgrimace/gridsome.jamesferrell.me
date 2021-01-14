@@ -13,13 +13,13 @@
 
 
 <script>
-  import ImageHeader from "~/components/ImageHeader";
+  import ImageHero from "~/components/ImageHero";
   import SecondarySidebar from "~/components/SecondarySidebar";
   import CTA from "~/components/CTA";
 
   export default {
     components: {
-      ImageHeader, SecondarySidebar, CTA
+      ImageHero, SecondarySidebar, CTA
     },
     metaInfo: {
       title: "Uses"
@@ -31,7 +31,7 @@
 <template>
   <Layout>
     <template slot="hero">
-      <ImageHeader
+      <ImageHero
         :id="$page.d.id"
         :headline="$page.d.headline"
         :imgSrc="$page.d.heroImg"

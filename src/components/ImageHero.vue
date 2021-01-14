@@ -1,8 +1,8 @@
 <script>
   export default {
-    name: "ImageHeader",
+    name: "ImageHero",
     props: {
-      headline:   {default: "missing `headline` prop in ImageHeader.vue"},
+      headline:   {default: "missing `headline` prop in ImageHero.vue"},
       subhead:    {default: null},
       imgSrc:     {default: null},
       defaultImg: {default: "/images/workspace-hero.jpg"}
@@ -12,44 +12,23 @@
 
 
 <template>
-  <header class="image-header header dark-theme" role="banner">
+  <header class="image-hero hero dark-theme" role="banner">
 
-    <h1 class="image-header-headline">
+    <h1 class="image-hero-headline">
       {{ headline }}
-      <span class="header-subhead u-font-md" v-if="subhead">
+      <span class="hero-subhead u-font-md" v-if="subhead">
         <span class="u-screenreader">: </span>{{ subhead }}
       </span>
     </h1>
 
-    <g-image class="image-header-img" :src="imgSrc || defaultImg" draggable="false" />
+    <g-image class="image-hero-img" :src="imgSrc || defaultImg" draggable="false" />
 
   </header>
 </template>
 
 
 <style lang="scss">
-  ////////////////////////////////
-  // global header styles
-  ////////////////////////////////
-
-  // subhead (span nested within .header-headline)
-  .header-subhead {
-    display: block; // make the span stackable
-    margin-top: 0.25em; // space it out from the title
-  }
-
-  // hero image container
-  .image-header-img {
-    @include absolute-expand;
-    object-fit: cover;
-  }
-
-
-  ////////////////////////////////
-  // image header
-  ////////////////////////////////
-
-  .image-header {
+  .image-hero {
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -79,7 +58,7 @@
   }
 
   // headline
-  .image-header-headline {
+  .image-hero-headline {
     display: inline-block;
     z-index: 1;
     top: -0.25rem; // fudge into x-height vertical alignment
@@ -87,5 +66,16 @@
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  // hero image container
+  .image-hero-img {
+    @include absolute-expand;
+    object-fit: cover;
+  }
+
+  .hero-subhead {
+    display: block; // make the span stackable
+    margin-top: 0.25em; // space it out from the title
   }
 </style>

@@ -27,7 +27,7 @@
   import Tag from "~/components/Tag";
 
   export default {
-    name: "FilterHeader",
+    name: "FilterHero",
     components: {
       Tag
     },
@@ -63,8 +63,8 @@
 
 
 <template>
-  <header class="filter-header header">
-    <h1 class="filter-header-headline u-font-xl">
+  <header class="filter-hero hero">
+    <h1 class="filter-hero-headline u-font-xl">
       {{ uppercaseFirst(selectedFilter) }} {{ contentType }}
     </h1>
 
@@ -96,26 +96,8 @@
 
 
 <style lang="scss">
-
-  // space out the filter-header
-  .filter-header {
-    padding-bottom: 1.5rem;
-    padding-right: 0 !important;
-    max-width: 100% !important;
-
-    // make filter-header stop before the secondary-content sidebar
-    @media (min-width: $bp-xl) {
-      padding-right: $sidebar-width;
-
-      // offset sidebar
-      & ~ .secondary-content {
-        top: 1.9rem;
-      }
-    }
-  }
-
   // headline positioning
-  .filter-header-headline {
+  .filter-hero-headline {
     margin-bottom: 0.65rem;
   }
 
@@ -136,13 +118,13 @@
 
 
   // margin fix
-  .filter-header {
-    // account for .tag-item bottom margin on filter-header only
+  .filter-hero {
+    // account for .tag-item bottom margin on filter-hero only
     // NOTE: applying this globaly messes up the work-item tag placement
     margin-bottom: 0;
   }
 
-  // states for filter-header component
+  // states for filter-hero component
   .project.is-hidden {
     display: none;
   }

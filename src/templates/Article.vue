@@ -25,13 +25,13 @@
   import {formatTagAsSlug, generateTwitterLink, minutesToRead} from "~/helpers.js";
 
   import Colophon from "~/components/Colophon";
-  import ImageHeader from "~/components/ImageHeader";
+  import ImageHero from "~/components/ImageHero";
   import Paginator from "~/components/Paginator";
   import Tag from "~/components/Tag";
 
   export default {
     components: {
-      Fragment, TwitterIcon, Colophon, ImageHeader, Paginator, Tag
+      Fragment, TwitterIcon, Colophon, ImageHero, Paginator, Tag
     },
     metaInfo() {
       return {
@@ -66,7 +66,7 @@
 <template>
   <Layout>
     <template slot="hero">
-      <ImageHeader
+      <ImageHero
         :id="$page.d.id"
         :headline="$page.d.title"
         :imgSrc="$page.d.heroImg"
