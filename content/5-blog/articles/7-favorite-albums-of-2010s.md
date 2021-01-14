@@ -99,4 +99,4 @@ The follow up album features one of the world’s best drummers pushing himself 
 - Tigran Hamasyan — [Mockroot](https://www.youtube.com/watch?v=XYrRM7wBMXw&list=PLAGJKR_6zhKqzJwS_rHJttflouyqBU4Y4)
 
 ## So there you have it
-Now that we’re in the roaring twenties, maybe the pendulum will swing back, my tastes with mellow out, and I will find some mainstream music that speaks to me. Maybe. Probably not. 😬
+Now that we’re in the roaring twenties, maybe the pendulum will swing back, my tastes will mellow out, and I will find some mainstream music that speaks to me. Maybe. Probably not. 😬

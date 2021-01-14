@@ -18,14 +18,15 @@ h1, h2, h3, h4, h5, h6,
 		color: inherit;
 		font-family: inherit;
 		font-weight: inherit;
-		text-decoration-color: $light-2;
+		text-decoration-color: $brand-color;
+		text-decoration-thickness: $border-width;
 		transition:
 			$duration-sm color,
 			$duration-sm text-decoration-color;
 
 		&:hover, &:focus {
 			text-decoration-color: $brand-light;
-			color: $black;
+			color: $brand-light;
 		}
 	}
 }
@@ -72,6 +73,10 @@ pre > code {
 pre {
 	margin-top: 2em;
 	margin-bottom: 2em;
+}
+
+.content ul li:before {
+	color: $dark-2;
 }
 
 

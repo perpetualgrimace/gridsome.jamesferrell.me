@@ -50,3 +50,8 @@
 .content figure > figcaption {
   margin-top: 0.5em;
 }
+
+.content hr {
+	margin-top: $gutter * 1.5;
+	margin-bottom: $gutter;
+}
