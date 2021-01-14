@@ -3,39 +3,41 @@
 	@include layout-wrapper;
 
 	// switch to 14 columns on big screens
-	@media (min-width: $bp-xl) {
-		grid-template-columns: repeat(14, 1fr);
-		width: $bp-lg + ($gutter * 2);
-	}
-
-	// full width by default
-	& > .section                 { grid-column:  1 / 13; }
-
-	// keep line-length in check as screen gets wider
-	&.single-column > .section   {
-		@media (min-width: $bp-md) { grid-column:  2 / 12; }
-		@media (min-width: $bp-xl) { grid-column:  3 / 13; }
-	}
-
-	// secondary content right
-	&.with-sidebar {
-		@media (min-width: $bp-sm) {
-			& > .primary-content     { grid-column:  1 / 10; }
-			& > .secondary-content   { grid-column: 10 / 13; }
-		}
-		@media (min-width: $bp-md) {
-			& > .primary-content     { grid-column:  2 / 10; }
-			& > .cta-content         { grid-column:  2 / 12; }
-		}
-		@media (min-width: $bp-lg) {
-			& > .primary-content     { grid-column:  3 / 10; }
-			& > .secondary-content   { grid-column: 10 / 13; }
-		}
-		// primary content centered on big screens
+	@supports (display: grid) {
 		@media (min-width: $bp-xl) {
-			& > .primary-content     { grid-column:  4 / 12; }
-			& > .secondary-content   { grid-column: 12 / 15; }
-			& > .cta-content         { grid-column:  3 / 13; }
+			grid-template-columns: repeat(14, 1fr);
+			width: $bp-lg + ($gutter * 2);
+		}
+
+		// full width by default
+		& > .section                 { grid-column:  1 / 13; }
+
+		// keep line-length in check as screen gets wider
+		&.single-column > .section   {
+			@media (min-width: $bp-md) { grid-column:  2 / 12; }
+			@media (min-width: $bp-xl) { grid-column:  3 / 13; }
+		}
+
+		// secondary content right
+		&.with-sidebar {
+			@media (min-width: $bp-sm) {
+				& > .primary-content     { grid-column:  1 / 10; }
+				& > .secondary-content   { grid-column: 10 / 13; }
+			}
+			@media (min-width: $bp-md) {
+				& > .primary-content     { grid-column:  2 / 10; }
+				& > .cta-content         { grid-column:  2 / 12; }
+			}
+			@media (min-width: $bp-lg) {
+				& > .primary-content     { grid-column:  3 / 10; }
+				& > .secondary-content   { grid-column: 10 / 13; }
+			}
+			// primary content centered on big screens
+			@media (min-width: $bp-xl) {
+				& > .primary-content     { grid-column:  4 / 12; }
+				& > .secondary-content   { grid-column: 12 / 15; }
+				& > .cta-content         { grid-column:  3 / 13; }
+			}
 		}
 	}
 }

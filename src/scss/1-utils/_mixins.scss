@@ -415,29 +415,41 @@
 
 @mixin hero-radius($property: border-radius) {
 	#{$property}: $radius-md;
+	transition: border-radius $duration-xs;
 
-	@media (min-width: $bp-sm) {
+	@media (min-width: $bp-lg) {
 		#{$property}: $radius-lg;
 	}
 }
 
 @mixin hero-base {
 	@include hero-radius;
-	display: flex;
+
+	display: flex; // fallback
 	align-items: center;
-	margin: 0 auto $gutter auto;
+
+	@supports (display: grid) {
+		@include grid;
+	}
+
 	width: $inner-width;
 	max-width: calc(100% - #{$gutter * 2});
 	min-height: $hero-height;
+	margin: 0 auto ($gutter * 1.5) auto;
+	padding: $gutter;
+
+	@media (min-width: $bp-xs) {
+		padding: $gutter 0;
+	}
+
+	@media (min-width: $bp-md) {
+		min-height: calc(#{$hero-height} + 18vh);
+	}
 
 	// pull out of grid & offset
 	@media (min-width: $bp-lg) {
 		padding: $gutter;
 		width: $outer-width;
 		max-width: 100%;
-	}
-
-	> * {
-		max-width: $inner-width;
 	}
 }
