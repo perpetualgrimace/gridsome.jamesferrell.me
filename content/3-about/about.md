@@ -12,15 +12,17 @@ import DefinitionList from "~/components/DefinitionList"
 
 ## About me
 
-I’m a designer turned front-end developer — thus, UX developer or [Front-end designer](https://bradfrost.com/blog/post/frontend-design/). Coming from a design background, the code I care most about is the code the user directly interacts with. So everything I write is responsive, accessible, fast, and well-designed.
+I’m a designer turned front-end developer — thus, UX developer or [Front-end designer](https://bradfrost.com/blog/post/frontend-design/). Coming from a design background, the code I care most about is the code the user directly interacts with. So everything I write is well-designed, responsive, accessible, and fast.
 
-I’m a generalist by way of specializing in one thing at a time over long periods of time; I consider myself more of a *builder* than a *creative*.
+I’m a generalist by way of specializing in one thing at a time over long periods of time; I consider myself more of a *builder* than a *creative*.
 
-## Why hire me?
+## Reasons you should hire me
 
-- Your website/app feels visually or architecturally disorganized, and you want to build a unified design system
 - Your website/app loads slowly, isn’t optimized for mobile, or isn’t usable via keyboard or assistive technology; and you’d like to stop leaving money on the table by providing a poor experience in those contexts
+- Your website/app feels visually or architecturally disorganized, and you want to build a unified design system
 - You want to build your website/app the right way from the beginning, so you don’t run into the above issues down the line
+- Your entire team consists of full-stack developers
+- You just want to have nice things
 
 <DefinitionList slug="principles-list" />
 
