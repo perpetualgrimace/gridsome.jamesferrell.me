@@ -2,7 +2,6 @@
   query ($path: String!) {
     d: contact (path: $path) {
       title
-      headline
       content
       labelName
       labelEmail
