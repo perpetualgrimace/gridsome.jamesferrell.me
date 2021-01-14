@@ -7,9 +7,9 @@ slug: employment-list
 ### Front-End Designer at Datawheel
 December 2017 – December 2019
 
-Designed and implemented designs for data-oriented websites and dashboards, organizing data into meaningful sections with appropriate visualizations. Handled front-end design and design system implementation for [Canon CMS](https://github.com/Datawheel/canon/tree/master/packages/cms), which is now used to quickly and efficiently build complex sites.
+Designed and implemented designs for data-oriented websites and dashboards, organizing data into meaningful sections with appropriate visualizations. Handled front-end design and design system implementation for [Canon CMS](https://github.com/Datawheel/canon/tree/master/packages/cms), which is now used to quickly and efficiently build complex sites.
 
-Worked with high profile clients such as [Verizon](https://enterprise.verizon.com/resources/reports/dbir/), Estée Lauder, the [CDC](https://arpsp.cdc.gov/), and [Deloitte](https://opensourcecompass.io/).
+Worked with high profile clients such as [Verizon](https://enterprise.verizon.com/resources/reports/dbir/), Estée Lauder, the [CDC](https://arpsp.cdc.gov/), and [Deloitte](https://opensourcecompass.io/).
 
 ### Web Designer at Berman Advertising / Overdrive Interactive
 January 2014 – August 2017

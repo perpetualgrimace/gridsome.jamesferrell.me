@@ -9,6 +9,7 @@ slug: skills-list
 - Semantic, accessible HTML (WCAG)
 - Clean, well-documented CSS (SCSS & PostCSS)
 - Single page apps (React, Vue, & Svelte)
+- Gatsby & Gridsome
 - Static site generators (Jekyll)
 - Flat file CMS’s (Kirby)
 
@@ -30,6 +31,5 @@ slug: skills-list
 
 ### Currently improving:
 - Javascript (ES6)
-- Gatsby & Gridsome
 - Web performance
 - Command line Git

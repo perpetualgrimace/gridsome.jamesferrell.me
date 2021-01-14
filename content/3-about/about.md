@@ -16,6 +16,10 @@ I’m a designer turned front-end developer — thus, UX developer or [Front-end
 
 I’m a generalist by way of specializing in one thing at a time over long periods of time; I consider myself more of a *builder* than a *creative*.
 
+<DefinitionList slug="principles-list" />
+
+<BulletList slug="skills-list" />
+
 ## Reasons you should hire me
 
 - Your website/app loads slowly, isn’t optimized for mobile, or isn’t usable via keyboard or assistive technology; and you’d like to stop leaving money on the table by providing a poor experience in those contexts
@@ -23,10 +27,6 @@ I’m a generalist by way of specializing in one thing at a time over long perio
 - You want to build your website/app the right way from the beginning, so you don’t run into the above issues down the line
 - Your entire team consists of full-stack developers
 - You just want to have nice things
-
-<DefinitionList slug="principles-list" />
-
-<BulletList slug="skills-list" />
 
 ## Software & hardware
 
