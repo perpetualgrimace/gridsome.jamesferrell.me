@@ -69,6 +69,9 @@
 
 		// when the sidebar is on the side
 		@media (min-width: $bp-sm) {
+			// position: sticky;
+			// top: calc(#{$nav-height} + #{$gutter});
+
 			h2 {
 				margin-top: 0.4375em; // fudged; can't use align-items: baseline with grid
 				font-size: $font-md;
