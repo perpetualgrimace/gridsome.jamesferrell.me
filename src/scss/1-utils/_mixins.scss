@@ -233,7 +233,12 @@
 	display: inline-block;
 	width: 2rem;
 	height: 2px;
-	background: $light-2;
+	border-radius: $border-width;
+	background-color: $light-2;
+
+	@include dark-mode {
+		background-color: $dark-2;
+	}
 }
 
 
