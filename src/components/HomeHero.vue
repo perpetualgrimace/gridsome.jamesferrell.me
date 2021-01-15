@@ -127,7 +127,7 @@
 
 			.home-hero-headline {
 				grid-column: 7 / 13;
-				margin: auto auto ($gutter / 2) 0;
+				margin: auto auto auto ($gutter / 2);
 			}
 
 			.home-hero-bio {
@@ -144,6 +144,9 @@
 				.home-hero-avatar {
 					grid-column: 1 / 4;
 					grid-row: 1 / span 2;
+				}
+				.home-hero-headline {
+					margin: auto auto 0 0;
 				}
 
 				.home-hero-headline,
