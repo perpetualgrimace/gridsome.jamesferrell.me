@@ -28,6 +28,11 @@ module.exports = {
     }
   },
 
+  // default image settings
+  images: {
+    defaultQuality: 90 // doesn't appear to do anything?
+  },
+
   // icons
   icon: {
     favicon: {

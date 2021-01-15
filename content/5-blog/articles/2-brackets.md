@@ -6,7 +6,7 @@ description: "Brackets is an appealing code editor for those just getting starte
 tags: design,development,brackets,adobe,code,front end,frontend,front-end,dev,tools,alternative,live preview,brackets extract,html,css,webtools
 topic: software
 hashtag: webtools
-heroImg: "./2-assets/hero.jpg"
+heroImg: "./2-assets/hero.png"
 published: 2015-07-11
 updated: 2017-09-06
 ---

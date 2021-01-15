@@ -4,7 +4,7 @@ slug: favorite-albums-of-2010s
 id: 7
 description: "Turns out I’ve been listening to a lot of proggy rock and metal."
 topic: music
-heroImg: "./7-assets/hero.jpg"
+heroImg: "./7-assets/hero.png"
 tags: music,audio
 hashtag: FavoriteAlbums
 published: 2020-01-30

@@ -4,7 +4,7 @@ slug: discipline-of-self-teaching
 id: 1
 description: "How to channel your enthusiasm into productivity and learn a new craft, in three easy steps."
 tags: design,motivation,personal growth,inspirational
-heroImg: "./1-assets/hero.jpg"
+heroImg: "./1-assets/hero.png"
 topic: problem solving
 hashtag: learning
 published: 2015-05-05

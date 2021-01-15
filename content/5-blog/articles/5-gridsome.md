@@ -4,8 +4,7 @@ slug: gridsome
 id: 5
 description: Some thoughts on rebuilding my website with Gridsome.
 topic: webdev
-heroImg: "./5-assets/hero.jpg"
-thumbImg: "./5-assets/thumb.jpg"
+heroImg: "./5-assets/hero.png"
 tags: jamstack,progressive web app,vue,graphQL,gridsome
 hashtag: webdev
 published: 2019-11-23

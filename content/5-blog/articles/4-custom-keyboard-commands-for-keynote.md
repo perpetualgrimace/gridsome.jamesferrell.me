@@ -4,7 +4,7 @@ slug: custom-keyboard-commands-for-keynote
 id: 4
 description: As a designer, you’re going to have to create a Keynote presentation now and then. Hey, at least it isn’t PowerPoint. 🔥
 topic: workflow
-heroImg: "./4-assets/hero.jpg"
+heroImg: "./4-assets/hero.png"
 thumbImg: "./4-assets/thumb.jpg"
 tags: productivity,efficiency
 hashtag: keynote
