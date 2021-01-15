@@ -5,6 +5,7 @@ sidebarHeading: "My resumé"
 sidebarText: "As you can see, of the three accepted stylings of the word resumé, I prefer the version with one accent at the end."
 sidebarLink: resume
 sidebarLinkText: "Resumé page"
+heroImg: "/images/about-hero.png"
 ---
 
 import BulletList from "~/components/BulletList"

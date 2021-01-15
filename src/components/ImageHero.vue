@@ -5,7 +5,7 @@
       headline:   {default: "missing `headline` prop in ImageHero.vue"},
       subhead:    {default: null},
       imgSrc:     {default: null},
-      defaultImg: {default: "/images/workspace-hero.jpg"},
+      defaultImg: {default: "/images/workspace-hero.png"},
       overlapped: {default: false}
     }
   }

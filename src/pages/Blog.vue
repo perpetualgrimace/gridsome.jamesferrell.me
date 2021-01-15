@@ -4,6 +4,7 @@
       title
       headline
       content
+      heroImg
     }
   }
 </page-query>
@@ -58,6 +59,7 @@
       <FilterHero
         @selectFilter="handleSelectFilter"
         :selectedFilter="selectedFilter || 'all'"
+        :imgSrc="$page.d.heroImg"
       />
     </template>
 

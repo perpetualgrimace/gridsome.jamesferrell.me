@@ -34,7 +34,8 @@
     },
     props: {
       contentType:    { default: "articles" },
-      selectedFilter: { default: "all" }
+      selectedFilter: { default: "all" },
+      imgSrc:         { default: null }
     },
     methods: {
       flattenArray, uppercaseFirst
@@ -63,7 +64,7 @@
 
 
 <template>
-  <ImageHero :headline="`${ uppercaseFirst(selectedFilter) } ${ contentType }`" :overlapped="true">
+  <ImageHero :headline="`${ uppercaseFirst(selectedFilter) } ${ contentType }`" :overlapped="true" :imgSrc="imgSrc">
     <template slot="filters">
       <!-- filters -->
       <p class="u-visually-hidden">Filter by:</p>

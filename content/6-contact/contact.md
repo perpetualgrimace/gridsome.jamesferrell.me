@@ -1,5 +1,6 @@
 ---
 title: Get in touch
+heroImg: "/images/contact-hero.png"
 labelName: Your name
 labelEmail: Email address
 labelText: Your message

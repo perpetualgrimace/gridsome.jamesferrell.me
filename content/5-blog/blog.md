@@ -1,6 +1,7 @@
 ---
 title: Blog
 headline: articles
+heroImg: "/images/blog-hero.png"
 ---
 
 ## About the blog

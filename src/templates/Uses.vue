@@ -7,6 +7,7 @@
       content
       sidebarHeading
       sidebarText
+      heroImg
     }
   }
 </page-query>

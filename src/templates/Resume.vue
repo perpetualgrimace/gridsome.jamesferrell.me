@@ -3,6 +3,7 @@
     d: resume (path: $path) {
       title
       content
+      heroImg
       sidebarHeading
       sidebarText
       sidebarLink

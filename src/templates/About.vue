@@ -4,6 +4,7 @@
       id
       title
       headline
+      heroImg
       content
       sidebarHeading
       sidebarText

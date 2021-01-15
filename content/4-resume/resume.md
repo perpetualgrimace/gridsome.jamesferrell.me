@@ -1,5 +1,6 @@
 ---
 title: Resumé
+heroImg: "/images/resume-hero.png"
 
 sidebarHeading: References
 sidebarText: "Available on request."

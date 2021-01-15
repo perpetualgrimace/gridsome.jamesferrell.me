@@ -2,6 +2,7 @@
   query ($path: String!) {
     d: contact (path: $path) {
       title
+      heroImg
       content
       labelName
       labelEmail
@@ -117,7 +118,8 @@
 <template>
   <Layout singleColumn="true">
     <template slot="hero">
-      <ImageHero :headline="$page.d.title" :overlapped="!submitted" />
+      <ImageHero :headline="$page.d.title" :overlapped="!submitted" 
+        :imgSrc="$page.d.heroImg" />
     </template>
 
     <Fragment v-if="submitted === false">
