@@ -6,7 +6,7 @@
 	@supports (display: grid) {
 		@media (min-width: $bp-xl) {
 			grid-template-columns: repeat(14, 1fr);
-			width: $bp-lg + ($gutter * 2);
+			width: 68rem + ($gutter * 2);
 		}
 
 		// full width by default
