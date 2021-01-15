@@ -243,9 +243,16 @@
 
   .contact-form {
     padding: $gutter;
+    z-index: 1;
+    // theming
     @include box-shadow-lg;
     background-color: $white;
     border-radius: $radius-md;
+
+    @include dark-mode {
+      @include box-shadow-xl(rgba($black, 0.666));
+      background-color: $dark-2;
+    }
 
     @media (min-width: $bp-md) {
       margin-top: -$hero-overlap;

@@ -94,12 +94,21 @@
   .card-inner {
     @include box-shadow-lg;
     padding: $font-md;
-    background-color: $white;
     border-radius: $radius-sm;
+    background-color: $white;
+
+    @include dark-mode {
+      @include box-shadow-lg(rgba($black, 0.666));
+      background-color: $dark-2;
+    }
 
     &:hover, &:focus-within {
       transform: scale(1.025);
       @include box-shadow-xl;
+
+      @include dark-mode {
+        @include box-shadow-xl(rgba($black, 0.666));
+      }
     }
   }
 
@@ -183,6 +192,10 @@
     }
   }
 
+  .card-meta {
+    color: $gray;
+  }
+
 
   ////////////////////////////////////
   // link & interactions
@@ -202,11 +215,6 @@
     &:active + .card-caption .card-title {
       color: $brand-dark;
     }
-  }
-
-  .card-inner.is-focused,
-  .card-inner:hover {
-    @include box-shadow-xl;
   }
 
   ////////////////////////////////

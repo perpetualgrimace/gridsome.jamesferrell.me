@@ -6,12 +6,21 @@
 html {
 	background: $light-1;
 	color: $dark-1;
+
+	@include dark-mode {
+		background: $dark-3;
+		color: $light-3;
+	}
 }
 
 // headings
 h1, h2, h3, h4, h5, h6,
 .heading {
 	color: $dark-2;
+
+	@include dark-mode {
+		color: $light-1;
+	}
 
 	// links inside headings, but not the auto-generated ones
 	& > a:not([aria-hidden="true"]) {
@@ -35,6 +44,10 @@ h1, h2, h3, h4, h5, h6,
 a {
 	color: $brand-color;
 	text-decoration-color: $light-2;
+
+	@include dark-mode {
+		text-decoration-color: $dark-1;
+	}
 
 	&:hover,
 	&:focus {
@@ -77,6 +90,10 @@ pre {
 
 .content ul li:before {
 	color: $dark-2;
+
+	@include dark-mode {
+		color: $gray;
+	}
 }
 
 

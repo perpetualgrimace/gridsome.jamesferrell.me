@@ -82,7 +82,7 @@
 <style lang="scss">
 
 	.colophon {
-		@include hero-radius;
+		border-radius: $radius-md;
 	}
 	
 	// add padding to inner container
@@ -106,6 +106,14 @@
 
 		& + p {
 			margin-top: 0.625em;
+		}
+	}
+
+	.colophon a {
+		text-decoration-color: $light-2;
+
+		&:hover, &:focus {
+			text-decoration-color: $white;
 		}
 	}
 

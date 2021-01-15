@@ -12,13 +12,28 @@ textarea {
 
   &:hover {
     border-color: $brand-light;
-    background: $white;
+    background-color: $white;
   }
   &:focus {
     @include box-shadow-lg;
     border-color: $brand-dark;
-    background: $white;
+    background-color: $white;
     outline: none;
+  }
+
+  @include dark-mode {
+    background-color: $dark-3;
+    border-color: $black;
+
+    &:hover {
+      border-color: $brand-light;
+      background-color: $dark-3;
+    }
+    &:focus {
+      @include box-shadow-lg;
+      border-color: $brand-color;
+      background-color: $black;
+    }
   }
 }
 

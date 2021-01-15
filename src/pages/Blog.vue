@@ -77,6 +77,7 @@
   .article-list-content.is-overlapping {
     @media (min-width: $bp-md) {
       margin-top: -$hero-overlap - 0.45;
+      z-index: 1;
     }
   }
 </style>

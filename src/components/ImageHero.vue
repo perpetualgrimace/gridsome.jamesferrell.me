@@ -74,7 +74,7 @@
     }
 
     .image-hero-filters {
-      margin-top: 0.5em;
+      margin-top: $gutter;
       margin-bottom: auto;
     }
 

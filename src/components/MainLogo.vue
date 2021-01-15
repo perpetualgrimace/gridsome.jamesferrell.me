@@ -52,6 +52,10 @@
 			@include body-semibold-font;
 			color: $dark-1;
 
+			@include dark-mode {
+				color: $white;				
+			}
+
 			@media (min-width: $bp-sm) {
 				top: -1px;
 			}
@@ -65,8 +69,6 @@
 
 	// the icon
 	.main-logo-icon {
-		background-color: $dark-2;
-		color: $white;
 		// sizing
 		width: $logo-icon-size;
 		height: $logo-icon-size;
@@ -75,6 +77,8 @@
 		margin-right: 3px;
 		vertical-align: middle;
 		// theming
+		background-color: $dark-2;
+		color: $white;
 		border-radius: $radius-sm;
 		top: -0.125rem;
 		transition: 

@@ -83,8 +83,8 @@
     &:active {
       background: $dark-color;
       color: $text-color;
-      border-color: $dark-color;
-      // transform: perspective(50em) rotateX(8deg) scale(1); // more subtle 3d effect
+      border-color: transparent;
+      box-shadow: none;
 
       // partially hide gradient fill to allow darker background color to show through
       &:after {

@@ -98,6 +98,18 @@
 		}
 	}
 
+	.home-hero a {
+		text-decoration-color: $light-2;
+
+		&:hover, &:focus {
+			text-decoration-color: $white;
+		}
+
+		@media (min-width: $bp-md) {
+			text-decoration-thickness: 2px;
+		}
+	}
+
 	////////////////////////////////
 	// layout
 	////////////////////////////////

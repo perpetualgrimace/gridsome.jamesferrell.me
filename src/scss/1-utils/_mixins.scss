@@ -32,12 +32,11 @@
 }
 
 ////////////////////////////////
-// breakpoints
+// dark mode
 ////////////////////////////////
 
-// used by nav and main sidebar
-@mixin bp-fixed-nav {
-	@media (min-height: $bp-xxs) {
+@mixin dark-mode {
+	@media (prefers-color-scheme: dark) {
 		@content;
 	}
 }
@@ -185,6 +184,10 @@
 
 @mixin radial-gloss {
 	background-image: radial-gradient(at top, rgba($white, 0.1) 0%, rgba($white, 0) 100%);
+
+	@include dark-mode {
+		background-image: radial-gradient(at top, rgba($black, 0) 0%, rgba($black, 0.2) 100%);
+	}
 }
 
 
@@ -320,6 +323,10 @@
 		transition: 
 			opacity $duration-xs,
 			background-color $duration-sm;
+
+		@include dark-mode {
+			background-color: $dark-2;
+		}
 	}
 
 	// transition in
@@ -370,7 +377,6 @@
 	}
 }
 
-
 ////////////////////////////////
 // brand-theme base styles
 ////////////////////////////////
@@ -412,7 +418,9 @@
 @mixin hero-base {
 	@include hero-radius;
 
-	display: flex; // fallback
+	// fallback
+	display: flex;
+	flex-direction: column;
 	align-items: center;
 
 	@supports (display: grid) {
@@ -440,8 +448,8 @@
 		max-width: 100%;
 	}
 
-	.tag .tag-link {
-	  color: $dark-1;
-	  background-color: rgba($light-1, 0.75);
+	.tag-link {
+	  @include box-shadow-lg(rgba($black, 0.333));
+	  position: relative;
 	}
 }

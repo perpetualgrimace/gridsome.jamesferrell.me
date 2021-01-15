@@ -98,7 +98,7 @@
     </div>
 
     <!-- coming soon -->
-    <p v-if="comingSoon" class="project-banner u-font-sm">Coming soon</p>
+    <p v-if="comingSoon" class="project-banner u-font-sm">Coming soon?</p>
   </article>
 </template>
 
@@ -155,7 +155,7 @@
         left: -3.25em;
         z-index: 1;
         // theming
-        color: $black;
+        color: $dark-2;
         background-color: $light-2;
         @include box-shadow-xl;
         // typography

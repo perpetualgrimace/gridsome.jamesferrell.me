@@ -64,7 +64,7 @@
 		margin-bottom: 0;
 
 		// fixed nav on bigger screens
-		@include bp-fixed-nav {
+		@media (min-height: $bp-xxs) {
 			position: fixed;
 			left: 0;
 			right: 0;
@@ -72,7 +72,17 @@
 			background-color: rgba($light-1, 0.95); // fallback
 			background: linear-gradient(to bottom, $light-1, rgba($light-1, 0.9));
 
-			// glass edge
+			@include dark-mode {
+				background-color: rgba($dark-3, 0.95); // fallback
+				background: linear-gradient(to bottom, rgba($dark-3, 0.98), rgba($dark-3, 0.9));
+			}
+
+			// apply bg blur to fixed menu, but not when it can override the mobile menu
+			@media (min-width: $bp-sm) and (min-height: $bp-xxs) {
+				backdrop-filter: blur(6px);
+			}
+
+			// glass edge (border adds a pixel, so :after it is)
 			&:after {
 				@include pseudo;
 				position: absolute;
@@ -80,7 +90,12 @@
 				right: 0;
 				bottom: 0;
 				height: 1px;
+				z-index: -1;
 				background-color: $light-1;
+
+				@include dark-mode {
+					background-color: rgba($dark-3, 0.5);
+				}
 			}
 
 			// offset fixed nav height

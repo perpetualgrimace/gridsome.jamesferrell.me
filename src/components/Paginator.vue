@@ -141,12 +141,20 @@
 <style lang="scss">
 
   .paginator {
-    @include box-shadow-lg;
     border-radius: $radius-md;
+    @include box-shadow-lg;
+
+    @include dark-mode {
+      @include box-shadow-lg(rgba($black, 0.666));
+    }
   }
 
   .paginator-item-first {
     border-bottom: 1px solid $light-1;
+
+    @include dark-mode {
+      border-color: $dark-3;
+    }
 
     .paginator-link {
       @media (max-width: $bp-xxs - 0.001) {
@@ -181,8 +189,13 @@
     width: 100%;
     height: rem(90); // needed for alignment hack
     padding: $font-xs;
-    background: $white;
+    // theming
     text-decoration: none;
+    background-color: $white;
+
+    @include dark-mode {
+      background-color: $dark-2;
+    }
   }
 
   .paginator-inner {
@@ -202,11 +215,16 @@
     @include body-semibold-font;
     line-height: 1;
     color: $dark-1;
+
+    @include dark-mode {
+      color: $light-3;
+    }
   }
 
   // title text style
   .heading.paginator-title { // specifity override
     color: $brand-color;
+    transition: color $duration-sm;
   }
 
   .grid-icon {
@@ -242,6 +260,10 @@
         // reset and adjust borders
         border-left: 1px solid $light-1;
         border-right: 1px solid $light-1;
+
+        @include dark-mode {
+          border-color: $dark-3;
+        }
       }
     }
   }
@@ -254,8 +276,12 @@
   // :hover & :focus
   .paginator-link:hover,
   .paginator-link:focus {
-    @include box-shadow-xl;
     z-index: 1; // bring forward
+    @include box-shadow-xl;
+
+    @include dark-mode {
+      @include box-shadow-xl(rgba($black, 0.666));
+    }
 
     // title
     .paginator-title {

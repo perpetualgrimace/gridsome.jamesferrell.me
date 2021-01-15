@@ -64,23 +64,36 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		// positioning
 		margin-top: $gutter * 2;
 
 		@media (min-width: $bp-md) { margin-top: $gutter * 3; }
 		@media (min-width: $bp-lg) { margin-top: $gutter * 4; }
+
+		// theming
+		@include dark-mode {
+			color: $dark-1;
+		}
 
 		&:before {
 			@include pseudo;
 			position: absolute;
 			width: calc(100% - #{$gutter * 2});
 			height: $border-width;
+
+			// positioning
 			top: -$gutter * 1.25;
+
+			@media (min-width: $bp-md) { top: -$gutter * 1.75; }
+			@media (min-width: $bp-lg) { top: -$gutter * 2.25; }
+
 			// theming
 			border-radius: $border-width;
 			background-color: $light-2;
 
-			@media (min-width: $bp-md) { top: -$gutter * 1.75; }
-			@media (min-width: $bp-lg) { top: -$gutter * 2.25; }
+			@include dark-mode {
+				background-color: $dark-2;
+			}
 		}
 
 
