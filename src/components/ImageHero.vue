@@ -60,6 +60,11 @@
     flex-direction: column;
     // layout
     grid-column: 1 / 13;
+    min-height: $hero-height;
+
+    @media (min-width: $bp-md) {
+      min-height: calc(#{$hero-height} + 12vh); // fudged, can't use 100%
+    }
 
     @media (min-width: $bp-xs) { grid-column: 2 / 12; }
     @media (min-width: $bp-lg) { grid-column: 3 / 11 }
@@ -79,6 +84,7 @@
 
     .image-hero-meta {
       margin-top: auto;
+      margin-bottom: -1.125rem; // fudged
 
       @media (min-width: $bp-xxs) {
         display: flex;
