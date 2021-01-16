@@ -50,6 +50,15 @@
       @include radial-gloss;
       z-index: 1;
     }
+
+    // reset min-height & use aspect-ratio where available on tiny screens
+    @media (max-width: $bp-xxs - 0.001) {
+      &, & .image-hero-inner {
+        min-height: 10rem;
+        aspect-ratio: 2 / 1;
+        margin-top: auto;
+      }
+    }
   }
 
   // text container
@@ -60,7 +69,6 @@
     flex-direction: column;
     // layout
     grid-column: 1 / 13;
-    min-height: $hero-height;
 
     @media (min-width: $bp-md) {
       min-height: calc(#{$hero-height} + 12vh); // fudged, can't use 100%
