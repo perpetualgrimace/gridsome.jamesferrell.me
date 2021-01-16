@@ -24,7 +24,7 @@
 
 
 <template>
-  <article class="cta brand-theme u-left-center u-margin-top-lg u-margin-bottom-sm" :class="classes">
+  <article class="cta brand-theme u-left-center u-margin-bottom-sm" :class="classes">
     <h2>{{ heading }}</h2>
     <p>{{ text }}</p>
 
@@ -37,6 +37,11 @@
   .cta {
     @include hero-radius;
     padding: 1.5rem 2rem 2rem 2rem;
+    margin-top: $gutter / 2;
+
+    @media (min-width: $bp-sm) {
+      margin-top: $gutter;
+    }
 
     // set heading style to u-font-xxl
     h2, h3 {

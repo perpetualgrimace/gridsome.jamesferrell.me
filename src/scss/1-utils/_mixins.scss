@@ -435,11 +435,15 @@
 	width: $inner-width;
 	max-width: calc(100% - #{$gutter * 2});
 	min-height: $hero-height;
-	margin: 0 auto ($gutter * 1.5) auto;
+	margin: 0 auto ($gutter / 2) auto;
 	padding: $gutter;
 
 	@media (min-width: $bp-xs) {
 		padding: $gutter 0;
+	}
+
+	@media (min-width: $bp-sm) {
+		margin-bottom: ($gutter * 1.5);
 	}
 
 	@media (min-width: $bp-md) {
