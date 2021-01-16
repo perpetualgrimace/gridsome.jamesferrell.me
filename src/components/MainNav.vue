@@ -195,9 +195,12 @@
 		}
 
 		// needed because reasons
-		@media (min-width: $bp-lg) {
-			&:last-of-type {
-				margin-right: -0.75em; // offset link padding
+		&:last-of-type {
+			@media (min-width: $bp-xs) {
+				margin-right: -0.5em;
+			}
+			@media (min-width: $bp-lg) {
+				margin-right: -0.6em;
 			}
 		}
 	}
