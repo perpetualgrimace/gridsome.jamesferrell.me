@@ -9,17 +9,15 @@ slug: skills-list
 - Semantic, accessible HTML (WCAG)
 - Clean, well-documented CSS (SCSS & PostCSS)
 - Single page apps (React, Vue, & Svelte)
-- Gatsby & Gridsome
 - Static site generators (Jekyll)
 - Flat file CMS’s (Kirby)
 
 ### Core design skills:
 - UI design & prototyping
 - Mobile & responsive design
-- Sketch, Photoshop, Illustrator
+- Sketch, Figma, Photoshop, Illustrator
 - Content architecture & wireframing
 - Keynote presentations
-
 
 ### Capable but not excited about:
 - Branding
@@ -27,7 +25,7 @@ slug: skills-list
 - Wordpress & PHP
 - Gulp & Grunt
 - Bootstrap & Foundation
-
+- GraphQL
 
 ### Currently improving:
 - Javascript (ES6)

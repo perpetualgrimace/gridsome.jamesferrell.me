@@ -9,7 +9,7 @@ sidebarLinkText: "Contact me"
 
 downloadHeading: "PDF Resumé"
 downloadText: "Need an inaccessible version of this page that can only be opened with proprietary software? I’ve got you covered. 😉"
-downloadLink: "jamesferrell-resume-2020-screen.pdf"
+downloadLink: "jamesferrell-resume-2021-screen.pdf"
 downloadLinkText: Download PDF
 ---
 

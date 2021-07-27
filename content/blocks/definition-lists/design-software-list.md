@@ -4,8 +4,8 @@ slug: design-software-list
 
 ## Design software
 
-### [Sketch](https://www.sketchapp.com)
-My design software of choice. It makes web and UI design both efficient and realistic. Still waiting on nested character styles though. 😒
+### [Sketch](https://www.sketchapp.com) & [Figma](https://www.figma.com)
+I use and enjoy both of these modern design apps.
 
 ### Photoshop
 Great for editing photos, and clunky as hell for everything else.

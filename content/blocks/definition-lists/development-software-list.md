@@ -4,8 +4,8 @@ slug: development-software-list
 
 ## Development software
 
-### [Sublime Text](https://www.sublimetext.com/)
-It’s like Atom, but loads up quickly and doesn’t make my computer chug. I use the One Dark theme so it feels even more like Atom. Markdown editing is nice, too.
+### [Atom](https://www.atom.io/)
+I’ve tried the others; I’m most comfortable and efficient with this one.
 
 ### [Tower](https://www.git-tower.com/mac/)
 Makes Git a bit more approachable and I use it pretty regularly.
