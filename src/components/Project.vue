@@ -61,6 +61,29 @@
           return true;
         }
         return false;
+      },
+      hostname() {
+        let {host} = new URL(this.link);
+        if (host.split('.')[1] === 'bandcamp') {
+          host = 'bandcamp.com';
+        }
+        return host
+          .replace('www.', '')
+          .replace('web.archive.org', 'archive.org')
+          .replace('en.', '');
+      },
+      intro() {
+        let prefix = 'View live site';
+        if (this.hostname === 'archive.org') {
+          prefix = 'View archived site';
+        }
+        if (this.hostname === 'dribbble.com') {
+          prefix = "View designs";
+        }
+        if (this.hostname === 'bandcamp.com') {
+          prefix = 'Listen';
+        }
+        return `${prefix} at `;
       }
     }
   };
@@ -83,7 +106,7 @@
     <div class="project-inner">
       <div class="project-caption">
         <!-- heading -->
-        <h2 class="project-title heading u-font-xxl" tabindex="-1" :id="slug">
+        <h2 class="project-title heading u-font-xxl" tabindex="-1">
           {{ title }}
         </h2>
 
@@ -93,6 +116,11 @@
 
       <ProjectDeviceMobile v-if="layout === 'web' && mobileImg" :img="mobileImg" :lazy="lazy" />
       <component :is="component.name" :img="component.img" :lazy="lazy" />
+    </div>
+
+    <!-- where am I going? -->
+    <div class="project-outbound" :id="slug">
+      {{ intro }} {{ hostname }} <svg aria-hidden xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 16"><path fill="currentColor" d="M11 10h1v3c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h3v1H1v10h10v-3zM6 2l2.25 2.25L5 7.5 6.5 9l3.25-3.25L12 8V2H6z"/></svg>
     </div>
   </article>
 </template>
@@ -215,11 +243,45 @@
           transform: translateY(-12px);
         }
       }
+
+      & ~ .project-outbound {
+        @include absolute-horizontal-center;
+        opacity: 1;
+      }
     }
 
     &:focus {
       outline-offset: -$border-width;
     }
+  }
+
+
+  ////////////////////////////////////
+  // outbound indicator
+  ////////////////////////////////////
+  .project-outbound {
+    @include box-shadow-lg($shadow-dark);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -20%) scale(0.9);
+    bottom: 40%;
+    z-index: 2;
+    font-size: $font-md;
+    background-color: rgba($dark-3, 0.95);
+    padding: 0.5em 1em;
+    border-radius: $radius-sm;
+    color: $white;
+    // transitions
+    opacity: 0;
+    transition:
+      opacity 0.075s ease-out,
+      transform 0.075s ease-out;
+  }
+  .project-outbound > svg {
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    padding-left: 0.25em;
   }
 
 
