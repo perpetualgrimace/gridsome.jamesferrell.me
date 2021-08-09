@@ -17,7 +17,6 @@
     props: {
       // useful defaults
       layout:         { default: "web" },
-      comingSoon:     { default: false },
       lazy:           { default: true },
       selectedFilter: { default: "all" },
       // defaults as warnings
@@ -26,7 +25,7 @@
       link:           { default: "#missing-`link`-prop-in-Project.vue" },
       color:          { default: "black" },
       tags:           { default: "missing `tags` prop in Project.vue" },
-      mobileImg:      { default: "missing-`mobileImg`-prop-in-Project.vue" },
+      mobileImg:      { default: false },
       laptopImg:      { default: "missing-`laptopImg`-prop-in-Project.vue" },
       albumImg:       { default: "missing-`albumImg`-prop-in-Project.vue" },
       controllerImg:  { default: "missing-`controllerImg`-prop-in-Project.vue" }
@@ -37,10 +36,10 @@
       },
       component() {
         if (this.layout === "web") {
-          // also generate ProjectDeviceLaptop in the template
+          // also generate ProjectDeviceMobile in the template
           return {
-            name: "ProjectDeviceMobile",
-            img: this.mobileImg
+            name: "ProjectDeviceLaptop",
+            img: this.laptopImg
           };
         }
         else if (this.layout === "album") {
@@ -71,7 +70,7 @@
 <template>
   <article
     class="project dark-theme"
-    :class="`${ layout }-project${ comingSoon ? ' is-coming-soon' : '' } ${ isHidden ? 'is-hidden' : 'is-visible' }`"
+    :class="`${ layout }-project ${ isHidden ? 'is-hidden' : 'is-visible' }`"
     :style="{ 'background-color': color }"
   >
 
@@ -92,13 +91,9 @@
         <TagList :tags="splitTags" :selectedFilter="selectedFilter" />
       </div>
 
+      <ProjectDeviceMobile v-if="layout === 'web' && mobileImg" :img="mobileImg" :lazy="lazy" />
       <component :is="component.name" :img="component.img" :lazy="lazy" />
-      <ProjectDeviceLaptop v-if="layout === 'web'" :img="laptopImg" :lazy="lazy" />
-
     </div>
-
-    <!-- coming soon -->
-    <p v-if="comingSoon" class="project-banner u-font-sm">Coming soon?</p>
   </article>
 </template>
 
@@ -138,49 +133,6 @@
       // left align text and laptop-container
       // NOTE: won't apply to mobile, album or controller
       text-align: left;
-    }
-
-    // coming soon; no hovering
-    &.is-coming-soon {
-
-      // banner
-      .project-banner {
-        // sizing
-        display: block;
-        padding: 0.5em 3em;
-        // positioning
-        position: absolute;
-        transform: rotateZ(-45deg);
-        top: 1.75em;
-        left: -3.25em;
-        z-index: 1;
-        // theming
-        color: $dark-2;
-        background-color: $light-2;
-        @include box-shadow-xl;
-        // typography
-        text-align: center;
-        text-transform: uppercase;
-        // transitions
-        transition:
-          color $duration-md,
-          background $duration-sm;
-      }
-
-      // interactions
-      .project-link {
-        cursor: default;
-        background-color: transparent !important;
-
-        &:hover + .project-inner .device-container {
-          transform: none;
-        }
-
-        &:hover + .project-banner {
-          color: $white;
-          background-color: $brand-color;
-        }
-      }
     }
 
     // hidden state

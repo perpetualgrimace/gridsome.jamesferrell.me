@@ -10,7 +10,6 @@
           color
           thumbnailLayout
           tags
-          comingSoon
           mobileImg
           laptopImg
           albumImg
@@ -68,7 +67,6 @@
       :layout="node.thumbnailLayout"
       :lazy="node.order !== $static.projects.edges.length"
       :tags="node.tags"
-      :comingSoon="node.comingSoon"
       :mobileImg="node.mobileImg"
       :laptopImg="node.laptopImg"
       :albumImg="node.albumImg"
