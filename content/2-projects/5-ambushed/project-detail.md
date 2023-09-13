@@ -1,7 +1,7 @@
 ---
 title: Ambushed
 slug: ambushed
-color: #5A475E
+color: "#5A475E"
 thumbnailLayout: album
 tags: "branding,audio production"
 albumImg: plinksticity-reloaded.jpg

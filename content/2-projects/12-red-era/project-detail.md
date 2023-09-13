@@ -9,5 +9,5 @@ mobileImg2x: red-era-mobile@2x.jpg
 laptopImg: red-era-laptop.jpg
 laptopImg2x: red-era-laptop@2x.jpg
 externalLink: https://red-era.com
-order: 17
+order: 12
 ---
