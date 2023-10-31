@@ -120,10 +120,11 @@ module.exports = {
     },
     // projects
     {
-      use: "@gridsome/source-filesystem",
+      use: "@gridsome/vue-remark",
       options: {
-        path: "content/**/project-detail.md",
+        baseDir: "content/2-projects/active",
         typeName: "Project",
+        template: "./src/templates/Project.vue",
         route: "/projects/:slug",
       },
     },

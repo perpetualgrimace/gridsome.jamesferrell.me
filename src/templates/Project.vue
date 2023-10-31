@@ -1,11 +1,10 @@
 <page-query>
   query ($path: String!) {
     d: project (path: $path) {
-      order
+      id
       slug
       title
       tags
-      thumbnailLayout
       color
     }
   }
@@ -48,7 +47,7 @@ export default {
       </ProjectHero>
     </template>
 
-    <!-- <VueRemarkContent class="project-content content" /> -->
+    <VueRemarkContent class="project-content content" />
   </Layout>
 </template>
 
