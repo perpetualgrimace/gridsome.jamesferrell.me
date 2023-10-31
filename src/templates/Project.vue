@@ -6,6 +6,7 @@
       title
       tags
       color
+      externalLink
     }
   }
 </page-query>
@@ -47,8 +48,47 @@ export default {
       </ProjectHero>
     </template>
 
+    <div class="project-iframe-wrapper u-margins-auto">
+      <iframe
+        :src="$page.d.externalLink"
+        loading="lazy"
+        frameborder="0"
+        style="width: 100%; height: 100%;"
+      />
+    </div>
+
     <VueRemarkContent class="project-content content" />
   </Layout>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.project-iframe-wrapper {
+  @include device-shadow;
+  width: 100%;
+  min-width: 320px;
+  max-width: 100%;
+  height: 75vh;
+  min-height: 480px;
+  max-height: 100vh;
+  resize: both;
+  overflow: hidden;
+  padding: 0.75rem 0.75rem 1.25rem 0.75rem;
+  border-radius: $radius-sm;
+  background-color: $dark-1;
+
+  @media (min-width: $bp-md) {
+    margin-top: -$hero-overlap - 0.45;
+    z-index: 1;
+
+    &:after {
+      font-size: $font-sm;
+      color: $white;
+      display: block;
+      content: "Resize me →";
+      position: absolute;
+      bottom: 0;
+      right: 0.75rem;
+    }
+  }
+}
+</style>
