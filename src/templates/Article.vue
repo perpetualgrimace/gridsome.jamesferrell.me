@@ -27,7 +27,7 @@ import {
 
 import Colophon from "~/components/Colophon";
 import ImageHero from "~/components/ImageHero";
-import Paginator from "~/components/Paginator";
+import ArticlePaginator from "~/components/ArticlePaginator";
 import Tag from "~/components/Tag";
 
 export default {
@@ -35,7 +35,7 @@ export default {
     Fragment,
     Colophon,
     ImageHero,
-    Paginator,
+    ArticlePaginator,
     Tag,
   },
   metaInfo() {
@@ -70,7 +70,7 @@ export default {
 </script>
 
 <template>
-  <Layout singleColumn="true">
+  <Layout :singleColumn="true">
     <template slot="hero">
       <ImageHero
         :id="$page.d.id"
@@ -95,7 +95,7 @@ export default {
     <VueRemarkContent class="article-content content" />
 
     <template slot="cta">
-      <Paginator :currentID="$page.d.id" />
+      <ArticlePaginator :currentID="$page.d.id" />
       <Colophon classes="u-margin-bottom-sm" />
     </template>
   </Layout>

@@ -18,7 +18,7 @@ import site from "../../content/site.json";
 
 import Colophon from "~/components/Colophon";
 import ProjectHero from "~/components/ProjectHero";
-import Paginator from "~/components/Paginator";
+import ProjectPaginator from "~/components/ProjectPaginator";
 import Tag from "~/components/Tag";
 
 export default {
@@ -26,7 +26,7 @@ export default {
     Fragment,
     Colophon,
     ProjectHero,
-    Paginator,
+    ProjectPaginator,
     Tag,
   },
   metaInfo() {
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <template>
-  <Layout singleColumn="true">
+  <Layout :singleColumn="true">
     <template slot="hero">
       <ProjectHero
         :headline="$page.d.title"
@@ -58,6 +58,11 @@ export default {
     </div>
 
     <VueRemarkContent class="project-content content" />
+
+    <template slot="cta">
+      <ProjectPaginator :currentID="$page.d.id" />
+      <Colophon classes="u-margin-bottom-sm" />
+    </template>
   </Layout>
 </template>
 

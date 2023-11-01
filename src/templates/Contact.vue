@@ -23,103 +23,113 @@
   }
 </page-query>
 
-
 <script>
-  import {Fragment} from "vue-fragment";
-  import {isEmail, spam} from "~/helpers.js";
-  import Button from "~/components/Button";
-  import ImageHero from "~/components/ImageHero";
+import { Fragment } from "vue-fragment";
+import { isEmail, spam } from "~/helpers.js";
+import Button from "~/components/Button";
+import ImageHero from "~/components/ImageHero";
 
-  export default {
-    components: {
-      Fragment, Button, ImageHero
+export default {
+  components: {
+    Fragment,
+    Button,
+    ImageHero,
+  },
+  metaInfo: {
+    title: "Contact",
+  },
+  data() {
+    return {
+      formData: {},
+      submitted: false,
+      status: null,
+      hasMounted: false,
+      validationError: null,
+    };
+  },
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          (key) =>
+            encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+        )
+        .join("&");
     },
-    metaInfo: {
-      title: "Contact"
-    },
-    data() {
-      return {
-        formData: {},
-        submitted: false,
-        status: null,
-        hasMounted: false,
-        validationError: null
+    handleSubmit(e) {
+      const encodedEmail = this.encode({
+        "form-name": e.target.getAttribute("name"),
+        ...this.formData,
+      });
+
+      // validation
+      if (!this.formData.name || this.formData.name === "") {
+        this.validationError = "emptyName";
+        this.$refs.nameField.focus();
+        return false;
+      } else if (!this.formData.email || this.formData.email === "") {
+        this.validationError = "emptyEmail";
+        this.$refs.emailField.focus();
+        return false;
+      } else if (!isEmail(this.formData.email)) {
+        this.validationError = "invalidEmail";
+        this.$refs.emailField.focus();
+        return false;
+      } else if (!this.formData.text || this.formData.text === "") {
+        this.validationError = "emptyText";
+        this.$refs.textField.focus();
+        return false;
       }
-    },
-    methods: {
-      encode(data) {
-        return Object.keys(data)
-          .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-          .join('&')
-      },
-      handleSubmit(e) {
-        const encodedEmail = this.encode({'form-name': e.target.getAttribute('name'), ...this.formData});
 
-        // validation
-        if (!this.formData.name || this.formData.name === "") {
-          this.validationError = "emptyName";
-          this.$refs.nameField.focus();
-          return false;
-        }
-        else if (!this.formData.email || this.formData.email === "") {
-          this.validationError = "emptyEmail";
-          this.$refs.emailField.focus();
-          return false;
-        }
-        else if (!isEmail(this.formData.email)) {
-          this.validationError = "invalidEmail";
-          this.$refs.emailField.focus();
-          return false;
-        }
-        else if (!this.formData.text || this.formData.text === "") {
-          this.validationError = "emptyText";
-          this.$refs.textField.focus();
-          return false;
-        }
+      // spam detection
+      let spamCount = 0;
+      spam.forEach((s) =>
+        encodedEmail.includes(s.replace(/\s/g, "%20"))
+          ? spamCount++
+          : null
+      );
 
-        // spam detection
-        let spamCount = 0;
-        spam.forEach(s => encodedEmail.includes(s.replace(/\s/g, "%20")) ? spamCount++ : null);
+      if (spamCount >= 1) {
+        this.submitted = true;
+        this.status = "spam";
+        return null;
+      }
 
-        if(spamCount >= 1) {
-          this.submitted = true;
-          this.status = "spam";
-          return null;
-        }
-
-        // we're good, submit the form
-        fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: encodedEmail
-        })
+      // we're good, submit the form
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encodedEmail,
+      })
         .then(() => {
           this.submitted = true;
           this.status = "success";
         })
-        .catch(error => {
+        .catch((error) => {
           this.submitted = true;
           this.status = "fail";
           console.log(error);
         });
-      }
     },
-    mounted() {
-      // show the form
-      this.hasMounted = true;
+  },
+  mounted() {
+    // show the form
+    this.hasMounted = true;
 
-      // re-focus the name field once the app hydrates
-      this.$nextTick(() => this.$refs.nameField.focus());
-    }
-  }
+    // re-focus the name field once the app hydrates
+    this.$nextTick(() => this.$refs.nameField.focus());
+  },
+};
 </script>
 
-
 <template>
-  <Layout singleColumn="true">
+  <Layout :singleColumn="true">
     <template slot="hero">
-      <ImageHero :headline="$page.d.title" :overlapped="!submitted" 
-        :imgSrc="$page.d.heroImg" />
+      <ImageHero
+        :headline="$page.d.title"
+        :overlapped="!submitted"
+        :imgSrc="$page.d.heroImg"
+      />
     </template>
 
     <Fragment v-if="submitted === false">
@@ -149,7 +159,15 @@
               v-model="formData.name"
               ref="nameField"
             />
-            <label class="contact-form-error" :class="validationError && validationError === 'emptyName' ? 'is-visible' : 'is-hidden'" for="name">
+            <label
+              class="contact-form-error"
+              :class="
+                validationError && validationError === 'emptyName'
+                  ? 'is-visible'
+                  : 'is-hidden'
+              "
+              for="name"
+            >
               {{ $page.d.emptyName }}
             </label>
           </div>
@@ -160,17 +178,38 @@
             </label>
             <input
               class="contact-form-input"
-              :class="validationError === 'emptyEmail' || validationError === 'invalidEmail' ? 'is-invalid' : ''"
+              :class="
+                validationError === 'emptyEmail' ||
+                validationError === 'invalidEmail'
+                  ? 'is-invalid'
+                  : ''
+              "
               type="text"
               name="email"
               id="email"
               v-model="formData.email"
               ref="emailField"
             />
-            <label class="contact-form-error" :class="validationError && validationError === 'emptyEmail' ? 'is-visible' : 'is-hidden'" for="email">
+            <label
+              class="contact-form-error"
+              :class="
+                validationError && validationError === 'emptyEmail'
+                  ? 'is-visible'
+                  : 'is-hidden'
+              "
+              for="email"
+            >
               {{ $page.d.emptyEmail }}
             </label>
-            <label class="contact-form-error" :class="validationError && validationError === 'invalidEmail' ? 'is-visible' : 'is-hidden'" for="email">
+            <label
+              class="contact-form-error"
+              :class="
+                validationError && validationError === 'invalidEmail'
+                  ? 'is-visible'
+                  : 'is-hidden'
+              "
+              for="email"
+            >
               {{ $page.d.invalidEmail }}
             </label>
           </div>
@@ -190,7 +229,15 @@
               v-model="formData.text"
               ref="textField"
             />
-            <label class="contact-form-error" :class="validationError && validationError === 'emptyText' ? 'is-visible' : 'is-hidden'" for="text">
+            <label
+              class="contact-form-error"
+              :class="
+                validationError && validationError === 'emptyText'
+                  ? 'is-visible'
+                  : 'is-hidden'
+              "
+              for="text"
+            >
               {{ $page.d.emptyText }}
             </label>
           </div>
@@ -198,23 +245,35 @@
 
         <!-- netlify fields -->
         <input type="hidden" name="form-name" value="contact" />
-        <label hidden>If you're a robot, please fill this out: <input name="bot-field" /></label>
+        <label hidden
+          >If you're a robot, please fill this out:
+          <input name="bot-field"
+        /></label>
 
         <!-- submit button -->
         <div class="g-columns">
           <div class="g-col u-padding-top-xs">
-            <Button type="submit" classes="u-font-sm u-margin-top-off" :text="$page.d.submitText" />
+            <Button
+              type="submit"
+              classes="u-font-sm u-margin-top-off"
+              :text="$page.d.submitText"
+            />
           </div>
         </div>
       </form>
 
       <!-- or, email me -->
-      <VueRemarkContent class="content u-font-sm u-left-center u-margin-top-lg" />
-
+      <VueRemarkContent
+        class="content u-font-sm u-left-center u-margin-top-lg"
+      />
     </Fragment>
 
     <!-- unfortunately, sir, it appears that you are a robot -->
-    <transition name="transition-fade" appear v-else-if="status === 'spam'">
+    <transition
+      name="transition-fade"
+      appear
+      v-else-if="status === 'spam'"
+    >
       <div class="contact-message u-left-center content">
         <h2 class="u-font-xxl">{{ $page.d.spamHeading }}</h2>
         <p>{{ $page.d.spamText1 }}</p>
@@ -223,7 +282,11 @@
     </transition>
 
     <!-- message sent -->
-    <transition name="transition-fade" appear v-else-if="status === 'success'">
+    <transition
+      name="transition-fade"
+      appear
+      v-else-if="status === 'success'"
+    >
       <div class="contact-message u-left-center content">
         <h2 class="u-font-xxl">{{ $page.d.successHeading }}</h2>
         <p>{{ $page.d.successText }}</p>
@@ -231,7 +294,11 @@
     </transition>
 
     <!-- message not sent -->
-    <transition name="transition-fade" appear v-else-if="status === 'fail'">
+    <transition
+      name="transition-fade"
+      appear
+      v-else-if="status === 'fail'"
+    >
       <div class="contact-message u-left-center content">
         <h2 class="u-font-xxl">{{ $page.d.failHeading }}</h2>
         <p>{{ $page.d.failText }}</p>
@@ -240,81 +307,79 @@
   </Layout>
 </template>
 
-
 <style lang="scss">
+.contact-form {
+  padding: $gutter;
+  z-index: 1;
+  // theming
+  @include box-shadow-lg;
+  background-color: $white;
+  border-radius: $radius-md;
 
-  .contact-form {
-    padding: $gutter;
+  @include dark-mode {
+    @include box-shadow-xl(rgba($black, 0.666));
+    background-color: $dark-2;
+  }
+
+  @media (min-width: $bp-md) {
+    margin-top: -$hero-overlap;
+  }
+
+  &.is-hidden {
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .g-col {
     z-index: 1;
-    // theming
-    @include box-shadow-lg;
-    background-color: $white;
-    border-radius: $radius-md;
+  }
+}
 
-    @include dark-mode {
-      @include box-shadow-xl(rgba($black, 0.666));
-      background-color: $dark-2;
-    }
+.contact-form-textarea {
+  height: calc(15vh + 10vw);
+}
 
-    @media (min-width: $bp-md) {
-      margin-top: -$hero-overlap;
-    }
+.contact-message {
+  width: 100%;
+  max-width: 30rem;
+  margin: $gutter auto;
+}
 
+// labels
+label {
+  display: block;
+  padding-bottom: $gutter; // extend clickable area
+  // compensate for padding
+  margin-bottom: -0.75rem;
+
+  // validation errors
+  &.contact-form-error {
+    @include body-bold-font;
+    position: absolute;
+    color: $error-color;
+    top: auto;
+    padding-bottom: 0; // reset padding
+    z-index: -1; // place behind fields
+    // transitionable properties
+    transform: none;
+    opacity: 1;
+
+    // default hidden state, toggled via js
     &.is-hidden {
+      transform: translateY(-100%);
       opacity: 0;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .g-col {
-      z-index: 1;
     }
   }
+}
 
-  .contact-form-textarea {
-    height: calc(15vh + 10vw);
-  };
+// invalid fields get a red border
+.contact-form .contact-form-input.is-invalid,
+.contact-form .contact-form-textarea.is-invalid {
+  border-color: $error-color;
 
-  .contact-message {
-    width: 100%;
-    max-width: 30rem;
-    margin: $gutter auto;
+  & ~ .contact-form-error {
+    color: $error-color;
   }
-
-  // labels
-  label {
-    display: block;
-    padding-bottom: $gutter; // extend clickable area
-    // compensate for padding
-    margin-bottom: -0.75rem;
-
-    // validation errors
-    &.contact-form-error {
-      @include body-bold-font;
-      position: absolute;
-      color: $error-color;
-      top: auto;
-      padding-bottom: 0; // reset padding
-      z-index: -1; // place behind fields
-      // transitionable properties
-      transform: none;
-      opacity: 1;
-
-      // default hidden state, toggled via js
-      &.is-hidden {
-        transform: translateY(-100%);
-        opacity: 0;
-      }
-    }
-  }
-
-  // invalid fields get a red border
-  .contact-form .contact-form-input.is-invalid,
-  .contact-form .contact-form-textarea.is-invalid {
-    border-color: $error-color;
-
-    & ~ .contact-form-error {
-      color: $error-color;
-    }
-  }
+}
 </style>
