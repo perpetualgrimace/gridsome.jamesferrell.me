@@ -3,9 +3,18 @@ title: "Classic controllers"
 slug: classic-controllers
 color: "#9191A0"
 thumbnailLayout: controller
-tags: digital illustration
+tags: artwork
 controllerImg: snes-controller.png
 controllerImg2x: snes-controller@2x.png
-externalLink: http://dribbble.com/perpetualgrimace/projects/157127-Controllers
+slides:
+  [
+    "dreamcast.jpg",
+    "genesis.jpg",
+    "ps2.jpg",
+    "nes.jpg",
+    "n64.jpg",
+    "snes.jpg",
+  ]
+maxWidth: "600px"
 id: 7
 ---
