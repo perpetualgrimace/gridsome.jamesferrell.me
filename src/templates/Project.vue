@@ -95,15 +95,20 @@ export default {
 
 <style lang="scss">
 .project-outer-wrapper {
-  width: 100%;
+  @include fullwidth;
 
   @media (min-width: $bp-md) {
     margin-top: -$hero-overlap - 0.45;
     z-index: 1;
   }
 }
+
 .project-iframe-wrapper {
   @include device-shadow;
+  border-radius: $radius-md;
+  background-color: $dark-2;
+  padding: 1.5rem 1px 1px 1px;
+  width: 48rem;
   min-width: 320px;
   max-width: 100%;
   height: 75vh;
@@ -111,18 +116,30 @@ export default {
   max-height: 100vh;
   resize: both;
   overflow: hidden;
-  padding: 0.75rem 0.75rem 1.25rem 0.75rem;
-  border-radius: $radius-sm;
-  background-color: $dark-1;
+  border-top: 1px solid $gray;
+  border-radius: calc(#{$radius-md} - 1px);
+
+  iframe {
+    border-top: 1px solid $dark-3;
+    border-radius: 0 0 $radius-md $radius-md;
+  }
 
   &:after {
-    font-size: $font-sm;
-    color: $white;
+    @include device-shadow;
+    content: "resize me →";
     display: block;
-    content: "Resize me →";
     position: absolute;
     bottom: 0;
-    right: 0.75rem;
+    right: 0;
+    color: $light-3;
+    background-color: $dark-2;
+    font-size: $font-sm;
+    padding: 0.15em 1.25em 0.2em 0.75em;
+    border-radius: $radius-md 0 $radius-md 0;
   }
+}
+
+.project-content:not(:empty) {
+  margin-top: $gutter * 1.25;
 }
 </style>
