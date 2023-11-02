@@ -9,7 +9,8 @@ export default {
   props: {
     currentID: { default: null },
     allPages: { default: null },
-    template: { default: "article " },
+    template: { default: "article" },
+    parentPageLink: { default: "/blog" },
   },
   computed: {
     total() {
@@ -94,7 +95,7 @@ export default {
       </li>
 
       <li class="paginator-item paginator-item-middle">
-        <g-link to="/blog" class="paginator-link">
+        <g-link :to="parentPageLink" class="paginator-link">
           <span class="paginator-inner">
             <GridIcon />
             <span class="u-visually-hidden">All {{ template }}s</span>

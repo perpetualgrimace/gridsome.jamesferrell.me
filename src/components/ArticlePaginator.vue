@@ -31,5 +31,6 @@ export default {
     :allPages="$static.articles.edges"
     :currentID="currentID"
     template="article"
+    parentPageLink="/blog"
   />
 </template>

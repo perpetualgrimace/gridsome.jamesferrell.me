@@ -32,6 +32,7 @@ export default {
       :allPages="$static.projects.edges"
       :currentID="currentID"
       template="project"
+      parentPageLink="/projects"
     />
   </div>
 </template>
