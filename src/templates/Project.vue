@@ -9,6 +9,7 @@
       maxWidth
       color
       externalLink
+      iframeBlocked
     }
   }
 </page-query>
@@ -19,6 +20,7 @@ import { Carousel, Slide } from "vue-carousel";
 
 import { getBaseUrlFromString } from "~/helpers.js";
 
+import Button from "~/components/Button";
 import Colophon from "~/components/Colophon";
 import ProjectHero from "~/components/ProjectHero";
 import ProjectIframeHeader from "~/components/ProjectIframeHeader";
@@ -28,6 +30,7 @@ import Tag from "~/components/Tag";
 export default {
   components: {
     Fragment,
+    Button,
     Colophon,
     ProjectHero,
     ProjectIframeHeader,
@@ -70,6 +73,11 @@ export default {
       <div
         class="project-iframe-wrapper u-margins-auto"
         :class="isFullscreen ? 'is-fullscreen' : ''"
+        :style="
+          !$page.d.iframeBlocked
+            ? 'min-height: 480px; height: 75vh;'
+            : 'min-height: 240px; height: 60vh;'
+        "
         v-if="$page.d.externalLink"
       >
         <ProjectIframeHeader
@@ -79,11 +87,40 @@ export default {
         />
 
         <iframe
+          v-if="!$page.d.iframeBlocked"
           :src="$page.d.externalLink"
           loading="lazy"
           frameborder="0"
           style="width: 100%; height: 100%;"
         />
+
+        <div class="project-blocked" v-else-if="$page.d.iframeBlocked">
+          <g-image src="/images/xzbitsad.jpg" alt="Xhibit is sad" />
+          <h2 class="u-font-xxl u-margin-bottom">
+            Yo dawg, I heard you like websites
+          </h2>
+          <p class="u-font-lg u-margin-bottom">
+            Unfortunately,
+            <a :href="$page.d.externalLink" target="_blank">
+              {{ getBaseUrlFromString($page.d.externalLink) }}
+            </a>
+            won’t let me put their website in my website — so in this case
+            you won't be able to website while you website
+          </p>
+          <p class="u-font-sm">
+            <a
+              class="button"
+              :href="$page.d.externalLink"
+              target="_blank"
+            >
+              Open
+              <span class="u-visually-hidden">{{
+                getBaseUrlFromString($page.d.externalLink)
+              }}</span>
+              in a new tab
+            </a>
+          </p>
+        </div>
       </div>
 
       <div
@@ -132,8 +169,6 @@ export default {
   width: 48rem;
   min-width: 320px;
   max-width: calc(100% - #{$gutter * 2});
-  height: 75vh;
-  min-height: 480px;
   max-height: 100vh;
   resize: both;
   overflow: hidden;
@@ -161,18 +196,40 @@ export default {
 
   &.is-fullscreen {
     position: fixed;
-    width: 100%;
+    width: 100% !important;
     max-width: 100%;
-    height: calc(100% - #{$nav-height});
+    height: calc(100% - #{$nav-height}) !important;
     top: $nav-height;
     left: 0;
     bottom: 0;
     right: 0;
     z-index: 12;
+
+    &:after {
+      display: none;
+    }
   }
 }
 
 .project-content:not(:empty) {
   margin-top: $gutter * 1.25;
+}
+
+.project-blocked {
+  height: 100%;
+  background-color: $dark-3;
+  padding: $gutter * 2 $gutter * 2 $gutter $gutter * 2;
+  border-top: 1px solid $black;
+  border-radius: 0 0 $radius-md $radius-md;
+  overflow-y: auto;
+
+  img {
+    float: left;
+    width: 14rem;
+    max-width: 33.333%;
+    min-width: 5rem;
+    margin-right: $gutter * 2;
+    margin-bottom: $gutter;
+  }
 }
 </style>

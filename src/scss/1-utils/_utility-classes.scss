@@ -3,43 +3,75 @@
 ////////////////////////////////
 
 // font sizes
-.u-font-xs   { font-size : $font-xs; }
-.u-font-sm   { font-size : $font-sm; }
-.u-font-md   { font-size : $font-md; }
-.u-font-lg   { font-size : $font-lg; }
-.u-font-xl   { font-size : $font-xl; }
-.u-font-xxl  { font-size : $font-xxl; }
-.u-font-xxxl { font-size : $font-xxxl; }
+.u-font-xs {
+  font-size: $font-xs;
+}
+.u-font-sm {
+  font-size: $font-sm;
+}
+.u-font-md {
+  font-size: $font-md;
+}
+.u-font-lg {
+  font-size: $font-lg;
+}
+.u-font-xl {
+  font-size: $font-xl;
+}
+.u-font-xxl {
+  font-size: $font-xxl;
+}
+.u-font-xxxl {
+  font-size: $font-xxxl;
+}
 
 // alignment classes -- the same on all screen sizes
-.u-left   { text-align: left; }
-.u-right  { text-align: right; }
-.u-center { text-align: center; }
+.u-left {
+  text-align: left;
+}
+.u-right {
+  text-align: right;
+}
+.u-center {
+  text-align: center;
+}
 
 // switch alignment around 630px width (mobile first)
 .u-center-left {
   text-align: center;
-  @media (min-width: $bp-md) { text-align: left; }
+  @media (min-width: $bp-md) {
+    text-align: left;
+  }
 }
 .u-center-right {
   text-align: center;
-  @media (min-width: $bp-md) { text-align: right; }
+  @media (min-width: $bp-md) {
+    text-align: right;
+  }
 }
 .u-left-center {
   text-align: left;
-  @media (min-width: $bp-md) { text-align: center; }
+  @media (min-width: $bp-md) {
+    text-align: center;
+  }
 }
 .u-left-right {
   text-align: left;
-  @media (min-width: $bp-md) { text-align: right; }
+  @media (min-width: $bp-md) {
+    text-align: right;
+  }
 }
 .u-right-left {
   text-align: right;
-  @media (min-width: $bp-md) { text-align: left; }
+  @media (min-width: $bp-md) {
+    text-align: left;
+  }
 }
 .u-right-center {
   text-align: right;
-  @media (min-width: $bp-md) { text-align: center; }
+  @media (min-width: $bp-md) {
+    text-align: center;
+  }
 }
 
 // make a link look like body text
@@ -71,7 +103,6 @@
   }
 }
 
-
 ////////////////////////////////
 // layout
 ////////////////////////////////
@@ -82,14 +113,14 @@
 
 // vertically center child elements via flexbox
 .u-vertical-center {
-  @media(min-width: $bp-md) {
+  @media (min-width: $bp-md) {
     @include flex-vertical-center;
   }
 }
 
 // stretch to fill container with the power of flexbox
 .u-full-height {
-  @media(min-width: $bp-md) {
+  @media (min-width: $bp-md) {
     display: flex;
   }
 }
@@ -99,7 +130,6 @@
   display: inline-block;
   vertical-align: middle;
 }
-
 
 ////////////////////////////////
 // list reset
@@ -113,7 +143,6 @@
     display: none;
   }
 }
-
 
 ////////////////////////////////
 // margins
@@ -165,7 +194,6 @@
   margin-right: auto !important;
 }
 
-
 ////////////////////////////////
 // padding
 ////////////////////////////////
@@ -205,7 +233,6 @@
 .u-padding-bottom-off {
   padding-bottom: 0 !important;
 }
-
 
 ////////////////////////////////
 // hide content

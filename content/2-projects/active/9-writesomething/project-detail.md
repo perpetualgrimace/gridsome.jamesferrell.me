@@ -10,4 +10,5 @@ laptopImg: writesomething-laptop.png
 laptopImg2x: writesomething-laptop@2x.png
 externalLink: https://web.archive.org/web/20170614035922/http://writesomething.org/
 id: 9
+iframeBlocked: true
 ---

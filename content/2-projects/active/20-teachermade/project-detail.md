@@ -10,4 +10,5 @@ laptopImg: teachermade-laptop.jpg
 laptopImg2x: teachermade-laptop@2x.jpg
 externalLink: https://dribbble.com/shots/16162623-TeacherMade-app-redesign
 id: 15
+iframeBlocked: true
 ---

@@ -10,4 +10,5 @@ laptopImg: codelife-laptop.jpg
 laptopImg2x: codelife-laptop@2x.jpg
 externalLink: http://en.codelife.com
 id: 11
+iframeBlocked: true
 ---

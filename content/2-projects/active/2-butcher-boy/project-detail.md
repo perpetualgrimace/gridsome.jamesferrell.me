@@ -10,4 +10,5 @@ laptopImg: butcherboy-laptop.png
 laptopImg2x: butcherboy-laptop@2x.png
 externalLink: http://butcherboymarket.com
 id: 2
+iframeBlocked: true
 ---
