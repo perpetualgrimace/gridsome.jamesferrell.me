@@ -1,268 +1,277 @@
 <script>
-	import site from "../../content/site.json";
-	import HamBurger from "./HamBurger";
-	import MainLogo from "./MainLogo";
+import site from "../../content/site.json";
+import HamBurger from "./HamBurger";
+import MainLogo from "./MainLogo";
 
-	export default {
-		name: "MainNav",
-		components: {
-			HamBurger,
-			MainLogo
-		},
-		data() {
-			return {
-				site,
-				menuOpen: false
-			}
-		},
-		methods: {
-			toggleMenu: function(e) {
-				if (e) e.preventDefault();
-				this.menuOpen = !this.menuOpen;
-			}
-		}
-	};
+export default {
+  name: "MainNav",
+  components: {
+    HamBurger,
+    MainLogo,
+  },
+  data() {
+    return {
+      site,
+      menuOpen: false,
+    };
+  },
+  methods: {
+    toggleMenu: function(e) {
+      if (e) e.preventDefault();
+      this.menuOpen = !this.menuOpen;
+    },
+  },
+};
 </script>
 
-
 <template>
-	<div class="main-nav">
-		<nav class="main-nav-inner" role="navigation">
-			<!-- skip link -->
-			<a class="button-inverted skip-link u-visually-hidden" href="#main">Skip to content</a>
+  <div class="main-nav">
+    <nav class="main-nav-inner" role="navigation">
+      <!-- skip link -->
+      <a class="button-inverted skip-link u-visually-hidden" href="#main"
+        >Skip to content</a
+      >
 
-			<MainLogo :tabbable="!menuOpen" />
-			
-			<!-- nav menu toggle for small screens -->
-			<HamBurger :onClick="toggleMenu" :menuOpen="menuOpen" />
+      <MainLogo :tabbable="!menuOpen" />
 
+      <!-- nav menu toggle for small screens -->
+      <HamBurger :onClick="toggleMenu" :menuOpen="menuOpen" />
 
-			<!-- main nav -->
-			<ul id="nav" class="main-nav-list" :class="menuOpen ? 'is-expanded' : 'is-collapsed'">
-				<li class="main-nav-item u-hide-above-s">
-					<g-link to="/" class="main-nav-link" exact-active-class="is-active">
-						home
-					</g-link>
-				</li>
-				<li class="main-nav-item" v-for="nav in site.mainNav">
-					<g-link :to="nav.link" class="main-nav-link" active-class="is-active" exact-active-class="is-active">
-						{{ nav.title }}
-					</g-link>
-				</li>
-			</ul>
-		</nav>
-	</div>
+      <!-- main nav -->
+      <ul
+        id="nav"
+        class="main-nav-list"
+        :class="menuOpen ? 'is-expanded' : 'is-collapsed'"
+      >
+        <li class="main-nav-item u-hide-above-s">
+          <g-link
+            to="/"
+            class="main-nav-link"
+            exact-active-class="is-active"
+          >
+            home
+          </g-link>
+        </li>
+        <li class="main-nav-item" v-for="nav in site.mainNav">
+          <g-link
+            :to="nav.link"
+            class="main-nav-link"
+            active-class="is-active"
+            exact-active-class="is-active"
+          >
+            {{ nav.title }}
+          </g-link>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </template>
 
-
 <style lang="scss">
+// default positioning and theming
+.main-nav {
+  top: 0;
+  z-index: 11;
+  margin-bottom: 0;
 
-	// default positioning and theming
-	.main-nav {
-		top: 0;
-		z-index: 11;
-		margin-bottom: 0;
+  // fixed nav on bigger screens
+  @media (min-height: $bp-xxs) {
+    position: fixed;
+    left: 0;
+    right: 0;
+    // theming
+    background-color: rgba($light-1, 0.95); // fallback
+    background: linear-gradient(to bottom, $light-1, rgba($light-1, 0.9));
 
-		// fixed nav on bigger screens
-		@media (min-height: $bp-xxs) {
-			position: fixed;
-			left: 0;
-			right: 0;
-			// theming
-			background-color: rgba($light-1, 0.95); // fallback
-			background: linear-gradient(to bottom, $light-1, rgba($light-1, 0.9));
+    @include dark-mode {
+      background-color: rgba($dark-3, 0.95); // fallback
+      background: linear-gradient(
+        to bottom,
+        rgba($dark-3, 0.98),
+        rgba($dark-3, 0.9)
+      );
+    }
 
-			@include dark-mode {
-				background-color: rgba($dark-3, 0.95); // fallback
-				background: linear-gradient(to bottom, rgba($dark-3, 0.98), rgba($dark-3, 0.9));
-			}
+    // apply bg blur to fixed menu, but not when it can override the mobile menu
+    @media (min-width: $bp-sm) and (min-height: $bp-xxs) {
+      backdrop-filter: blur(6px);
+    }
 
-			// apply bg blur to fixed menu, but not when it can override the mobile menu
-			@media (min-width: $bp-sm) and (min-height: $bp-xxs) {
-				backdrop-filter: blur(6px);
-			}
+    // glass edge (border adds a pixel, so :after it is)
+    &:after {
+      @include pseudo;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      z-index: -1;
+      background-color: $light-1;
 
-			// glass edge (border adds a pixel, so :after it is)
-			&:after {
-				@include pseudo;
-				position: absolute;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				height: 1px;
-				z-index: -1;
-				background-color: $light-1;
+      @include dark-mode {
+        background-color: rgba($dark-3, 0.5);
+      }
+    }
 
-				@include dark-mode {
-					background-color: rgba($dark-3, 0.5);
-				}
-			}
+    // offset fixed nav height
+    & + .main {
+      margin-top: $nav-height;
+    }
+  }
+}
 
-			// offset fixed nav height
-			& + .main {
-				margin-top: $nav-height;
-			}
-		}
-	}
+////////////////////////////////////////////
+// main nav element
+////////////////////////////////////////////
 
+// positioning
+.main-nav-inner {
+  @include layout-wrapper(0, $outer-width);
+  height: $nav-height;
+  display: flex;
+}
 
-	////////////////////////////////////////////
-	// main nav element
-	////////////////////////////////////////////
+////////////////////////////////////////////
+// main nav list
+////////////////////////////////////////////
 
-	// positioning
-	.main-nav-inner {
-		@include layout-wrapper(0, $outer-width);
-		height: $nav-height;
-		display: flex;
-	}
+.main-nav-list {
+  // small screens
+  @media (max-width: $bp-sm - 0.001) {
+    @include dropdown-hidden;
+    @include box-shadow-lg;
+    // max-width: $sidebar-width;
+    display: flex;
+    flex-direction: column;
+    max-height: $nav-height;
+    z-index: -1;
 
+    &.is-collapsed .main-nav-link {
+      @include visually-hidden;
+    }
 
-	////////////////////////////////////////////
-	// main nav list
-	////////////////////////////////////////////
+    // expanded menu state
+    &.is-expanded {
+      @include dropdown-visible;
+      @include absolute-expand;
+      background-color: rgba($black, 0.95);
+      backdrop-filter: blur(4px);
+      position: fixed;
+      max-height: 100%;
+      z-index: 30;
+      transition: opacity $duration-sm, transform $duration-sm;
+    }
+  }
 
-	.main-nav-list {
-		// small screens
-		@media (max-width: $bp-sm - 0.001) {
-			@include dropdown-hidden;
-			@include box-shadow-lg;
-			// max-width: $sidebar-width;
-			display: flex;
-			flex-direction: column;
-			max-height: $nav-height;
-			z-index: -1;
+  // right aligned
+  @media (min-width: $bp-sm) {
+    margin-left: auto;
+    margin-right: $gutter;
+  }
 
-			&.is-collapsed .main-nav-link {
-				@include visually-hidden;
-			}
+  @media (max-height: $bp-xxxs - 0.001) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 
-			// expanded menu state
-			&.is-expanded {
-				@include dropdown-visible;
-				@include absolute-expand;
-				background-color: rgba($black, 0.95);
-				backdrop-filter: blur(4px);
-				position: fixed;
-				max-height: 100%;
-				z-index: 30;
-				transition:
-					opacity $duration-sm,
-					transform $duration-sm;
-			}
-		}
+////////////////////////////////////////////
+// main nav items
+////////////////////////////////////////////
 
-		// right aligned
-		@media (min-width: $bp-sm) {
-			margin-left: auto;
-			margin-right: $gutter;
-		}
+// nav items
+.main-nav-item {
+  width: 100%;
+  height: auto;
+  float: left;
 
-		@media (max-height: $bp-xxxs - 0.001) {
-			flex-direction: row;
-			flex-wrap: wrap;
-		}
-	}
+  // small screens
+  @media (max-width: $bp-sm - 0.001) {
+    flex: 1 1 auto;
+    display: flex;
+  }
+  @media (max-height: $bp-xxxs - 0.001) {
+    flex-basis: 50%;
+  }
 
+  // big screens
+  @media (min-width: $bp-sm) {
+    width: auto;
+    display: block;
 
-	////////////////////////////////////////////
-	// main nav items
-	////////////////////////////////////////////
+    &:not(:last-of-type) {
+      margin-right: 2px;
+    }
+  }
 
-	// nav items
-	.main-nav-item {
-		width: 100%;
-		height: auto;
-		float: left;
+  // needed because reasons
+  &:last-of-type {
+    @media (min-width: $bp-xs) {
+      margin-right: -0.5em;
+    }
+    @media (min-width: $bp-lg) {
+      margin-right: -0.6em;
+    }
+  }
+}
 
-		// small screens
-		@media (max-width: $bp-sm - 0.001) {
-			flex: 1 1 auto;
-			display: flex;
-		}
-		@media (max-height: $bp-xxxs - 0.001) {
-			flex-basis: 50%;
-		}
+////////////////////////////////////////////
+// main nav links
+////////////////////////////////////////////
 
-		// big screens
-		@media (min-width: $bp-sm) {
-			width: auto;
-			display: block;
+// nav links
+.main-nav-link {
+  @include nav-link-base;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 100%;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
 
-			&:not(:last-of-type) {
-				margin-right: 2px;
-			}
-		}
+  // small screens
+  @media (max-width: $bp-sm - 0.001) {
+    font-size: calc(2vh + #{$font-xs});
+    padding: 0.25em $gutter * 2;
 
-		// needed because reasons
-		&:last-of-type {
-			@media (min-width: $bp-xs) {
-				margin-right: -0.5em;
-			}
-			@media (min-width: $bp-lg) {
-				margin-right: -0.6em;
-			}
-		}
-	}
+    &:hover,
+    &:focus {
+      color: $white;
+    }
 
+    &:focus {
+      outline-offset: -2px;
+    }
+  }
 
-	////////////////////////////////////////////
-	// main nav links
-	////////////////////////////////////////////
+  // big screens
+  @media (min-width: $bp-sm) {
+    @include nav-link-hover;
+    line-height: $nav-height; // vertically center
+    font-size: $font-sm;
+  }
+}
 
-	// nav links
-	.main-nav-link {
-		@include nav-link-base;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		flex: 1 1 100%;
-		width: 100%;
-		z-index: 1;
-		overflow: hidden;
+////////////////////////////////////////////
+// skip link
+////////////////////////////////////////////
 
-		// small screens
-		@media (max-width: $bp-sm - 0.001) {
-			font-size: calc(2vh + #{$font-xs});
-			padding: 0.25em $gutter * 2;
+.skip-link {
+  top: $nav-height + 0.13rem; // position under nav bar
+  z-index: 8;
+  transform: translateX(-100%);
 
-			&:hover, &:focus {
-				color: $white;
-			}
+  @media (min-width: $bp-lg) {
+    left: 1.5rem;
+  }
 
-			&:focus {
-				outline-offset: -2px;
-			}
-		}
-
-		// big screens
-		@media (min-width: $bp-sm) {
-			@include nav-link-hover;
-			line-height: $nav-height; // vertically center
-			font-size: $font-sm;
-		}
-	}
-
-
-	////////////////////////////////////////////
-	// skip link
-	////////////////////////////////////////////
-
-	.skip-link {
-		top: $nav-height + 0.13rem; // position under nav bar
-		z-index: 8;
-		transform: translateX(-100%);
-
-		@media (min-width: $bp-lg) {
-			left: 1.5rem;
-		}
-
-		// focus
-		&:focus {
-			clip: auto;
-			height: auto;
-			width: auto;
-			transform: none;
-		}
-	}
+  // focus
+  &:focus {
+    clip: auto;
+    height: auto;
+    width: auto;
+    transform: none;
+  }
+}
 </style>

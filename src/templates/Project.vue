@@ -17,10 +17,11 @@
 import { Fragment } from "vue-fragment";
 import { Carousel, Slide } from "vue-carousel";
 
-import site from "../../content/site.json";
+import { getBaseUrlFromString } from "~/helpers.js";
 
 import Colophon from "~/components/Colophon";
 import ProjectHero from "~/components/ProjectHero";
+import ProjectIframeHeader from "~/components/ProjectIframeHeader";
 import ProjectPaginator from "~/components/ProjectPaginator";
 import Tag from "~/components/Tag";
 
@@ -29,10 +30,23 @@ export default {
     Fragment,
     Colophon,
     ProjectHero,
+    ProjectIframeHeader,
     ProjectPaginator,
     Tag,
     Carousel,
     Slide,
+  },
+  data() {
+    return {
+      isFullscreen: false,
+    };
+  },
+  methods: {
+    getBaseUrlFromString,
+    toggleFullscreen: function(e) {
+      if (e) e.preventDefault();
+      this.isFullscreen = !this.isFullscreen;
+    },
   },
   metaInfo() {
     return {
@@ -55,8 +69,15 @@ export default {
     <div class="project-outer-wrapper">
       <div
         class="project-iframe-wrapper u-margins-auto"
+        :class="isFullscreen ? 'is-fullscreen' : ''"
         v-if="$page.d.externalLink"
       >
+        <ProjectIframeHeader
+          :isFullscreen="isFullscreen"
+          :onToggleFullscreen="toggleFullscreen"
+          :baseUrl="getBaseUrlFromString($page.d.externalLink)"
+        />
+
         <iframe
           :src="$page.d.externalLink"
           loading="lazy"
@@ -86,6 +107,8 @@ export default {
 
     <VueRemarkContent class="project-content content" />
 
+    <p>{{ this.$refs.iframe }}</p>
+
     <template slot="cta">
       <ProjectPaginator :currentID="$page.d.id" />
       <Colophon classes="u-margin-bottom-sm" />
@@ -110,7 +133,7 @@ export default {
   padding: 1.5rem 1px 1px 1px;
   width: 48rem;
   min-width: 320px;
-  max-width: 100%;
+  max-width: calc(100% - #{$gutter * 2});
   height: 75vh;
   min-height: 480px;
   max-height: 100vh;
@@ -136,6 +159,18 @@ export default {
     font-size: $font-sm;
     padding: 0.15em 1.25em 0.2em 0.75em;
     border-radius: $radius-md 0 $radius-md 0;
+  }
+
+  &.is-fullscreen {
+    position: fixed;
+    width: 100%;
+    max-width: 100%;
+    height: calc(100% - #{$nav-height});
+    top: $nav-height;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 12;
   }
 }
 
