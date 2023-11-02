@@ -20,18 +20,14 @@ export default {
     <div class="project-hero-inner">
       <h1 class="project-hero-headline u-center-left">
         {{ headline }}
-        <span class="hero-subhead u-font-md" v-if="subhead">
-          <span class="u-screenreader">: </span>{{ subhead }}
+        <span
+          class="hero-subhead u-font-md u-margin-top-sm"
+          v-if="subhead"
+        >
+          <span class="u-visually-hidden">: </span>
+          {{ subhead }}
         </span>
       </h1>
-
-      <div class="project-hero-meta" v-if="$slots.meta">
-        <slot name="meta" />
-      </div>
-
-      <div class="project-hero-filters" v-if="$slots.filters">
-        <slot name="filters" />
-      </div>
     </div>
   </header>
 </template>
@@ -118,6 +114,7 @@ export default {
 }
 
 .hero-subhead {
+  @include body-font;
   display: block; // make the span stackable
   margin-top: 0.25em; // space it out from the title
 }

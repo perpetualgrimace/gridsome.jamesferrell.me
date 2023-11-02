@@ -4,6 +4,7 @@ slug: classic-controllers
 color: "#9191A0"
 thumbnailLayout: controller
 tags: artwork
+role: ["design"]
 controllerImg: snes-controller.png
 controllerImg2x: snes-controller@2x.png
 slides:
@@ -17,4 +18,6 @@ slides:
   ]
 maxWidth: "600px"
 id: 7
+timePeriod: "2013"
+dribbble: "https://dribbble.com/perpetualgrimace/projects/157127-Classic-controller-illustrations"
 ---

@@ -64,29 +64,6 @@ export default {
       }
       return false;
     },
-    hostname() {
-      let { host } = new URL(this.link);
-      if (host.split(".")[1] === "bandcamp") {
-        host = "bandcamp.com";
-      }
-      return host
-        .replace("www.", "")
-        .replace("web.archive.org", "archive.org")
-        .replace("en.", "");
-    },
-    intro() {
-      let prefix = "View live site";
-      if (this.hostname === "archive.org") {
-        prefix = "View archived site";
-      }
-      if (this.hostname === "dribbble.com") {
-        prefix = "View designs";
-      }
-      if (this.hostname === "bandcamp.com") {
-        prefix = "Listen";
-      }
-      return `${prefix} at `;
-    },
   },
 };
 </script>
@@ -99,13 +76,10 @@ export default {
   >
     <!-- cover link -->
     <a
-      v-if="link"
       :href="`projects/${slug}`"
       class="project-link"
       :aria-describedby="slug"
     />
-    <!-- no link -->
-    <span v-else class="project-link" />
 
     <!-- content -->
     <div class="project-inner">

@@ -10,15 +10,20 @@
       color
       externalLink
       iframeBlocked
+      role
+      company
+      timePeriod
     }
   }
 </page-query>
 
 <script>
 import { Fragment } from "vue-fragment";
-import { Carousel, Slide } from "vue-carousel";
 
-import { getBaseUrlFromString } from "~/helpers.js";
+import {
+  generateProjectSubhead,
+  getBaseUrlFromString,
+} from "~/helpers.js";
 
 import Button from "~/components/Button";
 import Colophon from "~/components/Colophon";
@@ -36,8 +41,14 @@ export default {
     ProjectIframeHeader,
     ProjectPaginator,
     Tag,
-    Carousel,
-    Slide,
+    Carousel: () =>
+      import("vue-carousel/src/index")
+        .then((m) => m.Carousel)
+        .catch(),
+    Slide: () =>
+      import("vue-carousel/src/index")
+        .then((m) => m.Slide)
+        .catch(),
   },
   data() {
     return {
@@ -45,6 +56,7 @@ export default {
     };
   },
   methods: {
+    generateProjectSubhead,
     getBaseUrlFromString,
     toggleFullscreen: function(e) {
       if (e) e.preventDefault();
@@ -66,9 +78,11 @@ export default {
         :headline="$page.d.title"
         :link="$page.d.externalLink"
         :color="$page.d.color"
+        :subhead="generateProjectSubhead($page.d)"
       >
       </ProjectHero>
     </template>
+
     <div class="project-outer-wrapper">
       <div
         class="project-iframe-wrapper u-margins-auto"
