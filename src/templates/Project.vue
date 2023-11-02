@@ -107,8 +107,6 @@ export default {
 
     <VueRemarkContent class="project-content content" />
 
-    <p>{{ this.$refs.iframe }}</p>
-
     <template slot="cta">
       <ProjectPaginator :currentID="$page.d.id" />
       <Colophon classes="u-margin-bottom-sm" />
