@@ -9,7 +9,14 @@ mobileImg: fusion-mobile.png
 mobileImg2x: fusion-mobile@2x.png
 laptopImg: fusion-laptop.png
 laptopImg2x: fusion-laptop@2x.png
-externalLink: http://fusion-lamps.com
+maxWidth: "660px"
+slides:
+  [
+    "1-products-home.png",
+    "2-product-overview.png",
+    "3-product-list.png",
+    "4-product-detail.png",
+  ]
 iframeBlocked: true
 id: 1
 timePeriod: "2012"

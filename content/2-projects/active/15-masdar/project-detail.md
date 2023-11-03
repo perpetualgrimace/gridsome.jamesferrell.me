@@ -9,7 +9,17 @@ mobileImg: masdar-mobile.jpg
 mobileImg2x: masdar-mobile@2x.jpg
 laptopImg: masdar-laptop.jpg
 laptopImg2x: masdar-laptop@2x.jpg
-externalLink: https://dribbble.com/shots/16162516-E-commerce-site-for-datasets
+dribbble: https://dribbble.com/shots/16162516-E-commerce-site-for-datasets
+slides: [
+  '1-collection-list.png',
+  '2-collection-detail.png',
+  '3-dataset-deatil.png',
+  '4-cart.png',
+  '5-checkout.png',
+  '6-order-summary.png',
+  '7-login.png',
+  '8-cart-empty.png',
+]
 id: 12
 iframeBlocked: true
 timePeriod: "early 2020"
