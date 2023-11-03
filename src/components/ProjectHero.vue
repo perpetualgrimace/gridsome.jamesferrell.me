@@ -1,6 +1,9 @@
 <script>
+import Tag from "~/components/Tag";
+
 export default {
   name: "ProjectHero",
+  components: { Tag },
   props: {
     headline: { default: "missing `headline` prop in ProjectHero.vue" },
     subhead: { default: null },
