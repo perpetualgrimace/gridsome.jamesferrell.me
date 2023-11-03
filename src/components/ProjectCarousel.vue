@@ -14,7 +14,7 @@ export default {
   props: {
     slides: { default: {} },
     slug: { default: "" },
-    maxWidth: { default: "100%" },
+    maxWidth: { default: "" },
   },
 };
 </script>
@@ -22,13 +22,15 @@ export default {
 <template>
   <div
     class="project-carousel u-margins-auto"
-    :style="`max-width: ${maxWidth};`"
+    :style="`max-width: ${maxWidth || '960px'};`"
   >
     <Carousel
       :perPage="1"
       :navigationEnabled="true"
       :loop="true"
       :paginationPadding="0"
+      :adjustableHeight="true"
+      adjustableHeightEasing="ease-out"
     >
       <Slide v-for="({ slide }, i) in slides" :key="i">
         <g-image
@@ -46,10 +48,19 @@ $carousel-button-width: 1.95rem;
 .project-carousel {
   @include device-shadow;
   border: $gutter solid $dark-2;
-  border-radius: $radius-sm;
+  border-bottom-width: $gutter * 2;
+  background-color: $dark-2;
+  border-radius: $radius-md;
 }
 .VueCarousel-wrapper {
   @include box-shadow-xl($shadow-dark);
+  border-radius: $radius-sm;
+}
+.VueCarousel-slide {
+  display: block !important;
+}
+.VueCarousel-inner {
+  align-items: flex-start !important;
 }
 
 .VueCarousel-navigation {
@@ -93,7 +104,7 @@ $carousel-button-width: 1.95rem;
 
 .VueCarousel-pagination {
   position: absolute;
-  bottom: $gutter / 2;
+  bottom: -($gutter * 1.425);
 }
 .VueCarousel-dot {
   @include box-shadow($shadow-dark);
