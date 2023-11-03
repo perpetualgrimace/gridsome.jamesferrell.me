@@ -98,7 +98,6 @@ export default {
       <Carousel :perPage="1" :navigationEnabled="true">
         <Slide v-for="({ slide }, i) in page.slides" :key="i">
           <g-image
-            class="image-hero-img"
             :src="`/images/projects/${page.slug}/${page.slides[i]}`"
             draggable="false"
           />
