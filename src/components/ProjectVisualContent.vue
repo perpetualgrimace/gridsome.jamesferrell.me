@@ -1,25 +1,16 @@
 <script>
-import { Fragment } from "vue-fragment";
-
 import { getBaseUrlFromString } from "~/helpers.js";
 
-import Button from "~/components/Button";
 import ProjectIframeHeader from "~/components/ProjectIframeHeader";
+import ProjectCarousel from "~/components/ProjectCarousel";
+import ProjectBlocked from "~/components/ProjectBlocked";
 
 export default {
   name: "ProjectVisualContent",
   components: {
-    Fragment,
-    Button,
     ProjectIframeHeader,
-    Carousel: () =>
-      import("vue-carousel/src/index")
-        .then((m) => m.Carousel)
-        .catch(),
-    Slide: () =>
-      import("vue-carousel/src/index")
-        .then((m) => m.Slide)
-        .catch(),
+    ProjectCarousel,
+    ProjectBlocked,
   },
   props: {
     page: { default: {} },
@@ -42,6 +33,7 @@ export default {
 <template>
   <div class="project-visual-content">
     <div
+      v-if="page.externalLink"
       class="project-iframe-wrapper u-margins-auto"
       :class="isFullscreen ? 'is-fullscreen' : ''"
       :style="
@@ -49,7 +41,6 @@ export default {
           ? 'min-height: 480px; height: 75vh;'
           : 'min-height: 240px; height: 60vh;'
       "
-      v-if="page.externalLink"
     >
       <ProjectIframeHeader
         :isFullscreen="isFullscreen"
@@ -65,45 +56,18 @@ export default {
         style="width: 100%; height: 100%;"
       />
 
-      <div class="project-blocked" v-else-if="page.iframeBlocked">
-        <g-image src="/images/xzbitsad.jpg" alt="Xhibit is sad" />
-        <h2 class="u-font-xxl u-margin-bottom">
-          Yo dawg, I heard you like websites
-        </h2>
-        <p class="u-font-lg u-margin-bottom">
-          Unfortunately,
-          <a :href="page.externalLink" target="_blank">
-            {{ getBaseUrlFromString(page.externalLink) }}
-          </a>
-          won’t let me put their website in my website — so in this case
-          you won't be able to website while you website
-        </p>
-        <p class="u-font-sm">
-          <a class="button" :href="page.externalLink" target="_blank">
-            Open
-            <span class="u-visually-hidden">{{
-              getBaseUrlFromString(page.externalLink)
-            }}</span>
-            in a new tab
-          </a>
-        </p>
-      </div>
+      <ProjectBlocked
+        v-else-if="page.iframeBlocked"
+        :externalLink="page.externalLink"
+      />
     </div>
 
-    <div
-      class="project-carousel-wrapper u-margins-auto"
-      v-else-if="page.slides.length"
-      :style="`max-width: ${page.maxWidth || '100%'};`"
-    >
-      <Carousel :perPage="1" :navigationEnabled="true">
-        <Slide v-for="({ slide }, i) in page.slides" :key="i">
-          <g-image
-            :src="`/images/projects/${page.slug}/${page.slides[i]}`"
-            draggable="false"
-          />
-        </Slide>
-      </Carousel>
-    </div>
+    <ProjectCarousel
+      v-if="page.slides.length"
+      :slides="page.slides"
+      :slug="page.slug"
+      :maxWidth="page.maxWidth"
+    />
   </div>
 </template>
 
@@ -163,24 +127,6 @@ export default {
     &:after {
       display: none;
     }
-  }
-}
-
-.project-blocked {
-  height: 100%;
-  background-color: $dark-3;
-  padding: $gutter * 2 $gutter * 2 $gutter $gutter * 2;
-  border-top: 1px solid $black;
-  border-radius: 0 0 $radius-md $radius-md;
-  overflow-y: auto;
-
-  img {
-    float: left;
-    width: 14rem;
-    max-width: 33.333%;
-    min-width: 5rem;
-    margin-right: $gutter * 2;
-    margin-bottom: $gutter;
   }
 }
 </style>
