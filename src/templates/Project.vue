@@ -12,6 +12,7 @@
       iframeBlocked
       role
       company
+      timePreposition
       timePeriod
     }
   }

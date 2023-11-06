@@ -39,7 +39,8 @@ export function getBaseUrlFromString(str) {
 }
 
 export function generateProjectSubhead(metaObj) {
-  const { role, company, timePeriod } = metaObj;
+  const { role, company, timePeriod, timePreposition } = metaObj;
+  const preposition = timePreposition || "in";
   let sentence = "";
   if (role) {
     sentence = role
@@ -48,7 +49,7 @@ export function generateProjectSubhead(metaObj) {
       .replace("development", "built")
       .replace("audio production", "recorded");
   }
-  if (timePeriod) sentence += ` in ${timePeriod}`;
+  if (timePeriod) sentence += ` ${preposition} ${timePeriod}`;
   if (company) sentence += ` at ${company}`;
   return uppercaseFirst(sentence);
 }
