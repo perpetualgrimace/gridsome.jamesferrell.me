@@ -97,6 +97,7 @@ export default {
   iframe {
     border-top: 1px solid $dark-3;
     border-radius: 0 0 $radius-md $radius-md;
+    background: #fff;
   }
 
   &:after {
