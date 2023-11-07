@@ -1,7 +1,7 @@
 ---
 title: Perf Metronome
 slug: perf-metronome
-color: "blue"
+color: "#212333"
 thumbnailLayout: web
 tags: "design"
 role: ["design"]

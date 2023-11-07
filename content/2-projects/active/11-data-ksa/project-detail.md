@@ -1,7 +1,7 @@
 ---
 title: "Data KSA"
 slug: data-ksa
-color: "#14434B"
+color: "#19A869"
 thumbnailLayout: web
 tags: "design,development"
 role: ["design", "development"]

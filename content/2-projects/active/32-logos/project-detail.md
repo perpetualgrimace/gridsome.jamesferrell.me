@@ -1,9 +1,9 @@
 ---
-title: Logo reel
+title: Collection of logos
 slug: logos
-color: "gray"
+color: "#596073"
 thumbnailLayout: logos
-tags: "design"
+tags: "design, branding"
 role: ["design"]
 logosImg: spam-tracking-app-mobile.jpg
 logosImg2x: spam-tracking-app-mobile@2x.jpg

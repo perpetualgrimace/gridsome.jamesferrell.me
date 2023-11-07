@@ -1,7 +1,7 @@
 ---
 title: CDC Patient Safety Portal
 slug: cdc-psp
-color: "cyan"
+color: "#045da9"
 thumbnailLayout: web
 tags: "development,react,accessibility"
 role: ["development"]

@@ -1,7 +1,7 @@
 ---
 title: The Welcoming
 slug: the-welcoming
-color: "#2d0045"
+color: "#18113c"
 thumbnailLayout: album
 tags: "branding,audio production,artwork"
 role: ["design", "audio production"]

@@ -1,7 +1,7 @@
 ---
 title: Canon CMS
 slug: canon-cms
-color: "yellow"
+color: "#B89427"
 thumbnailLayout: web
 tags: "design,development,react"
 role: ["design", "development"]

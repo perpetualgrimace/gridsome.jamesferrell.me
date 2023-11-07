@@ -1,7 +1,7 @@
 ---
 title: "Classic controllers"
 slug: classic-controllers
-color: "#9191A0"
+color: "#7C548D"
 thumbnailLayout: controller
 tags: artwork
 role: ["design"]

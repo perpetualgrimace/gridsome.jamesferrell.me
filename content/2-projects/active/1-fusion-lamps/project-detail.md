@@ -1,7 +1,7 @@
 ---
 title: "Fusion Lamps"
 slug: fusion-lamps
-color: "#697078"
+color: "#02834A"
 thumbnailLayout: web
 tags: "design,branding"
 role: ["design"]

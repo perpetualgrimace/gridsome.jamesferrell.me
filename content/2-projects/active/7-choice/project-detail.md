@@ -1,7 +1,7 @@
 ---
 title: Choice website
 slug: choice
-color: "green"
+color: "#28d886"
 thumbnailLayout: web
 tags: "design,development"
 role: ["design", "development"]

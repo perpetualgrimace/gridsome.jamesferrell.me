@@ -1,7 +1,7 @@
 ---
 title: Saudi IP Observatory
 slug: sa-ip-observatory
-color: "teal"
+color: "#003650"
 thumbnailLayout: web
 tags: "design"
 role: ["design"]

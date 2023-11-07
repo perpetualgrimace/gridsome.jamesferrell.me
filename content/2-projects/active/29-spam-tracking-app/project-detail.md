@@ -1,7 +1,7 @@
 ---
-title: Spam Tracking App
+title: Spam tracking app
 slug: spam-tracking-app
-color: "blue"
+color: "#1A1965"
 thumbnailLayout: web
 tags: "design"
 role: ["design"]

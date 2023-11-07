@@ -1,7 +1,7 @@
 ---
 title: Berman Advertising website
 slug: berman
-color: "blue"
+color: "#2629a8"
 thumbnailLayout: web
 tags: "design,development"
 role: ["design", "development"]

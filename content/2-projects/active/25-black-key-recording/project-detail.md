@@ -1,7 +1,7 @@
 ---
 title: Black Key Recording
 slug: black-key-recording
-color: "#F2494D"
+color: "#e8372d"
 thumbnailLayout: web
 tags: "design,development,branding,kirby cms"
 role: ["design", "development"]

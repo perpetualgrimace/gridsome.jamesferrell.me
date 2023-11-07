@@ -1,7 +1,7 @@
 ---
-title: Data Science Company Website
+title: Data science company website
 slug: data-science-company-website
-color: "black"
+color: "#4A1C3D"
 thumbnailLayout: web
 tags: "design,development,react,next"
 role: ["design", "development"]

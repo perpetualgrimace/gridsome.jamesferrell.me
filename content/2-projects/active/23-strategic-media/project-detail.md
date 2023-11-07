@@ -1,7 +1,7 @@
 ---
 title: Strategic Media
 slug: strategic-media
-color: "red"
+color: "#EC6223"
 thumbnailLayout: web
 tags: "development,kirby cms"
 role: ["development"]

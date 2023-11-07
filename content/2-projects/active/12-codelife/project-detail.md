@@ -1,7 +1,7 @@
 ---
 title: Codelife
 slug: codelife
-color: "#3BD9CC"
+color: "#0b5b5c"
 thumbnailLayout: web
 tags: "design,development,React"
 role: ["design", "development"]

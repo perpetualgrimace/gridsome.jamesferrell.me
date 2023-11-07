@@ -1,7 +1,7 @@
 ---
 title: Saudi Customs Data Initiative
 slug: sa-customs
-color: "#0A253E"
+color: "#00B09A"
 thumbnailLayout: web
 tags: "design,development,svelte"
 role: ["design", "development"]
