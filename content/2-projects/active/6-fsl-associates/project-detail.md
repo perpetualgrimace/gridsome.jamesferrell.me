@@ -11,6 +11,6 @@ laptopImg: fsl-laptop.png
 laptopImg2x: fsl-laptop@2x.png
 externalLink: http://fslassociates.com
 id: 6
-timePeriod: "late 2016"
+timePeriod: "mid 2016"
 company: "Berman Advertising"
 ---
