@@ -4,6 +4,7 @@ import ProjectDeviceMobile from "~/components/ProjectDeviceMobile";
 import ProjectDeviceLaptop from "~/components/ProjectDeviceLaptop";
 import ProjectAlbumArt from "~/components/ProjectAlbumArt";
 import ProjectController from "~/components/ProjectController";
+import ProjectThumbnail from "~/components/ProjectThumbnail";
 
 export default {
   name: "Project",
@@ -13,6 +14,7 @@ export default {
     ProjectDeviceLaptop,
     ProjectAlbumArt,
     ProjectController,
+    ProjectThumbnail,
   },
   props: {
     // useful defaults
@@ -22,14 +24,17 @@ export default {
     // defaults as warnings
     title: { default: "missing `title` prop in Project.vue" },
     slug: { default: "missing `slug` prop in Project.vue" },
-    link: { default: "#missing-`link`-prop-in-Project.vue" },
+    link: { default: "#missing `link` prop in Project.vue" },
     color: { default: "black" },
     tags: { default: "missing `tags` prop in Project.vue" },
     mobileImg: { default: false },
-    laptopImg: { default: "missing-`laptopImg`-prop-in-Project.vue" },
-    albumImg: { default: "missing-`albumImg`-prop-in-Project.vue" },
+    laptopImg: { default: "missing `laptopImg` prop in Project.vue" },
+    albumImg: { default: "missing `albumImg` prop in Project.vue" },
     controllerImg: {
-      default: "missing-`controllerImg`-prop-in-Project.vue",
+      default: "missing `controllerImg` prop in Project.vue",
+    },
+    thumbnailImg: {
+      default: "missing `thumbnailImg` prop in Project.vue",
     },
   },
   computed: {
@@ -53,7 +58,11 @@ export default {
           name: "ProjectController",
           img: this.controllerImg,
         };
-      } else return false;
+      } else
+        return {
+          name: "ProjectThumbnail",
+          img: this.thumbnailImg,
+        };
     },
     isHidden() {
       if (

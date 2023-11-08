@@ -14,6 +14,7 @@
           laptopImg
           albumImg
           controllerImg
+          thumbnailImg
         }
       }
     }
@@ -68,6 +69,7 @@ export default {
       :layout="node.thumbnailLayout"
       :lazy="node.order !== $static.projects.edges.length"
       :tags="node.tags"
+      :thumbnailImg="node.thumbnailImg"
       :mobileImg="node.mobileImg"
       :laptopImg="node.laptopImg"
       :albumImg="node.albumImg"

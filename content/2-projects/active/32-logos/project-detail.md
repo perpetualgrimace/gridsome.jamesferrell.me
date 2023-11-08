@@ -2,11 +2,10 @@
 title: Collection of logos
 slug: logos
 color: "#596073"
-thumbnailLayout: logos
 tags: "design, branding"
 role: ["design"]
-logosImg: spam-tracking-app-mobile.jpg
-logosImg2x: spam-tracking-app-mobile@2x.jpg
+thumbnailImg: logos.png
+thumbnailImg2x: logos@2x.png
 slides: [
   '1-logos.png',
 ]
