@@ -3,7 +3,7 @@ title: TeacherMade
 slug: teachermade
 color: "#0070f0"
 thumbnailLayout: web
-tags: "design"
+tags: "design,branding"
 role: ["design"]
 mobileImg: teachermade-mobile.jpg
 mobileImg2x: teachermade-mobile@2x.jpg
