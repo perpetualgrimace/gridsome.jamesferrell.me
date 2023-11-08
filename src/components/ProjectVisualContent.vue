@@ -3,6 +3,7 @@ import { getBaseUrlFromString } from "~/helpers.js";
 
 import ProjectIframeHeader from "~/components/ProjectIframeHeader";
 import ProjectCarousel from "~/components/ProjectCarousel";
+import ProjectImage from "~/components/ProjectImage";
 import ProjectBlocked from "~/components/ProjectBlocked";
 
 export default {
@@ -10,6 +11,7 @@ export default {
   components: {
     ProjectIframeHeader,
     ProjectCarousel,
+    ProjectImage,
     ProjectBlocked,
   },
   props: {
@@ -63,8 +65,14 @@ export default {
     </div>
 
     <ProjectCarousel
-      v-if="page.slides.length"
+      v-if="page.slides.length > 1"
       :slides="page.slides"
+      :slug="page.slug"
+      :maxWidth="page.maxWidth"
+    />
+    <ProjectImage
+      v-else-if="page.slides.length === 1"
+      :src="page.slides[0]"
       :slug="page.slug"
       :maxWidth="page.maxWidth"
     />
