@@ -35,7 +35,7 @@ export default {
     </template>
 
     <h2 class="u-padding-bottom">{{ $page.d.projectsHeading }}</h2>
-    <ProjectList :limit="8" />
+    <ProjectList :limit="11" />
     <div class="u-right">
       <Button
         link="projects"
