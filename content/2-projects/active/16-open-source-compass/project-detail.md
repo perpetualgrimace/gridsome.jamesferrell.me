@@ -9,7 +9,11 @@ mobileImg: osc-mobile.png
 mobileImg2x: osc-mobile@2x.png
 laptopImg: osc-laptop.jpg
 laptopImg2x: osc-laptop@2x.jpg
-externalLink: https://web.archive.org/web/20210227162442/https://opensourcecompass.io/
+archivedLink: https://web.archive.org/web/20210227162442/https://opensourcecompass.io/
+slides: [
+  "1-home.png",
+  "2-project-detail.png"
+]
 id: 16
 iframeBlocked: true
 timePeriod: "mid 2019"

@@ -21,9 +21,9 @@ export default {
     </h2>
     <p class="u-font-lg u-margin-bottom">
       Unfortunately,
-      <a :href="externalLink" target="_blank">
-        {{ getBaseUrlFromString(externalLink) }}
-      </a>
+      <a :href="externalLink" target="_blank">{{
+        getBaseUrlFromString(externalLink)
+      }}</a>
       won’t let me put their website in my website — so in this case you
       won't be able to website while you website
     </p>
