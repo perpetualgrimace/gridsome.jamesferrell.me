@@ -267,15 +267,4 @@ export default {
     margin-left: 1rem;
   }
 }
-
-// flipped device layout for even items:
-// phone left, laptop right
-@media (min-width: $bp-lg) {
-  .project:nth-of-type(even) .mobile-container {
-    right: auto; // reset right positioning
-  }
-  .project:nth-of-type(even) .laptop-container {
-    left: 120px; // offset using pixels actually works, because everything is in pixels 😬
-  }
-}
 </style>
