@@ -13,7 +13,7 @@ import DefinitionList from "~/components/DefinitionList"
 
 ## About me
 
-I’m a designer turned front-end developer — thus, [UX developer](http://www.disambiguity.com/what-is-a-ux-developer/) or [front-end designer](https://bradfrost.com/blog/post/frontend-design/). Coming from a design background, the code I care most about is the code the user directly interacts with. So everything I write is well-designed, responsive, accessible, and fast.
+I’m a designer turned front-end developer — thus, [UX developer](https://www.disambiguity.com/what-is-a-ux-developer/) or [front-end designer](https://bradfrost.com/blog/post/frontend-design/). Coming from a design background, the code I care most about is the code the user directly interacts with. So everything I write is well-designed, responsive, accessible, and fast.
 
 I’m a generalist by way of specializing in one thing at a time over long periods of time; I consider myself more of a _builder_ than a *creative*.
 

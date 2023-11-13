@@ -9,7 +9,7 @@ mobileImg: codelife-mobile.jpg
 mobileImg2x: codelife-mobile@2x.jpg
 laptopImg: codelife-laptop.jpg
 laptopImg2x: codelife-laptop@2x.jpg
-externalLink: http://en.codelife.com
+externalLink: https://en.codelife.com
 id: 12
 iframeBlocked: true
 timePeriod: "2018"

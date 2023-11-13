@@ -7,7 +7,7 @@ tags: "branding,audio production"
 role: ["design", "audio production"]
 albumImg: plinksticity-reloaded.jpg
 albumImg2x: plinksticity-reloaded@2x.jpg
-externalLink: http://ambushed.bandcamp.com/album/plinksticity-reloaded-plinksticial-edition
+externalLink: https://ambushed.bandcamp.com/album/plinksticity-reloaded-plinksticial-edition
 id: 13
 timePeriod: "2015 and late 2018"
 ---

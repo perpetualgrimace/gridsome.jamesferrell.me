@@ -9,7 +9,7 @@ mobileImg: vedantra-mobile.png
 mobileImg2x: vedantra-mobile@2x.png
 laptopImg: vedantra-laptop.png
 laptopImg2x: vedantra-laptop@2x.png
-externalLink: http://vedantra.jamesferrell.me
+externalLink: https://vedantra.jamesferrell.me
 id: 5
 timePeriod: "mid 2016"
 company: "Berman Advertising"
