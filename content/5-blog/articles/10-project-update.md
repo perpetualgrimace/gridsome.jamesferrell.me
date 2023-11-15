@@ -17,7 +17,7 @@ Okay more accurately, project pages now load the project website into an iframe 
 
 ![website in a website](./10-assets/yo-dawg-i-heard-you-like-websites.gif)
 
-I put them in a little fake browser window which shows the URL, allows you to toggle a fullscreen mode, and encourages you to resize the "window" to your heart’s content. It’s not the most resource-efficient approach, but it is fun!
+I put them in a little fake browser window which shows the URL, allows you to toggle a fullscreen mode, and encourages you to resize the “window” to your heart’s content. It’s not the most resource-efficient approach, but it is fun!
 
 And for projects that can’t be loaded into an iframe, I now display an image or series of images. A picture of a website isn’t as good as a website, but in some cases it’ll have to do.
 
