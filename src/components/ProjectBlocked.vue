@@ -25,7 +25,7 @@ export default {
         getBaseUrlFromString(externalLink)
       }}</a>
       won’t let me put their website in my website — so in this case you
-      won't be able to website while you website
+      won't be able to website while you website.
     </p>
     <p class="u-font-sm">
       <a class="button" :href="externalLink" target="_blank">
