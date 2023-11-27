@@ -85,7 +85,7 @@ export default {
   >
     <!-- cover link -->
     <a
-      :href="`projects/${slug}`"
+      :href="`/projects/${slug}`"
       class="project-link"
       :aria-describedby="slug"
     />
