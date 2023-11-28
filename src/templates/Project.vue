@@ -76,4 +76,7 @@ export default {
 .project-text-content:not(:empty) {
   margin-top: $gutter * 1.25;
 }
+.project-text-content .cta {
+  margin-top: $gutter * 2;
+}
 </style>
