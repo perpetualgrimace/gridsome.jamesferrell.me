@@ -75,7 +75,13 @@ export default {
 </script>
 
 <template>
-  <nav class="paginator u-margin-top-sm u-margin-bottom-sm">
+  <nav
+    :class="
+      `paginator u-margin-top-sm u-margin-bottom-sm${
+        template !== 'article' ? ' is-fixed' : ''
+      }`
+    "
+  >
     <ul class="paginator-list u-center u-margin-top-off-children">
       <li class="paginator-item paginator-item-first">
         <g-link
@@ -124,9 +130,25 @@ export default {
 </template>
 
 <style lang="scss">
-.paginator {
-  border-radius: $radius-md;
+@media (min-width: $bp-md) and (min-height: $bp-sm) {
+  .paginator.is-fixed {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: $gutter / 2;
+    right: $gutter / 2;
+
+    .paginator-list {
+      width: 48rem;
+      max-width: 100%;
+      margin: auto;
+    }
+  }
+}
+
+.paginator-list {
   @include box-shadow-lg;
+  border-radius: $radius-md;
 
   @include dark-mode {
     @include box-shadow-lg(rgba($black, 0.666));
