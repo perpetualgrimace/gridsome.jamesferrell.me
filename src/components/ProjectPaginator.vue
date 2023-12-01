@@ -27,12 +27,10 @@ export default {
 </script>
 
 <template>
-  <div>
-    <Paginator
-      :allPages="$static.projects.edges"
-      :currentID="currentID"
-      template="project"
-      parentPageLink="/projects"
-    />
-  </div>
+  <Paginator
+    :allPages="$static.projects.edges"
+    :currentID="currentID"
+    template="project"
+    parentPageLink="/projects"
+  />
 </template>
