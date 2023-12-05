@@ -21,7 +21,7 @@ timePeriod: "mid 2023"
 
 import CTA from "~/components/CTA"
 
-There is a classified website in the middle east similar to Craigslist which suffers an epidemic of spam posts, and an app is currently being developed by CST to combat this through providing rhobust reporting tools.
+There is a classified website in the middle east similar to Craigslist which suffers an epidemic of spam posts, and an app is currently being developed by CST to combat this through providing robust reporting tools.
 
 I was contracted to streamline and redesign the app while adhering strictly to the organization’s branding.
 

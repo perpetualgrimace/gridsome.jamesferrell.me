@@ -29,6 +29,6 @@ These are mockups for a rebrand and website redesign that I attempted during my 
 
 At the time, I had just read the early books by A Book Apart, and found myself super inspired by responsive design, and built the home page in vanilla HTML and CSS (lost to time, unfortunately). Alas, the web development team was in Canada, the branding team was in the UK, my boss was unreceptive, and ultimately my efforts to unify the branding and packaging design were unsuccessful.
 
-It was a valueable learning experience though, and a fond reminder of my early days as a designer.
+It was a valuable learning experience though, and a fond reminder of my early days as a designer.
 
 <CTA heading="Need a website or a rebrand?" />

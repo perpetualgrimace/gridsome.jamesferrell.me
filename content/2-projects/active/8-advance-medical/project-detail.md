@@ -19,6 +19,6 @@ import CTA from "~/components/CTA"
 
 Healthcare-focused client website designed in Sketch and built with Kirby CMS.
 
-Advance Medical was a company that offered medical plans to employers. I was able to successfully talk the client out of using a video in the header, and we opted instead for a purely aesthetic slide show (which is the best type of slide show). Since the copmany had offices in multiple countries, the site needed to be multilingual as well.
+Advance Medical was a company that offered medical plans to employers. I was able to successfully talk the client out of using a video in the header, and we opted instead for a purely aesthetic slide show (which is the best type of slide show). Since the company had offices in multiple countries, the site needed to be multilingual as well.
 
 <CTA heading="Need a custom website?" />

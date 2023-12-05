@@ -26,7 +26,7 @@ import CTA from "~/components/CTA"
 
 These recreations of classic console controllers were done for fun, mostly to get used to Photoshop and all its fancy layer effects.
 
-Shortly thereafter, skeumorphism went out of style. 😅
+Shortly thereafter, skeuomorphism went out of style. 😅
 
 Originally posted on [dribbble.com](https://dribbble.com/perpetualgrimace/projects/157127-Classic-controller-illustrations).
 

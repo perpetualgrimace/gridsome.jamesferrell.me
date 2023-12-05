@@ -19,6 +19,6 @@ import CTA from "~/components/CTA"
 
 Classy client website designed in Sketch and built with Kirby CMS.
 
-Choice is a company that curates books for libraries. Blogging regularly was part of their business strategy, so I had the additional tasks of converting html articles to markdown and providing guidance for using the admin panel.
+Choice is a company that curates books for libraries. Blogging regularly was part of their business strategy, so I had the additional tasks of converting HTML articles to markdown and providing guidance for using the admin panel.
 
 <CTA heading="Need a custom website?" />

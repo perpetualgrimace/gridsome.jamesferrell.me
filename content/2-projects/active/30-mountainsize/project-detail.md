@@ -16,7 +16,7 @@ timePeriod: "mid 2023"
 
 import CTA from "~/components/CTA"
 
-I’ve long drempt of opening my own recording studio, and now I finally have!
+I’ve long dreamed of opening my own recording studio, and now I finally have!
 
 For this website, I’m primarily targeting musicians under the greater heavy music umbrella, which is where I have the most experience.
 
