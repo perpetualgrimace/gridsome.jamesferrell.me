@@ -130,18 +130,21 @@ export default {
 </template>
 
 <style lang="scss">
-@media (min-width: $bp-md) and (min-height: $bp-sm) {
+@media (min-width: $bp-md) and (min-height: $bp-xs) {
   .paginator.is-fixed {
     position: fixed;
     z-index: 1;
     bottom: 0;
-    left: $gutter / 2;
-    right: $gutter / 2;
+    left: 0;
+    right: 0;
+    margin-bottom: 0 !important;
 
     .paginator-list {
-      width: 48rem;
-      max-width: 100%;
-      margin: auto;
+      width: 100%;
+    }
+    .paginator-link {
+      border-radius: 0;
+      height: rem(60);
     }
   }
 }

@@ -102,10 +102,19 @@ export default {
   }
 
   // theming
-  background-color: $light-1;
-  @include dark-mode {
-    color: $dark-1;
-    background-color: $dark-3;
+  &:after {
+    @include pseudo;
+    @include absolute-horizontal-center;
+    width: 100vw;
+    bottom: 0;
+    top: 0;
+    z-index: -1;
+    background-color: $light-1;
+
+    @include dark-mode {
+      color: $dark-1;
+      background-color: $dark-3;
+    }
   }
 
   &:before {
