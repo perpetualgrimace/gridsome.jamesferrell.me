@@ -16,3 +16,9 @@ slides: [
 id: 24
 timePeriod: "mid 2021"
 ---
+
+import CTA from "~/components/CTA"
+
+Mockups for a web app that would track patents, primarily in Saudi Arabia.
+
+<CTA heading="Working on a web application?" />

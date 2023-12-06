@@ -18,7 +18,7 @@ company: "Berman Advertising"
 
 import CTA from "~/components/CTA"
 
-This is a client website designed by Emily Toews (an intern at the time) and built on a shoestring budget with Kirby CMS. The site is still live at time of writing, but you’ll have to go visit [fslassociates.com](http://www.fslassociates.com) since I can’t embed it here.
+This is a client website designed by Emily Toews and built on a shoestring budget with Kirby CMS. The site is still live at time of writing, but you’ll have to go visit [fslassociates.com](http://www.fslassociates.com) since I can’t embed it here.
 
 It’s one of the few surviving websites built at Berman at time of writing, so it must be doing its job!
 

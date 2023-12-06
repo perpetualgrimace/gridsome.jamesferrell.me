@@ -5,6 +5,7 @@ slug: skills-list
 ## Skills & Capabilities
 
 ### Core development skills:
+
 - Design systems development (Storybook)
 - Semantic, accessible HTML (WCAG)
 - Clean, well-documented CSS (SCSS & PostCSS)
@@ -13,6 +14,7 @@ slug: skills-list
 - Flat file CMS’s (Kirby)
 
 ### Core design skills:
+
 - UI design & prototyping
 - Mobile & responsive design
 - Sketch, Figma, Photoshop, & Illustrator
@@ -21,8 +23,9 @@ slug: skills-list
 - Keynote presentations
 
 ### Capable but not excited about:
+
 - Print design
-- Wordpress & PHP
+- WordPress & PHP
 - Gulp & Grunt
 - Bootstrap & Foundation
 - GraphQL
