@@ -17,3 +17,11 @@ id: 14
 timePeriod: "late 2018"
 company: "Datawheel"
 ---
+
+import CTA from "~/components/CTA"
+
+DataChile was the first project handled by Datawheel’s remote branch. While they did an admirable job, I was brought on to smooth out some of the rough edges in the design implementation, often redesigning parts of the site.
+
+Unfortunately, due to the nature of the site relying heavily on APIs, only the home page works on the [archived version](https://web.archive.org/web/20220113092447/https://es.datachile.io/) of the site.
+
+<CTA heading="Make sense of your data" />

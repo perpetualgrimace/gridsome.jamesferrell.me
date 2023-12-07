@@ -24,3 +24,11 @@ id: 20
 iframeBlocked: true
 timePeriod: "early 2020"
 ---
+
+import CTA from "~/components/CTA"
+
+I worked on some designs for an E-commerce site, but with a twist: the product being sold is data.
+
+The client requested three levels of nesting: collections, stacks, and datasets. We explored how that might be presented, taking inspiration from Amazon in order to keep it feeling familiar.
+
+<CTA heading="Beautiful and effective E-commerce site design" />

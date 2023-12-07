@@ -14,3 +14,9 @@ id: 11
 timePeriod: "early 2018"
 company: "Datawheel"
 ---
+
+import CTA from "~/components/CTA"
+
+Data KSA was a site built at Datawheel that visualized the state of the Saudi population. I was the designer and primary developer for the project.
+
+<CTA heading="Make sense of your data" />
