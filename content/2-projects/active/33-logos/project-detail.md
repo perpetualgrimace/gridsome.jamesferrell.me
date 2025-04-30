@@ -9,7 +9,7 @@ thumbnailImg2x: logos@2x.png
 slides: [
   '1-logos.png',
 ]
-id: 32
+id: 33
 timePreposition: "starting in"
 timePeriod: "2012"
 ---

@@ -11,7 +11,7 @@ laptopImg: blackkey-laptop.png
 laptopImg2x: blackkey-laptop@2x.png
 externalLink: https://bkproductionstampa.com/
 archivedLink: https://web.archive.org/web/20160105033457/http://blackkeyrecording.com/
-id: 25
+id: 24
 timePeriod: "early 2016 and late 2021"
 ---
 

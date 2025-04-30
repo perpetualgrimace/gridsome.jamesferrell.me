@@ -10,7 +10,7 @@ mobileImg2x: data-science-company-website-mobile@2x.jpg
 laptopImg: data-science-company-website-laptop.jpg
 laptopImg2x: data-science-company-website-laptop@2x.jpg
 externalLink: https://data-science-company-website.jamesferrell.me
-id: 28
+id: 27
 timePeriod: "2023"
 ---
 
