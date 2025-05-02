@@ -16,6 +16,10 @@ timePeriod: "late 2024"
 
 import CTA from "~/components/CTA"
 
-TODO: description
+J.R. Bauer is a Florida contractor that specializes in a specific type of home construction called Insulated Concrete Forms, or ICF.
 
-<CTA />
+For the logo design, I used the shape of an ICF mold as inspiration along with familiar home iconography. The custom built website both demonstrates J.R.’s experience as a contractor, and informs potential customers about why J.R. has chosen to utilize ICF as his primary construction method.
+
+The website started bringing in new customers within a week. I’m not a sales guy, but that seems like a good result!
+
+<CTA heading="Need more customers?" text="Let’s work together to make your products or services accessible." />

@@ -16,6 +16,6 @@ timePeriod: "throughout 2024"
 
 import CTA from "~/components/CTA"
 
-TODO: description
+Envision Realm Studios is a startup based in Florida that builds stuff for theme parks. I worked with them do design a classy logo that could be interpreted as a wrench, a bird, or a portal. We then built a website that shows off their craftsmanship and builds credibility.
 
 <CTA />

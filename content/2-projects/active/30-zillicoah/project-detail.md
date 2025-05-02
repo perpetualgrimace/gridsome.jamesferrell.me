@@ -16,6 +16,6 @@ timePeriod: "early 2024"
 
 import CTA from "~/components/CTA"
 
-TODO: description
+Zillicoah is a band from Asheville that knows exactly how they want to look and sound, which made designing and building them a website relatively easy! Using [The Welcoming](/projects/the-welcoming)’s website as a starting point, I custom built a website to meet their needs and elevate their online presence.
 
-<CTA />
+<CTA heading="Custom band websites" text="Let’s build one that helps you grow." />
