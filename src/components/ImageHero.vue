@@ -4,7 +4,7 @@ export default {
   props: {
     headline: { default: "missing `headline` prop in ImageHero.vue" },
     imgSrc: { default: null },
-    defaultImg: { default: "/images/workspace-hero.png" },
+    defaultImg: { default: "/images/default-hero.png" },
     overlapped: { default: false },
   },
 };

@@ -14,17 +14,28 @@
   "keywords": "design, web design, ui design, visual design, development, developer, website, webdev, frontend, front-end, branding, identity, kirby cms, sketch, boston, tampa, freelance, contract, responsive, accessibility, accessible, a11y, 508, mobile, phone, tablet, react, vue, javascript, vanilla, css, scss, sass, postcss, es6, gulp, grunt, git",
 
   "socialAccounts": [
-    { "name": "github",   "link": "https://github.com/perpetualgrimace" },
-    { "name": "codepen",  "link": "https://codepen.io/perpetualgrimace" },
-    { "name": "dribbble", "link": "https://dribbble.com/perpetualgrimace" },
-    { "name": "twitter",  "link": "https://twitter.com/perpetualgrimac" },
-    { "name": "instagram",   "link": "https://instagram.com/perpetualgrimace" },
-    { "name": "facebook",  "link": "https://facebook.com/perpetualgrimace" },
-    { "name": "linkedin", "link": "https://linkedin.com/in/perpetualgrimace" }
+    { "name": "github", "link": "https://github.com/perpetualgrimace" },
+    { "name": "codepen", "link": "https://codepen.io/perpetualgrimace" },
+    {
+      "name": "dribbble",
+      "link": "https://dribbble.com/perpetualgrimace"
+    },
+    {
+      "name": "instagram",
+      "link": "https://instagram.com/perpetualgrimace"
+    },
+    {
+      "name": "facebook",
+      "link": "https://facebook.com/perpetualgrimace"
+    },
+    {
+      "name": "linkedin",
+      "link": "https://linkedin.com/in/perpetualgrimace"
+    }
   ],
 
   "ctaHeading": "Let’s work together",
   "ctaText": "I’m currently accepting new projects. I’m also happy to talk shop.",
-  "ctaLink":  "contact",
-  "ctaLinkText":  "Get in touch"
+  "ctaLink": "contact",
+  "ctaLinkText": "Get in touch"
 }
