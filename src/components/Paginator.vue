@@ -130,25 +130,6 @@ export default {
 </template>
 
 <style lang="scss">
-@media (min-width: $bp-md) and (min-height: $bp-xs) {
-  .paginator.is-fixed {
-    position: fixed;
-    z-index: 1;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin-bottom: 0 !important;
-
-    .paginator-list {
-      width: 100%;
-    }
-    .paginator-link {
-      border-radius: 0;
-      height: rem(60);
-    }
-  }
-}
-
 .paginator-list {
   @include box-shadow-lg;
   border-radius: $radius-md;
